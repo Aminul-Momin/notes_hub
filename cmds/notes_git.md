@@ -292,6 +292,7 @@
 🔥 MERGING:
 
 -   `$ git merge <Master:branch_name1> < branch_name2>`
+
 -   `$ git merge —abort`
     -   Abort merge if it is not possible to merge for any reason.
 
@@ -306,6 +307,7 @@
     -   get the remote origin URL
 
 -   `$ git remote add upstream <URL>`
+
 -   `$ git pull upstream Master`
 
 -   `$ git push -u origin master`
@@ -314,12 +316,12 @@
 
 -   `$ git pull <Origin: Name_of_remote> <Master:Name_of_local_branch>`
 
-    -   git fetch Origin & git merge Origin/Master
+    -   `$ git fetch origin && git merge origin master`
 
 -   `$ git push origin`
 
     -   push all the branches to origin
 
--   Git fetch
--   Git fetch origin
--   Git fetch origin/master master
+-   `$ git fetch`
+-   `$ git fetch origin`
+-   `$ git fetch origin/master master`

@@ -3,6 +3,7 @@
 ---
 
 -   [[notes_bash]]
+-   [[notes_linux]]
 
 ---
 
@@ -22,6 +23,8 @@
 -   SSH Clint Configuration File:
 
     -   `/etc/shh/sshd_config`
+
+-   [SSH Agent Explained](https://smallstep.com/blog/ssh-agent-explained/)
 
 -   **ssh-keygen:**
 
@@ -57,8 +60,7 @@
 
         -
 
-    -   `$ scp ~/.ssh/key_file.pem namenode:~/.ssh`
-        -
+    -   ## `$ scp ~/.ssh/key_file.pem namenode:~/.ssh`
 
 -   `$ ssh shah@am2.local`
 
@@ -124,9 +126,9 @@
     -   `wget --directory-prefix=~/Data --output-document=my-file.csv http://file-to-download.csv`
         -   $→$
 
--   **curl:**
+-   [curl](https://www.hostinger.com/tutorials/curl-command-with-examples-linux/)
 
--   **tar:**
+-   [tar](https://linuxhint.com/linux-tar-command/)
 
     -   `tar xvf ~/Data/file-to-untar.tar -C ~/Download`
 
@@ -135,7 +137,7 @@
     -   `tar --list -f tar_file_name.tar.gz`
         -   $→$
 
--   **zip/unzip:**
+-   [zip/unzip](https://www.hostinger.com/tutorials/how-to-unzip-files-linux/)
 
     -   `unzip ~/Data/filename.zip -d ~/Data`
 
@@ -368,6 +370,8 @@
 
 ### SSH, SYSTEM INFO & NETWORK COMMANDS
 
+-   [34 Basic Linux Commands Every User Should Know](https://www.hostinger.com/tutorials/linux-commands)
+
 -   `$ ssh user@host`
     -   $→$ connects to host as user
 -   `$ ssh -p <port> user@host`
@@ -389,7 +393,7 @@
 -   `$ uptime`
     -   $→$ shows current uptime
 -   `$ w`
-    -   $→$ displays whois online
+    -   $→$ displays who are online and what they are doing
 -   `$ finger <user>`
     -   $→$ displays information about user
 -   `$ uname -a`
@@ -397,9 +401,18 @@
 -   `$ man <command>`
     -   $→$ shows the manual for specified command
 -   `$ df`
+
     -   $→$ shows disk usage
+    -   Use df command to get a report on the system’s disk space usage, shown in percentage and KBs. If you want to see the report in megabytes, type df -m
+
 -   `$ du <filename>`
+
     -   $→$ shows the disk usage of the files and directories in filename (du -s give only a total)
+
+-   `$ cat /proc/meminfo`
+
+    -   to Check Memory Use in Linux
+
 -   `$ last <yourUsername>`
     -   $→$ lists your last logins
 -   `$ ps -u yourusername`
@@ -410,6 +423,10 @@
     -   $→$ kill all processes with the name
 -   `$ top`
     -   $→$ displays your currently active processes
+-   `$ htop`
+
+    -   to Find Memory Load of Each Process
+
 -   `$ lsof`
     -   $→$ lists open files
 -   `$ bg`
@@ -489,106 +506,112 @@
 
 ### FUNCTIONS
 
-        # The function refers to passed arguments by position (as if they were positional parameters), that is, $1, $2, and so forth.
-        # $@ is equal to "$1" "$2"... "$N", where N is the number of positional parameters. $# holds the number of positional parameters.
+```bash
+# The function refers to passed arguments by position (as if they were positional parameters), that is, $1, $2, and so forth.
+# $@ is equal to "$1" "$2"... "$N", where N is the number of positional parameters. $# holds the number of positional parameters.
 
 
-        function functname() {
-            shell commands
-        }
+function functname() {
+    shell commands
+}
 
-        unset -f functname  # deletes a function definition
-        declare -f          # displays all defined functions in your login session
+unset -f functname  # deletes a function definition
+declare -f          # displays all defined functions in your login session
+```
 
 ---
 
 ### FLOW CONTROLS
 
-        statement1 && statement2  # and operator
-        statement1 || statement2  # or operator
+statement1 && statement2 # and operator
+statement1 || statement2 # or operator
 
-        -a                        # and operator inside a test conditional expression
-        -o                        # or operator inside a test conditional expression
+-a # and operator inside a test conditional expression
+-o # or operator inside a test conditional expression
 
-        # STRINGS
+# STRINGS
 
-        str1 == str2               # str1 matches str2
-        str1 != str2               # str1 does not match str2
-        str1 < str2                # str1 is less than str2 (alphabetically)
-        str1 > str2                # str1 is greater than str2 (alphabetically)
-        str1 \> str2               # str1 is sorted after str2
-        str1 \< str2               # str1 is sorted before str2
-        -n str1                    # str1 is not null (has length greater than 0)
-        -z str1                    # str1 is null (has length 0)
+str1 == str2 # str1 matches str2
+str1 != str2 # str1 does not match str2
+str1 < str2 # str1 is less than str2 (alphabetically)
+str1 > str2 # str1 is greater than str2 (alphabetically)
+str1 \> str2 # str1 is sorted after str2
+str1 \< str2 # str1 is sorted before str2
+-n str1 # str1 is not null (has length greater than 0)
+-z str1 # str1 is null (has length 0)
 
-        # FILES
+# FILES
 
-        -a file                   # file exists or its compilation is successful
-        -d file                   # file exists and is a directory
-        -e file                   # file exists; same -a
-        -f file                   # file exists and is a regular file (i.e., not a directory or other special type of file)
-        -r file                   # you have read permission
-        -s file                   # file exists and is not empty
-        -w file                   # your have write permission
-        -x file                   # you have execute permission on file, or directory search permission if it is a directory
-        -N file                   # file was modified since it was last read
-        -O file                   # you own file
-        -G file                   # file's group ID matches yours (or one of yours, if you are in multiple groups)
-        file1 -nt file2           # file1 is newer than file2
-        file1 -ot file2           # file1 is older than file2
+-a file # file exists or its compilation is successful
+-d file # file exists and is a directory
+-e file # file exists; same -a
+-f file # file exists and is a regular file (i.e., not a directory or other special type of file)
+-r file # you have read permission
+-s file # file exists and is not empty
+-w file # your have write permission
+-x file # you have execute permission on file, or directory search permission if it is a directory
+-N file # file was modified since it was last read
+-O file # you own file
+-G file # file's group ID matches yours (or one of yours, if you are in multiple groups)
+file1 -nt file2 # file1 is newer than file2
+file1 -ot file2 # file1 is older than file2
 
-        # NUMBERS
+# NUMBERS
 
-        -lt                       # less than
-        -le                       # less than or equal
-        -eq                       # equal
-        -ge                       # greater than or equal
-        -gt                       # greater than
-        -ne                       # not equal
+-lt # less than
+-le # less than or equal
+-eq # equal
+-ge # greater than or equal
+-gt # greater than
+-ne # not equal
 
-        if condition
-        then
-        statements
-        [elif condition
-        then statements...]
-        [else
-        statements]
-        fi
+if condition
+then
+statements
+[elif condition
+then statements...]
+[else
+statements]
+fi
 
-        for x in {1..10}
-        do
-        statements
-        done
+```bash
+for x in {1..10}
+do
+statements
+done
 
-        for name [in list]
-        do
-        statements that can use $name
-        done
+for name [in list]
+do
+statements that can use $name
+done
 
-        for (( initialisation ; ending condition ; update ))
-        do
-        statements...
-        done
+for (( initialisation ; ending condition ; update ))
+do
+statements...
+done
+```
 
-        case expression in
-        pattern1 )
-            statements ;;
-        pattern2 )
-            statements ;;
-        esac
+```bash
+case expression in
+pattern1 )
+statements ;;
+pattern2 )
+statements ;;
+esac
+```
 
-        select name [in list]
-        do
-        statements that can use $name
-        done
+select name [in list]
+do
+statements that can use $name
+done
 
-        while condition; do
-        statements
-        done
+while condition; do
+statements
+done
 
-        until condition; do
-        statements
-        done
+until condition; do
+statements
+done
 
 ---
 
@@ -698,14 +721,14 @@
         trap 'echo $varname' EXIT  # useful when you want to print out the values of variables at the point that your script exits
 
         function errtrap {
-        es=$?
-        echo "ERROR line $1: Command exited with status $es."
+            es=$?
+            echo "ERROR line $1: Command exited with status $es."
         }
 
         trap 'errtrap $LINENO' ERR  # is run whenever a command in the surrounding script or function exits with non-zero status
 
         function dbgtrap {
-        echo "badvar is $badvar"
+            echo "badvar is $badvar"
         }
 
         trap dbgtrap DEBUG  # causes the trap code to be executed before every statement in a function or script
@@ -713,7 +736,7 @@
         trap - DEBUG  # turn off the DEBUG trap
 
         function returntrap {
-        echo "A return occurred"
+            echo "A return occurred"
         }
 
         trap returntrap RETURN  # is executed each time a shell function or a script executed with the . or source commands finishes executing
