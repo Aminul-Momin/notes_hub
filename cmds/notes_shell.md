@@ -4,6 +4,7 @@
 
 -   [[notes_bash]]
 -   [[notes_linux]]
+-   [The 50 Most Popular Linux & Terminal Commands - Full Course for Beginners](https://www.youtube.com/watch?v=ZtqBQ68cfJc&t=119s)
 
 ---
 
