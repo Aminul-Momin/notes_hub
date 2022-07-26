@@ -1,0 +1,34 @@
+-   [Install Airflow:](https://github.com/apache/airflow/blob/main/README.md#installing-from-pypi)
+    -   `$ pip install 'apache-airflow==2.3.3' --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.3.3/constraints-3.7.txt"`
+-   `$ export AIRFLOW_HOME=.`
+-   `$ airflow db init`
+-   `$ airflow webserver -p 8080`
+-   `$ `
+-   `$ airflow user create -r Admin -e bbcredcap3@gmail.com -f Aminul -l Momin -u bbcredcap3`
+-   `$ airflow webserver -p 8080`
+-   `$ airflow scheduler`
+-   `$ `
+-   `$ `
+-   `$ `
+-   `$ `
+
+### Dockerized Airflow
+
+-   `$ curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.3.3/docker-compose.yaml'
+
+    -   Download `docker-compose.yaml` file
+
+-   `$ mkdir -p ./dags ./logs ./plugins`
+-   `$ echo -e "AIRFLOW_UID=$(id -u)" > .env` # Only for Linux Machine
+
+-   `$ touch .env` # Only for MacOS or Windows
+    -   Content: AIRFLOW_UID=50000
+-   `$ docker-compose up airflow-init`
+-   `$ docker-compose up`
+
+-   The webserver is available at: `http://localhost:8080`. The default account has the login `airflow` and the password `airflow`.
+
+-   `$ `
+-   `$ `
+-   `$ `
+-   `$ `
