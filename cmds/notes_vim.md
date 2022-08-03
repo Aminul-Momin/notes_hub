@@ -123,7 +123,7 @@
 
 ### EDITING IN NORMAL MODE:
 
--   V`
+-   `V`
 
     -   Sellect the line of which the cursor is on
 
@@ -131,7 +131,7 @@
     -   join line below to the current line
 -   `🔥 u`
     -   undo
--   `🔥 Ctr`l + r
+-   `🔥 Ctrl + r`
     -   redo
 -   `🔥 .`
     -   repeat last command

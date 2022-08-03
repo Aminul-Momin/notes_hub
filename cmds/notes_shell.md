@@ -2,6 +2,7 @@
 
 ---
 
+-   [LinuxHowTo](https://www.linuxhowto.net/)
 -   [[notes_bash]]
 -   [[notes_linux]]
 -   [The 50 Most Popular Linux & Terminal Commands - Full Course for Beginners](https://www.youtube.com/watch?v=ZtqBQ68cfJc&t=119s)
@@ -14,6 +15,36 @@
     -   List out available shells.
 -   `$ chsh -s /bin/bash`
     -   Change current Shell to bash shell
+
+---
+
+-   COMMAND DESCRIPTION SYNTAX:
+
+    1. angle brackets for required parameters:
+        - EX: ping <hostname>
+    2. square brackets for optional parameters:
+        - EX: mkdir [-p] <dirname>
+    3. ellipses for repeated items:
+        - EX: cp <source1> [source2…] <dest>
+    4. vertical bars for choice of items:
+        - EX: netstat {-t|-u}
+
+-   COMMAND-LINE ARGUMENT:
+
+    -   A command-line argument or parameter is an item of information provided to a program when it is started. A program can have many command-line arguments that identify sources or destinations of information, or that alter the operation of the program.
+
+-   COMMAND-LINE OPTION:
+
+    -   A command-line option or simply option (also known as a flag or switch) modifies the operation of a command; the effect is determined by the command's program. Options follow the command name on the command line, separated by spaces. A space before the first option is not always required, such as Dir/? and DIR /? in DOS, which have the same effect[10] of listing the DIR command's available options, whereas dir --help (in many versions of Unix) does require the option to be preceded by at least one space (and is case-sensitive).
+
+-   OPTION CONVENTIONS IN UNIX-LIKE SYSTEMS:
+
+    -   In Unix-like systems, the ASCII hyphen-minus begins options; the new (and GNU) convention is to use two hyphens then a word (e.g. --create) to identify the option's use while the old convention (and still available as an option for frequently-used options) is to use one hyphen then one letter (e.g., -c); if one hyphen is followed by two or more letters it may mean two options are being specified, or it may mean the second and subsequent letters are a parameter (such as filename or date) for the first option.
+
+-   TERMINAL VS. BASH VS. COMMAND LINE VS. PROMPT:
+    https://www.youtube.com/watch?v=hMSByvFHOro
+
+---
 
 ### [SSH: Usage, Options, Configuration](https://www.ssh.com/academy/ssh/command#ssh-client-configuration-file)
 
@@ -63,13 +94,23 @@
 
     -   ## `$ scp ~/.ssh/key_file.pem namenode:~/.ssh`
 
--   `$ ssh shah@am2.local`
+-   `$ ssh user@host`
 
-    -
+    -   connects to host as user
 
--   `$ ssh farzana@am2.local`
+    -   `$ ssh shah@am2.local`
+    -   `$ ssh farzana@am2.local`
 
-    -
+-   `$ ssh -p <port> user@host`
+
+    -   connects to host on specified port as user
+
+-   `$ ssh-copy-id user@host`
+
+    -   adds your ssh key to host for user to enable a keyed or passwordless login
+    -   `$ ssh-copy-id root@server.######.com`
+    -   `$ ssh-copy-id shah@10.0.0.4`
+    -   `$ ssh-copy-id shah@am2.local`
 
 -   `$ ssh -i .ssh/local_login_key.pub shah@10.0.0.4`
 
@@ -79,29 +120,17 @@
 
     -   Add your SSH private key to the ssh-agent and store your passphrase in the keychain. The -K option is Apple's standard version of ssh-add, which stores the passphrase in your keychain for you when you add an ssh key to the ssh-agent. If you chose not to add a passphrase to your key, run the command without the -K option.
 
--   `$ ssh-copy-id root@server.######.com`
-
-    -
-
--   `$ ssh-copy-id shah@10.0.0.4`
-
-    -
-
--   `$ ssh-copy-id shah@am2.local`
-
-    -
-
 -   `$ ssh datanode1 'cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub`
 
     -
 
 -   `$ pbcopy < ~/.ssh/id_rsa.pub`
 
-    -   Copies the contents of the id_rsa.pub file to your clipboard
+    -   Copies the contents of the id_rsa.pub file to your clipboard in MacOS
 
 -   `$ cat ~/.ssh/file_name.pub >> ~/.ssh/authorized_keys`
 
-    -   $→$
+    -
 
 -   `$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys`
 
@@ -182,8 +211,17 @@
     -   🔥 `sudo chmod -R u+rwX,g-rwx,o-rx <file_or_dir_name>`
         -   Recursively adds (`+`) read (`r`), write (`w`), and special execution (`X`) permissions for user (`u`), and removes (`-`) read (`r`), write (`w`), and execution (`x`) permissions for Group (`g`), and removes (`-`) read (`r`) and execution (`x`) permissions for Others
 
--   **chown:**
--   **chgrp:**
+-   [chown](https://www.linuxhowto.net/how-to-change-file-group-owner-with-chown-command-in-linux/)
+
+-   `$ sudo chown :group file`
+
+    -   `$ sudo chown :docker file1.txt`
+        -   Change the group owner of file1.txt from linuxtechi to docker.
+
+-   [chgrp](https://www.linuxhowto.net/change-group-using-chgrp-command-in-linux/)
+
+-   `$ chgrp OPTION group_name /path/to/file_or_directory`
+    -   The group_name attribute represents the new group name that the file or directory will acquire. Additionally, you can specify the GID (group ID) instead of the group name. In that case, you need to append the GID with a plus sign (+).
 
 ---
 
@@ -286,21 +324,122 @@
 ### BASH BASICS
 
 -   `$ env`
-    -   $→$ displays all environment variables
+    -   displays all environment variables
 -   `$ echo $SHELL`
-    -   $→$ displays the shell you're using
+    -   displays the shell you're using
 -   `$ echo $BASH_VERSION`
-    -   $→$ displays bash version
+    -   displays bash version
 -   `$ unset VARIABLE_NAME`
-    -   $→$ Unset the given variabel - 'VARIABLE_NAME'
+    -   Unset the given variabel - 'VARIABLE_NAME'
 -   `$ bash`
-    -   $→$ if you want to use bash (type exit to go back to your previously opened shell)
+    -   if you want to use bash (type exit to go back to your previously opened shell)
 -   `$ whereis bash`
-    -   $→$ locates the binary, source and manual-page for a command
+    -   locates the binary, source and manual-page for a command
 -   `$ which bash`
-    -   $→$ finds out which program is executed as 'bash' (default: /bin/bash, can change across environments)
+    -   finds out which program is executed as 'bash' (default: /bin/bash, can change across environments)
+-   `$ whoami`
+    -   returns your username
+-   `$ passwd`
+
+    -   lets you change your password
+
 -   `$ clear`
-    -   $→$ clears content on window (hide displayed lines)
+    -   clears content on window (hide displayed lines)
+
+---
+
+### SYSTEM INFO & NETWORK COMMANDS
+
+-   [34 Basic Linux Commands Every User Should Know](https://www.hostinger.com/tutorials/linux-commands)
+
+-   `$ quota -v`
+    -   shows what your disk quota is
+-   `$ date`
+    -   shows the current date and time
+-   `$ cal`
+    -   shows the month's calendar
+-   `$ uptime`
+    -   shows current uptime
+-   `$ w`
+    -   displays who are online and what they are doing
+-   `$ finger <user>`
+    -   displays information about user
+-   `$ uname -a`
+    -   shows kernel information
+-   `$ man <command>`
+    -   shows the manual for specified command
+-   `$ df`
+
+    -   shows disk usage
+    -   Use df command to get a report on the system’s disk space usage, shown in percentage and KBs. If you want to see the report in megabytes, type df -m
+
+-   `$ du <filename>`
+
+    -   shows the disk usage of the files and directories in filename (du -s give only a total)
+
+-   `$ cat /proc/meminfo`
+
+    -   to Check Memory Use in Linux
+
+-   `$ last <yourUsername>`
+
+    -   lists your last logins
+
+-   `$ ps -u yourusername`
+
+    -   lists your processes
+
+-   `$ kill <PID>`
+
+    -   kills the processes with the ID you gave
+
+-   `$ killall <processname>`
+
+    -   kill all processes with the name
+
+-   `$ top`
+
+    -   displays your currently active processes
+
+-   `$ htop`
+
+    -   to Find Memory Load of Each Process
+
+-   `$ lsof`
+
+    -   lists open files
+
+-   `$ bg`
+
+    -   lists stopped or background jobs ; resume a stopped job in the background
+
+-   `$ fg`
+
+    -   brings the most recent job in the foreground
+
+-   `$ fg <job>`
+
+    -   brings job to the foreground
+
+-   `$ ping <host>`
+
+    -   pings host and outputs results
+
+-   `$ whois <domain>`
+
+    -   gets whois information for domain
+
+-   `$ dig <domain>`
+
+    -   gets DNS information for domain
+
+-   `$ dig -x <host>`
+
+    -   reverses lookup host
+
+-   `$ id`
+    -   get information of the user (user id)
+    -   Output Example: uid=501(a.momin) gid=20(staff) groups=20(staff),12(everyone),61(localaccounts),79(\_appserverusr),80(admin),81(\_appserveradm),98(\_lpadmin),701(com.apple.sharepoint.group.1),702(com.apple.sharepoint.group.2),33(\_appstore),100(\_lpoperator),204(\_developer),250(\_analyticsusers),395(com.apple.access_ftp),398(com.apple.access_screensharing),399(com.apple.access_ssh-disabled),400(com.apple.access_remote_ae)
 
 ---
 
@@ -354,100 +493,20 @@
     -   $→$ remove a non-empty directory
 -   `$ mv <dir1> <dir2>`
     -   $→$ rename a directory from <dir1> to <dir2>
--   `$ cd`
-    -   $→$ changes to home
--   `$ cd ..`
-    -   $→$ changes to the parent directory
 -   `$ cd <dirname>`
     -   $→$ changes directory
 -   `$ cp -r <dir1> <dir2>`
     -   $→$ copy <dir1> into <dir2> including sub-directories
 -   `$ pwd`
     -   $→$ tells you where you currently are
+-   `$ cd`
+    -   $→$ changes to home directory.
+-   `$ cd ..`
+    -   $→$ changes to the parent directory.
 -   `$ cd ~`
-    -   $→$ changes to home.
-
----
-
-### SSH, SYSTEM INFO & NETWORK COMMANDS
-
--   [34 Basic Linux Commands Every User Should Know](https://www.hostinger.com/tutorials/linux-commands)
-
--   `$ ssh user@host`
-    -   $→$ connects to host as user
--   `$ ssh -p <port> user@host`
-    -   $→$ connects to host on specified port as user
--   `$ ssh-copy-id user@host`
-
-    -   $→$ adds your ssh key to host for user to enable a keyed or passwordless login
-
--   `$ whoami`
-    -   $→$ returns your username
--   `$ passwd`
-    -   $→$ lets you change your password
--   `$ quota -v`
-    -   $→$ shows what your disk quota is
--   `$ date`
-    -   $→$ shows the current date and time
--   `$ cal`
-    -   $→$ shows the month's calendar
--   `$ uptime`
-    -   $→$ shows current uptime
--   `$ w`
-    -   $→$ displays who are online and what they are doing
--   `$ finger <user>`
-    -   $→$ displays information about user
--   `$ uname -a`
-    -   $→$ shows kernel information
--   `$ man <command>`
-    -   $→$ shows the manual for specified command
--   `$ df`
-
-    -   $→$ shows disk usage
-    -   Use df command to get a report on the system’s disk space usage, shown in percentage and KBs. If you want to see the report in megabytes, type df -m
-
--   `$ du <filename>`
-
-    -   $→$ shows the disk usage of the files and directories in filename (du -s give only a total)
-
--   `$ cat /proc/meminfo`
-
-    -   to Check Memory Use in Linux
-
--   `$ last <yourUsername>`
-    -   $→$ lists your last logins
--   `$ ps -u yourusername`
-    -   $→$ lists your processes
--   `$ kill <PID>`
-    -   $→$ kills the processes with the ID you gave
--   `$ killall <processname>`
-    -   $→$ kill all processes with the name
--   `$ top`
-    -   $→$ displays your currently active processes
--   `$ htop`
-
-    -   to Find Memory Load of Each Process
-
--   `$ lsof`
-    -   $→$ lists open files
--   `$ bg`
-    -   $→$ lists stopped or background jobs ; resume a stopped job in the background
--   `$ fg`
-    -   $→$ brings the most recent job in the foreground
--   `$ fg <job>`
-
-    -   $→$ brings job to the foreground
-
--   `$ ping <host>`
-    -   $→$ pings host and outputs results
--   `$ whois <domain>`
-    -   $→$ gets whois information for domain
--   `$ dig <domain>`
-    -   $→$ gets DNS information for domain
--   `$ dig -x <host>`
-    -   $→$ reverses lookup host
--   `$ wget <file>`
-    -   $→$ downloads file
+    -   $→$ changes to home directory.
+-   `$ cd -`
+    -   $→$ changes to previous directory.
 
 ---
 
@@ -804,3 +863,420 @@ done
         echo -e "${Green}This is GREEN text${Color_Off} and normal text"
         echo -e "${Red}${On_White}This is Red test on White background${Color_Off}"
         # option -e is mandatory, it enable interpretation of backslash escapes
+
+<h1 style="color:red" align="center" >BASH PROGRAMMING:</h1>
+
+### Bash Tutorials:
+
+-   [[Notes_shell]]
+-   [Bash Cheatsheet](https://devhints.io/bash)
+-   [The Complete How To Guide Of Bash Functions](https://www.shell-tips.com/bash/functions/)
+-   [Google Shell Style Guide](https://google.github.io/styleguide/shellguide.html)
+-   [Interview Bit](https://www.interviewbit.com/shell-scripting-interview-questions/)
+-   [Interview Questions](https://www.guru99.com/shell-scripting-interview-questions.html)
+
+### The Linux Kernel
+
+Every operating system (OS) has a kernel. The kernel is the layer of the OS that bridges the hardware with the main programs that run on a computer. The kernel is the core of the OS and is the first to load when the computer boots up. It remains in the computer's memory throughout a session. It is responsible for providing an interface for all applications, controlling the hardware and allowing processes to get information from each other. There are three types of kernel:
+
+-   Microkernel
+-   Hybrid
+-   Monolithic
+
+Linux uses a monolithic kernel, so called because it includes device drivers and the file management system and therefore requires more memory. On the opposite end of the spectrum, a microkernel aims to occupy the smallest amount of memory by managing only the necessities such as the CPU, memory and inter-process communication (IPC).
+
+### The Shell
+
+The shell forms the layer between the user and the kernel so the user can enter commands. The kernel 'understands' only binary language, which is composed exclusively of ones and zeros. In early computing, any instructions/commands from the users were entered in binary language, but this evolved so that the user can enter commands in a more recognizable language. It is the shell that acts as the go-between, accepting the commands entered in the language recognizable by the user, and translating them to binary language for the kernel.
+
+### Bash
+
+Bash stands for Bourne Again SHell, and is **a type of shell** found in Linux, which is the default shell in several versions ('distributions') of Linux. Other common types of shell are cshell and kshell, though there are others. The most primitive type of shell in Linux is sh.
+
+### Terminal
+
+The terminal is the application that brings it all together, in the sense that it provides a visual representation of the shell for the user to enter commands. In other words, in a GUI (graphical user interface), where applications and other features are visually represented by images that the user can manipulate by clicking on them with a cursor, a terminal application opens a window where the user can type in commands for the shell to interpret into binary language for the kernel.
+
+Summing it all up, we could say that we've discussed three layers so far: the terminal, where the user enters written commands; the shell, and Bash being a type of shell, which takes those commands and interprets them into binary language; the kernel which takes the binary language commands and executes the task on hand.
+
+### Elements of Bash:
+
+-   [Pipeline](https://tiswww.case.edu/php/chet/bash/bashref.html#Pipelines):
+
+    -   A pipeline is a sequence of one or more commands separated by one of the control operators `|` or `|&`
+
+-   [Array in Bash](https://tiswww.case.edu/php/chet/bash/bashref.html#Arrays):
+
+-   [Grouping Commands](https://ss64.com/bash/syntax-brackets.html):
+
+-   [Shell Expansion](https://tiswww.case.edu/php/chet/bash/bashref.html#Shell-Expansions): Expansion is performed on the command line after it has been split into tokens. There are seven kinds of expansion performed:
+    -   **Brace Expansion** $→$ Expansion of expressions within braces.
+    -   **Tilde Expansion** $→$ Expansion of the ~ character.
+    -   [Shell Parameter Expansion](https://tiswww.case.edu/php/chet/bash/bashref.html#Shell-Parameter-Expansion) $→$ How Bash expands variables to their values.
+    -   **Command Substitution** $→$ Using the output of a command as an argument.
+    -   **Arithmetic Expansion** $→$ How to use arithmetic in shell expansions.
+    -   **Process Substitution** $→$ A way to write and read to and from a command.
+    -   **Word Splitting** $→$ How the results of expansion are split into separate arguments.
+    -   **Filename Expansion** $→$ A shorthand for specifying filenames matching patterns.
+
+### Special Variables in Bash:
+
+-   [Shell Parameters](https://tiswww.case.edu/php/chet/bash/bashref.html#Shell-Parameters)
+
+-   `$0` $→$ The filename of the current script.
+-   `$n` $→$ The Nth argument passed to script was invoked or function was called.
+-   `$#` $→$ The number of argument passed to script or function.
+-   `$@` $→$ All arguments passed to script or function.
+-   `$*` $→$ All arguments passed to script or function.
+-   `$?` $→$ The exit status of the last command executed.
+-   `$$` $→$ The process ID of the current shell. For shell scripts, this is the process ID under which they are executing.
+-   `$!` $→$ The process number of the last background command.
+-   `$IFS`$→$
+
+### Shell command separator/control characters:
+
+| Bash Widgets      | Meaning                                                                                                                                                                                                                                                                                                                                                                                  |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `$(command)`      | Replace command with its output. Example: `my_var = $(ls -1)`; `ls -l $(which cp)`                                                                                                                                                                                                                                                                                                       |
+| `$((mth-exprsn))` | Example: ` my_var = $(( 2 + 8))` `echo $(($((5**2)) * 3))`                                                                                                                                                                                                                                                                                                                               |
+| `$`               | prefix to a variable, like `"$myvar"`                                                                                                                                                                                                                                                                                                                                                    |
+| `$1`              | First argument supplied after the program/function on execution.                                                                                                                                                                                                                                                                                                                         |
+| `$2`              | Second argument supplied after the program/function on execution. ($3 etc.)                                                                                                                                                                                                                                                                                                              |
+| `$#`              | Shows the number of arguments.                                                                                                                                                                                                                                                                                                                                                           |
+| `$?`              | Any argument (good to use in `if` statements)                                                                                                                                                                                                                                                                                                                                            |
+| `$*`              | All arguments                                                                                                                                                                                                                                                                                                                                                                            |
+| `$@`              | All arguments                                                                                                                                                                                                                                                                                                                                                                            |
+| `#`               | commented line, anything on a line after "#" will be overlooked by the script                                                                                                                                                                                                                                                                                                            |
+| `0>`              | stdin stream director (I never seen this used in any script)                                                                                                                                                                                                                                                                                                                             |
+| `1>`              | stdout stream director (standard output)                                                                                                                                                                                                                                                                                                                                                 |
+| `2>`              | stderr stream director (standard error output)                                                                                                                                                                                                                                                                                                                                           |
+| `%`               | job character, %1 = fg job 1, %2 = fg job 2, etc.                                                                                                                                                                                                                                                                                                                                        |
+| `>>`              | stream director append to a file                                                                                                                                                                                                                                                                                                                                                         |
+| `<<`              | stdin stream director. (`cat > file << EOF` ; anything ; EOF)                                                                                                                                                                                                                                                                                                                            |
+| `>`               | stream director that will start at the top of the file (in if statements `< `and `>` may be used as greater-then and lesser-then, as: `if [ "$1" >= "2" ]`) = back-slash, takes away any special meaning with a character, `$var` will not be treated as a variable. (and a new line will not be treated as a new line) Also a before a command, removes any alias on the command as: rm |
+| `>&`              | stream director to stream director, ie. `echo "a" 1>/dev/null 2>&1` this directs `2>` to the same place as `1>`                                                                                                                                                                                                                                                                          |
+| `!$`              | last commands last argument                                                                                                                                                                                                                                                                                                                                                              |
+| `!!`              | repeat last command                                                                                                                                                                                                                                                                                                                                                                      |
+| `;`               | will separate 2 commands as if they were written on separate command lines                                                                                                                                                                                                                                                                                                               |
+| `;;`              | end of a case function in a case statement. (see `case` further down)                                                                                                                                                                                                                                                                                                                    |
+| `$!`              | PID of the last child process.                                                                                                                                                                                                                                                                                                                                                           |
+| `$$`              | PID of current process (PID == Process ID)                                                                                                                                                                                                                                                                                                                                               |
+| `$0`              | Shows program that owns the current process.                                                                                                                                                                                                                                                                                                                                             |
+| `$-`              | current option flags (I never ever had to use this one)                                                                                                                                                                                                                                                                                                                                  |
+| `$_`              | Last argument/Command                                                                                                                                                                                                                                                                                                                                                                    |
+| `@`               | `$@` is equivalent to `"$1"` `"$2"` etc. (all arguments)                                                                                                                                                                                                                                                                                                                                 |
+| `\`               | Escape special character interpretor                                                                                                                                                                                                                                                                                                                                                     |
+| `' '`             | Interpret literally without evaluating any metacharacter.                                                                                                                                                                                                                                                                                                                                |
+| `" "`             | Interpret literally with evaluating metacharacters.                                                                                                                                                                                                                                                                                                                                      |
+| `*`               | wild card (`\*` can substitute any number of characters)                                                                                                                                                                                                                                                                                                                                 |
+| `?`               | wild card (`? `can substitute any single character)                                                                                                                                                                                                                                                                                                                                      |
+| `{#varname}`      | returns the length of the value of the variable as a character string                                                                                                                                                                                                                                                                                                                    |
+| `*(patternlist)`  | matches zero or more occurrences of the given patterns                                                                                                                                                                                                                                                                                                                                   |
+| `+(patternlist)`  | matches one or more occurrences of the given patterns                                                                                                                                                                                                                                                                                                                                    |
+| `?(patternlist)`  | matches zero or one occurrence of the given patterns                                                                                                                                                                                                                                                                                                                                     |
+| `@(patternlist)`  | matches exactly one of the given patterns                                                                                                                                                                                                                                                                                                                                                |
+| `!(patternlist)`  | matches anything except one of the given patterns                                                                                                                                                                                                                                                                                                                                        |
+| `(UNIX command)`  | command substitution: runs the command and returns standard output                                                                                                                                                                                                                                                                                                                       |
+
+### Flags/Options in Bash:
+
+-   [Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/index.html)
+-   [Taking command line arguments using flags in bash](https://dev.to/shriaas2898/taking-command-line-arguments-using-flags-in-bash-121)
+-   [Different ways to implement flags in bash](https://jonalmeida.com/posts/2013/05/26/different-ways-to-implement-flags-in-bash/)
+-
+
+### Functions in Bash:
+
+### Some Discovered Errors:
+
+```bash
+# Brace Expension errors !
+PATHS="$SD"/WORKSPACE_SETUP/.{git-aliases.bash,git-completion.bash,git-prompt.sh}
+
+# Error
+PATHS="$SD/WORKSPACE_SETUP.git-aliases.bash $SD/WORKSPACE_SETUP.git-completion.bash $SD/WORKSPACE_SETUP.git-prompt.sh"
+
+```
+
+### Control Flow in Bash:
+
+-   **Remarks:**
+
+    -   contition is written in square brackets.
+    -   when use mathematical operator in conditions or elsewhere use double parenthesis.
+
+```bash
+if [ expr1 ]; then
+    statments ...
+elif [ expr2 ]; then
+    statments ...
+elif [ expr3 ]; then
+    statments ...
+else
+    statments ...
+fi
+
+
+if [ ! -f "$2" ]
+then
+  echo "File \"$2\" does not exist."
+  exit $E_NOFILE
+fi
+```
+
+### Looping in Bash:
+
+-   **Remarks:**
+
+#### for:
+
+##### Operating on a file list contained in a variable
+
+```bash
+
+#!/bin/bash
+# fileinfo.sh
+
+FILES="/usr/sbin/accept
+/usr/sbin/pwck
+/usr/sbin/chroot
+/usr/bin/fakefile
+/sbin/badblocks
+/sbin/ypbind"     # List of files you are curious about.
+                  # Threw in a dummy file, /usr/bin/fakefile.
+
+echo
+
+for file in $FILES
+do
+
+  if [ ! -e "$file" ]       # Check if file exists.
+  then
+    echo "$file does not exist."; echo
+    continue                # On to next.
+   fi
+
+  ls -l $file | awk '{ print $8 "         file size: " $5 }'  # Print 2 fields.
+  whatis `basename $file`   # File info.
+  # Note that the whatis database needs to have been set up for this to work.
+  # To do this, as root run /usr/bin/makewhatis.
+  echo
+done
+
+exit 0
+
+
+```
+
+##### Find a particular string in the binaries in a specified directory.
+
+```bash
+#!/bin/bash
+# findstring.sh:
+
+directory=/usr/bin/
+fstring="Free Software Foundation"  # See which files come from the FSF.
+
+for file in $( find $directory -type f -name '*' | sort )
+do
+  strings -f $file | grep "$fstring" | sed -e "s%$directory%%"
+  #  In the "sed" expression,
+  #+ it is necessary to substitute for the normal "/" delimiter
+  #+ because "/" happens to be one of the characters filtered out.
+  #  Failure to do so gives an error message. (Try it.)
+done
+
+exit $?
+
+#  Exercise (easy):
+#  ---------------
+#  Convert this script to take command-line parameters
+#+ for $directory and $fstring.
+```
+
+##### Symbolic links in a directory, saved to a file
+
+```bash
+
+#!/bin/bash
+# symlinks.sh: Lists symbolic links in a directory.
+
+OUTFILE=symlinks.list                         # save-file
+
+directory=${1-`pwd`}
+#  Defaults to current working directory,
+#+ if not otherwise specified.
+
+
+echo "symbolic links in directory \"$directory\"" > "$OUTFILE"
+echo "---------------------------" >> "$OUTFILE"
+
+for file in "$( find $directory -type l )"    # -type l = symbolic links
+do
+  echo "$file"
+done | sort >> "$OUTFILE"                     # stdout of loop
+#           ^^^^^^^^^^^^^                       redirected to save file.
+
+# echo "Output file = $OUTFILE"
+
+exit $?
+```
+
+##### Nested Loop
+
+```bash
+
+#!/bin/bash
+# nested-loop.sh: Nested "for" loops.
+
+outer=1             # Set outer loop counter.
+
+# Beginning of outer loop.
+for a in 1 2 3 4 5
+do
+  echo "Pass $outer in outer loop."
+  echo "---------------------"
+  inner=1           # Reset inner loop counter.
+
+  # ===============================================
+  # Beginning of inner loop.
+  for b in 1 2 3 4 5
+  do
+    echo "Pass $inner in inner loop."
+    let "inner+=1"  # Increment inner loop counter.
+  done
+  # End of inner loop.
+  # ===============================================
+
+  let "outer+=1"    # Increment outer loop counter.
+  echo              # Space between output blocks in pass of outer loop.
+done
+# End of outer loop.
+
+exit 0
+```
+
+```bash
+# Process each file in directory_1, comparing it to directory_2
+missing=0
+for filename in "$1"/*; do
+    fn=$(basename "$filename")
+    if [ -f "$filename" ]; then
+        if [ ! -f "$2/$fn" ]; then
+            echo "$fn is missing from $2"
+            missing=$((missing + 1))
+        fi
+    fi
+done
+echo "$missing files missing"
+```
+
+##### Various ways of geting list of files's path
+
+```bash
+for entry in `ls $search_dir`; do
+    echo $entry
+done
+
+for entry in "$search_dir"/* "$work_dir"/*
+do
+  if [ -f "$entry" ];then
+    echo "$entry"
+  fi
+done
+
+$ pwd
+/home/victoria
+
+$ find $(pwd) -maxdepth 1 -type f -not -path '*/\.*' | sort
+/home/victoria/new
+/home/victoria/new1
+/home/victoria/new2
+/home/victoria/new3
+/home/victoria/new3.md
+/home/victoria/new.md
+/home/victoria/package.json
+/home/victoria/Untitled Document 1
+/home/victoria/Untitled Document 2
+
+$ find . -maxdepth 1 -type f -not -path '*/\.*' | sed 's/^\.\///g' | sort
+new
+new1
+new2
+new3
+new3.md
+new.md
+package.json
+Untitled Document 1
+Untitled Document 2
+```
+
+-   `.` : current folder
+-   remove `-maxdepth 1` to search recursively
+-   `-type f `: find files, not directories (`d`)
+-   `-not -path '*/\.*'` : do not return `.hidden_files`
+-   `sed 's/^\.\///g'` : remove the prepended `./` from the result list
+
+#### while:
+
+##### While loop with multiple conditions
+
+```bash
+var1=unset
+previous=$var1
+
+while echo "previous-variable = $previous"
+      echo
+      previous=$var1
+      [ "$var1" != end ] # Keeps track of what $var1 was previously.
+      # Four conditions on *while*, but only the final one controls loop.
+      # The *last* exit status is the one that counts.
+do
+echo "Input variable #1 (end to exit) "
+  read var1
+  echo "variable #1 = $var1"
+done
+
+# Try to figure out how this all works.
+# It's a wee bit tricky.
+
+exit 0
+```
+
+##### Inside its test brackets, a while loop can call a function.
+
+```bash
+t=0
+
+condition ()
+{
+  ((t++))
+
+  if [ $t -lt 5 ]
+  then
+    return 0  # true
+  else
+    return 1  # false
+  fi
+}
+
+while condition
+#     ^^^^^^^^^
+#     Function call -- four loop iterations.
+do
+  echo "Still going: t = $t"
+done
+
+# Still going: t = 1
+# Still going: t = 2
+# Still going: t = 3
+# Still going: t = 4
+```
+
+```bash
+number=0
+while [ "$number" -lt 10 ]; do
+    echo "Number = $number"
+    number=$((number + 1))
+done
+```

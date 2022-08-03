@@ -1,3 +1,8 @@
+-   [`docker-compose.ymal` by Airflow](https://airflow.apache.org/docs/apache-airflow/stable/docker-compose.yaml)
+-   [Default Airflow Config File](https://github.com/apache/airflow/blob/main/airflow/config_templates/default_airflow.cfg)
+
+---
+
 -   [Install Airflow:](https://github.com/apache/airflow/blob/main/README.md#installing-from-pypi)
     -   `$ pip install 'apache-airflow==2.3.3' --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.3.3/constraints-3.7.txt"`
 -   `$ export AIRFLOW_HOME=.`
@@ -24,7 +29,7 @@
 -   `$ touch .env` # Only for MacOS or Windows
     -   Content: AIRFLOW_UID=50000
 -   `$ docker-compose up airflow-init`
--   `$ docker-compose up`
+-   `$ docker-compose up -d`
 
 -   The webserver is available at: `http://localhost:8080`. The default account has the login `airflow` and the password `airflow`.
 

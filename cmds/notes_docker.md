@@ -29,6 +29,13 @@
 
 -   [Use the Docker command line](https://docs.docker.com/engine/reference/commandline/cli/)
 
+### [$ docker build](https://docs.docker.com/engine/reference/commandline/build/): `docker build [OPTIONS] PATH | URL | -`
+
+-   `$ docker build`
+
+    -   Usage: docker build <path to docker file>
+    -   This command is used to build an image from a specified docker file
+
 ### [$ docker run](https://docs.docker.com/engine/reference/commandline/run/): `docker run [OPTIONS] IMAGE [COMMAND] [ARG...]`
 
 -   `$ docker run <image_name>`
@@ -52,47 +59,9 @@
         -   Run in interactive mode.
 
 -   `Run - PORT Mapping`:
-    -   `$ docker run -it 80: 5000 dockerized_flask_app/app`
+    -   `$ docker run -it <image_name>`
 
-![docker_port_mapping](../assets/docker_port_mapping.png)
-
--   `Run - VOLUME Mapping`:
-
-    -   `$ docker run -p 8080:5000 mysql`
-    -   `$ docker stop mysql`
-    -   `$ docker rm mysql`
-
-    -   `$ docker rm -v /dir_out_container:/dir_in_container mysql`
-        -   map a diractory outside of container to a diractory inside of container
-    -   `$ docker rm -v /opt/datadir:/var/lib/mysql mysql`
-    -
-
--   `Inspect a Container`:
-
-    -   `$ docker inspect <container_name | container_id>`
-        -   Return details of a container in json format.
-
--   `Container Logs`:
-
-    -   `$ docker logs <container_name | container_id>`
-        -   Show the logs of a container ran in gackgroun (detach mode).
-
--   `Environment Variables`:
-
-    -   `$ docker run -e APP_COLOR=blue dockerized_flask_app/app`
-
--   `Various Modes of Container`:
-
--   `$ docker run -d image_name`
-
-    -   Run in _Detach Mode_.
-
--   `$ docker attach <container_id>`
-
-    -   Run in _Attach Mode_ back.
-
--   `$ docker run -it dockerzied_flask_app/app`
-    -   Run a custom dockerized flask application in interactive mode.
+/Users/a.momin/Desktop/Screen Shot 2022-07-24 at 3.38.03 PM.png
 
 ### [$ docker ps](https://docs.docker.com/engine/reference/commandline/ps/): `docker ps [OPTIONS]`
 
@@ -129,8 +98,6 @@
 
 -   `$ docker run ubuntu`
 
-    -   Runs an Ubuntu image and exites immediately.
-
     -   `$ docker ps`
 
 -   `$ docker run ubuntu sleep 60`
@@ -147,33 +114,30 @@
     -   Usage: `$ docker exec -it <container_id | container_name> bash`
     -   This command is used to access the running container
 
-### [$ docker image](): ``
+### Various Modes of Container:
 
-### [$ docker build](https://docs.docker.com/engine/reference/commandline/build/): `docker build [OPTIONS] PATH | URL | -`
+-   `$ docker run -d image_name`
 
--   `$ docker build`
+    -   Run in _Detach Mode_.
 
-    -   Usage: docker build <path to docker file>
-    -   This command is used to build an image from a specified docker file
+-   `$ docker attach <container_id>`
+
+    -   Run in _Attach Mode_ back.
+
+-   `$ docker run -it dockerzied_flask_app/app`
+    -   Run a custom dockerized flask application in interactive mode.
+
+### [$ docker ](): ``
 
 ### [$ docker ](): ``
 
 ### [$ ](): ``
 
----
-
 ## Docker Compose:
-
----
 
 -   [docker-compose](https://docs.docker.com/compose/reference/):
 
 -   [Compose CLI environment variables](https://docs.docker.com/compose/reference/envvars/)
-
--   `$ docker-compose `
--   `$ docker-compose `
--   `$ docker-compose `
--   `$ docker-compose `
 
 ### [$ ](): ``
 
@@ -184,6 +148,15 @@
 -   `$ docker commit` - docker commit <conatainer id> <username/imagename>
 
     -   This command creates a new image of an edited container on the local system
+
+-   `$ docker images`
+
+    -   This command lists all the l ocally stored docker images
+
+-   `$ docker rm`
+
+    -   Usage: docker rm <container id>
+    -   This command is used to delete a stopped container
 
 ---
 

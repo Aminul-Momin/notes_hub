@@ -1,199 +1,200 @@
-- 𝑳𝒊𝒔𝒕 𝒐𝒇 𝐔𝐬𝐞𝐟𝐮𝐥𝐥 𝑺𝒚𝒎𝒃𝒐𝒍𝒔
+-   𝑳𝒊𝒔𝒕 𝒐𝒇 𝐔𝐬𝐞𝐟𝐮𝐥𝐥 𝑺𝒚𝒎𝒃𝒐𝒍𝒔
 
-  - ⮐ ⎇ ⬆︎ ⌘ ⌥ + ⌃ + ⤶ ⇧  ⤶ ⬋ ↩︎ ↲ ↵ ↫ ⭿ ♥ ★ 🎾 &
+    -   ⮐ ⎇ ⬆︎ ⌘ ⌥ + ⌃ + ⤶ ⇧  ⤶ ⬋ ↩︎ ↲ ↵ ↫ ⭿ ♥ ★ 🎾 &
 
-- [Documentations: Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/latest/?badge=latest)
+-   [Documentations: Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/latest/?badge=latest)
 
-- [Deploy A Jupyter Notebook Server into Production using Docker & Heroku](https://www.youtube.com/watch?v=GoJ6qR2VMTA)
+-   [Deploy A Jupyter Notebook Server into Production using Docker & Heroku](https://www.youtube.com/watch?v=GoJ6qR2VMTA)
 
-- [How to install Bash Kernel]9http://slhogle.github.io/2017/bash_jupyter_notebook/)
+-   [How to install Bash Kernel]9http://slhogle.github.io/2017/bash_jupyter_notebook/)
 
-- 🔥 `$ jupyter notebook --help`
-- 🔥 `$ jupyter --path`
+-   `$ pip install notebook`
+-   🔥 `$ jupyter notebook --help`
+-   🔥 `$ jupyter --path`
 
 ### FUNDAMENTALS:
 
-- `$ jupyter kernelspec list `
-- `$ jupyter kernelspec remove kernel_name`
+-   `$ jupyter kernelspec list `
+-   `$ jupyter kernelspec remove kernel_name`
 
-- https://ipython.readthedocs.io/en/stable/interactive/tutorial.html#
-- https://ipython.org/documentation.html
+-   https://ipython.readthedocs.io/en/stable/interactive/tutorial.html#
+-   https://ipython.org/documentation.html
 
-- `$ python3 -m pip install jupyter`
-  - install Jupyter Notebook
-- `$ pip3 install --upgrade notebook`
+-   `$ python3 -m pip install jupyter`
+    -   install Jupyter Notebook
+-   `$ pip3 install --upgrade notebook`
 
-  - Upgrade Jupyter Notebook
+    -   Upgrade Jupyter Notebook
 
-- `$ pip3 install --upgrade jupyterthemes`
+-   `$ pip3 install --upgrade jupyterthemes`
 
-- `$ jupyter notebook`
+-   `$ jupyter notebook`
 
-  - start server of jupyter notebook at port-8888.
+    -   start server of jupyter notebook at port-8888.
 
-- `%load <path/python_file.py>`
-- `%run <path/python_file.py>`
-  - Execute a python script from jupyter notebook cell.
-- `%run -i <path/python_file.py>`
-  - Import custom python script file
+-   `%load <path/python_file.py>`
+-   `%run <path/python_file.py>`
+    -   Execute a python script from jupyter notebook cell.
+-   `%run -i <path/python_file.py>`
+    -   Import custom python script file
 
 ### USEFULL SHORTCUTE AND SOME DESCRIPTION:
 
-- `⌃ + ⮐`
-  - run selected cell
-- `⬆︎ + ⮐`
-  - run cell, select below
-- `⎇ + ⮐`
-  - run cell and insert below
-- `A`
-  - insert cell above
-- `B`
-  - insert cell below
-- `Y`
-  - change cell to code
-- `M`
-  - change cell to markdown
-- `dd`
-  - delete selected cell
-- `J`
-  - move cell selection up
-- `K`
-  - move cell selection down
-- `c`
-  - copy selected cell
-- `x`
-  - cuts selected cell
-- `v`
-  - paste after the selected cell
-- `z`
-  - undo the last operation
-- `⬆︎ + ^ + <-`
-  - collapse all the heading
-- `⬆︎ + ^ + ->`
-  - expand all the heading
-- `<-`
-  - collapse the heading of the selected.
-- `->`
-  - expand the selected heading
-- `⬆︎ + -> / ->`
-  - select cells
-- `⬆︎ + m`
-  - merges selected cells
-- `⬆︎ + ^ + -`
-  - splits the cell at the cursor's position
-- `f`
-  - find and replace in selected cells
-- `1`
-  - change cell to heading 1 (not in VSC)
-- `2`
-  - change cell to heading 2 (not in VSC)
-- `3`
-  - change cell to heading 3 (not in VSC)
-- `4`
-  - change cell to heading 4 (not in VSC)
-- `5`
-  - change cell to heading 5 (not in VSC)
-- `6`
-  - change cell to heading 6 (not in VSC)
-- `!`
-  - bash command indicator. The exclamatory symbol is followed by a bash command. Ex: !pwd, !ls, !cd
-- `! ls`
-  ->> list out all the directories and files present in the Current Working Directory
+-   `⌃ + ⮐`
+    -   run selected cell
+-   `⬆︎ + ⮐`
+    -   run cell, select below
+-   `⎇ + ⮐`
+    -   run cell and insert below
+-   `A`
+    -   insert empty cell above
+-   `B`
+    -   insert empty cell below
+-   `Y`
+    -   change selected markdown cell into code cell.
+-   `M`
+    -   change code-type-cell to markdown-type-cell
+-   `dd`
+    -   delete selected cell
+-   `J`
+    -   move cell selection up
+-   `K`
+    -   move cell selection down
+-   `c`
+    -   copy selected cell
+-   `x`
+    -   cuts selected cell
+-   `v`
+    -   paste after the selected cell
+-   `z`
+    -   undo the last operation
+-   `⬆︎ + ^ + <-`
+    -   collapse all the heading
+-   `⬆︎ + ^ + ->`
+    -   expand all the heading
+-   `<-`
+    -   collapse the heading of the selected.
+-   `->`
+    -   expand the selected heading
+-   `⬆︎ + -> / ->`
+    -   select cells
+-   `⬆︎ + m`
+    -   merges selected cells
+-   `⬆︎ + ^ + -`
+    -   splits the cell at the cursor's position
+-   `f`
+    -   find and replace in selected cells
+-   `1`
+    -   change cell to heading 1 (not in VSC)
+-   `2`
+    -   change cell to heading 2 (not in VSC)
+-   `3`
+    -   change cell to heading 3 (not in VSC)
+-   `4`
+    -   change cell to heading 4 (not in VSC)
+-   `5`
+    -   change cell to heading 5 (not in VSC)
+-   `6`
+    -   change cell to heading 6 (not in VSC)
+-   `!`
+    -   bash command indicator. The exclamatory symbol is followed by a bash command. Ex: !pwd, !ls, !cd
+-   `! ls`
+    ->> list out all the directories and files present in the Current Working Directory
 
-- MAGIC:
+-   MAGIC:
 
-  - Magic commands come in two flavors: line magics, which are denoted by a
-  - single '%' prefix and operate on a single line of input, and cell magics, which
-  - are denoted by a double '%%' prefix and operate on multiple lines of input.
+    -   Magic commands come in two flavors: line magics, which are denoted by a
+    -   single '%' prefix and operate on a single line of input, and cell magics, which
+    -   are denoted by a double '%%' prefix and operate on multiple lines of input.
 
-- LINE MAGIC:
+-   LINE MAGIC:
 
-  - They are similar to command line calls.
-  - They start with % character.
-  - Rest of the line is its argument passed without parentheses or quotes.
-  - Line magics can be used as expression and their return value can be assigned to variable.
+    -   They are similar to command line calls.
+    -   They start with % character.
+    -   Rest of the line is its argument passed without parentheses or quotes.
+    -   Line magics can be used as expression and their return value can be assigned to variable.
 
-- CELL MAGIC:
+-   CELL MAGIC:
 
-  - They have '%%' character prefix.
-  - They can operate on multiple lines below their call.
+    -   They have '%%' character prefix.
+    -   They can operate on multiple lines below their call.
 
-- %magicfunction? ->> Information of a given 'magicfunction' is obtained
+-   %magicfunction? ->> Information of a given 'magicfunction' is obtained
 
-- % ->> line magic indicator
-- %% ->> cell magic indicator
-- %lsmagic ->> list out all the magic commands available to be used.
-- %matplotlib inline ->> %matplotlib inline sets the backend of matplotlib to the 'inline' backend: With this backend, the output of plotting commands is displayed inline within frontends like the Jupyter notebook, directly below the code cell that produced it.
+-   % ->> line magic indicator
+-   %% ->> cell magic indicator
+-   %lsmagic ->> list out all the magic commands available to be used.
+-   %matplotlib inline ->> %matplotlib inline sets the backend of matplotlib to the 'inline' backend: With this backend, the output of plotting commands is displayed inline within frontends like the Jupyter notebook, directly below the code cell that produced it.
 
 ### USEFULL JUPYTER COMMANDS:
 
-- `<Function_name> + ⬆︎ + ⮐` -->> Show where the the given function, 'Function_name', from.
-- `? <Function_name>` -->> Pirnt out the doc string of the given 'Function_name'.
-- `?? <Function_name>` -->> Print out the source code for the given 'Function_name'.
-- 🔥 `⬆︎ + tab` -->> Pirnt the short version of document string.
-- 🔥 `⬆︎ + tab + tab` -->> Pirnt the long version of the document string.
-- `⬆︎ + tab + tab + tab` -->>
-- `⎇ + tab ` -->> Auto Completion
-- `^ + ⬆︎ + -` -->> Split cell into two cells
-- `Hold down 'alt'` -->> Use multiple cursors
-- `Cmd + '[' / ']'` -->> Indent / dedent line
+-   `<Function_name> + ⬆︎ + ⮐` -->> Show where the the given function, 'Function_name', from.
+-   `? <Function_name>` -->> Pirnt out the doc string of the given 'Function_name'.
+-   `?? <Function_name>` -->> Print out the source code for the given 'Function_name'.
+-   🔥 `⬆︎ + tab` -->> Pirnt the short version of document string.
+-   🔥 `⬆︎ + tab + tab` -->> Pirnt the long version of the document string.
+-   `⬆︎ + tab + tab + tab` -->>
+-   `⎇ + tab ` -->> Auto Completion
+-   `^ + ⬆︎ + -` -->> Split cell into two cells
+-   `Hold down 'alt'` -->> Use multiple cursors
+-   `Cmd + '[' / ']'` -->> Indent / dedent line
 
 ### ENABLE NOTEBOOK EXTENSION:
 
-- `$ pip install jupyter notebook`
+-   `$ pip install jupyter notebook`
 
-- `$ pip install jupyter_contrib_nbextensions`
+-   `$ pip install jupyter_contrib_nbextensions`
 
-  - Install the extention
+    -   Install the extention
 
-- `$ jupyter contrib nbextension install --user`
+-   `$ jupyter contrib nbextension install --user`
 
-  - Setup the configuration
+    -   Setup the configuration
 
-- `$ jupyter nbextension enable <nbextension require path>`
+-   `$ jupyter nbextension enable <nbextension require path>`
 
-  - Enable the extension
+    -   Enable the extension
 
-- 🔥 `$ pip install ipykernel`
-- 🔥 `$ ipython kernel install --user --name=ads_jnb_kernel`
+-   🔥 `$ pip install ipykernel`
+-   🔥 `$ ipython kernel install --user --name=ads_jnb_kernel`
 
 ### CONFIGURATIONS & CUSTOMIZATIONS:
 
-- jupyter notebook -h
-- jupyter notebook --help-all
+-   jupyter notebook -h
+-   jupyter notebook --help-all
 
-- 🔥 jupyter notebook --generate-config
+-   🔥 jupyter notebook --generate-config
 
-  - Create a `jupyter_notebook_config.py` file in the `.jupyter` directory, with all the defaults configurations commented out.
+    -   Create a `jupyter_notebook_config.py` file in the `.jupyter` directory, with all the defaults configurations commented out.
 
-- ~/.jupyter/custom/custom.jS
+-   ~/.jupyter/custom/custom.jS
 
-  - a special file to tweak the jupyter notebook setup
+    -   a special file to tweak the jupyter notebook setup
 
-- ~/.jupyter/nbconfig/notebook.json
+-   ~/.jupyter/nbconfig/notebook.json
 
-  - another special file to tweak the jupyter setup
+    -   another special file to tweak the jupyter setup
 
-- /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jupyter_contrib_nbextensions
+-   /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jupyter_contrib_nbextensions
 
-- `$ pip install jupyterthemes`
+-   `$ pip install jupyterthemes`
 
-  - install jupyterthemes
+    -   install jupyterthemes
 
-- `$ pip install --upgrade jupyterthemes`
+-   `$ pip install --upgrade jupyterthemes`
 
-  - upgrade to latest version
+    -   upgrade to latest version
 
-- `$ jt -l`
+-   `$ jt -l`
 
-  - List out all the available themes available in package called 'jupyterthemes'
+    -   List out all the available themes available in package called 'jupyterthemes'
 
-- `$ jt -t onedork`
+-   `$ jt -t onedork`
 
-  - Enable 'onedork' theme
+    -   Enable 'onedork' theme
 
-- `$ jt -r`
-  - Reset the theme of this notebook to default setting.
+-   `$ jt -r`
+    -   Reset the theme of this notebook to default setting.
 
 It’s time to make your jupyter notebook cool again !!!
 One can customize each and every aspect of the notebooks. Lets start with customizing colours. On both windows and linux (ubuntu), the process is fairly straight.
@@ -207,9 +208,9 @@ Customizing colours: 1) Go to user directory for whom jupyter is installed. 2) F
 
 # Commands needed to install jupyter server in GCP Computee Engine
 
-- `$ sudo apt-get update`
-- `$ sudo pip install jupyter`
-- `$ jupyter notebook --generate-config`
+-   `$ sudo apt-get update`
+-   `$ sudo pip install jupyter`
+-   `$ jupyter notebook --generate-config`
 
 :'
 vim ~/.jupyter/jupyter_notebook_config.py
@@ -219,9 +220,9 @@ c.NotebookApp.open_browser = False
 c.NotebookApp.port = 1111
 '
 
-- `$ jupyter notebook password`
+-   `$ jupyter notebook password`
 
-- `$ jupyter notebook --ip=0.0.0.0 --port=8886 --no-browser`
+-   `$ jupyter notebook --ip=0.0.0.0 --port=8886 --no-browser`
 
 ===============================================================================
 
