@@ -1,5 +1,12 @@
 #!bin/bash
 
+download_vim_config_files(){
+    cd ~
+    curl https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/vim_configs/vim01_python/.vimrc >> ~/.vimrc
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    # then Open `~/.vimrc` file with vim.
+}
+
 install_data(){
     :'Install data into a Notebook instance of GCP Virtual Machine'
 
@@ -82,19 +89,23 @@ scp_to_vm(){
 }
 
 create_sql_kernel(){
-    conda create -n sql_kernel_name python=3 ipython notebook
-    conda activate sql_kernel_name
-    pip install mysql-kernel
+    # create conda environment with the name `sql_kernel_name`
+    conda create -n $1 python=3 ipython notebook
+    conda activate $1
+    pip install mysql-kernel #
     python -m mysql_kernel.install
-    conda deactivate sql_kernel_name
+    conda deactivate
 }
 
 create_bash_kernel(){
-    conda create -n bash_kernel_name python=3 ipython notebook
-    conda activate bash_kernel_name
+    
+    # send the conda environment name as the first parameter.
+    
+    conda create -n $1 python=3 ipython notebook
+    conda activate $1
     pip install bash_kernel
     python -m bash_kernel.install
-    conda deactivate bash_kernel_name
+    conda deactivate
 }
 
 create_conda_env(){
