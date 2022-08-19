@@ -6,6 +6,7 @@
 -   [[notes_bash]]
 -   [[notes_linux]]
 -   [The 50 Most Popular Linux & Terminal Commands - Full Course for Beginners](https://www.youtube.com/watch?v=ZtqBQ68cfJc&t=119s)
+-   [18 Commands That Will Change The Way You Use Linux Forever](https://www.youtube.com/watch?v=AVXYq8aL47Q)
 
 ---
 

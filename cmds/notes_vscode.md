@@ -3,6 +3,18 @@
 -   𝑳𝒊𝒔𝒕 𝒐𝒇 𝐔𝐬𝐞𝐟𝐮𝐥𝐥 𝑺𝒚𝒎𝒃𝒐𝒍𝒔
     ⮐ ⎇ ⬆︎ ⌘ ⌥ + ⌃ + ⤶ ⇧  ⤶ ⬋ ↩︎ ↲ ↵ ↫ ⭿ ♥ ★ ## &
 
+### USEFULL PATH OF FILES AND FOLDERS
+
+-   ~/Library/Application\ Support/Code/User/settings.json
+-   ~/Library/Application\ Support/Code/User/keybindings.json
+-   ~/Library/Application\ Support/Code/User/snippets
+
+### SETTINGS
+
+-   `⌘+⇧+P`
+    -   type `setting`, select `open workspace setting`
+    -   python.terminal.activateEnvironment": true
+
 ### Notes:
 
 -   🔥 How to get usr Snippet?
@@ -20,13 +32,13 @@
 
     -   Cut the line of code at the cursor to paste somewhere else.
 
+-   `⌘ + k + 1]`
+
+    -   Fold code at the base indentation lavel
+
 -   `⌥ + ⌘ + ]`
 
     -   Fold code in the editor
-
--   `⌘ + k + 1]`
-
-    -   Fold code at the 0-th indentation lavel
 
 -   `⌘ + k + j]`
 
@@ -129,18 +141,6 @@
 
 -   Transform indentation to Tab.
     -   `⌘+⇧+P` type 'indentationToTabs' ↦ ⮐
-
-### USEFULL PATH OF FILES AND FOLDERS
-
--   ~/Library/Application\ Support/Code/User/settings.json
--   ~/Library/Application\ Support/Code/User/keybindings.json
--   ~/Library/Application\ Support/Code/User/snippets
-
-### SETTINGS
-
--   `⌘+⇧+P`
-    -   type `setting`, select `open workspace setting`
-    -   python.terminal.activateEnvironment": true
 
 ### MANAGE EXTENSIONS FROM COMMAND LINE
 

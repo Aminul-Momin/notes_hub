@@ -6,66 +6,135 @@
 -   ref: https://realpython.com/vim-and-python-a-match-made-in-heaven/
 -   🔥 🔥 ref: https://stackoverflow.com/questions/5400806/what-are-the-most-used-vim-commands-keypresses/5400978#5400978
 -   🔥 ref: https://www.radford.edu/~mhtay/CPSC120/VIM_Editor_Commands.htm
+-   [10 Advanced Vim Features](https://www.youtube.com/watch?v=gccGjwTZA7k)
+-   [My Favorite Vim Tricks](https://www.youtube.com/watch?v=B-EPvfxcgl0&t=290s)
+
+### Python on Vim:
+
+-   `:! python file_name.py`
+    -   run python file from vim.
 
 ################ Configuration for Vim ######################
 
--   let mapleader = "\<Space>" --> Set leader as Space
--   let mapleader = " " --> Set leader as Space
+-   `:version`
+    -   Spits out which version of vim you are using.
+-   `let mapleader = "\<Space>"`
+    -   Set leader as Space
+-   `let mapleader = " "`
+
+    -   Alternative way of setting leader as Space
+
+-   `<Space> n`
+    -   Toggle folder/file explorer
+-   `<Space> t`
+    -   Toggle Tagbar
+-   `<Space> m`
+
+    -   Toggle mouse ON/OFF
+
+-   How to coment out multiple lines?
+    1. marks lines
+    2. SHIFT + :
+    3. /s/^/#
+        - '#' is comenting character.
 
 #############################################################
 
 ### EXITING:
 
--   `:w`
-    -   write (save) the file, but don’t exit
--   `:w !sudo tee %`
-    -   write out the current file using sudo
--   `:wq or :x or ZZ`
-    -   write (save) and quit
--   `:q`
-    -   quit (fails if there are unsaved changes)
 -   `:q! or ZQ`
+
     -   quit and throw away unsaved changes
+
+-   `:q`
+
+    -   quit (fails if there are unsaved changes)
+
+-   `:w`
+
+    -   write (save) the file, but don’t exit
+
+-   `:w !sudo tee %`
+
+    -   write out the current file using sudo
+
+-   `:wq or :x or ZZ`
+
+    -   write (save) and quit
 
 ######################### Most Usefull Vim Commands ###########################
 
 -   `:source %`
 
-    -   source the current file you are working on.
+    -   source (`run`) the current file (lua files) you are working on.
+
+-   i + gt (i in [1-9])
+
+    -   Focus i-th buffer (Vim Tab)
+
+-   `<SPACE> + [` / `<SPACE> + ]`
+
+    -   Changes the focus across the Buffer (Vim Tab)
 
 -   Usage of: `f,t,w,b,%,h,j,k,l`
 
 -   `v`
-    -   to select range of test
+
+    -   to select range of text
+
     -   After selecting the text, try d to delete, or y to copy, or :s/match/replace/, or :center, or !sort, or...
+
 -   `🔥 ⬆︎ + v`
+
     -   to select a line.
+
 -   `⌃ + v`
+
     -   to select columns of text
+
 -   `yiw`
+
     -   copy the word where the curson on
+
 -   `:m 12`
+
     -   move current line to after line 12
+
 -   `:5,7m 21`
+
     -   move lines 5, 6 and 7 to after line 21
--   `:/pattern + ⮐` (then 'n' / `shift+n` to hop over the patterns)
+
+-   `:/pattern + ⮐`
+
+    -   Highlight the pattern.
+    -   `n` / `shift+n` to hop over the highlighted patterns.
 
     -   to search a text pattern
 
 -   `shift + *` (repeat to get the next occurance, `shift + #` previous occurance)
+
     -   search for the word currently cursor is in
+
 -   `x`
+
     -   to cut character.
+
 -   `g;`
+
     -   to go through changes in backward
+
 -   `g,`
+
     -   to go through changes in forword
+
 -   `~`
 
     -   to switch cases
 
 -   `:changes`
+
     -   to see all the changes
+
 -   `:jumps`
 
 ###############################################################################
@@ -76,17 +145,17 @@
 ### ENTERING INTO INSERT MODE:
 
 -   `🔥 i`
-    -   insert before the cursor.
--   `🔥 I`
-    -   insert at the beginning of the line
+    -   insert `before the focused character`.
 -   `🔥 a`
-    -   insert (append) after the cursor
+    -   insert (append) `after the focused character`.
+-   `🔥 o`
+    -   append (open) a new line `below the current line`.
+-   `🔥 I`
+    -   insert at the `beginning of the line`
 -   `🔥 A`
     -   insert (append) at the end of the line
--   `🔥 o`
-    -   append (open) a new line below the current line
 -   `🔥 O`
-    -   append (open) a new line above the current line
+    -   append (open) a new line `above the current line`.
 -   `ea`
     -   insert (append) at the end of the word
 -   `Esc`
@@ -105,9 +174,9 @@
 -   `:%y+`
     -   Yank the whole file
 -   `p`
-    -   put (paste) the clipboard after cursor
+    -   put (paste) the clipboard after focused character.
 -   `P`
-    -   put (paste) before cursor
+    -   put (paste) before focused character.
 -   `dd`
     -   delete (cut) a line
 -   `2dd`
@@ -128,19 +197,33 @@
     -   Sellect the line of which the cursor is on
 
 -   `🔥 J`
+
     -   join line below to the current line
+
 -   `🔥 u`
+
     -   undo
+
 -   `🔥 Ctrl + r`
+
     -   redo
+
 -   `🔥 .`
+
     -   repeat last command
+
 -   `r`
+
     -   replace a single character
+
 -   `cc`
+
     -   change (replace) entire line
+
 -   `cw`
+
     -   change (replace) to the end of the word
+
 -   `c$`
     -   change (replace) to the end of the line
 -   `s`
@@ -211,42 +294,6 @@
 -   `🔥 Ctrl + u`
     -   move back 1/2 a screen
 
-### GLOBAL:
-
--   `:help keyword`
-    -   open help for keyword
--   `:o file`
-    -   open file
--   `:saveas file`
-    -   save file as
--   `:close`
-    -   close current window
-
-### MARKING TEXT (VISUAL MODE):
-
--   `v`
-    -   start visual mode, mark lines, then perform an operation (such as d-delete)
--   `V`
-    -   start linewise visual mode
--   `Ctrl + v`
-    -   start blockwise visual mode
--   `o`
-    -   move to the other end of marked area
--   `O`
-    -   move to other corner of block
--   `aw`
-    -   mark a word
--   `ab`
-    -   a block with ()
--   `aB`
-    -   a block with {}
--   `ib`
-    -   inner block with ()
--   `iB`
-    -   inner block with {}
--   `Esc`
-    -   exit visual mode
-
 ### VISUAL COMMANDS:
 
 -   `>`
@@ -257,60 +304,48 @@
     -   yank (copy) marked text
 -   `d`
     -   delete marked text
--   `~`
+-   `🔥 ~`
     -   switch case
-
-### REGISTERS:
-
--   `:reg`
-    -   show registers content
--   `"xy`
-    -   yank into register x
--   `"xp`
-
-    -   paste contents of register x
-
--   Tip: Registers are being stored in ~/.viminfo, and will be loaded again on next restart of vim.
--   Tip: Register 0 contains always the value of the last yank command.
-
-### MARKS:
-
--   `:marks`
-    -   list of marks
--   `ma`
-    -   set current position for mark A
--   ``a`
-    -   jump to position of mark A
--   `y`a`
-    -   yank text to position of mark A
-
-### MACROS:
-
--   `qa`
-    -   record macro a
--   `q`
-    -   stop recording macro
--   `@a`
-    -   run macro a
--   `@@`
-    -   rerun last run macro
 
 ### SEARCH AND REPLACE:
 
 -   `🔥 /pattern`
+
     -   search for pattern
+
 -   `🔥 ?pattern`
+
     -   search backward for pattern
+
 -   `\vpattern`
+
     -   ‘very magic’ pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)
+
 -   `n`
+
     -   repeat search in same direction
+
 -   `N`
+
     -   repeat search in opposite direction
+
+-   `:/pattern + ⮐` (then `shift+n`/'n' to hop over the patterns back and forth)
+
+    -   to search a text pattern
+
+-   `shift + #` / `shift + *`
+
+    -   highlighting for the word currently cursor is in
+    -   repeat to get the next occurance, previous occurance
+
 -   `🔥 :%s/old/new/g`
+
     -   replace all old with new throughout file
+
 -   `🔥 :%s/old/new/gc`
+
     -   replace all old with new throughout file with confirmations
+
 -   `:noh`
     -   remove highlighting of search matches
 
@@ -380,3 +415,74 @@
 -   `:tabdo command`
     -   run the command on all tabs (e.g. :tabdo q
     -   closes all opened tabs)
+
+### MARKING TEXT (VISUAL MODE):
+
+-   `v`
+    -   start visual mode, mark lines, then perform an operation (such as d-delete)
+-   `V`
+    -   start linewise visual mode
+-   `Ctrl + v`
+    -   start blockwise visual mode
+-   `o`
+    -   move to the other end of marked area
+-   `O`
+    -   move to other corner of block
+-   `aw`
+    -   mark a word
+-   `ab`
+    -   a block with ()
+-   `aB`
+    -   a block with {}
+-   `ib`
+    -   inner block with ()
+-   `iB`
+    -   inner block with {}
+-   `Esc`
+    -   exit visual mode
+
+### GLOBAL:
+
+-   `:help keyword`
+    -   open help for keyword
+-   `:o file`
+    -   open file
+-   `:saveas file`
+    -   save file as
+-   `:close`
+    -   close current window
+
+### REGISTERS:
+
+-   `:reg`
+    -   show registers content
+-   `"xy`
+    -   yank into register x
+-   `"xp`
+
+    -   paste contents of register x
+
+-   Tip: Registers are being stored in ~/.viminfo, and will be loaded again on next restart of vim.
+-   Tip: Register 0 contains always the value of the last yank command.
+
+### MARKS:
+
+-   `:marks`
+    -   list of marks
+-   `ma`
+    -   set current position for mark A
+-   ``a`
+    -   jump to position of mark A
+-   `y`a`
+    -   yank text to position of mark A
+
+### MACROS:
+
+-   `qa`
+    -   record macro a
+-   `q`
+    -   stop recording macro
+-   `@a`
+    -   run macro a
+-   `@@`
+    -   rerun last run macro

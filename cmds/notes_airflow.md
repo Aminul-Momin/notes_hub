@@ -4,7 +4,9 @@
 ---
 
 -   [Install Airflow:](https://github.com/apache/airflow/blob/main/README.md#installing-from-pypi)
+
     -   `$ pip install 'apache-airflow==2.3.3' --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.3.3/constraints-3.7.txt"`
+
 -   `$ export AIRFLOW_HOME=.`
 -   `$ airflow db init`
 -   `$ airflow webserver -p 8080`

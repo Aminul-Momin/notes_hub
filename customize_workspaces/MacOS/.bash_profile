@@ -161,6 +161,6 @@ export FLASK_APP=run.py
 export FLASK_DEBUG=1
 export FLASK_ENV=dev
 export EMAIL_USER='amominnj@gmail.com'
-export EMAIL_PASS='am5202844'
+export EMAIL_PASS='recal'
 
 source /Users/a.momin/gd/Software_Development/Machine_Learning/notes_hub/customize_workspaces/workspace_funcs.sh
