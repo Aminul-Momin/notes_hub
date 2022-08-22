@@ -1,18 +1,22 @@
     𝑳𝒊𝒔𝒕 𝒐𝒇 𝐔𝐬𝐞𝐟𝐮𝐥𝐥 𝑺𝒚𝒎𝒃𝒐𝒍𝒔:
         ⮐ ⎇ ⬆︎ ⌘ ⌥ + ⌃ + ⤶ ⇧  ⤶ ⬋ ↩︎ ↲ ↵ ↫ ⭿ ♥ ★ 🎾 &
 
+🔥 CONFIGURATIONS:
+
 ### Refferences:
 
+-   [[notes_vim2]]
 -   ref: https://realpython.com/vim-and-python-a-match-made-in-heaven/
 -   🔥 🔥 ref: https://stackoverflow.com/questions/5400806/what-are-the-most-used-vim-commands-keypresses/5400978#5400978
 -   🔥 ref: https://www.radford.edu/~mhtay/CPSC120/VIM_Editor_Commands.htm
 -   [10 Advanced Vim Features](https://www.youtube.com/watch?v=gccGjwTZA7k)
 -   [My Favorite Vim Tricks](https://www.youtube.com/watch?v=B-EPvfxcgl0&t=290s)
 
-### Python on Vim:
+### Some Technical Commands on Vim:
 
 -   `:! python file_name.py`
     -   run python file from vim.
+-   `: echo has('clipboard')`
 
 ################ Configuration for Vim ######################
 
@@ -34,9 +38,10 @@
 
 -   How to coment out multiple lines?
     1. marks lines
-    2. SHIFT + :
-    3. /s/^/#
+    2. :/s/^/#
+        - `⬆︎+:` to get `:`
         - '#' is comenting character.
+        - '^' is indication of beginning of line as regex.
 
 #############################################################
 

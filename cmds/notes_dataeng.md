@@ -1,0 +1,1 @@
+-   [Ubuntu: How to build curl with the latest openssl? (6 Solutions!!)](https://www.youtube.com/watch?v=DEBuN-80cuU&t=37s)

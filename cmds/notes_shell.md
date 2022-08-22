@@ -15,7 +15,9 @@
 -   `$ cat /etc/shells.`
     -   List out available shells.
 -   `$ chsh -s /bin/bash`
-    -   Change current Shell to bash shell
+    -   Change current Shell to bash shell in MacOS.
+-   `$ usermod -s /bin/bash <username>`
+    -   Set current shell to /bin/bash in RHEL.
 
 ---
 

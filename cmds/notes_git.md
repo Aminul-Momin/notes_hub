@@ -1,16 +1,59 @@
-## Git Documentation:
+🔥 GIT TUTORIALS:
 
 -   [Udacity: How to Use Git and GitHub](https://www.youtube.com/playlist?list=PLAwxTw4SYaPk8_-6IGxJtD3i2QAu5_s_p)
 -   https://git-scm.com/docs
 
--   HELP:
-    -   `$ git --help`
-    -   `$ git help -a`
-    -   `$ git help -g`
-    -   `$ git help <command> -->> Ex: git help add, git help reset, git help rm`
-    -   `$ git help <concept>`
-    -   `$ git help git`
-    -   `$ git [options] commands [<args>]`
+🔥 KEY WORDS:
+
+-   Checkout
+    -   Checkout: Switching between different commit, branches or tags.
+    -   Checkout a Branch means changing Head Pointer from current branch to the branch to be checkedout.
+-   Initial Commit
+-   Untracked File
+-   HEAD:
+    -   `HEAD`: Git’s way of referring to the current snapshot. Internally, the ‘git checkout’ command simply updates the HEAD to point to either the specified branch or commit. When it points to a branch, Git doesn’t complain, but when you check out a commit, it switches into a “detached HEAD” state.
+    -   Head Pointer always points to the Active Branch. When it points to a branch, Git doesn’t complain, but when you check out a commit, it switches into a “detached HEAD” state.
+    -   Detached Head
+-   TAG:
+    -   Tag is an extra lebel for a commit in the commit chain that can indicate usefull informations. A tag is not updated by the commit command.
+    -   Annoted Tag
+    -   Lightwaight Tag
+-   `remote`
+-   `origin`
+    -   origin/master is the state of master branch on remote repository
+    -   origin - This is a custom and most common name to point to remote.
+    -   origin/master - This is just a pointer to refer master branch in remote repo. Remember I said origin points to remote.
+-   `master`
+
+    -   master - The default branch name in Git is master. For both remote and local repository.
+    -   master is the state of master branch on local repository
+
+-   `working directory`
+-   `staging area`
+-   `local master`
+-   `GitHub master`
+-   fork
+
+🔥 NOTES:
+
+-   There generally are at least three copies of a project on your workstation:
+
+    -   One copy is your own repository with your own commit history (the already saved one, so to say).
+    -   The second copy is your working copy where you are editing and building (not committed yet to your repo).
+    -   The third copy is your local “cached” copy of a remote repository (probably the original from where you cloned yours).
+
+-   You cannot delete the branch you are on.
+-   If you checkout a branch and then commits, the branch’s label autometically updates to the new commits.
+
+🔥 HELP:
+
+-   `$ git --help`
+-   `$ git help -a`
+-   `$ git help -g`
+-   `$ git help <command> -->> Ex: git help add, git help reset, git help rm`
+-   `$ git help <concept>`
+-   `$ git help git`
+-   `$ git [options] commands [<args>]`
 
 ## Initialize/Clone Git Repository
 
@@ -95,7 +138,13 @@
     -   get the remote origin URL
 
 -   `$ git config --get remote.origin.url`
+
     -   get the remote origin URL
+
+-   `$ git config --get user.email`
+
+    -   Returns email address of current git user
+
 -   `$ ssh -T git@github.com`
 
 ## RECORD & EXAMIN CHANGES
@@ -216,36 +265,6 @@
 1. git reset <commit_id>
 2. git push origin master -f
 
-🔥 KEY WORDS:
-
--   Checkout
--   Initial Commit
--   Untracked File
--   Detached Head
-
-🔥 KEY WORDS:
-
--   HEAD: Git’s way of referring to the current snapshot. Internally, the ‘git checkout’ command simply updates the HEAD to point to either the specified branch or commit. When it points to a branch, Git doesn’t complain, but when you check out a commit, it switches into a “detached HEAD” state.
--   Tag is an extra lebel for a commit in the commit chain that can indicate usefull informations. A tag is not updated by the commit command.
--   Checkout: Switching between different commit, branches or tags.
--   Head Pointer always points to the Active Branch. When it points to a branch, Git doesn’t complain, but when you check out a commit, it switches into a “detached HEAD” state.
--   Checkout a Branch means changing Head Pointer from current branch to the branch to be checkedout.
--   Annoted Tag
--   Lightwaight Tag
--   Remote
--   Orinig
--   Master
-
-🔥 Notes:
-
--   You cannot delete the branch you are on.
--   If you checkout a branch and then commits, the branch’s label autometically updates to the new commits.
--   master - The default branch name in Git is master. For both remote and local machine.
--   master is the state of master branch on local repository
--   origin/master is the state of master branch on remote repository
--   origin - This is a custom and most common name to point to remote.
--   origin/master - This is just a pointer to refer master branch in remote repo. Remember I said origin points to remote.
-
 ## GIT BRANCHING & MEARGING FILES
 
 -   [git branch]()
@@ -294,9 +313,8 @@
 -   `$ git merge <Master:branch_name1> < branch_name2>`
 
 -   `$ git merge —abort`
-    -   Abort merge if it is not possible to merge for any reason.
 
-🔥 FAST-FORWARD MERGING:
+    -   Abort merge if it is not possible to merge for any reason.
 
 -   `$ git remote set-url origin git@github.com:Aminul-Momin/Algorithms_and_Data_Structures.git`
 
@@ -308,19 +326,33 @@
 
 -   `$ git remote add upstream <URL>`
 
--   `$ git pull upstream Master`
+-   `$ git push origin master`
+
+    -   `origin` is master branch of remote repository
+    -   `master` is master branch of local repository
+    -   Pushes the master branch of local repository to master branch of remote repository.
 
 -   `$ git push -u origin master`
-
--   `$ git push <Origin: Name_of_remote> <Master:Name_of_local_br>`
-
--   `$ git pull <Origin: Name_of_remote> <Master:Name_of_local_branch>`
-
-    -   `$ git fetch origin && git merge origin master`
 
 -   `$ git push origin`
 
     -   push all the branches to origin
+
+🔥 PULL/FETCH:
+
+-   `git fetch` is the command that tells your local git to retrieve the latest meta-data info from the original (yet doesn’t do any file transferring. It’s more like just checking to see if there are any changes available).
+
+-   `git pull` on the other hand does that AND brings (copy) those changes from the remote repository.
+
+-   `$ git pull origin master`
+
+    -   `origin` is master branch of remote repository
+    -   `master` is master branch of local repository
+    -   pulls the master branch of remote repository into master branch of local repository.
+
+    -   It's equivalent to `$ git fetch origin && git merge origin master`
+
+-   `$ git pull upstream Master`
 
 -   `$ git fetch`
 -   `$ git fetch origin`
