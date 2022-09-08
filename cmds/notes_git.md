@@ -1,5 +1,6 @@
 🔥 GIT TUTORIALS:
 
+-   [Learn Git with Bitbucket Cloud](https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud)
 -   [Udacity: How to Use Git and GitHub](https://www.youtube.com/playlist?list=PLAwxTw4SYaPk8_-6IGxJtD3i2QAu5_s_p)
 -   https://git-scm.com/docs
 
@@ -209,65 +210,80 @@
 
     -   Popping your stash removes the changes from your stash and reapplies them to your working copy.
 
-##### [git checkout]()
+-   `$ git stash drop`
+    -   drop top hash, stash@{0}
+-   `$ git stash drop stash@{n}`
+    -   drop specific stash - see git stash list
 
--   `$ git checkout <commit_id>`
+##### [Resetting, Reverting, and Checking Out](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting)
 
--   `$ git checkout master`
+-   [Undoing Commits & Changes](https://www.atlassian.com/git/tutorials/undoing-changes)
+-   [git checkout]()
 
--   `$ git checkout <file_name>`
+    -   `$ git checkout <commit_id>`
 
-    -   Discard the specified file from Working Area.
+    -   `$ git checkout master`
 
--   `$ git checkout .`
+    -   `$ git checkout <file_name>`
 
-    -   Discard all the changes to the Working Area.
+        -   Discard the specified file from Working Area.
 
--   `$ git checkout <commit_id>`
+    -   `$ git checkout .`
 
--   `$ git checkout -- <file> ...`
+        -   Discard all the changes to the Working Area.
 
-    -   to discard changes in working directory
+    -   `$ git checkout <commit_id>`
 
--   g`$ it rm --cached <file_name>`
-    -   Unstage the specified file from Staging Area.
+    -   `$ git checkout -- <file> ...`
 
-##### [Git Reset]()
+        -   to discard changes in working directory
 
--   <span style="color:orange">Extra care should be given using the reset command</span>
+-   [git reset]()
 
--   `$ git reset HEAD <file_name>`
+    -   g`$ it rm --cached <file_name>`
 
-    -   Unstage the specified file from Staging Area.
+        -   Unstage the specified file from Staging Area.
 
--   `$ git reset HEAD */.`
+    -   <span style="color:orange">Extra care should be given using the reset command</span>
 
-    -   Unstage all the file from Staging Area
+    -   `$ git reset HEAD <file_name>`
 
--   `$ git reset HEAD~1`
+        -   Unstage the specified file from Staging Area.
 
-    -   Discard the FIRST commit from Local Repository (Committing Area). Discarted file kept in Working Area
+    -   `$ git reset HEAD */.`
 
--   `$ git reset HEAD~3`
+        -   Unstage all the file from Staging Area
 
-    -   Discard the FIRST THREE commit from Local Repository (Committing Area). Discarted file kept in Working Area
+    -   `$ git reset HEAD~1`
 
--   `$ git reset --soft HEAD~3`
+        -   Discard the FIRST commit from Local Repository (Committing Area). Discarted file kept in Working Area
 
-    -   Discard the first three commit from Local Repository (Committing Area). Discarted file kept in Staging Area
+    -   `$ git reset HEAD~3`
 
--   `$ git reset --hard`
-    -   🔥 COMPLETELY REMOVE EVERYTHING FROM LOCAL REPOSITORY (COMMITTING AREA) !!!!!!!!!!!!
--   `$ git reset --hard HEAD~2`
+        -   Discard the FIRST THREE commit from Local Repository (Committing Area). Discarted file kept in Working Area
 
-🔥 REMOVING A COMMIT FROM REMOTE REPOSITORY:
+    -   `$ git reset --soft HEAD~3`
 
-1. git reset <commit_id>
-2. git push origin master -f
+        -   Discard the first three commit from Local Repository (Committing Area). Discarted file kept in Staging Area
+
+    -   `$ git reset --hard`
+        -   🔥 COMPLETELY REMOVE EVERYTHING FROM LOCAL REPOSITORY (COMMITTING AREA) !!!!!!!!!!!!
+    -   `$ git reset --hard HEAD~2`
+
+    -   <font color="orange">How do I discard unstaged changes in Git?</font>
+
+        -   `$ git restore .` - For all unstaged files in current working directory use: -`$ git-clean` - Remove untracked files from the working tree.
+        -   `$ git restore path/to/file/to/revert`
+            -   For a specific file use
+
+    -   🔥 REMOVING A COMMIT FROM REMOTE REPOSITORY:
+
+        1. git reset <commit_id>
+        2. git push origin master -f
 
 ## GIT BRANCHING & MEARGING FILES
 
--   [git branch]()
+[git branch](https://www.atlassian.com/git/tutorials/using-branches)
 
 -   git branch -h
 -   git checkout -h
@@ -295,26 +311,36 @@
     -   Show all the name of branches that has been created so far
 
 -   `$ git log –graph –onetime <branch_name1 branch_name2 … >`
+
     -   Visulize the branches Structure
 
-🔥 TAG:
+-   🔥 TAG:
 
--   `$ git tag`
-    -   Verifying Tag
--   `$ git tag -a <lebel_of_tag>`
-    -   Creates a Annoted Tag, extra informations.
--   `$ git tag -d <name_of_tag_to_be_deleted>`
-    -   Deletes the specified tag.
--   `$ git tag -a <lebel_of_tag> <commit_id>`
-    -   Tags a older commit.
+    -   `$ git tag`
+        -   Verifying Tag
+    -   `$ git tag -a <lebel_of_tag>`
+        -   Creates a Annoted Tag, extra informations.
+    -   `$ git tag -d <name_of_tag_to_be_deleted>`
+        -   Deletes the specified tag.
+    -   `$ git tag -a <lebel_of_tag> <commit_id>`
 
-🔥 MERGING:
+        -   Tags a older commit.
 
--   `$ git merge <Master:branch_name1> < branch_name2>`
+🔥 [MERGING](https://www.atlassian.com/git/tutorials/using-branches/git-merge):
+
+-   `$ git merge <origin_branch_name> < local_branch_name>`
+
+    -   Merge a local branch into a origin branch.
+
+-   `$ git merge <local_branch_name1> < local_branch_name2>`
+
+    -   Merges two branches in local repository.
 
 -   `$ git merge —abort`
 
     -   Abort merge if it is not possible to merge for any reason.
+
+🔥 PUSH/PULL/FETCH:
 
 -   `$ git remote set-url origin git@github.com:Aminul-Momin/Algorithms_and_Data_Structures.git`
 
@@ -337,8 +363,6 @@
 -   `$ git push origin`
 
     -   push all the branches to origin
-
-🔥 PULL/FETCH:
 
 -   `git fetch` is the command that tells your local git to retrieve the latest meta-data info from the original (yet doesn’t do any file transferring. It’s more like just checking to see if there are any changes available).
 

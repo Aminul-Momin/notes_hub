@@ -1,11 +1,13 @@
 -   [`docker-compose.ymal` by Airflow](https://airflow.apache.org/docs/apache-airflow/stable/docker-compose.yaml)
 -   [Default Airflow Config File](https://github.com/apache/airflow/blob/main/airflow/config_templates/default_airflow.cfg)
+-   [Airflow Cheat Sheet](https://github.com/cherkavi/cheat-sheet/blob/master/airflow.md)
 
 ---
 
 -   [Install Airflow:](https://github.com/apache/airflow/blob/main/README.md#installing-from-pypi)
 
     -   `$ pip install 'apache-airflow==2.3.3' --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.3.3/constraints-3.7.txt"`
+    -   [Command Line Interface (CLI) Cheat Sheet](https://levelup.gitconnected.com/airflow-command-line-interface-cli-cheat-sheet-6e5d90bd3552)
 
 -   `$ export AIRFLOW_HOME=.`
 -   `$ airflow db init`

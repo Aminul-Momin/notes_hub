@@ -18,6 +18,8 @@
     -   Change current Shell to bash shell in MacOS.
 -   `$ usermod -s /bin/bash <username>`
     -   Set current shell to /bin/bash in RHEL.
+-   `$ exec $SHELL -l`
+    -   Reload your shell.
 
 ---
 
@@ -333,7 +335,9 @@
 -   `$ echo $BASH_VERSION`
     -   displays bash version
 -   `$ unset VARIABLE_NAME`
+
     -   Unset the given variabel - 'VARIABLE_NAME'
+
 -   `$ bash`
     -   if you want to use bash (type exit to go back to your previously opened shell)
 -   `$ whereis bash`
@@ -347,7 +351,11 @@
     -   lets you change your password
 
 -   `$ clear`
+
     -   clears content on window (hide displayed lines)
+
+-   `$ su user_name`
+    -   switch/set/substitute user into the given user_name.
 
 ---
 
@@ -592,34 +600,55 @@ statement1 || statement2 # or operator
 -a # and operator inside a test conditional expression
 -o # or operator inside a test conditional expression
 
-# STRINGS
+# STRINGS EXPRESSION:
 
-str1 == str2 # str1 matches str2
-str1 != str2 # str1 does not match str2
-str1 < str2 # str1 is less than str2 (alphabetically)
-str1 > str2 # str1 is greater than str2 (alphabetically)
-str1 \> str2 # str1 is sorted after str2
-str1 \< str2 # str1 is sorted before str2
--n str1 # str1 is not null (has length greater than 0)
--z str1 # str1 is null (has length 0)
+-   `str1 == str2`
+    -   str1 matches str2
+-   `str1 != str2`
+    -   str1 does not match str2
+-   `str1 < str2`
+    -   str1 is less than str2 (alphabetically)
+-   `str1 > str2`
+    -   str1 is greater than str2 (alphabetically)
+-   `str1 \> str2`
+    -   str1 is sorted after str2
+-   `str1 \< str2`
+    -   str1 is sorted before str2
+-   `-n str1`
+    -   str1 is not null (has length greater than 0)
+-   `-z str1`
+    -   str1 is null (has length 0)
 
-# FILES
+# FILES EXPRESSION:
 
--a file # file exists or its compilation is successful
--d file # file exists and is a directory
--e file # file exists; same -a
--f file # file exists and is a regular file (i.e., not a directory or other special type of file)
--r file # you have read permission
--s file # file exists and is not empty
--w file # your have write permission
--x file # you have execute permission on file, or directory search permission if it is a directory
--N file # file was modified since it was last read
--O file # you own file
--G file # file's group ID matches yours (or one of yours, if you are in multiple groups)
-file1 -nt file2 # file1 is newer than file2
-file1 -ot file2 # file1 is older than file2
+-   `-a File`
+    -   file exists or its compilation is successful
+-   `-d File`
+    -   file exists and is a directory
+-   `-e File`
+    -   file exists; same -a
+-   `-f File`
+    -   file exists and is a regular file (i.e., not a directory or other special type of file)
+-   `-r File`
+    -   you have read permission
+-   `-s File`
+    -   file exists and is not empty
+-   `-w File`
+    -   your have write permission
+-   `-x File`
+    -   you have execute permission on file, or directory search permission if it is a directory
+-   `-N File`
+    -   file was modified since it was last read
+-   `-O File`
+    -   you own file
+-   `-G File`
+    -   file's group ID matches yours (or one of yours, if you are in multiple groups)
+-   `file1 -nt file2File`
+    -   file1 is newer than file2
+-   `file1 -ot file2File`
+    -   file1 is older than file2
 
-# NUMBERS
+# NUMBERS EXPRESSION:
 
 -lt # less than
 -le # less than or equal
@@ -628,6 +657,7 @@ file1 -ot file2 # file1 is older than file2
 -gt # greater than
 -ne # not equal
 
+```bash
 if condition
 then
 statements
@@ -637,7 +667,6 @@ then statements...]
 statements]
 fi
 
-```bash
 for x in {1..10}
 do
 statements
@@ -661,7 +690,6 @@ statements ;;
 pattern2 )
 statements ;;
 esac
-```
 
 select name [in list]
 do
@@ -675,6 +703,7 @@ done
 until condition; do
 statements
 done
+```
 
 ---
 

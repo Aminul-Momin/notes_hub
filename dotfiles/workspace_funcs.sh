@@ -1,11 +1,5 @@
 #!bin/bash
 
-download_vim_config_files(){
-    cd ~
-    curl https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/vim_configs/vim01_python/.vimrc >> ~/.vimrc
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    # then Open `~/.vimrc` file with vim.
-}
 
 install_data(){
     :'Install data into a Notebook instance of GCP Virtual Machine'

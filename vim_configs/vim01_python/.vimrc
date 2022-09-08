@@ -1,29 +1,50 @@
-" plugins
+"set nohlsearch
+set noerrorbells
+set nowrap
+set incsearch
+set scrolloff=8
+
+
 let need_to_install_plugins = 0
 if empty(glob('~/.vim/autoload/plug.vim'))
+    " Install a minimalist Vim Plugin Manager
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     let need_to_install_plugins = 1
 endif
 
 call plug#begin()
+
+Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-sensible'
 Plug 'itchyny/lightline.vim'
 Plug 'gruvbox-community/gruvbox'
-Plug 'joshdick/onedark.vim'
+"Plug 'joshdick/onedark.vim'
 Plug 'ap/vim-buftabline'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jiangmiao/auto-pairs'
-Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'       " Asyncronus Linting Engine
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'lepture/vim-jinja'
 Plug 'pangloss/vim-javascript'
 Plug 'alvan/vim-closetag'
 Plug 'maxmellon/vim-jsx-pretty'
+
+" Vim needed to be compiled with python3.6+ support
+"Plug 'Valloric/YouCompleteMe'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Conquer of Completion
+" You have to install coc extension or configure language servers for LSP support.
+" `$ cd .vim/plugged/coc.nvim/ && yarn install && yarn build`
+" `$ vim ~/.vimrc`; `:CocInstall coc-python`; `:CocInstall coc-jedi`     " Install python COC support
+
+Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
+" `$ vim ~/.vimrc`; `:CocInstall coc-htmldjango`     " Install python COC support
+
 call plug#end()
 
 filetype plugin indent on
@@ -63,8 +84,11 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set colorcolumn=80
+set signcolumn=yes
 set expandtab
 set viminfo='25,\"50,n~/.viminfo
+
+
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
@@ -103,14 +127,14 @@ endfunction
 
 " color scheme
 syntax on
-colorscheme onedark
+" colorscheme onedark
 filetype on
 filetype plugin indent on
 
 " lightline
 set noshowmode
 let g:lightline = { 'colorscheme': 'onedark' }
-
+let g:ale_linters = { 'pyhton': ['flake8'] }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Specific colorscheme settings (must come before setting your colorscheme).
@@ -123,20 +147,22 @@ colorscheme gruvbox
 set background=dark
 
 " Specific colorscheme settings (must come after setting your colorscheme).
-if (g:colors_name == 'gruvbox')
-  if (&background == 'dark')
-    hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
-  else
-    hi Visual cterm=NONE ctermfg=NONE ctermbg=228 guibg=#f2e5bc
-    hi CursorLine cterm=NONE ctermfg=NONE ctermbg=228 guibg=#f2e5bc
-    hi ColorColumn cterm=NONE ctermfg=NONE ctermbg=228 guibg=#f2e5bc
-  endif
-endif
+"if (g:colors_name == 'gruvbox')
+"  if (&background == 'dark')
+"    hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
+"  else
+"    hi Visual cterm=NONE ctermfg=NONE ctermbg=228 guibg=#f2e5bc
+"    hi CursorLine cterm=NONE ctermfg=NONE ctermbg=228 guibg=#f2e5bc
+"    hi ColorColumn cterm=NONE ctermfg=NONE ctermbg=228 guibg=#f2e5bc
+"  endif
+"endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 " code folding
 set foldmethod=indent
+
+" open file without folded up
 set foldlevel=99
 
 " wrap toggle
@@ -208,9 +234,7 @@ function! StartUp()
 endfunction
 autocmd VimEnter * call StartUp()
 
-" ale
-map <C-e> <Plug>(ale_next_wrap)
-map <C-r> <Plug>(ale_previous_wrap)
+
 
 " tags
 map <leader>t :TagbarToggle<CR>
@@ -247,6 +271,29 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
 
+""""""""""""" Asyncronus Linting Engine """""""""""""
+" consult `:help ale-options` for global options and `:help ale-integration-options` for options specified to particular linters.
+" Use the global executable with a special name for flake8.
+"let g:ale_python_flake8_executable = '/foo/bar/flake8'
+
+let g:ale_python_flake8_use_global = 1
+let g:ale_linters = {'python': 'all'}
+let g:ale_fixers = {'python': ['isort', 'yapf', 'remove_trailing_lines', 'trim_whitespace']}
+let g:ale_lsp_suggestions = 1
+let g:ale_fix_on_save = 1
+let g:ale_go_gofmt_options = '-s'
+let g:ale_go_gometalinter_options = '— enable=gosimple — enable=staticcheck'
+let g:ale_completion_enabled = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] [%severity%] %code: %%s'
+
+" ale
+map <C-e> <Plug>(ale_next_wrap)
+map <C-r> <Plug>(ale_previous_wrap)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 

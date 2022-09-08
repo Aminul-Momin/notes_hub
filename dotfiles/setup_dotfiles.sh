@@ -1,36 +1,42 @@
 
 bash_dotfiles_lnx(){
-    curl https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/Linux/.bashrc > ~/.bashrc
-    curl https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/Linux/.bash_profile > ~/.bash_profile
-    curl https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/Linux/.aliases > ~/.aliases
-    curl https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/Linux/.git-completion.bash > ~/.git-completion.bash
-    curl https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/Linux/.git-prompt.sh > ~/.git-prompt.sh
-    curl https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/Linux/.git-aliases.bash > ~/.git-aliases.bash
+    nt_hub="https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/Linux"
+    curl $nt_hub/.bashrc > ~/.bashrc
+    curl $nt_hub/.bash_profile > ~/.bash_profile
+    curl $nt_hub/.aliases > ~/.aliases
+    curl $nt_hub/.git-completion.bash > ~/.git-completion.bash
+    curl $nt_hub/.git-prompt.sh > ~/.git-prompt.sh
+    curl $nt_hub/.git-aliases.bash > ~/.git-aliases.bash
 }
 
 vim_dotfiles_lnx(){
-    # Remove existing neovim configuration
-    # rm -fr ~/.local && rm -fr ~/.config/nvim
+
 
     my_home=/home/$USER
-    vimrc_file="$my/.vimrc"
+    vimrc_file="$my_home/.vimrc"
     if [ -e $vimrc_file ]; then      # Check if file exists.
         mkdir $my_home/old_vimrc
         mv $vimrc_file $my_home/old_vimrc/
     fi
     
-    for dir in $my_home/.{local config/nvim}; do
+    for dir in $my_home/.{local/share/nvim config/nvim}; do
         if [ -d $dir ]; then
             if [! -d $my_home/old_nvim]; then
                 mkdir $my_home/old_nvim
             fi
 
-            mv -r $dir $my_home/old_nvim/
+            if [! -f $my_home/old_nvim/README.md]; then
+                touch $my_home/old_nvim/README.md
+            fi
+
+            cat $dir >> $my_home/old_nvim/README.md
+            mv $dir $my_home/old_nvim/
         fi
     done;
 
+    src_vimrc="https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/Linux"
     # download my `.vimrc` from my github account.
-    curl https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/Linux/.vimrc > ~/.vimrc
+    curl $src_vimrc/.vimrc > ~/.vimrc
 
     # Install `vim-plug` package manager to be used with vim (`.vimrc`). Check the documentation to use it with neovim (`init.vim`)
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

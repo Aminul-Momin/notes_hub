@@ -268,6 +268,13 @@
 
 ### Docker Volume:
 
-    - Anonymous: Randomly created and maintained by Docker.
-    - Host: Mount a local directory or file on the container
-    - Named: Created with a name and maintaied by Docker
+-   Anonymous: Randomly created and maintained by Docker.
+-   Host: Mount a local directory or file on the container
+-   Named: Created with a name and maintaied by Docker
+
+### Usefull Commands in case of non-responsive Dockers in RHEL
+
+-   ps -auxwww | head -n1
+-   cat sos_commands/process/ps_auxwww | awk '$8 ~ /D/'
+-   echo 1 > /proc/sys/kernel/sysrq
+-   echo w > /proc/sysrq-trigger

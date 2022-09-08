@@ -9,16 +9,27 @@
 -   ref: https://realpython.com/vim-and-python-a-match-made-in-heaven/
 -   🔥 🔥 ref: https://stackoverflow.com/questions/5400806/what-are-the-most-used-vim-commands-keypresses/5400978#5400978
 -   🔥 ref: https://www.radford.edu/~mhtay/CPSC120/VIM_Editor_Commands.htm
+
 -   [10 Advanced Vim Features](https://www.youtube.com/watch?v=gccGjwTZA7k)
 -   [My Favorite Vim Tricks](https://www.youtube.com/watch?v=B-EPvfxcgl0&t=290s)
+-   [50+ Vim Tips and Tricks from Beginner to Expert](https://www.youtube.com/watch?v=ZEIpdC_klDI)
 
-### Some Technical Commands on Vim:
+### Helpful Commands on Vim:
+
+-   coc commands:
+
+    -   `:CocConfig`
+    -   `CocInstall coc-python`
+    -   `CocCommand`
 
 -   `:! python file_name.py`
     -   run python file from vim.
 -   `: echo has('clipboard')`
 
-################ Configuration for Vim ######################
+-   `:help popupmenu-completion`
+-   `:help popupmenu-keys`
+-   `$ brew install ctags`
+    ################ Configuration for Vim ######################
 
 -   `:version`
     -   Spits out which version of vim you are using.

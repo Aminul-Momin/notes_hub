@@ -36,6 +36,8 @@
 -   <font color=red>Download the vim plugins manager called **vim-plug** from git hub. Then use following comands to manage your vim plugins.</font>
 
 -   `:PlugInstall` $\rightarrow$ Install plugins
+-   `$ vim +PlugInstall +qall`
+    -   Install vim plugins from terminal.
 -   `:PlugUpdate` $\rightarrow$ Update plugins：
 -   `:PlugClean` $\rightarrow$ Remove plugins： (Before run this command, comment the plugin install command in init.vim)
 -   `:PlugStatus` $\rightarrow$ Check the plugin status：

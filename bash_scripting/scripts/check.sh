@@ -1,4 +1,4 @@
-#!
+#!bin/bash
 
 function main(){
     check $@
@@ -29,9 +29,11 @@ check(){
 }
 
 function help(){
+    echo $1
     echo "Help. I need help"
 }
 
 function n_func(){
     echo "This is the n_func."
 }
+
