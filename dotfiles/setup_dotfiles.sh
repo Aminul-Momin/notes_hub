@@ -12,27 +12,27 @@ bash_dotfiles_lnx(){
 vim_dotfiles_lnx(){
 
 
-    my_home=/home/$USER
-    vimrc_file="$my_home/.vimrc"
-    if [ -e $vimrc_file ]; then      # Check if file exists.
-        mkdir $my_home/old_vimrc
-        mv $vimrc_file $my_home/old_vimrc/
-    fi
+    # my_home=/home/$USER
+    # vimrc_file="$my_home/.vimrc"
+    # if [ -e $vimrc_file ]; then      # Check if file exists.
+    #     mkdir $my_home/old_vimrc
+    #     mv $vimrc_file $my_home/old_vimrc/
+    # fi
     
-    for dir in $my_home/.{local/share/nvim config/nvim}; do
-        if [ -d $dir ]; then
-            if [! -d $my_home/old_nvim]; then
-                mkdir $my_home/old_nvim
-            fi
+    # for dir in $my_home/.{local/share/nvim config/nvim}; do
+    #     if [ -d $dir ]; then
+    #         if [! -d $my_home/old_nvim]; then
+    #             mkdir $my_home/old_nvim
+    #         fi
 
-            if [! -f $my_home/old_nvim/README.md]; then
-                touch $my_home/old_nvim/README.md
-            fi
+    #         if [! -f $my_home/old_nvim/README.md]; then
+    #             touch $my_home/old_nvim/README.md
+    #         fi
 
-            cat $dir >> $my_home/old_nvim/README.md
-            mv $dir $my_home/old_nvim/
-        fi
-    done;
+    #         cat $dir >> $my_home/old_nvim/README.md
+    #         mv $dir $my_home/old_nvim/
+    #     fi
+    # done;
 
     src_vimrc="https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/Linux"
     # download my `.vimrc` from my github account.
