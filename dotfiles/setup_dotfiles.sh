@@ -1,12 +1,12 @@
 
 bash_dotfiles_lnx(){
-    nt_hub="https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/Linux"
-    curl $nt_hub/.bashrc > ~/.bashrc
-    curl $nt_hub/.bash_profile > ~/.bash_profile
-    curl $nt_hub/.aliases > ~/.aliases
-    curl $nt_hub/.git-completion.bash > ~/.git-completion.bash
-    curl $nt_hub/.git-prompt.sh > ~/.git-prompt.sh
-    curl $nt_hub/.git-aliases.bash > ~/.git-aliases.bash
+    nt_dotfiles="https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/Linux"
+    curl $nt_dotfiles/.bashrc > ~/.bashrc
+    curl $nt_dotfiles/.bash_profile > ~/.bash_profile
+    curl $nt_dotfiles/.aliases > ~/.aliases
+    curl $nt_dotfiles/.git-completion.bash > ~/.git-completion.bash
+    curl $nt_dotfiles/.git-prompt.sh > ~/.git-prompt.sh
+    curl $nt_dotfiles/.git-aliases.bash > ~/.git-aliases.bash
 }
 
 vim_dotfiles_lnx(){
@@ -49,4 +49,41 @@ vim_dotfiles_lnx(){
 nvim_dotfiles_lnx(){
     # Install `vim-plug` package manager to be used with nvim (`init.vim`). Check the documentation to use it with vim (`.vimrc`)
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+}
+
+notes_cmds(){
+
+    nt_cmds="https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/cmds"
+    for file in notes_{airflow,docker,git,py,vim}.md; do
+        if [! -d $HOME/NTS]; then
+            mkdir $HOME/NTS
+        fi
+        curl $nt_cmds/$file >> $HOME/NTS/$file
+    done
+}
+
+# To install VSCode extentions, send 
+vscode_extensions(){
+    :' Downloads VSCode extensions into the directory, `~/.vscode/extensions`.
+    Args:
+        file_name ($1): The file name containg vscode extention-ids seperated by new line.
+    '
+
+    while read line; do
+        echo "Installing $line . . . . . "
+        # code --install-extension $line ## Uncoment this line to do expected
+        # printf "%$(tput cols)s\n"|tr " " "="
+    done < $1
+}
+
+
+ln_bash_dotfiles(){
+    for dot_file in $NTS/dotfiles/MacOS/.{aliases,bash_profile,bashrc,git-*}; do
+        if [! -d $1]; then
+            ln -fsv $dot_file $HOME
+        else
+            mkdir $HOME/DUMMY_HM
+            ln -fsv $dot_file $HOME/DUMMY_HM
+        fi
+    done
 }

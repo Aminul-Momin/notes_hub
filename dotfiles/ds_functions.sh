@@ -118,20 +118,6 @@ create_pip_env(){
     pip install numpy PDPbox plotnine pandas pandas-summary scikit-learn sklearn_pandas graphviz waterfallcharts treeinterpreter
 }
 
-# To install VSCode extentions, send 
-vscode_extensions(){
-    :' Install all the VSCode  extensions into the directory, `~/.vscode/extensions`, from given file.
-    Args:
-        file_name: The file name containg extention-ids seperated by new line.
-    '
-
-    while read line; do
-        echo "Installing $line . . . . . "
-        # code --install-extension $line ## Uncoment this line to do expected
-        # printf "%$(tput cols)s\n"|tr " " "="
-    done < $1
-}
-
 remove_spark(){
     
     sprk="/Users/a.momin/opt/anaconda3/envs/fastai/bin/beeline

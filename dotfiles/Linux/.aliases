@@ -16,8 +16,10 @@ alias j="jobs"
 
 #========== Docker Shortcuts =============
 image_name="xbk_notification_service"
+container=$(docker ps | grep $image_name)
+
 alias dps="docker ps | grep $1"
-alias dstp="docker stop $(docker ps | grep $image_name)"
+#alias dstp="docker stop ${container:0:12}"
 alias dbld="""docker build -t "${image_name}-img""""
 alias dlg="docker logs --follow $image_name ."
 alias dx="docker exec -it $1 bash"

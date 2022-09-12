@@ -51,7 +51,7 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # The following line of code is appended here to learn the Git & Github  from
 
 # Udacity.com to Enable tab completion
-source ~/.git-completion.bash
+source $HOME/.git-completion.bash
 
 # colors:
 green="\[\033[0;32m\]"
@@ -60,7 +60,7 @@ purple="\[\033[0;35m\]"
 reset="\[\033[0m\]"
 
 # Change command prompt :
-source ~/.git-prompt.sh
+source $HOME/.git-prompt.sh
 
 export GIT_PS1_SHOWDIRTYSTATE=1
 
@@ -85,7 +85,7 @@ export PS1="$purple\u -->>|$green\$(__git_ps1)$blue\W$purple|\n$ $reset"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/a.momin/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$("$HOME/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
@@ -103,10 +103,10 @@ unset __conda_setup
 
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/a.momin/exec -l /bin/bash/google-cloud-sdk/path.bash.inc' ]; then . '/Users/a.momin/exec -l /bin/bash/google-cloud-sdk/path.bash.inc'; fi
+if [ -f "$HOME/exec -l /bin/bash/google-cloud-sdk/path.bash.inc' ]; then . "$HOME/exec -l /bin/bash/google-cloud-sdk/path.bash.inc'; f"
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/a.momin/exec -l /bin/bash/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/a.momin/exec -l /bin/bash/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f "$HOME/exec -l /bin/bash/google-cloud-sdk/completion.bash.inc' ]; then . "$HOME/exec -l /bin/bash/google-cloud-sdk/completion.bash.inc'; f"
 
 
 
@@ -132,24 +132,24 @@ export PATH=$PATH:$M2_HOME/bin
 
 export GIT_TOKEN='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'
 
-export ADS='/Users/a.momin/gd/Software_Development/Python_Program/Python3/Algorithms_and_Data_Structures/'
-export SD='/Users/a.momin/gd/Software_Development'
-export GDT='/Users/a.momin/gd/Desktop'
-export DS='/Users/a.momin/gd/Software_Development/Machine_Learning/notes_hub'
-export JOBS_DB='/Users/a.momin/gd/Jobs_DB'
-export NLTK_DATA='/Users/a.momin/nltk_data'
-export UTILS='/Users/a.momin/gd/Software_Development/Machine_Learning/notes_hub/utils'
+export NTS="$HOME/gd/Software_Development/Machine_Learning/notes_hub"
+export ADS="$HOME/gd/Software_Development/Python_Program/Python3/Algorithms_and_Data_Structures/"
+export SD="$HOME/gd/Software_Development"
+export GDT="$HOME/gd/Desktop"
+export DS="$HOME/gd/Software_Development/Machine_Learning/notes_hub"
+export JOBS_DB="$HOME/gd/Jobs_DB"
+export NLTK_DATA="$HOME/nltk_data"
+export UTILS="$HOME/gd/Software_Development/Machine_Learning/notes_hub/utils"
 
 # Flask Environment Variables
 export FLASK_APP=run.py
 export FLASK_DEBUG=1
 export FLASK_ENV=dev
 export EMAIL_USER='amominnj@gmail.com'
-export EMAIL_PASS='am5202844'
+export EMAIL_PASS='..5.....4'
 
 # Setting PATH for Python 3.10
+# ADDED AUTOMATICALLY BY  INSTALLATION
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
 export PATH
-
-source /Users/a.momin/gd/Software_Development/Machine_Learning/notes_hub/customize_workspaces/workspace_funcs.sh

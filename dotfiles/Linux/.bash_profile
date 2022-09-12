@@ -74,9 +74,10 @@ export PS1="$purple\u -->>|$green\$(__git_ps1)$blue\W$purple|\n$ $reset"
 complete -cf sudo
 
 # Flask Environment Variables
-export FLASK_APP=run.py
-export FLASK_DEBUG=1
-export FLASK_ENV=dev
-export EMAIL_USER='amominnj@gmail.com'
-export EMAIL_PASS='recal'
+# export FLASK_APP=run.py
+# export FLASK_DEBUG=1
+# export FLASK_ENV=dev
+# export EMAIL_USER='amominnj@gmail.com'
+# export EMAIL_PASS='recal'
 
+export NTS="$HOME/NTS"
