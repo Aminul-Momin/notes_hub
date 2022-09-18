@@ -49,6 +49,13 @@ vim_dotfiles_lnx(){
 nvim_dotfiles_lnx(){
     # Install `vim-plug` package manager to be used with nvim (`init.vim`). Check the documentation to use it with vim (`.vimrc`)
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    
+    ## Build COC as follows:
+    # cd .local/share/nvim/pluged/coc.nvim
+    # yarn install
+    # yarn build
+
+    ## configuration: ~/.config/nvim/
 }
 
 notes_cmds(){
