@@ -1,4 +1,16 @@
 
+for_mac_only(){
+
+}
+
+for_lnx_only(){
+
+}
+
+for_gitbash_only(){
+    
+}
+
 bash_dotfiles_lnx(){
     nt_dotfiles="https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/Linux"
     curl $nt_dotfiles/.bashrc > ~/.bashrc
@@ -10,8 +22,6 @@ bash_dotfiles_lnx(){
 }
 
 vim_dotfiles_lnx(){
-
-
     # my_home=/home/$USER
     # vimrc_file="$my_home/.vimrc"
     # if [ -e $vimrc_file ]; then      # Check if file exists.
@@ -35,6 +45,7 @@ vim_dotfiles_lnx(){
     # done;
 
     src_vimrc="https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/Linux"
+    
     # download my `.vimrc` from my github account.
     curl $src_vimrc/.vimrc > ~/.vimrc
 
