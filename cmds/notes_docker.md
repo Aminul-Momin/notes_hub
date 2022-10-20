@@ -13,6 +13,7 @@
 ---
 
 -   sudo systemctl status docker
+
     -   Check whether Docker is running or not in Linux machine.
 
 ---
@@ -26,143 +27,151 @@
 ## docker:
 
 -   [docker](https://docs.docker.com/engine/reference/commandline/docker/):
-
 -   [Use the Docker command line](https://docs.docker.com/engine/reference/commandline/cli/)
 
-### [$ docker run](https://docs.docker.com/engine/reference/commandline/run/): `docker run [OPTIONS] IMAGE [COMMAND] [ARG...]`
+-   [$ docker run](https://docs.docker.com/engine/reference/commandline/run/): `docker run [OPTIONS] IMAGE [COMMAND] [ARG...]`
 
--   `$ docker run <image_name>`
+    -   `$ docker run -d --name=name_your_container <image_name>`
 
-    -   Pull image_name down it not available in docker-host (Local Machine) and instentiate and run an image_name_container from image_name image.
-    -   Run in _Attach Mode_. Add `-d` option to run in _Detach Mode_
-    -   EX: `$ docker run nginx`.
+        -   Pull image_name down if it's not available in docker-host (Local Machine) and instantiate and run an image_name_container from image_name image.
+        -   Run in _Attach Mode_. Add `-d` option to run in _Detach Mode_
+        -   `--name=name_your_container` is used to give the container a name to refer it later
+        -   EX: `$ docker run nginx`.
+        -   When you run a Docker run command like this, it runs in the foreground or in an attached mode, meaning you will be attached to the console or the standard out of the Docker container. And you will see the output of the web service on your screen. You won't be able to do anything else on this console other than view the output until this Docker container stops. It won't respond to your inputs. press the ctrl plus c combination to stop the container and the application hosted on the container exits and you get back to your prompt.
+        -   Another option is to run the Docker container in the detached mode by providing the `-d` option. This will run the Docker container in the background mode, and you will be back to your prompt immediately. The container will continue to run in the backend, run the docker ps command to view the running container. Now if you would like to attach back to the running container later, run the `docker attach` command and specify the name or ID of the Docker container.
+        -   Now remember, if you're specifying the ID of a container in any Docker command, you can simply provide the first few characters alone, just so it is different from the other container IDs on the host.
 
--   `$ docker pull <image_name>`
+    -   `$ docker pull <image_name>`
 
-    -   Just pull down the image into the docker-host (Local machine) form docker registry (Docker Hub)
+        -   Just pull down the image into the docker-host (Local machine) form docker registry (Docker Hub)
 
--   `Run - tag`:
+    -   `Run - tag`:
 
-    -   `$ docker run <image_name:tag`
+        -   `$ docker run <image_name>:tag`
 
--   `Run - STDIN`:
+    -   `Run - STDIN`:
 
-    -   `$ docker run -it <image_name>`
-    -   `$ docker run python:3.7`
-        -   Run in interactive mode.
+        -   `$ docker run -it <image_name>`
+            -   Run in interactive (`i`) mode with terminal (`t`) aatched to it.
+        -   `$ docker run python:3.7`
 
--   `Run - PORT Mapping`:
-    -   `$ docker run -it 80: 5000 dockerized_flask_app/app`
+    -   `Run - PORT Mapping`:
+        -   `$ docker run -it 80: 5000 dockerized_flask_app/app`
 
-![docker_port_mapping](../assets/docker_port_mapping.png)
+    ![docker_port_mapping](../assets/docker_port_mapping.png)
 
--   `Run - VOLUME Mapping`:
+    -   `Run - VOLUME Mapping`:
 
-    -   `$ docker run -p 8080:5000 mysql`
-    -   `$ docker stop mysql`
-    -   `$ docker rm mysql`
+        -   `$ docker run -p 8080:5000 mysql`
+        -   `$ docker stop mysql`
+        -   `$ docker rm mysql`
 
-    -   `$ docker rm -v /dir_out_container:/dir_in_container mysql`
-        -   map a diractory outside of container to a diractory inside of container
-    -   `$ docker rm -v /opt/datadir:/var/lib/mysql mysql`
-    -
+        -   `$ docker rm -v /dir_out_container:/dir_in_container mysql`
+            -   `/dir_out_container:/dir_in_container` mount a diractory outside of container into a diractory inside of container
+        -   `$ docker rm -v /opt/datadir:/var/lib/mysql mysql`
+        -
 
--   `Inspect a Container`:
+    -   `Inspect a Container`:
 
-    -   `$ docker inspect <container_name | container_id>`
-        -   Return details of a container in json format.
+        -   `$ docker inspect <container_name | container_id>`
+            -   Return details of a container in json format.
 
--   `Container Logs`:
+    -   `Container Logs`:
 
-    -   `$ docker logs <container_name | container_id>`
-        -   Show the logs of a container ran in gackgroun (detach mode).
+        -   `$ docker logs <container_name | container_id>`
+            -   Show the logs of a container ran in gackgroun (detach mode).
 
--   `Environment Variables`:
+    -   `Environment Variables`:
 
-    -   `$ docker run -e APP_COLOR=blue dockerized_flask_app/app`
+        -   `$ docker run -e APP_COLOR=blue dockerized_flask_app/app`
 
--   `Various Modes of Container`:
+    -   `Various Modes of Container`:
 
-    -   `$ docker run -d image_name`
+        -   `$ docker run -d image_name`
 
-        -   Run in _Detach Mode_.
+            -   Run in _Detach Mode_.
 
-    -   `$ docker attach <container_id>`
+        -   `$ docker attach <container_id>`
 
-        -   Run in _Attach Mode_ back.
+            -   Run (without `-d` option) in _Attach Mode_ back.
 
-    -   `$ docker run -it dockerzied_flask_app/app`
-        -   Run a custom dockerized flask application in interactive mode.
+        -   `$ docker run -it dockerzied_flask_app/app`
+            -   Run a custom dockerized flask application in interactive mode.
 
-### [$ docker ps](https://docs.docker.com/engine/reference/commandline/ps/): `docker ps [OPTIONS]`
-
--   `$ docker ps`
-
-    -   list out only the running containers
-
--   `$ docker cp ./<my_new_dag.py> dagvaol_host:/dags`
-    -   Copy my_new_dag.py from CWD to allocated dag volume in the docker container.
-
-### [$ docker ](): ``
-
-### [$ docker stop](https://docs.docker.com/engine/reference/commandline/stop/): `docker stop [OPTIONS] CONTAINER [CONTAINER...]`
-
--   `$ docker stop <container_id | container_name>`
-    -   Stop the given running container keeping the instance of the container for later use.
-
-### [$ docker kill](https://docs.docker.com/engine/reference/commandline/kill/): `docker kill [OPTIONS] CONTAINER [CONTAINER...]`
-
-### [$ docker rm](): ``
-
--   `$ docker rm <container_id | container_name>`
-    -   Remove the instance of container previously created.
-
-### [$ docker images](): ``
-
--   `$ docker images`
-    -   List out images available local machine. (in docker host)
-
-### [$ docker rmi](): ``
-
--   `$ docker rmi <image_name>`
-    -   Remove the image_name previously pulled down from docker registry.
-    -   EX: `$ docker rmi nginx`.
-    -   Must not running any container of the image.
-
-### Run Linux Operating System Image:
-
--   `$ docker run ubuntu`
-
-    -   Runs an Ubuntu image and exites immediately.
+-   [$ docker ps](https://docs.docker.com/engine/reference/commandline/ps/): `docker ps [OPTIONS]`
 
     -   `$ docker ps`
 
--   `$ docker run ubuntu sleep 60`
+        -   list out only the running containers
 
-    -   `$ docker ps`
+    -   `$ docker cp ./<my_new_dag.py> dagvaol_host:/dags`
 
--   `$ docker `
--   `$ docker `
+        -   Copy my_new_dag.py from CWD to allocated dag volume in the docker container.
 
-### [$ docker exec](https://docs.docker.com/engine/reference/commandline/exec/): `docker exec [OPTIONS] CONTAINER COMMAND [ARG...]`
+    -   docker ps --format "table {{.Names}}:\t{{.Ports}}\t{{.Status}}"
+        -   Print the result of `docker pa` in the given format.
 
--   `$ docker exec`
+-   [$ docker stop](https://docs.docker.com/engine/reference/commandline/stop/): `docker stop [OPTIONS] CONTAINER [CONTAINER...]`
 
-    -   Usage: `$ docker exec -it <container_id | container_name> bash`
-    -   This command is used to access the running container
+    -   `$ docker stop <container_id | container_name>`
+        -   Stop the given running container keeping the instance of the container for later use.
 
-### [$ docker image](): ``
+-   [$ docker kill](https://docs.docker.com/engine/reference/commandline/kill/): `docker kill [OPTIONS] CONTAINER [CONTAINER...]`
 
-### [$ docker build](https://docs.docker.com/engine/reference/commandline/build/): `docker build [OPTIONS] PATH | URL | -`
+-   [$ docker rm](): ``
+
+    -   `$ docker rm <container_id | container_name>`
+
+        -   Remove the instance of container previously created.
+
+    -   `$ docker images`
+
+        -   List out images available in docker host (local machine or remote server)
+
+    -   `$ docker rmi <image_name>`
+        -   Remove the image_name previously build or pulled down from docker registry.
+        -   EX: `$ docker rmi nginx`.
+        -   Must not running any container of that image.
+
+-   Runing Special UBUNTU Image:
+
+    -   When you run the Docker run Ubuntu command it runs an instance of Ubuntu image and exits immediately.
+    -   Now why is that? Unlike virtual machine containers are not meant to host an operating system. Containers are meant to run a specific task or process such as to host an instance of a web server or application server or a database, or simply to carry some kind of computation or analysis task. Once the task is complete, the container exits. A container only lives as long as the process inside it is alive. If the web service inside the container is stopped, or crash, then the container exits.
+
+    -   `$ docker run ubuntu`
+
+        -   Runs an Ubuntu image
+        -   it exites immediately.
+
+        -   `$ docker ps`
+
+    -   `$ docker run ubuntu sleep 60`
+
+        -   `$ docker ps`
+
+    -   docker run ubuntu sleep 5
+        -   Start container with a command `sleep 5`
+    -   `$ docker `
+    -   `$ docker `
+
+-   [$ docker exec](https://docs.docker.com/engine/reference/commandline/exec/): `docker exec [OPTIONS] CONTAINER COMMAND [ARG...]`
+
+    -   `$ docker exec`
+
+        -   Usage: `$ docker exec -it <container_id | container_name> bash`
+        -   This command is used to access the running container
+
+-   [$ docker image](): ``
+
+-   [$ docker build](https://docs.docker.com/engine/reference/commandline/build/): `docker build [OPTIONS] PATH | URL | -`
 
 -   `$ docker build`
 
     -   Usage: docker build <path to docker file>
     -   This command is used to build an image from a specified docker file
 
-### [$ docker ](): ``
-
-### [$ ](): ``
+-   `$ docker pull image_name`
+    -   Just pull the image from docker registry but don't run it.
 
 ---
 
@@ -176,7 +185,8 @@
 
 -   [Compose CLI environment variables](https://docs.docker.com/compose/reference/envvars/)
 
--   `$ docker-compose `
+-   `$ docker-compose up`
+-   `$ docker-compose up --build`
 -   `$ docker-compose `
 -   `$ docker-compose `
 -   `$ docker-compose `
@@ -208,14 +218,14 @@
 
 -   `$ docker <object> <command> [options] [...]`
 
+    -   `object` indicates the type of Docker object you'll be manipulating. This can be a `container`, `image`, `network` or `volume` object.
+    -   `command` indicates the task to be carried out by the daemon, for instance, the run command.
+    -   `options` can be any valid parameter that can override the default behavior of the command, like the `--publish` option for port mapping.
+
     -   `$ docker container run -d <image_name>`
     -   `$ docker container run --detach --publish 8080:80 fhsinchy/hello-dock`
     -   `$ docker volume create volume_my_data`
     -   `$ docker network create --drive bridge --subnet 128.18.0.0/16 custom_isolated_network`
-
-    -   `object` indicates the type of Docker object you'll be manipulating. This can be a `container`, `image`, `network` or `volume` object.
-    -   `command` indicates the task to be carried out by the daemon, for instance, the run command.
-    -   `options` can be any valid parameter that can override the default behavior of the command, like the `--publish` option for port mapping.
 
     -   `--publish (-p) 8080:80` indicates that any request sent to port 8080 of your host system will be forwarded to port 80 inside the container‌.
     -   `--detach (-d)` option is provided to keep container running without terminal to keep running .

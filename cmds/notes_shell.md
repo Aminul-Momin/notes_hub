@@ -2,37 +2,31 @@
 
 ---
 
+<details>
+<summary style="font-size:25px;color:Orange;text-align:left">Notes Link</summary>
+
 -   [LinuxHowTo](https://www.linuxhowto.net/)
 -   [[notes_bash]]
 -   [[notes_linux]]
 -   [The 50 Most Popular Linux & Terminal Commands - Full Course for Beginners](https://www.youtube.com/watch?v=ZtqBQ68cfJc&t=119s)
 -   [18 Commands That Will Change The Way You Use Linux Forever](https://www.youtube.com/watch?v=AVXYq8aL47Q)
+</details>
 
 ---
 
-### How to set default shell to bash on MacOS
-
--   `$ cat /etc/shells.`
-    -   List out available shells.
--   `$ chsh -s /bin/bash`
-    -   Change current Shell to bash shell in MacOS.
--   `$ usermod -s /bin/bash <username>`
-    -   Set current shell to /bin/bash in RHEL.
--   `$ exec $SHELL -l`
-    -   Reload your shell.
-
----
+<details>
+<summary style="font-size:25px;color:Orange;text-align:left">Terminology</summary>
 
 -   COMMAND DESCRIPTION SYNTAX:
 
     1. angle brackets for required parameters:
-        - EX: ping <hostname>
+        - EX: `ping <hostname>`
     2. square brackets for optional parameters:
-        - EX: mkdir [-p] <dirname>
+        - EX: `mkdir [-p] <dirname>`
     3. ellipses for repeated items:
-        - EX: cp <source1> [source2…] <dest>
+        - EX: `cp <source1> [source2…] <dest>`
     4. vertical bars for choice of items:
-        - EX: netstat {-t|-u}
+        - EX: `netstat {-t|-u}`
 
 -   COMMAND-LINE ARGUMENT:
 
@@ -48,6 +42,21 @@
 
 -   TERMINAL VS. BASH VS. COMMAND LINE VS. PROMPT:
     https://www.youtube.com/watch?v=hMSByvFHOro
+
+## </details>
+
+### How to set default shell to bash.
+
+-   `$ cat /etc/shells.`
+    -   List out available shells.
+-   `$ chsh -s /bin/bash`
+    -   Change current Shell to bash shell on MacOS.
+-   `$ usermod -s /bin/bash <username>`
+    -   Set current shell to /bin/bash on RHEL.
+-   `$ exec $SHELL -l`
+    -   Reload your shell.
+-   `$ cat /etc/redhat-release`
+-   `$ `
 
 ---
 
@@ -216,17 +225,35 @@
     -   🔥 `sudo chmod -R u+rwX,g-rwx,o-rx <file_or_dir_name>`
         -   Recursively adds (`+`) read (`r`), write (`w`), and special execution (`X`) permissions for user (`u`), and removes (`-`) read (`r`), write (`w`), and execution (`x`) permissions for Group (`g`), and removes (`-`) read (`r`) and execution (`x`) permissions for Others
 
--   [chown](https://www.linuxhowto.net/how-to-change-file-group-owner-with-chown-command-in-linux/)
+-   [chown](https://linuxize.com/post/linux-chown-command/)
+-   `$ chown [OPTIONS] USER[:GROUP] FILE(s)`
 
--   `$ sudo chown :group file`
-
-    -   `$ sudo chown :docker file1.txt`
+    -   EX: `$ sudo chown :group file`
+    -   EX: `$ sudo chown :docker file1.txt`
         -   Change the group owner of file1.txt from linuxtechi to docker.
 
--   [chgrp](https://www.linuxhowto.net/change-group-using-chgrp-command-in-linux/)
+-   `$ chown -R www-data: /var/dir`
 
--   `$ chgrp OPTION group_name /path/to/file_or_directory`
+    -   Change the ownership of all files and subdirectories under the /var/dir directory to a new owner and group named www-data
+
+-   `$ chown www-data: symlink1`
+    -   Change the ownership of the file or directory the symlink points to
+-   `$ chown -h www-data symlink1`
+
+    -   Change the group ownership of the symlink itself, use the -h option.
+
+-   [chgrp](https://linuxize.com/post/chgrp-command-in-linux/)
+-   `$ chgrp [OPTIONS] GROUP FILE..`
+    -   EX: `$ chgrp OPTION group_name /path/to/file_or_directory`
     -   The group_name attribute represents the new group name that the file or directory will acquire. Additionally, you can specify the GID (group ID) instead of the group name. In that case, you need to append the GID with a plus sign (+).
+-   `$ chgrp -R www-data /var/www`
+
+-   `$ chgrp www-data symlink1`
+    -   If you try to change the group of the symbolic link symlink1 that points to /opt/file1, chgrp will change the ownership of the file or directory the symlink points to:
+-   `$ chgrp -h www-data symlink1`
+    -   To change the group ownership of the symlink itself, use the `-h` option
+-   `$ chgrp -hR www-data /var/www`
+    -   Change the group ownership recursively including symbolic links, pass the `-h` option
 
 ---
 
@@ -235,10 +262,10 @@
 -   symbolic links (also known as “soft links” or “symlinks”): Refer to a symbolic path indicating the abstract location of another file.
 -   hard links : Refer to the specific location of physical data.
 
--   `$ ln -s path/file_name.extn`
-    -   Create a symlink into current directory
--   `$ ln -s {source-filename} {symbolic-filename}`
-    -   -   `$ ln -fs {source-filename} {symbolic-filename}`
+-   `$ ln -s path/source_file_name.extn`
+    -   Create a symlink from destination directory
+-   `$ ln -s {absolute_path/source_filename} {absolute_path/symbolic_filename}`
+    -   Create symbolic link from any directory.
     -
 
 ---
@@ -521,202 +548,22 @@
 
 ---
 
-### VARIABLES
-
-      varname=value                # defines a variable
-      varname=value command        # defines a variable to be in the environment of a particular subprocess
-      echo $varname                # checks a variable's value
-      echo $$                      # prints process ID of the current shell
-      echo $!                      # prints process ID of the most recently invoked background job
-      echo $?                      # displays the exit status of the last command
-      read <varname>               # reads a string from the input and assigns it to a variable
-      let <varname> = <equation>   # performs mathematical calculation using operators like +, -, *, /, %
-      export VARNAME=value         # defines an environment variable (will be available in subprocesses)
-
-      array[0]=valA                # how to define an array
-      array[1]=valB
-      array[2]=valC
-      array=([2]=valC [0]=valA [1]=valB)  # another way
-      array=(valA valB valC)              # and another
-
-      ${array[i]}                  # displays array's value for this index. If no index is supplied, array element 0 is assumed
-      ${#array[i]}                 # to find out the length of any element in the array
-      ${#array[@]}                 # to find out how many values there are in the array
-
-      declare -a                   # the variables are treated as arrays
-      declare -f                   # uses function names only
-      declare -F                   # displays function names without definitions
-      declare -i                   # the variables are treated as integers
-      declare -r                   # makes the variables read-only
-      declare -x                   # marks the variables for export via the environment
-
-      ${varname:-word}             # if varname exists and isn't null, return its value; otherwise return word
-      ${varname:=word}             # if varname exists and isn't null, return its value; otherwise set it word and then return its value
-      ${varname:?message}          # if varname exists and isn't null, return its value; otherwise print varname, followed by message and abort the current command or script
-      ${varname:+word}             # if varname exists and isn't null, return word; otherwise return null
-      ${varname:offset:length}     # performs substring expansion. It returns the substring of $varname starting at offset and up to length characters
-
-      ${variable#pattern}          # if the pattern matches the beginning of the variable's value, delete the shortest part that matches and return the rest
-      ${variable##pattern}         # if the pattern matches the beginning of the variable's value, delete the longest part that matches and return the rest
-      ${variable%pattern}          # if the pattern matches the end of the variable's value, delete the shortest part that matches and return the rest
-      ${variable%%pattern}         # if the pattern matches the end of the variable's value, delete the longest part that matches and return the rest
-      ${variable/pattern/string}   # the longest match to pattern in variable is replaced by string. Only the first match is replaced
-      ${variable//pattern/string}  # the longest match to pattern in variable is replaced by string. All matches are replaced
-
-      ${#varname}                  # returns the length of the value of the variable as a character string
-
-      *(patternlist)               # matches zero or more occurrences of the given patterns
-      +(patternlist)               # matches one or more occurrences of the given patterns
-      ?(patternlist)               # matches zero or one occurrence of the given patterns
-      @(patternlist)               # matches exactly one of the given patterns
-      !(patternlist)               # matches anything except one of the given patterns
-
-      $(UNIX command)              # command substitution: runs the command and returns standard output
-
----
-
-### FUNCTIONS
-
-```bash
-# The function refers to passed arguments by position (as if they were positional parameters), that is, $1, $2, and so forth.
-# $@ is equal to "$1" "$2"... "$N", where N is the number of positional parameters. $# holds the number of positional parameters.
-
-
-function functname() {
-    shell commands
-}
-
-unset -f functname  # deletes a function definition
-declare -f          # displays all defined functions in your login session
-```
-
----
-
-### FLOW CONTROLS
-
-statement1 && statement2 # and operator
-statement1 || statement2 # or operator
-
--a # and operator inside a test conditional expression
--o # or operator inside a test conditional expression
-
-# STRINGS EXPRESSION:
-
--   `str1 == str2`
-    -   str1 matches str2
--   `str1 != str2`
-    -   str1 does not match str2
--   `str1 < str2`
-    -   str1 is less than str2 (alphabetically)
--   `str1 > str2`
-    -   str1 is greater than str2 (alphabetically)
--   `str1 \> str2`
-    -   str1 is sorted after str2
--   `str1 \< str2`
-    -   str1 is sorted before str2
--   `-n str1`
-    -   str1 is not null (has length greater than 0)
--   `-z str1`
-    -   str1 is null (has length 0)
-
-# FILES EXPRESSION:
-
--   `-a File`
-    -   file exists or its compilation is successful
--   `-d File`
-    -   file exists and is a directory
--   `-e File`
-    -   file exists; same -a
--   `-f File`
-    -   file exists and is a regular file (i.e., not a directory or other special type of file)
--   `-r File`
-    -   you have read permission
--   `-s File`
-    -   file exists and is not empty
--   `-w File`
-    -   your have write permission
--   `-x File`
-    -   you have execute permission on file, or directory search permission if it is a directory
--   `-N File`
-    -   file was modified since it was last read
--   `-O File`
-    -   you own file
--   `-G File`
-    -   file's group ID matches yours (or one of yours, if you are in multiple groups)
--   `file1 -nt file2File`
-    -   file1 is newer than file2
--   `file1 -ot file2File`
-    -   file1 is older than file2
-
-# NUMBERS EXPRESSION:
-
--lt # less than
--le # less than or equal
--eq # equal
--ge # greater than or equal
--gt # greater than
--ne # not equal
-
-```bash
-if condition
-then
-statements
-[elif condition
-then statements...]
-[else
-statements]
-fi
-
-for x in {1..10}
-do
-statements
-done
-
-for name [in list]
-do
-statements that can use $name
-done
-
-for (( initialisation ; ending condition ; update ))
-do
-statements...
-done
-```
-
-```bash
-case expression in
-pattern1 )
-statements ;;
-pattern2 )
-statements ;;
-esac
-
-select name [in list]
-do
-statements that can use $name
-done
-
-while condition; do
-statements
-done
-
-until condition; do
-statements
-done
-```
-
 ---
 
 ### COMMAND-LINE PROCESSING CYCLE
 
-        # The default order for command lookup is functions, followed by built-ins, with scripts and executables last.
-        # There are three built-ins that you can use to override this order: `command`, `builtin` and `enable`.
+---
 
-        command  # removes alias and function lookup. Only built-ins and commands found in the search path are executed
-        builtin  # looks up only built-in commands, ignoring functions and commands found in PATH
-        enable   # enables and disables shell built-ins
+The default order for command lookup is functions, followed by built-ins, with scripts and executables last.
+There are three built-ins that you can use to override this order: `command`, `builtin` and `enable`.
 
-        eval     # takes arguments and run them through the command-line processing steps all over again
+---
+
+-   command # removes alias and function lookup. Only built-ins and commands found in the search path are executed
+-   builtin # looks up only built-in commands, ignoring functions and commands found in PATH
+-   enable # enables and disables shell built-ins
+
+-   eval # takes arguments and run them through the command-line processing steps all over again
 
 ---
 
@@ -835,68 +682,14 @@ done
 
 ---
 
-### COLORS AND BACKGROUNDS
+<!-- <h1 style="color:red" align="center" >BASH PROGRAMMING:</h1> -->
 
-        # Reset
-        Color_Off='\033[0m' # Text Reset
+<details>
 
-        # Regular Colors
-        Black='\033[0;30m'  # Black
-        Red='\033[0;31m'    # Red
-        Green='\033[0;32m'  # Green
-        Yellow='\033[0;33m' # Yellow
-        Blue='\033[0;34m'   # Blue
-        Purple='\033[0;35m' # Purple
-        Cyan='\033[0;36m'   # Cyan
-        White='\033[0;97m'  # White
+<summary style="font-size:25px;color:Orange;text-align:center">BASH PROGRAMMING</summary>
+<details>
 
-        # Additional colors
-        LGrey='\033[0;37m'  # Ligth Gray
-        DGrey='\033[0;90m'  # Dark Gray
-        LRed='\033[0;91m'   # Ligth Red
-        LGreen='\033[0;92m' # Ligth Green
-        LYellow='\033[0;93m'# Ligth Yellow
-        LBlue='\033[0;94m'  # Ligth Blue
-        LPurple='\033[0;95m'# Light Purple
-        LCyan='\033[0;96m'  # Ligth Cyan
-
-
-        # Bold
-        BBlack='\033[1;30m' # Black
-        BRed='\033[1;31m'   # Red
-        BGreen='\033[1;32m' # Green
-        BYellow='\033[1;33m'# Yellow
-        BBlue='\033[1;34m'  # Blue
-        BPurple='\033[1;35m'# Purple
-        BCyan='\033[1;36m'  # Cyan
-        BWhite='\033[1;37m' # White
-
-        # Underline
-        UBlack='\033[4;30m' # Black
-        URed='\033[4;31m'   # Red
-        UGreen='\033[4;32m' # Green
-        UYellow='\033[4;33m'# Yellow
-        UBlue='\033[4;34m'  # Blue
-        UPurple='\033[4;35m'# Purple
-        UCyan='\033[4;36m'  # Cyan
-        UWhite='\033[4;37m' # White
-
-        # Background
-        On_Black='\033[40m' # Black
-        On_Red='\033[41m'   # Red
-        On_Green='\033[42m' # Green
-        On_Yellow='\033[43m'# Yellow
-        On_Blue='\033[44m'  # Blue
-        On_Purple='\033[45m'# Purple
-        On_Cyan='\033[46m'  # Cyan
-        On_White='\033[47m' # White
-
-        # Example of usage
-        echo -e "${Green}This is GREEN text${Color_Off} and normal text"
-        echo -e "${Red}${On_White}This is Red test on White background${Color_Off}"
-        # option -e is mandatory, it enable interpretation of backslash escapes
-
-<h1 style="color:red" align="center" >BASH PROGRAMMING:</h1>
+<summary style="font-size:25px;color:red;">Terminology</summary>
 
 ### Bash Tutorials:
 
@@ -931,6 +724,8 @@ The terminal is the application that brings it all together, in the sense that i
 
 Summing it all up, we could say that we've discussed three layers so far: the terminal, where the user enters written commands; the shell, and Bash being a type of shell, which takes those commands and interprets them into binary language; the kernel which takes the binary language commands and executes the task on hand.
 
+</details>
+
 ### Elements of Bash:
 
 -   [Pipeline](https://tiswww.case.edu/php/chet/bash/bashref.html#Pipelines):
@@ -950,6 +745,13 @@ Summing it all up, we could say that we've discussed three layers so far: the te
     -   **Process Substitution** $→$ A way to write and read to and from a command.
     -   **Word Splitting** $→$ How the results of expansion are split into separate arguments.
     -   **Filename Expansion** $→$ A shorthand for specifying filenames matching patterns.
+
+### Flags/Options in Bash:
+
+-   [Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/index.html)
+-   [Taking command line arguments using flags in bash](https://dev.to/shriaas2898/taking-command-line-arguments-using-flags-in-bash-121)
+-   [Different ways to implement flags in bash](https://jonalmeida.com/posts/2013/05/26/different-ways-to-implement-flags-in-bash/)
+-
 
 ### Special Variables in Bash:
 
@@ -1010,14 +812,143 @@ Summing it all up, we could say that we've discussed three layers so far: the te
 | `!(patternlist)`  | matches anything except one of the given patterns                                                                                                                                                                                                                                                                                                                                        |
 | `(UNIX command)`  | command substitution: runs the command and returns standard output                                                                                                                                                                                                                                                                                                                       |
 
-### Flags/Options in Bash:
+### VARIABLES
 
--   [Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/index.html)
--   [Taking command line arguments using flags in bash](https://dev.to/shriaas2898/taking-command-line-arguments-using-flags-in-bash-121)
--   [Different ways to implement flags in bash](https://jonalmeida.com/posts/2013/05/26/different-ways-to-implement-flags-in-bash/)
--
+varname=value # defines a variable
+varname=value command # defines a variable to be in the environment of a particular subprocess
+echo $varname                # checks a variable's value
+echo $$ # prints process ID of the current shell
+echo $! # prints process ID of the most recently invoked background job
+echo $? # displays the exit status of the last command
+read <varname> # reads a string from the input and assigns it to a variable
+let <varname> = <equation> # performs mathematical calculation using operators like +, -, \*, /, %
+export VARNAME=value # defines an environment variable (will be available in subprocesses)
+
+array[0]=valA # how to define an array
+array[1]=valB
+array[2]=valC
+array=([2]=valC [0]=valA [1]=valB) # another way
+array=(valA valB valC) # and another
+
+${array[i]}                  # displays array's value for this index. If no index is supplied, array element 0 is assumed
+${#array[i]} # to find out the length of any element in the array
+${#array[@]} # to find out how many values there are in the array
+
+declare -a # the variables are treated as arrays
+declare -f # uses function names only
+declare -F # displays function names without definitions
+declare -i # the variables are treated as integers
+declare -r # makes the variables read-only
+declare -x # marks the variables for export via the environment
+
+${varname:-word}             # if varname exists and isn't null, return its value; otherwise return word
+${varname:=word} # if varname exists and isn't null, return its value; otherwise set it word and then return its value
+${varname:?message}          # if varname exists and isn't null, return its value; otherwise print varname, followed by message and abort the current command or script
+${varname:+word} # if varname exists and isn't null, return word; otherwise return null
+${varname:offset:length} # performs substring expansion. It returns the substring of $varname starting at offset and up to length characters
+
+${variable#pattern}          # if the pattern matches the beginning of the variable's value, delete the shortest part that matches and return the rest
+${variable##pattern} # if the pattern matches the beginning of the variable's value, delete the longest part that matches and return the rest
+${variable%pattern}          # if the pattern matches the end of the variable's value, delete the shortest part that matches and return the rest
+${variable%%pattern} # if the pattern matches the end of the variable's value, delete the longest part that matches and return the rest
+${variable/pattern/string}   # the longest match to pattern in variable is replaced by string. Only the first match is replaced
+${variable//pattern/string} # the longest match to pattern in variable is replaced by string. All matches are replaced
+
+${#varname} # returns the length of the value of the variable as a character string
+
+\*(patternlist) # matches zero or more occurrences of the given patterns
++(patternlist) # matches one or more occurrences of the given patterns
+?(patternlist) # matches zero or one occurrence of the given patterns
+@(patternlist) # matches exactly one of the given patterns
+!(patternlist) # matches anything except one of the given patterns
+
+$(UNIX command) # command substitution: runs the command and returns standard output
+
+---
+
+# STRINGS EXPRESSION:
+
+-   `str1 == str2`
+    -   str1 matches str2
+-   `str1 != str2`
+    -   str1 does not match str2
+-   `str1 < str2`
+    -   str1 is less than str2 (alphabetically)
+-   `str1 > str2`
+    -   str1 is greater than str2 (alphabetically)
+-   `str1 \> str2`
+    -   str1 is sorted after str2
+-   `str1 \< str2`
+    -   str1 is sorted before str2
+-   `-n str1`
+    -   str1 is not null (has length greater than 0)
+-   `-z str1`
+    -   str1 is null (has length 0)
+
+# FILES EXPRESSION:
+
+-   `-a File`
+    -   file exists or its compilation is successful
+-   `-d File`
+    -   file exists and is a directory
+-   `-e File`
+    -   file exists; same -a
+-   `-f File`
+    -   file exists and is a regular file (i.e., not a directory or other special type of file)
+-   `-r File`
+    -   you have read permission
+-   `-s File`
+    -   file exists and is not empty
+-   `-w File`
+    -   your have write permission
+-   `-x File`
+    -   you have execute permission on file, or directory search permission if it is a directory
+-   `-N File`
+    -   file was modified since it was last read
+-   `-O File`
+    -   you own file
+-   `-G File`
+    -   file's group ID matches yours (or one of yours, if you are in multiple groups)
+-   `file1 -nt file2File`
+    -   file1 is newer than file2
+-   `file1 -ot file2File`
+    -   file1 is older than file2
+
+# NUMBERS EXPRESSION:
+
+-lt # less than
+-le # less than or equal
+-eq # equal
+-ge # greater than or equal
+-gt # greater than
+-ne # not equal
 
 ### Functions in Bash:
+
+### FUNCTIONS
+
+```bash
+# The function refers to passed arguments by position (as if they were positional parameters), that is, $1, $2, and so forth.
+# $@ is equal to "$1" "$2"... "$N", where N is the number of positional parameters. $# holds the number of positional parameters.
+
+
+function functname() {
+    shell commands
+}
+
+unset -f functname  # deletes a function definition
+declare -f          # displays all defined functions in your login session
+```
+
+---
+
+### FLOW CONTROLS
+
+statement1 && statement2 # and operator
+statement1 || statement2 # or operator
+
+-a # and operator inside a test conditional expression
+-o # or operator inside a test conditional expression
 
 ### Some Discovered Errors:
 
@@ -1312,3 +1243,66 @@ while [ "$number" -lt 10 ]; do
     number=$((number + 1))
 done
 ```
+
+### COLORS AND BACKGROUNDS
+
+        # Reset
+        Color_Off='\033[0m' # Text Reset
+
+        # Regular Colors
+        Black='\033[0;30m'  # Black
+        Red='\033[0;31m'    # Red
+        Green='\033[0;32m'  # Green
+        Yellow='\033[0;33m' # Yellow
+        Blue='\033[0;34m'   # Blue
+        Purple='\033[0;35m' # Purple
+        Cyan='\033[0;36m'   # Cyan
+        White='\033[0;97m'  # White
+
+        # Additional colors
+        LGrey='\033[0;37m'  # Ligth Gray
+        DGrey='\033[0;90m'  # Dark Gray
+        LRed='\033[0;91m'   # Ligth Red
+        LGreen='\033[0;92m' # Ligth Green
+        LYellow='\033[0;93m'# Ligth Yellow
+        LBlue='\033[0;94m'  # Ligth Blue
+        LPurple='\033[0;95m'# Light Purple
+        LCyan='\033[0;96m'  # Ligth Cyan
+
+
+        # Bold
+        BBlack='\033[1;30m' # Black
+        BRed='\033[1;31m'   # Red
+        BGreen='\033[1;32m' # Green
+        BYellow='\033[1;33m'# Yellow
+        BBlue='\033[1;34m'  # Blue
+        BPurple='\033[1;35m'# Purple
+        BCyan='\033[1;36m'  # Cyan
+        BWhite='\033[1;37m' # White
+
+        # Underline
+        UBlack='\033[4;30m' # Black
+        URed='\033[4;31m'   # Red
+        UGreen='\033[4;32m' # Green
+        UYellow='\033[4;33m'# Yellow
+        UBlue='\033[4;34m'  # Blue
+        UPurple='\033[4;35m'# Purple
+        UCyan='\033[4;36m'  # Cyan
+        UWhite='\033[4;37m' # White
+
+        # Background
+        On_Black='\033[40m' # Black
+        On_Red='\033[41m'   # Red
+        On_Green='\033[42m' # Green
+        On_Yellow='\033[43m'# Yellow
+        On_Blue='\033[44m'  # Blue
+        On_Purple='\033[45m'# Purple
+        On_Cyan='\033[46m'  # Cyan
+        On_White='\033[47m' # White
+
+        # Example of usage
+        echo -e "${Green}This is GREEN text${Color_Off} and normal text"
+        echo -e "${Red}${On_White}This is Red test on White background${Color_Off}"
+        # option -e is mandatory, it enable interpretation of backslash escapes
+
+</details>
