@@ -180,28 +180,30 @@
 
 <details>
 <summary style="font-size:25px;color:Orange;text-align:left">docker network</summary>
-- [docker network](https://docs.docker.com/engine/reference/commandline/network/)
-- `$ docker network COMMAND`
-- `$ docker network create [OPTIONS] NETWORK`
-- `$ docker network ls [OPTIONS]`
-- `$ docker network inspect [OPTIONS] NETWORK [NETWORK...]`
-- `$ docker network rm NETWORK [NETWORK...]`
-- `$ docker network prune [OPTIONS]`
-    - Remove all unused networks. Unused networks are those which are not referenced by any containers.
-- `$ `
+
+-   [docker network](https://docs.docker.com/engine/reference/commandline/network/)
+-   `$ docker network COMMAND`
+-   `$ docker network create [OPTIONS] NETWORK`
+-   `$ docker network ls [OPTIONS]`
+-   `$ docker network inspect [OPTIONS] NETWORK [NETWORK...]`
+-   `$ docker network rm NETWORK [NETWORK...]`
+-   `$ docker network prune [OPTIONS]`
+    -   Remove all unused networks. Unused networks are those which are not referenced by any containers.
+-   `$ `
 
 </details>
 
 <details>
 <summary style="font-size:25px;color:Orange;text-align:left">docker volume</summary>
-- `$ docker volume create [OPTIONS] [VOLUME]`
-- `$ docker volume create [OPTIONS] [VOLUME]`
-- `$ docker volume ls [OPTIONS]`
-- `$ docker volume inspect [OPTIONS] VOLUME [VOLUME...]`
-- `$ docker volume rm [OPTIONS] VOLUME [VOLUME...]`
-- `$ docker volume prune [OPTIONS]`
-    - Remove all unused local volumes. Unused local volumes are those which are not referenced by any containers
-- `$ `
+
+-   `$ docker volume create [OPTIONS] [VOLUME]`
+-   `$ docker volume create [OPTIONS] [VOLUME]`
+-   `$ docker volume ls [OPTIONS]`
+-   `$ docker volume inspect [OPTIONS] VOLUME [VOLUME...]`
+-   `$ docker volume rm [OPTIONS] VOLUME [VOLUME...]`
+-   `$ docker volume prune [OPTIONS]`
+    -   Remove all unused local volumes. Unused local volumes are those which are not referenced by any containers
+-   `$ `
 
 </details>
 
