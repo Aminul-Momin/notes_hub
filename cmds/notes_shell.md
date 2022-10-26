@@ -895,6 +895,8 @@ $(UNIX command) # command substitution: runs the command and returns standard ou
     -   file exists; same -a
 -   `-f File`
     -   file exists and is a regular file (i.e., not a directory or other special type of file)
+-   `-h File`
+    -   True if the File exist and a symbolic link
 -   `-r File`
     -   you have read permission
 -   `-s File`
@@ -903,6 +905,10 @@ $(UNIX command) # command substitution: runs the command and returns standard ou
     -   your have write permission
 -   `-x File`
     -   you have execute permission on file, or directory search permission if it is a directory
+-   `-n var`
+    -   True is the length of the var is greater than zero
+-   `-z var`
+    -   True if the var is empty
 -   `-N File`
     -   file was modified since it was last read
 -   `-O File`

@@ -23,13 +23,13 @@
 -   `$ docker --version`
 -   `$ docker version`
 -   `$ docker-compose --version`
+<details>
+<summary style="font-size:25px;color:Orange;text-align:left">docker</summary>
 
-## docker:
+-   [docker](https://docs.docker.com/engine/reference/commandline/docker/) | [Use the Docker command line](https://docs.docker.com/engine/reference/commandline/cli/)
 
--   [docker](https://docs.docker.com/engine/reference/commandline/docker/):
--   [Use the Docker command line](https://docs.docker.com/engine/reference/commandline/cli/)
-
--   [$ docker run](https://docs.docker.com/engine/reference/commandline/run/): `docker run [OPTIONS] IMAGE [COMMAND] [ARG...]`
+-   [docker run](https://docs.docker.com/engine/reference/commandline/run/)
+-   `docker run [OPTIONS] IMAGE [COMMAND] [ARG...]`
 
     -   `$ docker run -d --name=name_your_container <image_name>`
 
@@ -56,7 +56,7 @@
         -   `$ docker run python:3.7`
 
     -   `Run - PORT Mapping`:
-        -   `$ docker run -it 80: 5000 dockerized_flask_app/app`
+        -   `$ docker run -it 80:5000 dockerized_flask_app/app`
 
     ![docker_port_mapping](../assets/docker_port_mapping.png)
 
@@ -66,9 +66,9 @@
         -   `$ docker stop mysql`
         -   `$ docker rm mysql`
 
-        -   `$ docker rm -v /dir_out_container:/dir_in_container mysql`
+        -   `$ docker run -v /dir_out_container:/dir_in_container mysql`
             -   `/dir_out_container:/dir_in_container` mount a diractory outside of container into a diractory inside of container
-        -   `$ docker rm -v /opt/datadir:/var/lib/mysql mysql`
+        -   `$ docker run -v /opt/datadir:/var/lib/mysql mysql`
         -
 
     -   `Inspect a Container`:
@@ -79,7 +79,9 @@
     -   `Container Logs`:
 
         -   `$ docker logs <container_name | container_id>`
-            -   Show the logs of a container ran in gackgroun (detach mode).
+            -   Show the logs of a container ran in backgroun (detach mode).
+        -   `$ docker logs -f <container_name | container_id>`
+            -   Show the logs of a container ran in backgroun (detach mode) with `-f` (--follow) following log output.
 
     -   `Environment Variables`:
 
@@ -156,24 +158,59 @@
 
 -   [$ docker exec](https://docs.docker.com/engine/reference/commandline/exec/): `docker exec [OPTIONS] CONTAINER COMMAND [ARG...]`
 
-    -   `$ docker exec`
-
-        -   Usage: `$ docker exec -it <container_id | container_name> bash`
+    -   `$ docker exec -it <container_id | container_name> bash`
         -   This command is used to access the running container
 
 -   [$ docker image](): ``
 
+    -   `docker images`
+        -   List our images
+    -   `$ docker image tag image_name new_image_name`
+        -   Take the backup of image_name by new name `new_image_name`
+
 -   [$ docker build](https://docs.docker.com/engine/reference/commandline/build/): `docker build [OPTIONS] PATH | URL | -`
 
--   `$ docker build`
+    -   `$ docker build -t my_image .`
+        -   passing the -t flag to “tag” the new image with a name, which in this case will be my_image. The `.` indicates that the Dockerfile is in the current directory, along with so-called “context” — that is, the rest of the files that may be in that location
 
-    -   Usage: docker build <path to docker file>
-    -   This command is used to build an image from a specified docker file
+-   `$ docker pull image_name` - Just pull the image from docker registry but don't run it.
 
--   `$ docker pull image_name`
-    -   Just pull the image from docker registry but don't run it.
+-   `$ docker cp . volume_name:folder_name`
+    -   Copy content of current directory in the `folder_name` of `volume_name`.
+
+<details>
+<summary style="font-size:25px;color:Orange;text-align:left">docker network</summary>
+- [docker network](https://docs.docker.com/engine/reference/commandline/network/)
+- `$ docker network COMMAND`
+- `$ docker network create [OPTIONS] NETWORK`
+- `$ docker network ls [OPTIONS]`
+- `$ docker network inspect [OPTIONS] NETWORK [NETWORK...]`
+- `$ docker network rm NETWORK [NETWORK...]`
+- `$ docker network prune [OPTIONS]`
+    - Remove all unused networks. Unused networks are those which are not referenced by any containers.
+- `$ `
+
+</details>
+
+<details>
+<summary style="font-size:25px;color:Orange;text-align:left">docker volume</summary>
+- `$ docker volume create [OPTIONS] [VOLUME]`
+- `$ docker volume create [OPTIONS] [VOLUME]`
+- `$ docker volume ls [OPTIONS]`
+- `$ docker volume inspect [OPTIONS] VOLUME [VOLUME...]`
+- `$ docker volume rm [OPTIONS] VOLUME [VOLUME...]`
+- `$ docker volume prune [OPTIONS]`
+    - Remove all unused local volumes. Unused local volumes are those which are not referenced by any containers
+- `$ `
+
+</details>
+
+</details>
 
 ---
+
+<details>
+<summary style="font-size:25px;color:Orange;text-align:left">docker-compose</summary>
 
 ## Docker Compose:
 
@@ -185,7 +222,7 @@
 
 -   [Compose CLI environment variables](https://docs.docker.com/compose/reference/envvars/)
 
--   `$ docker-compose up`
+-   `$ docker-compose up -d`
 -   `$ docker-compose up --build`
 -   `$ docker-compose `
 -   `$ docker-compose `
@@ -195,9 +232,12 @@
 
 ### [$ ](): ``
 
----
+## </details>
 
 ---
+
+<details>
+<summary style="font-size:25px;color:Orange;text-align:left">Miscellaneous</summary>
 
 ## Rough:
 
@@ -288,3 +328,5 @@
 -   cat sos_commands/process/ps_auxwww | awk '$8 ~ /D/'
 -   echo 1 > /proc/sys/kernel/sysrq
 -   echo w > /proc/sysrq-trigger
+
+</details>
