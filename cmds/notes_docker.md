@@ -10,19 +10,23 @@
 -   [Install using the repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
 -   [Install using the convenience script](https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script)
 
----
-
--   sudo systemctl status docker
+-   `$ sudo systemctl status docker`
 
     -   Check whether Docker is running or not in Linux machine.
-
----
-
-### How to check Vertion of Docker?
 
 -   `$ docker --version`
 -   `$ docker version`
 -   `$ docker-compose --version`
+
+<details>
+<summary style="font-size:25px;color:Orange;text-align:left">Terminology</summary>
+
+-   Context
+-   Build Stage
+-   Layer
+
+</details>
+
 <details>
 <summary style="font-size:25px;color:Orange;text-align:left">docker</summary>
 
@@ -330,5 +334,18 @@
 -   cat sos_commands/process/ps_auxwww | awk '$8 ~ /D/'
 -   echo 1 > /proc/sys/kernel/sysrq
 -   echo w > /proc/sysrq-trigger
+
+</details>
+
+<details>
+<summary style="font-size:25px;color:Orange;text-align:left">Dockerfile</summary>
+
+```Dockerfile
+ARG
+FROM
+ADD
+COPY
+CMD
+```
 
 </details>
