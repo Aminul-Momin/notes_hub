@@ -55,10 +55,13 @@
     -   Set current shell to /bin/bash on RHEL.
 -   `$ exec $SHELL -l`
     -   Reload your shell.
--   `$ cat /etc/redhat-release`
 -   `$ `
 
----
+### Important Directories in RHEL:
+
+-   `$ cat /etc/redhat-release`
+-   `$ cat /etc/passwd `
+-   ***
 
 ### [SSH: Usage, Options, Configuration](https://www.ssh.com/academy/ssh/command#ssh-client-configuration-file)
 
@@ -222,6 +225,12 @@
 
         -   makes the file_name executible.
 
+    -   `$ chmod 1755 findReslts.sh`
+        -   sets sticky bit, sets read, write, and execute permissions for owner, and sets read and execute permissions for group and others (this suggests that the script be retained in memory)
+    -   `$ chmod 4755 setCtrls.sh`
+        -   sets UID, sets read, write, and execute permissions for user, and sets read and execute permissions for Group and Others
+    -   `$ chmod 2755 setCtrls.sh`
+        -   sets GID, sets read, write, and execute permissions for user, and sets read and execute permissions for Group and Others
     -   🔥 `sudo chmod -R u+rwX,g-rwx,o-rx <file_or_dir_name>`
         -   Recursively adds (`+`) read (`r`), write (`w`), and special execution (`X`) permissions for user (`u`), and removes (`-`) read (`r`), write (`w`), and execution (`x`) permissions for Group (`g`), and removes (`-`) read (`r`) and execution (`x`) permissions for Others
 
@@ -269,6 +278,29 @@
     -
 
 ---
+
+### Manging Users & Groups
+
+-   `$ useradd [OPTIONS] USERNAME`
+-   `$ sudo useradd username`
+-   `$ sudo passwd username` # To be able to log in as the newly created user, you need to set the user password.
+
+```bash
+sudo useradd \
+    -m \                                     # to create the user home directory as /home/username
+    -d /path/username \                      # If you want to create the user’s home directory in other location
+    -u 1500 \                                # to create a user with a specific UID. (verify: `id -u username`)
+    -g group_name \                          # set the login group to (Verify: `id -gn username`)
+    -G wheel,developers \                    # You to specify a list of supplementary groups which the user will be a member of
+    -s /usr/bin/bash \                       # allows you to specify the new user’s login shell. (verify: `grep username /etc/passwd`)
+    -c "Test User Account" \                 # option allows you to add a short description for the new user. Typically the user’s full name or the contact information are added as a comment.
+    username
+```
+
+-   `$ useradd -D` # To view the current default options for `useradd` (`/etc/default/useradd`)
+
+-   `$ `
+-   `$ `
 
 ### SHORTCUTS and HISTORY
 

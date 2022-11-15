@@ -1,6 +1,7 @@
 -   [`docker-compose.ymal` by Airflow](https://airflow.apache.org/docs/apache-airflow/stable/docker-compose.yaml)
 -   [Default Airflow Config File](https://github.com/apache/airflow/blob/main/airflow/config_templates/default_airflow.cfg)
 -   [Airflow Cheat Sheet](https://github.com/cherkavi/cheat-sheet/blob/master/airflow.md)
+-   [Airflow CLI Documentation](https://airflow.apache.org/docs/apache-airflow/stable/cli-and-env-variables-ref.html)
 
 ---
 
