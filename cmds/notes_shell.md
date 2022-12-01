@@ -47,114 +47,73 @@
 
 ### How to set default shell to bash.
 
--   `$ cat /etc/shells.`
-    -   List out available shells.
--   `$ chsh -s /bin/bash`
-    -   Change current Shell to bash shell on MacOS.
--   `$ usermod -s /bin/bash <username>`
-    -   Set current shell to /bin/bash on RHEL.
--   `$ exec $SHELL -l`
-    -   Reload your shell.
+-   `$ cat /etc/shells.`→ List out available shells.
+-   `$ chsh -s /bin/bash`→ Change current Shell to bash shell on MacOS.
+-   `$ usermod -s /bin/bash <username>`→ Set current shell to /bin/bash on RHEL.
+-   `$ exec $SHELL -l`→ Reload your shell.
 -   `$ `
 
 ### Important Directories in RHEL:
 
 -   `$ cat /etc/redhat-release`
 -   `$ cat /etc/passwd `
--   ***
+-   `$ cat /etc/sudoers`
+-   `$ cat /etc/hosts`
+-   `$ cat /etc/ssh/sshd_config` → SSH Clint Configuration File
+-   `$ cat /etc/services`
 
 ### [SSH: Usage, Options, Configuration](https://www.ssh.com/academy/ssh/command#ssh-client-configuration-file)
 
--   What is SSH?
-
-    -   SSH, also known as Secure Shell or Secure Socket Shell, is a network protocol that gives users, particularly system administrators, a secure way to access a computer over an unsecured network.
-
--   SSH Clint Configuration File:
-
-    -   `/etc/shh/sshd_config`
-
 -   [SSH Agent Explained](https://smallstep.com/blog/ssh-agent-explained/)
+-   [Understanding the Difference Between ssh and sshd](https://www.secur.cc/what-is-the-difference-between-ssh-and-sshd/#:~:text=The%20main%20difference%20is%20that,server%20using%20the%20users%20credentials.)
+
+-   SSH (Secure Shell or Secure Socket Shell): SSH is a network protocol that gives users, particularly system administrators, a secure way to access a computer over an unsecured network.
+-   SSH Agent:
+-   SSH Clint:
 
 -   **ssh-keygen:**
 
-    -   `$ ssh-keygen -t rsa -f ~/.ssh/[KEY_FILENAME] -C [USERNAME]`
+    -   `$ ssh-keygen -t rsa -f ~/.ssh/<KEY_FILENAME> -C [USERNAME]` → Generate a rsa key with file-name `KEY_FILENAME` and username `USERNAME`.
+    -   `$ ssh-keygen -t rsa -f ~/.ssh/<KEY_FILENAME> -P passphrase` → Example 1: `$ ssh-keygen -f ~/.ssh/file_name -t rsa -P ""`
 
-        -   Generate a rsa key with file-name `KEY_FILENAME` and username `USERNAME`.
+-   **ssh-add:**
 
-    -   `$ ssh-keygen -t rsa -f ~/.ssh/[KEY_FILENAME] -P passphrase`
+    -   `$ ssh-add ~/.ssh/id_rsa` → In order not to have prompted passphrase at login, cache the passphrase into 'ssh-agent' if you generate a key with passphrase.
+    -   `alias sshadd='eval $(ssh-agent) && ssh-add'` → Create alias to cache passphrase since `ssh-add` is temporary for a shell session.
+    -   `$ ssh-add -K ~/.ssh/id_rsa` → Add your SSH private key to the ssh-agent and store your passphrase in the keychain. The -K option is Apple's standard version of ssh-add, which stores the passphrase in your keychain for you when you add an ssh key to the ssh-agent. If you chose not to add a passphrase to your key, run the command without the -K option.
+    -   `$ cat ~/.ssh/file_name.pub >> ~/.ssh/authorized_keys`
+    -   `$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys`
+    -   `$ pbcopy < ~/.ssh/id_rsa.pub` → Copies the contents of the id_rsa.pub file to your clipboard in MacOS
 
-        -   Example 1: `$ ssh-keygen -f ~/.ssh/file_name -t rsa -P ""`
+    **ssh:**
 
-        -   Example 2: `$ ssh-keygen -f ~/.ssh/id_rsa -t rsa -P ""`
-
-        -   Example 3: `$ ssh-keygen -t rsa -f ~/.ssh/gcp-hdp-nds -C bbcredcap3 -P ""` $$
-
-        -
+    -   `$ ssh user@host` → Connects to host as user
+    -   `$ ssh -i .ssh/local_login_key.pub shah@10.0.0.4`
+    -   `$ ssh shah@am2.local`
+    -   `$ ssh farzana@am2.local`
+    -   `$ ssh datanode1 'cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub`
 
 -   **scp:**
 
-    -   `$ scp file.txt username@to_host:/remote/directory/`
+    -   `$ scp -r /local/directory/ username@to_host:/remote/directory/` → Copy directory from local host to a remote hos SCP example
+    -   `$ scp file.txt username@to_host:/remote/directory/` → Copy file from local host to a remote host
 
-        -   Copy file from local host to a remote host
+-   **ssh-copy-id:**
 
-    -   `$ scp -r /local/directory/ username@to_host:/remote/directory/`
+    -   `$ ssh-copy-id user@host` → Adds your ssh key to host for user to enable a keyed or passwordless login
+        -   `$ ssh-copy-id shah@10.0.0.4`
+        -   `$ ssh-copy-id shah@am2.local`
 
-        -   Copy directory from local host to a remote hos SCP example
+---
 
-    -   `$ scp -r ~/opt/anaconda3/envs/bulldozers ds:~/opt/conda/envs/`
+### rsync
 
-        -   Copy directory from local host to a remote hos SCP example
-
-    -   `$ scp ~/.ssh/key_file.pem shah@10.0.0.4:~/.ssh`
-
-        -
-
-    -   ## `$ scp ~/.ssh/key_file.pem namenode:~/.ssh`
-
--   `$ ssh user@host`
-
-    -   connects to host as user
-
-    -   `$ ssh shah@am2.local`
-    -   `$ ssh farzana@am2.local`
-
--   `$ ssh -p <port> user@host`
-
-    -   connects to host on specified port as user
-
--   `$ ssh-copy-id user@host`
-
-    -   adds your ssh key to host for user to enable a keyed or passwordless login
-    -   `$ ssh-copy-id root@server.######.com`
-    -   `$ ssh-copy-id shah@10.0.0.4`
-    -   `$ ssh-copy-id shah@am2.local`
-
--   `$ ssh -i .ssh/local_login_key.pub shah@10.0.0.4`
-
-    -
-
--   `$ ssh-add -K ~/.ssh/id_rsa`
-
-    -   Add your SSH private key to the ssh-agent and store your passphrase in the keychain. The -K option is Apple's standard version of ssh-add, which stores the passphrase in your keychain for you when you add an ssh key to the ssh-agent. If you chose not to add a passphrase to your key, run the command without the -K option.
-
--   `$ ssh datanode1 'cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub`
-
-    -
-
--   `$ pbcopy < ~/.ssh/id_rsa.pub`
-
-    -   Copies the contents of the id_rsa.pub file to your clipboard in MacOS
-
--   `$ cat ~/.ssh/file_name.pub >> ~/.ssh/authorized_keys`
-
-    -
-
--   `$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys`
-
-    -
-
--   🔥 `$ su Farzana --login`
-    -   Log into a user Farzana's profile.
+```bash
+rsync -avz \                        # run in archival and vervose mode
+    --rsh="ssh -i ~/.ssh/id_rsa" \  # make sure id_rsa file generated and coppied id_rsa.pub into remote server
+    user@remote_server:/src_path \
+    target_path
+```
 
 ---
 
@@ -162,48 +121,23 @@
 
 -   **wget:**
 
-    -   🔥 `wget -P ~/Data http://file-to-download.csv`
-
-        -   $→$ download `file-to-download.csv `into `~/Data` directory ( '`-P` to prefix directory path)
-
-    -   `wget -O my-file.csv ~/Data http://file-to-download.csv`
-
-        -   $→$ download 'file-to-download.csv' and save it as 'my-file.csv' instead of 'file-to-download.csv' into '~/Data'. (`-O` indicates Output)
-
-    -   `wget --directory-prefix=~/Data --output-document=my-file.csv http://file-to-download.csv`
-        -   $→$
+    -   🔥 `$ wget -P ~/Data http://file-to-download.csv` → download `file-to-download.csv `into `~/Data` directory ( '`-P` to prefix directory path)
+    -   `$ wget -O my-file.csv ~/Data http://file-to-download.csv` → download 'file-to-download.csv' and save it as 'my-file.csv' instead of 'file-to-download.csv' into '~/Data'. (`-O` indicates Output)
+    -   `$ wget --directory-prefix=~/Data --output-document=my-file.csv http://file-to-download.csv` →
 
 -   [curl](https://www.hostinger.com/tutorials/curl-command-with-examples-linux/)
-
 -   [tar](https://linuxhint.com/linux-tar-command/)
 
-    -   `tar xvf ~/Data/file-to-untar.tar -C ~/Download`
-
-        -   $→$ Untar file-to-untar.tar and save it into '~/Download' directory
-
-    -   `tar --list -f tar_file_name.tar.gz`
-        -   $→$
+    -   `$ tar xvf ~/Data/file-to-untar.tar -C ~/Download` → Untar file-to-untar.tar and save it into '~/Download' directory
+    -   `$ tar --list -f tar_file_name.tar.gz` →
 
 -   [zip/unzip](https://www.hostinger.com/tutorials/how-to-unzip-files-linux/)
 
-    -   `unzip ~/Data/filename.zip -d ~/Data`
-
-        -   $→$ To unzip a ZIP file to a different directory than the current one, use the -d switch
-
-    -   `unzip -l *.whl`
-
-        -   $→$
-
-    -   `$ gzip <filename>`
-
-        -   compresses files using gzip algorithm
-
-    -   `$ gunzip <filename>`
-
-        -   uncompresses files compressed by gzip
-
-    -   `$ gzcat <filename>`
-        -   lets you look at gzipped file without actually having to gunzip it
+    -   `$ unzip ~/Data/filename.zip -d ~/Data` → To unzip a ZIP file to a different directory than the current one, use the -d switch
+    -   `$ unzip -l *.whl` →
+    -   `$ gzip <filename>` → Compresses files using gzip algorithm
+    -   `$ gunzip <filename>` → Uncompresses files compressed by gzip
+    -   `$ gzcat <filename>` → Lets you look at gzipped file without actually having to gunzip it
 
 ---
 
@@ -281,19 +215,22 @@
 
 ### Manging Users & Groups
 
+-   `$ su user_name` → Switch/set/substitute user into the given user_name.
+-   `$ su Farzana --login` → Log into a user Farzana's profile.
+-   `$ sudo su -` → How to become sudo user in RHEL.
 -   `$ useradd [OPTIONS] USERNAME`
 -   `$ sudo useradd username`
--   `$ sudo passwd username` # To be able to log in as the newly created user, you need to set the user password.
+-   `$ sudo passwd username` → To be able to log in as the newly created user, you need to set the user password.
 
 ```bash
 sudo useradd \
-    -m \                                     # to create the user home directory as /home/username
-    -d /path/username \                      # If you want to create the user’s home directory in other location
-    -u 1500 \                                # to create a user with a specific UID. (verify: `id -u username`)
-    -g group_name \                          # set the login group to (Verify: `id -gn username`)
-    -G wheel,developers \                    # You to specify a list of supplementary groups which the user will be a member of
-    -s /usr/bin/bash \                       # allows you to specify the new user’s login shell. (verify: `grep username /etc/passwd`)
-    -c "Test User Account" \                 # option allows you to add a short description for the new user. Typically the user’s full name or the contact information are added as a comment.
+    -m \                        # to create the user home directory as /home/username
+    -d /path/username \         # If you want to create the user’s home directory in other location
+    -u 1500 \                   # to create a user with a specific UID. (verify: `id -u username`)
+    -g group_name \             # set the login group to (Verify: `id -gn username`)
+    -G wheel,developers \       # You to specify a list of supplementary groups which the user will be a member of
+    -s /usr/bin/bash \          # allows you to specify the new user’s login shell. (verify: `grep username /etc/passwd`)
+    -c "Test User Account" \    # option allows you to add a short description for the new user. Typically the user’s full name or the contact information are added as a comment.
     username
 ```
 
@@ -302,283 +239,242 @@ sudo useradd \
 -   `$ `
 -   `$ `
 
+### Netowrking
+
+-   What the hell are a TCP and UDP ports?
+
+    -   A port is nothing but a 16-bit number between 0 to 65535.
+    -   For example, TCP port number 22 may be forwarded to the OpenSSH server. Therefore, 22 port number is a way to identify the sshd (OpenSSH server) process.
+
+-   Port numbers
+    -   The Well Known Ports are those from 0 through 1023.
+    -   The Registered Ports are those from 1024 through 49151.
+    -   The Dynamic and Private Ports are those from 49152 through 65535.
+-   A registered port is a network port assigned by the Internet Assigned Numbers Authority (IANA) and stored in `/etc/services` file.
+
+---
+
+### Systemd and Service Management
+
+<details>
+
+<summary style="font-size:15px;color:red;">Terminology</summary>
+
+-   **Systemd:**
+
+    systemd is a software suite that provides an array of system components for Linux[6] operating systems. Its main aim is to unify service configuration and behavior across Linux distributions;[7] Its primary component is a "system and service manager"—an init system used to bootstrap user space and manage user processes. It also provides replacements for various daemons and utilities, including device management, login management, network connection management, and event logging.
+
+-   **Core components and libraries**
+
+    Following its integrated approach, systemd also provides replacements for various daemons and utilities, including the startup shell scripts, pm-utils, inetd, acpid, syslog, watchdog, cron and atd. systemd's core components include the following:
+
+    -   `systemd` is a system and service manager for Linux operating systems.
+    -   `systemctl` is a command to introspect and control the state of the systemd system and service manager. Not to be confused with sysctl.
+    -   `systemd-analyze` may be used to determine system boot-up performance statistics and retrieve other state and tracing information from the system and service manager.
+
+    Beside its primary purpose of providing a Linux init system, the systemd suite can provide additional functionality, including the following components:
+
+    -   `journald`
+        `systemd-journald` is a daemon responsible for event logging, with append-only binary files serving as its logfiles. The system administrator may choose whether to log system events with systemd-journald, syslog-ng or rsyslog. The potential for corruption of the binary format has led to much heated debate.
+        Journalctl is a utility for querying and displaying logs from journald, systemd’s logging service. Since journald stores log data in a binary format instead of a plaintext format, journalctl is the standard way of reading log messages processed by journald.
+
+-   **Configuration of systemd**
+
+        systemd records initialization instructions for each daemon in a configuration file (referred to as a "unit file") that uses a declarative language, replacing the traditionally used per-daemon startup shell scripts. The syntax of the language is inspired by .ini files.
+        Unit-file types include:
+
+        .service
+        .socket
+        .device (automatically initiated by systemd)
+        .mount
+        .automount
+        .swap
+        .target
+        .path
+        .timer (which can be used as a cron-like job scheduler)
+        .snapshot
+        .slice (used to group and manage processes and resources)
+        .scope (used to group worker processes, isn't intended to be configured via unit files[69])
+
+</details
+
+**systemctl**
+
+-   [How to Use Systemctl Utility in Linux](https://linuxhint.com/systemctl-utility-linux/)
+-   `$ sudo systemctl list-units`
+-   `$ sudo systemctl list-units --type=service`
+-   `$ sudo systemctl list-units –state=inactive`
+-   `$ sudo systemctl cat docker` → show the contents of the Docker unit
+-   `$ sudo systemctl edit docker` → The command will launch the nano text editor, allowing you to edit the unit file specified.
+-   `$ `
+-   `$ `
+-   `$ sudo systemctl status sshd`
+-   `$ sudo systemctl start nginx`
+-   `$ sudo systemctl stop nginx`
+-   `$ sudo systemctl reload nginx` → Reloading a service works by stopping the worker processes, apply configuration changes and restart the worker processes. That does not shut down the actual service itself.
+-   `$ sudo systemctl restart nginx` → restarting will shut down the service and the worker processes and restart them.
+-   `$ sudo systemctl enable nginx`
+-   `$ sudo systemctl enable nginx --now`
+-   `$ sudo systemctl disable sshd`
+-   `$ `
+-   `$ `
+
+**journalctl**
+
+-   [Using journalctl](https://www.loggly.com/ultimate-guide/using-journalctl/)
+
+-   `$ `
+-   `$ journalctl --since "1 hour ago"`
+-   `$ journalctl --since "2015-06-26 23:15:00" --until "2015-06-26 23:20:00"`
+-   `$ journalctl -u nginx.service`
+-   `$ journalctl -u mysql.service -f` → “follows” the mysql service log.
+-   `$ journalctl -u apache2.service -r -o json-pretty` → The -o parameter enables us to format the output of journalctl query.
+-   `$ `
+-   `$ `
+
+---
+
 ### SHORTCUTS and HISTORY
 
--   🔥 `$ CTRL+A`
-    -   move to beginning of line
--   `$ CTRL+B`
-    -   moves backward one character
--   `$ CTRL+C`
-    -   halts the current command
--   `$ CTRL+D`
-    -   deletes one character backward or logs out of current session, similar to exit
--   🔥 `$ CTRL+E`
-    -   moves to end of line
--   `$ CTRL+F`
-    -   moves forward one character
--   `$ CTRL+G`
-    -   aborts the current editing command and ring the terminal bell
--   `$ CTRL+H`
-    -   deletes one character under cursor (same as DELETE)
--   `$ CTRL+J`
-    -   same as RETURN
--   `$ CTRL+K`
-    -   deletes (kill) forward to end of line
--   `$ CTRL+L`
-    -   clears screen and redisplay the line
--   `$ CTRL+M`
-    -   same as RETURN
--   `$ CTRL+N`
-    -   next line in command history
--   `$ CTRL+O`
-    -   same as RETURN, then displays next line in history file
--   `$ CTRL+P`
-    -   previous line in command history
--   `$ CTRL+R`
-    -   searches backward
--   `$ CTRL+S`
-    -   searches forward
--   `$ CTRL+T`
-    -   transposes two characters
--   `$ CTRL+U`
-    -   kills backward from point to the beginning of line
--   `$ CTRL+V`
-    -   makes the next character typed verbatim
--   `$ CTRL+W`
-    -   kills the word behind the cursor
--   `$ CTRL+X`
-    -   lists the possible filename completions of the current word
--   `$ CTRL+Y`
-    -   retrieves (yank) last item killed
--   `$ CTRL+Z`
-
-    -   stops the current command, resume with fg in the foreground or bg in the background
-
--   🔥 `$ ALT+B`
-    -   moves backward one word
--   🔥 `$ ALT+D`
-    -   deletes next word
--   🔥 `$ ALT+F`
-    -   moves forward one word
--   `$ ALT+H`
-
-    -   deletes one character backward
-
--   `$ BACKSPACE`
-    -   deletes one character backward
--   `$ DELETE`
-
-    -   deletes one character under cursor
-
--   🔥 `$ history`
-    -   shows command line history
--   🔥 `$ !!`
-    -   repeats the last command
--   🔥 `$ !<n>`
-    -   refers to command line 'n'
--   🔥 `$ !<string>`
-
-    -   refers to command starting with 'string'
-
--   `$ exit`
-    -   logs out of current shell session
+-   🔥 `$ CTRL+A` → Move to beginning of line
+-   🔥 `$ CTRL+E` → Moves to end of line
+-   🔥 `$ ALT+B` → Moves backward one word
+-   🔥 `$ ALT+D` → Deletes next word
+-   🔥 `$ ALT+F` → Moves forward one word
+-   🔥 `$ history` → Shows command line history
+-   🔥 `$ !!` → Repeats the last command
+-   🔥 `$ !<n>` → Refers to command line 'n'
+-   🔥 `$ !<string>` → Refers to command starting with 'string'
+-   `$ CTRL+B` → Moves backward one character
+-   `$ CTRL+C` → Halts the current command
+-   `$ CTRL+D` → Deletes one character backward or logs out of current session, similar to exit
+-   `$ CTRL+F` → Moves forward one character
+-   `$ CTRL+G` → Aborts the current editing command and ring the terminal bell
+-   `$ CTRL+H` → Deletes one character under cursor (same as DELETE)
+-   `$ CTRL+J` → Same as RETURN
+-   `$ CTRL+K` → Deletes (kill) forward to end of line
+-   `$ CTRL+L` → Clears screen and redisplay the line
+-   `$ CTRL+M` → Same as RETURN
+-   `$ CTRL+N` → Next line in command history
+-   `$ CTRL+O` → Same as RETURN, then displays next line in history file
+-   `$ CTRL+P` → Previous line in command history
+-   `$ CTRL+R` → Searches backward
+-   `$ CTRL+S` → Searches forward
+-   `$ CTRL+T` → Transposes two characters
+-   `$ CTRL+U` → Kills backward from point to the beginning of line
+-   `$ CTRL+V` → Makes the next character typed verbatim
+-   `$ CTRL+W` → Kills the word behind the cursor
+-   `$ CTRL+X` → Lists the possible filename completions of the current word
+-   `$ CTRL+Y` → Retrieves (yank) last item killed
+-   `$ CTRL+Z` → Stops the current command, resume with fg in the foreground or bg in the background
+-   `$ ALT+H` → Deletes one character backward
+-   `$ BACKSPACE` → Deletes one character backward
+-   `$ DELETE` → Deletes one character under cursor
+-   `$ exit` → Logs out of current shell session
 
 ---
 
 ### BASH BASICS
 
--   `$ env`
-    -   displays all environment variables
--   `$ echo $SHELL`
-    -   displays the shell you're using
--   `$ echo $BASH_VERSION`
-    -   displays bash version
--   `$ unset VARIABLE_NAME`
-
-    -   Unset the given variabel - 'VARIABLE_NAME'
-
--   `$ bash`
-    -   if you want to use bash (type exit to go back to your previously opened shell)
--   `$ whereis bash`
-    -   locates the binary, source and manual-page for a command
--   `$ which bash`
-    -   finds out which program is executed as 'bash' (default: /bin/bash, can change across environments)
--   `$ whoami`
-    -   returns your username
--   `$ passwd`
-
-    -   lets you change your password
-
--   `$ clear`
-
-    -   clears content on window (hide displayed lines)
-
--   `$ su user_name`
-    -   switch/set/substitute user into the given user_name.
+-   `$ env` → Displays all environment variables
+-   `$ echo $SHELL` → Displays the shell you're using
+-   `$ echo $BASH_VERSION` → Displays bash version
+-   `$ unset VARIABLE_NAME` → Unset the given variabel - 'VARIABLE_NAME'
+-   `$ bash` → If you want to use bash (type exit to go back to your previously opened shell)
+-   `$ whereis bash` → Locates the binary, source and manual-page for a command
+-   `$ which bash` → Finds out which program is executed as 'bash' (default: /bin/bash, can change across environments)
+-   `$ whoami` → Returns your username
+-   `$ passwd` → Lets you change your password
+-   `$ clear` → Clears content on window (hide displayed lines)
 
 ---
 
 ### SYSTEM INFO & NETWORK COMMANDS
 
 -   [34 Basic Linux Commands Every User Should Know](https://www.hostinger.com/tutorials/linux-commands)
-
--   `$ quota -v`
-    -   shows what your disk quota is
--   `$ date`
-    -   shows the current date and time
--   `$ cal`
-    -   shows the month's calendar
--   `$ uptime`
-    -   shows current uptime
--   `$ w`
-    -   displays who are online and what they are doing
--   `$ finger <user>`
-    -   displays information about user
--   `$ uname -a`
-    -   shows kernel information
--   `$ man <command>`
-    -   shows the manual for specified command
--   `$ df`
-
-    -   shows disk usage
-    -   Use df command to get a report on the system’s disk space usage, shown in percentage and KBs. If you want to see the report in megabytes, type df -m
-
--   `$ du <filename>`
-
-    -   shows the disk usage of the files and directories in filename (du -s give only a total)
-
--   `$ cat /proc/meminfo`
-
-    -   to Check Memory Use in Linux
-
--   `$ last <yourUsername>`
-
-    -   lists your last logins
-
--   `$ ps -u yourusername`
-
-    -   lists your processes
-
--   `$ kill <PID>`
-
-    -   kills the processes with the ID you gave
-
--   `$ killall <processname>`
-
-    -   kill all processes with the name
-
--   `$ top`
-
-    -   displays your currently active processes
-
--   `$ htop`
-
-    -   to Find Memory Load of Each Process
-
--   `$ lsof`
-
-    -   lists open files
-
--   `$ bg`
-
-    -   lists stopped or background jobs ; resume a stopped job in the background
-
--   `$ fg`
-
-    -   brings the most recent job in the foreground
-
--   `$ fg <job>`
-
-    -   brings job to the foreground
-
--   `$ ping <host>`
-
-    -   pings host and outputs results
-
--   `$ whois <domain>`
-
-    -   gets whois information for domain
-
--   `$ dig <domain>`
-
-    -   gets DNS information for domain
-
--   `$ dig -x <host>`
-
-    -   reverses lookup host
-
--   `$ id`
-    -   get information of the user (user id)
-    -   Output Example: uid=501(a.momin) gid=20(staff) groups=20(staff),12(everyone),61(localaccounts),79(\_appserverusr),80(admin),81(\_appserveradm),98(\_lpadmin),701(com.apple.sharepoint.group.1),702(com.apple.sharepoint.group.2),33(\_appstore),100(\_lpoperator),204(\_developer),250(\_analyticsusers),395(com.apple.access_ftp),398(com.apple.access_screensharing),399(com.apple.access_ssh-disabled),400(com.apple.access_remote_ae)
+-   `$ quota -v` → shows what your disk quota is
+-   `$ date` → shows the current date and time
+-   `$ cal` → shows the month's calendar
+-   `$ uptime` → shows current uptime
+-   `$ w` → displays who are online and what they are doing
+-   `$ finger <user>` → displays information about user
+-   `$ uname -a` → shows kernel information
+-   `$ man <command>` → shows the manual for specified command
+-   `$ df` → shows disk usage → Use df command to get a report on the system’s disk space usage, shown in percentage and KBs. If you want to see the report in megabytes, type `df -m`
+-   `$ du <filename>` → shows the disk usage of the files and directories in filename (du -s give only a total)
+-   `$ cat /proc/meminfo` → to Check Memory Use in Linux
+-   `$ last <yourUsername>` → lists your last logins
+-   `$ ps -u yourusername` → lists your processes
+-   `$ kill <PID>` → kills the processes with the ID you gave
+-   `$ killall <processname>` → kill all processes with the name
+-   `$ top` → displays your currently active processes
+-   `$ htop` → to Find Memory Load of Each Process
+-   `$ lsof` → lists open files
+-   `$ bg` → lists stopped or background jobs ; resume a stopped job in the background
+-   `$ fg` → brings the most recent job in the foreground
+-   `$ fg <job>` → brings job to the foreground
+-   `$ ping <host>` → pings host and outputs results
+-   `$ whois <domain>` → gets whois information for domain
+-   `$ dig <domain>` → gets DNS information for domain
+-   `$ dig -x <host>` → reverses lookup host
+-   `$ id` → get information of the user (user id)
+    → Output Example: uid=501(a.momin) gid=20(staff) groups=20(staff),12(everyone),61(localaccounts),79(\_appserverusr),80(admin),81(\_appserveradm),98(\_lpadmin),701(com.apple.sharepoint.group.1),702(com.apple.sharepoint.group.2),33(\_appstore),100(\_lpoperator),204(\_developer),250(\_analyticsusers),395(com.apple.access_ftp),398(com.apple.access_screensharing),399(com.apple.access_ssh-disabled),400(com.apple.access_remote_ae)
 
 ---
 
 ### FILE COMMANDS
 
-| Bash Commands                                   | What it Does                                                                                                                                                       |
-| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `$ ls`                                          | lists your files in current directory, `ls <dir>` to print files in a specific directory                                                                           |
-| `$ ls -l`                                       | lists your files in 'long format', which contains the exact size of the file, who owns the file and who has the right to look at it, and when it was last modified |
-| `$ ls -a`                                       | lists all files in 'long format', including hidden files (name beginning with '.')                                                                                 |
-| `$ ln -s <filename> <link>`                     | creates symbolic link to file                                                                                                                                      |
-| `$ touch <filename>`                            | creates or updates (edit) your file                                                                                                                                |
-| `$ cat <filename>`                              | prints file raw content (will not be interpreted)                                                                                                                  |
-| `$ any_command > <filename>`                    | '>' is used to perform redirections, it will set any_command's stdout to file instead of "real stdout" (generally /dev/stdout)                                     |
-| `$ more <filename>`                             | shows the first part of a file (move with space and type q to quit)                                                                                                |
-| `$ head <filename>`                             | outputs the first lines of file (default: 10 lines)                                                                                                                |
-| `$ tail <filename>`                             | outputs the last lines of file (useful with -f option) (default: 10 lines)                                                                                         |
-| `$ vim <filename>`                              | opens a file in VIM (VI iMproved) text editor, will create it if it doesn't exist                                                                                  |
-| `$ mv <filename1> <dest>`                       | moves a file to destination, behavior will change based on 'dest' type (dir: file is placed into dir; file: file will replace dest (tip: useful for renaming))     |
-| `$ cp <filename1> <dest>`                       | copies a file                                                                                                                                                      |
-| `$ rm <filename>`                               | removes a file                                                                                                                                                     |
-| `$ rm -fr ~/Desktop/{valid,test,train,flower*}` | Remove valid, test, train, and flower\* directories from ~/Desktop directory                                                                                       |
-| `$ find . -name <name> <type>`                  | searches for a file or a directory in the current directory and all its sub-directories by its name                                                                |
-| `$ diff <filename1> <filename2>`                | compares files, and shows where they differ                                                                                                                        |
-| `$ wc <filename>`                               | tells you how many lines, words and characters there are in a file. Use -lwc (lines, word, character) to ouput only 1 of those informations                        |
-| `$ sort <filename>`                             | sorts the contents of a text file line by line in alphabetical order, use -n for numeric sort and -r for reversing order.                                          |
-| `$ sort -t -k <filename>`                       | sorts the contents on specific sort key field starting from 1, using the field separator t.                                                                        |
-| `$ chmod -options <filename>`                   | lets you change the read, write, and execute permissions on your files (more infos: SUID, GUID)                                                                    |
-| `$ gzip <filename>`                             | compresses files using gzip algorithm                                                                                                                              |
-| `$ gunzip <filename>`                           | uncompresses files compressed by gzip                                                                                                                              |
-| `$ gzcat <filename>`                            | lets you look at gzipped file without actually having to gunzip it                                                                                                 |
-| `$ lpr <filename>`                              | prints the file                                                                                                                                                    |
-| `$ lpq`                                         | checks out the printer queue                                                                                                                                       |
-| `$ lprm <jobnumber>`                            | removes something from the printer queue                                                                                                                           |
-| `$ genscript`                                   | converts plain text files into postscript for printing and gives you some options for formatting                                                                   |
-| `$ dvips <filename>`                            | prints .dvi files (i.e. files produced by LaTeX)                                                                                                                   |
-| `$ grep <pattern> <filenames>`                  | looks for the string in the files                                                                                                                                  |
-| `$ grep -r <pattern> <dir>`                     | search recursively for pattern in directory                                                                                                                        |
-| `$ head -n file_name \| tail +n`                | Print nth line from file.                                                                                                                                          |
-| `$ head -y lines.txt \| tail +x`                | want to display all the lines from x to y. This includes the xth and yth lines.                                                                                    |
+| Bash Commands                       | What it Does                                                                                                                                                       |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `$ ls`                              | lists your files in current directory, `ls <dir>` to print files in a specific directory                                                                           |
+| `$ ls -l`                           | lists your files in 'long format', which contains the exact size of the file, who owns the file and who has the right to look at it, and when it was last modified |
+| `$ ls -a`                           | lists all files in 'long format', including hidden files (name beginning with '.')                                                                                 |
+| `$ ln -s <filename> <link>`         | creates symbolic link to file                                                                                                                                      |
+| `$ touch <filename>`                | creates or updates (edit) your file                                                                                                                                |
+| `$ cat <filename>`                  | prints file raw content (will not be interpreted)                                                                                                                  |
+| `$ any_command > <filename>`        | '>' is used to perform redirections, it will set any_command's stdout to file instead of "real stdout" (generally /dev/stdout)                                     |
+| `$ more <filename>`                 | shows the first part of a file (move with space and type q to quit)                                                                                                |
+| `$ head <filename>`                 | outputs the first lines of file (default: 10 lines)                                                                                                                |
+| `$ tail <filename>`                 | outputs the last lines of file (useful with -f option) (default: 10 lines)                                                                                         |
+| `$ vim <filename>`                  | opens a file in VIM (VI iMproved) text editor, will create it if it doesn't exist                                                                                  |
+| `$ mv <filename1> <dest>`           | moves a file to destination, behavior will change based on 'dest' type (dir: file is placed into dir; file: file will replace dest (tip: useful for renaming))     |
+| `$ cp <filename1> <dest>`           | copies a file                                                                                                                                                      |
+| `$ rm <filename>`                   | removes a file                                                                                                                                                     |
+| `$ rm -fr ~/Desktop/{val,tst,tra*}` | Remove valid, test, train, and flower\* directories from ~/Desktop directory                                                                                       |
+| `$ find . -name <name> <type>`      | searches for a file or a directory in the current directory and all its sub-directories by its name                                                                |
+| `$ diff <filename1> <filename2>`    | compares files, and shows where they differ                                                                                                                        |
+| `$ wc <filename>`                   | tells you how many lines, words and characters there are in a file. Use -lwc (lines, word, character) to ouput only 1 of those informations                        |
+| `$ sort <filename>`                 | sorts the contents of a text file line by line in alphabetical order, use -n for numeric sort and -r for reversing order.                                          |
+| `$ sort -t -k <filename>`           | sorts the contents on specific sort key field starting from 1, using the field separator t.                                                                        |
+| `$ chmod -options <filename>`       | lets you change the read, write, and execute permissions on your files (more infos: SUID, GUID)                                                                    |
+| `$ gzip <filename>`                 | compresses files using gzip algorithm                                                                                                                              |
+| `$ gunzip <filename>`               | uncompresses files compressed by gzip                                                                                                                              |
+| `$ gzcat <filename>`                | lets you look at gzipped file without actually having to gunzip it                                                                                                 |
+| `$ lpr <filename>`                  | prints the file                                                                                                                                                    |
+| `$ lpq`                             | checks out the printer queue                                                                                                                                       |
+| `$ lprm <jobnumber>`                | removes something from the printer queue                                                                                                                           |
+| `$ genscript`                       | converts plain text files into postscript for printing and gives you some options for formatting                                                                   |
+| `$ dvips <filename>`                | prints .dvi files (i.e. files produced by LaTeX)                                                                                                                   |
+| `$ grep <pattern> <filenames>`      | looks for the string in the files                                                                                                                                  |
+| `$ grep -r <pattern> <dir>`         | search recursively for pattern in directory                                                                                                                        |
+| `$ head -n file_name \| tail +n`    | Print nth line from file.                                                                                                                                          |
+| `$ head -y lines.txt \| tail +x`    | want to display all the lines from x to y. This includes the xth and yth lines.                                                                                    |
 
 ---
 
 ### DIRECTORY COMMANDS
 
--   `$ mkdir <dirname>`
-    -   $→$ makes a new directory
--   `$ rmdir <dirname>`
-    -   $→$ remove an empty directory
--   `$ rmdir -rf <dirname>`
-    -   $→$ remove a non-empty directory
--   `$ mv <dir1> <dir2>`
-    -   $→$ rename a directory from <dir1> to <dir2>
--   `$ cd <dirname>`
-    -   $→$ changes directory
--   `$ cp -r <dir1> <dir2>`
-    -   $→$ copy <dir1> into <dir2> including sub-directories
--   `$ pwd`
-    -   $→$ tells you where you currently are
--   `$ cd`
-    -   $→$ changes to home directory.
--   `$ cd ..`
-    -   $→$ changes to the parent directory.
--   `$ cd ~`
-    -   $→$ changes to home directory.
--   `$ cd -`
-    -   $→$ changes to previous directory.
-
----
+-   `$ mkdir <dirname>` → Makes a new directory
+-   `$ rmdir <dirname>` → Remove an empty directory
+-   `$ rmdir -rf <dirname>` → Remove a non-empty directory
+-   `$ mv <dir1> <dir2>` → Rename a directory from <dir1> to <dir2>
+-   `$ cd <dirname>` → Changes directory
+-   `$ cp -r <dir1> <dir2>` → Copy <dir1> into <dir2> including sub-directories
+-   `$ pwd` → Tells you where you currently are
+-   `$ cd` → Changes to home directory.
+-   `$ cd ..` → Changes to the parent directory.
+-   `$ cd ~` → Changes to home directory.
+-   `$ cd -` → Changes to previous directory.
 
 ---
 
@@ -628,89 +524,87 @@ There are three built-ins that you can use to override this order: `command`, `b
 
 ### PROCESS HANDLING
 
-        # To suspend a job, type CTRL+Z while it is running. You can also suspend a job with CTRL+Y.
-        # This is slightly different from CTRL+Z in that the process is only stopped when it attempts to read input from terminal.
-        # Of course, to interrupt a job, type CTRL+C.
+-   To suspend a job, type `CTRL+Z` while it is running. You can also suspend a job with `CTRL+Y`.
+-   This is slightly different from `CTRL+Z` in that the process is only stopped when it attempts to read input from terminal.
+-   Of course, to interrupt a job, type `CTRL+C`.
 
-        myCommand &  # runs job in the background and prompts back the shell
-
-        jobs         # lists all jobs (use with -l to see associated PID)
-
-        fg           # brings a background job into the foreground
-        fg %+        # brings most recently invoked background job
-        fg %-        # brings second most recently invoked background job
-        fg %N        # brings job number N
-        fg %string   # brings job whose command begins with string
-        fg %?string  # brings job whose command contains string
-
-        kill -l               # returns a list of all signals on the system, by name and number
-        kill PID              # terminates process with specified PID
-        kill -s SIGKILL 4500  # sends a signal to force or terminate the process
-        kill -15 913          # Ending PID 913 process with signal 15 (TERM)
-        kill %1               # Where %1 is the number of job as read from 'jobs' command.
-
-        ps           # prints a line of information about the current running login shell and any processes running under it
-        ps -a        # selects all processes with a tty except session leaders
-
-        trap cmd sig1 sig2  # executes a command when a signal is received by the script
-        trap "" sig1 sig2   # ignores that signals
-        trap - sig1 sig2    # resets the action taken when the signal is received to the default
-
-        disown <PID|JID>    # removes the process from the list of jobs
-
-        wait                # waits until all background jobs have finished
+| myCommand &          | runs job in the background and prompts back the shell                                                 |
+| :------------------- | :---------------------------------------------------------------------------------------------------- |
+| jobs                 | lists all jobs (use with -l to see associated PID)                                                    |
+| fg                   | brings a background job into the foreground                                                           |
+| fg %+                | brings most recently invoked background job                                                           |
+| fg %-                | brings second most recently invoked background job                                                    |
+| fg %N                | brings job number N                                                                                   |
+| fg %string           | brings job whose command begins with string                                                           |
+| fg %?string          | brings job whose command contains string                                                              |
+| kill -l              | returns a list of all signals on the system, by name and number                                       |
+| kill PID             | terminates process with specified PID                                                                 |
+| kill -s SIGKILL 4500 | sends a signal to force or terminate the process                                                      |
+| kill -15 913         | Ending PID 913 process with signal 15 (TERM)                                                          |
+| kill %1              | Where %1 is the number of job as read from 'jobs' command.                                            |
+| ps                   | prints a line of information about the current running login shell and any processes running under it |
+| ps -a                | selects all processes with a tty except session leaders                                               |
+| trap cmd sig1 sig2   | executes a command when a signal is received by the script                                            |
+| trap "" sig1 sig2    | ignores that signals                                                                                  |
+| trap - sig1 sig2     | resets the action taken when the signal is received to the default                                    |
+| disown <PID \| JID>  | removes the process from the list of jobs                                                             |
+| wait                 | waits until all background jobs have finished                                                         |
 
 ---
 
 ### TIPS & TRICKS
 
-        # set an alias
-        cd; nano .bash_profile
-        > alias gentlenode='ssh admin@gentlenode.com -p 3404'  # add your alias in .bash_profile
+```bash
+# set an alias
+cd; nano .bash_profile
+> alias gentlenode='ssh admin@gentlenode.com -p 3404'  # add your alias in .bash_profile
 
-        # to quickly go to a specific directory
-        cd; nano .bashrc
-        > shopt -s cdable_vars
-        > export websites="/Users/mac/Documents/websites"
+# to quickly go to a specific directory
+cd; nano .bashrc
+> shopt -s cdable_vars
+> export websites="/Users/mac/Documents/websites"
 
-        source .bashrc
-        cd $websites
+source .bashrc
+cd $websites
+```
 
 ---
 
 ### DEBUGGING SHELL PROGRAMS
 
-        bash -n scriptname  # don't run commands; check for syntax errors only
-        set -o noexec       # alternative (set option in script)
+```bash
+bash -n scriptname  # don't run commands; check for syntax errors only
+set -o noexec       # alternative (set option in script)
 
-        bash -v scriptname  # echo commands before running them
-        set -o verbose      # alternative (set option in script)
+bash -v scriptname  # echo commands before running them
+set -o verbose      # alternative (set option in script)
 
-        bash -x scriptname  # echo commands after command-line processing
-        set -o xtrace       # alternative (set option in script)
+bash -x scriptname  # echo commands after command-line processing
+set -o xtrace       # alternative (set option in script)
 
-        trap 'echo $varname' EXIT  # useful when you want to print out the values of variables at the point that your script exits
+trap 'echo $varname' EXIT  # useful when you want to print out the values of variables at the point that your script exits
 
-        function errtrap {
-            es=$?
-            echo "ERROR line $1: Command exited with status $es."
-        }
+function errtrap {
+    es=$?
+    echo "ERROR line $1: Command exited with status $es."
+}
 
-        trap 'errtrap $LINENO' ERR  # is run whenever a command in the surrounding script or function exits with non-zero status
+trap 'errtrap $LINENO' ERR  # is run whenever a command in the surrounding script or function exits with non-zero status
 
-        function dbgtrap {
-            echo "badvar is $badvar"
-        }
+function dbgtrap {
+    echo "badvar is $badvar"
+}
 
-        trap dbgtrap DEBUG  # causes the trap code to be executed before every statement in a function or script
-        # ...section of code in which the problem occurs...
-        trap - DEBUG  # turn off the DEBUG trap
+trap dbgtrap DEBUG  # causes the trap code to be executed before every statement in a function or script
+# ...section of code in which the problem occurs...
+trap - DEBUG  # turn off the DEBUG trap
 
-        function returntrap {
-            echo "A return occurred"
-        }
+function returntrap {
+    echo "A return occurred"
+}
 
-        trap returntrap RETURN  # is executed each time a shell function or a script executed with the . or source commands finishes executing
+trap returntrap RETURN  # is executed each time a shell function or a script executed with the . or source commands finishes executing
+```
 
 ---
 
