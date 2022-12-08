@@ -162,7 +162,8 @@
 -   `$ psql [OPTION]... [DBNAME [USERNAME]]`
 -   `$ psql -h localhost -p 5432 -U a.momin a.momin`
 
-    -   USERNAME: a.momin; DBNAME: a.momin
+    -   USERNAME: a.momin
+    -   DBNAME: a.momin
 
     -   Connection options:
         -   `-h, --host=HOSTNAME`

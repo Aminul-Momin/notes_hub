@@ -148,28 +148,22 @@
 
 -   `$ ssh -T git@github.com`
 
+-   [Git and Vimdiff](https://medium.com/usevim/git-and-vimdiff-a762d72ced86)
+    <!-- To tell Git to always use Vimdiff, issue the following commands: -->
+-   `$ git config --global diff.tool vimdiff`
+-   `$ git config --global merge.tool vimdiff`
+
 ## RECORD & EXAMIN CHANGES
 
--   `$ git status`
-
-    -   Check the current status.
-
--   `$ git diff`
-
-    -   Difference between Working Directory and Staging Area
-
--   `$ git diff <commit_id1 commit_id2>`
-
-    -   Difference between two commits.
-
--   `$ git diff --staged`
-
-    -   Difference between Staging Area and Repository.
-
--   `$ git show <commit_id>`
-
-    -   Show the changes in commits compared to it’s parrents
-
+-   `$ git status` → Check the current status.
+-   `$ git diff` → Difference between Working Directory and Staging Area
+-   `git diff --cached` → Show the difference between the index and the last commit.
+-   `git diff branch` → Show a diff between the current working directory and the named branch.
+-   `$ git diff --staged` → Difference between Staging Area and Repository.
+-   `$ git diff <commit_id1 commit_id2>` → Difference between two commits.
+-   `$ git diff --stat` → Shows an overview of changes.
+-   `$ git log --pretty=format:"[%h] %ae, %ar: %s" --stat` → Shows commit history with the files that were changed.
+-   `$ git show <commit_id>` → Show the changes in commits compared to it’s parrents
 -   `$ git log <command>`
 -   `$ git log --help`
 -   `$ git log --oneline`
@@ -177,43 +171,19 @@
 -   `$ git log --oneline`
 -   `$ git log --oneline --decorate`
 -   `$ git log --graph --oneline --decorate --all`
-
--   `$ git add .`
-
-    -   Add changes of all files in the current & subdirectory to the Staging Area.
-
--   `$ git commit`
-
-    -   Commit into the Repository.
-
--   `$ git commit -m “Commit_Message”`
-
-    -   Commint into the Repository with Commit Message.
+-   `$ git add .` → Add changes of all files in the current & subdirectory to the Staging Area.
+-   `$ git commit` → Commit into the Repository.
+-   `$ git commit -m “Commit_Message”` → Commint into the Repository with Commit Message.
 
 ##### [git stash](https://www.youtube.com/watch?v=fXGug4itlTk)
 
--   `$ git stash`
-
-    -   stash uncommited local changes
+-   `$ git stash` → stash uncommited local changes
     -   git stash temporarily shelves (or stashes) changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on. Stashing is handy if you need to quickly switch context and work on something else, but you're mid-way through a code change and aren't quite ready to commit.
-
--   `$ git stash show`
-
-    -   show the content of your most recent stash.
-
--   `$ git stash list`
-
-    -   List out all your repository's stashes.
+-   `$ git stash show` → show the content of your most recent stash.
+-   `$ git stash list` → List out all your repository's stashes.
     -   `git stash show stash@{index}`
-
--   `$ git stash pop`
-
-    -   Popping your stash removes the changes from your stash and reapplies them to your working copy.
-
--   `$ git stash drop`
-    -   drop top hash, stash@{0}
--   `$ git stash drop stash@{n}`
-    -   drop specific stash - see git stash list
+-   `$ git stash pop` → Popping your stash removes the changes from your stash and reapplies them to your working copy.
+-   `$ git stash drop stash@{n}` → drop specific stash - see git stash list
 
 ##### [Resetting, Reverting, and Checking Out](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting)
 

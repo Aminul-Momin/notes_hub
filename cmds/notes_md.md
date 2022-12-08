@@ -1,11 +1,12 @@
 ### References and documentation:
 
-- [W3School](https://www.w3schools.io/file/markdown-introduction/)
+-   [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)
+-   [W3School](https://www.w3schools.io/file/markdown-introduction/)
 
 # Markdown Starter Worksheet
 
-- `/Users/a.momin/.mume/style.less`
-  - styling sheet for markdown page in SVCode.
+-   `/Users/a.momin/.mume/style.less`
+    -   styling sheet for markdown page in SVCode.
 
 The main goal of MarkDown is to be easily written and easily read. It uses "plain text" formatting and can be converted to HTML. The most common use case I've come across to use Markdown is for ReadMe files, used, for example, for Github repos. Markdown can also be used to create email.
 
@@ -15,18 +16,18 @@ Specifically, Visual Studio Code uses the [CommonMark](http://commonmark.org/) M
 
 ## Sections
 
-- [Markdown Starter Worksheet](#markdown-starter-worksheet)
-  - [Sections](#sections)
-  - [Headers](#headers)
-  - [Quotes](#quotes)
-  - [Emphasis](#emphasis)
-  - [Horizontal Rule](#horizontal-rule)
-  - [Lists](#lists)
-  - [Links](#links)
-  - [Images](#images)
-  - [Code](#code)
-  - [Custom CSS](#custom-css)
-  - [Additional Resources](#additional-resources)
+-   [Markdown Starter Worksheet](#markdown-starter-worksheet)
+    -   [Sections](#sections)
+    -   [Headers](#headers)
+    -   [Quotes](#quotes)
+    -   [Emphasis](#emphasis)
+    -   [Horizontal Rule](#horizontal-rule)
+    -   [Lists](#lists)
+    -   [Links](#links)
+    -   [Images](#images)
+    -   [Code](#code)
+    -   [Custom CSS](#custom-css)
+    -   [Additional Resources](#additional-resources)
 
 ---
 
@@ -360,9 +361,9 @@ You can also add custom CSS to your MarkDown to add additional styling to your d
 
 ```html
 <style>
-  body {
-    color: red;
-  }
+    body {
+        color: red;
+    }
 </style>
 ```
 
@@ -372,6 +373,6 @@ You can also add custom CSS to your MarkDown to add additional styling to your d
 
 ## Additional Resources
 
-- [Markdown Cheat Sheet - Adam P on Github](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images)
-- [Daring Fireball Markdown Syntax](https://daringfireball.net/projects/markdown/syntax)
-- [MarkDown in Visual Studio Code](https://code.visualstudio.com/docs/languages/markdown)
+-   [Markdown Cheat Sheet - Adam P on Github](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images)
+-   [Daring Fireball Markdown Syntax](https://daringfireball.net/projects/markdown/syntax)
+-   [MarkDown in Visual Studio Code](https://code.visualstudio.com/docs/languages/markdown)

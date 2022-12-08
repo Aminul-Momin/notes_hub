@@ -1,5 +1,7 @@
 ### Refferances:
 
+-   [Docker and Kubernetes Complete Tutorial](https://www.youtube.com/playlist?list=PL0hSJrxggIQoKLETBSmgbbvE4FO_eEgoB)
+-   [Dockerfile Components](https://github.com/wsargent/docker-cheat-sheet#dockerfile)
 -   [Docker Commands Cheat Sheet](https://buddy.works/tutorials/docker-commands-cheat-sheet#docker-container-commands)
 -   [Docker Cheat Sheet](https://intellipaat.com/blog/tutorial/devops-tutorial/docker-cheat-sheet/)
 -   [The Docker Handbook – 2021 Edition](https://www.freecodecamp.org/news/the-docker-handbook/)
@@ -10,14 +12,19 @@
 -   [Install using the repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
 -   [Install using the convenience script](https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script)
 
--   `$ sudo systemctl status docker`
-
-    -   Check whether Docker is running or not in Linux machine.
+-   `$ sudo systemctl status docker` → Check whether Docker is running or not in Linux machine.
 
 -   `$ docker --version`
 -   `$ docker version`
 -   `$ docker-compose --version`
-
+-   `/var/lib/docker/`
+    -   `/aufs`
+    -   `/containers`
+    -   `/image`
+    -   `/volumes`
+-   `$ docker info`
+-   `$ sudo service docker status`
+-   `$ systemctl is-active docker`
 <details>
 <summary style="font-size:25px;color:Orange;text-align:left">Terminology</summary>
 
@@ -53,85 +60,61 @@
     -w `pwd` \
     --entrypoint sleep                      # overridding entrypoint with bash command `sleep`
     --network=network_name \
-    --name=name_your_container \
+    --name=container_name \
     image_name:latest param1                # Append parameter `param1` to entrypoint bash command (`sleep param1`)
     ```
 
-    -   `$ docker run -d --name=name_your_container <image_name>`
+-   `$ docker inspect container_name` → Inspect the created contaner named by `container_name`
 
-        -   Pull image_name down if it's not available in docker-host (Local Machine) and instantiate and run an image_name_container from image_name image.
-        -   Run in _Attach Mode_. Add `-d` option to run in _Detach Mode_
-        -   `--name=name_your_container` is used to give the container a name to refer it later
-        -   EX: `$ docker run nginx`.
-        -
-        -
+-   `$ docker run -d --name=name_your_container <image_name>`
 
-    -   `$ docker pull <image_name>`
+    -   Pull image_name down if it's not available in docker-host (Local Machine) and instantiate and run an image_name_container from image_name image.
+    -   Run in _Attach Mode_. Add `-d` option to run in _Detach Mode_
+    -   `--name=name_your_container` is used to give the container a name to refer it later
+    -   EX: `$ docker run nginx`.
 
-        -   Just pull down the image into the docker-host (Local machine) form docker registry (Docker Hub)
+-   `$ docker pull <image_name>` → Just pull down the image into the docker-host (Local machine) form docker registry (Docker Hub)
 
-    -   `Run - STDIN`:
+-   `Run - STDIN`:
 
-        -   `$ docker run -it <image_name>`
-            -   Run in interactive (`i`) mode with terminal (`t`) aatched to it.
-        -   `$ docker run python:3.7`
+    -   `$ docker run -it <image_name>` → Run in interactive (`i`) mode with terminal (`t`) aatched to it.
+    -   `$ docker run python:3.7`
 
-    -   `Run - PORT Mapping`:
-        -   `$ docker run -it 80:5000 dockerized_flask_app/app`
+-   `Run - PORT Mapping`:
+    -   `$ docker run -it 80:5000 dockerized_flask_app/app`
 
-    ![docker_port_mapping](../assets/docker_port_mapping.png)
+![docker_port_mapping](../assets/docker_port_mapping.png)
 
-    -   `Run - VOLUME Mapping`:
+-   Run - VOLUME Mapping:
 
-        -   `$ docker run -v /dir_out_container:/dir_in_container mysql`
-            -   `/dir_out_container:/dir_in_container` mount a diractory outside of container into a diractory inside of container
+    -   `$ docker run -v /dir_out_container:/dir_in_container mysql`
 
-    -   `Inspect a Container`:
+-   Inspect a Container:
 
-        -   `$ docker inspect <container_name | container_id>`
-            -   Return details of a container in json format.
+    -   `$ docker inspect <container_name | container_id>` → Return details of a container in json format.
 
-    -   `Container Logs`:
+-   Container Logs:
 
-        -   `$ docker logs <container_name | container_id>`
-            -   Show the logs of a container ran in backgroun (detach mode).
-        -   `$ docker logs -f <container_name | container_id>`
-
-            -   Show the logs of a container ran in backgroun (detach mode) with `-f` (--follow) following log output.
-
-        -   `$ docker attach <container_id>`
-
-            -   Run (without `-d` option) in _Attach Mode_ back.
+    -   `$ docker logs <container_name | container_id>` → Show the logs of a container ran in backgroun (detach mode).
+    -   `$ docker logs -f <container_name | container_id>` → Show the logs of a container ran in backgroun (detach mode) with `-f` (--follow) following log output.
+    -   `$ docker attach <container_id>` → Run (without `-d` option) in _Attach Mode_ back.
 
 -   [$ docker ps](https://docs.docker.com/engine/reference/commandline/ps/): `docker ps [OPTIONS]`
 
-    -   `$ docker ps`
-
-        -   list out only the running containers
-
-    -   `$ docker cp ./<my_new_dag.py> dagvaol_host:/dags`
-
-        -   Copy my_new_dag.py from CWD to allocated dag volume in the docker container.
-
-    -   docker ps --format "table {{.Names}}:\t{{.Ports}}\t{{.Status}}"
-        -   Print the result of `docker pa` in the given format.
+    -   `$ docker ps` → list out only the running containers
+    -   `$ docker cp ./<my_new_dag.py> dagvaol_host:/dags` → Copy my_new_dag.py from CWD to allocated dag volume in the docker container.
+    -   `$ docker ps --format "table {{.Names}}:\t{{.Ports}}\t{{.Status}}"` → Print the result of `docker pa` in the given format.
 
 -   [$ docker stop](https://docs.docker.com/engine/reference/commandline/stop/): `docker stop [OPTIONS] CONTAINER [CONTAINER...]`
 
-    -   `$ docker stop <container_id | container_name>`
-        -   Stop the given running container keeping the instance of the container for later use.
+    -   `$ docker stop <container_id | container_name>` → Stop the given running container keeping the instance of the container for later use.
 
 -   [$ docker kill](https://docs.docker.com/engine/reference/commandline/kill/): `docker kill [OPTIONS] CONTAINER [CONTAINER...]`
     -   The docker kill subcommand kills one or more containers. The main process inside the container is sent SIGKILL signal (default), or the signal that is specified with the --signal option. You can reference a container by its ID, ID-prefix, or name. While the default (SIGKILL) signal will terminate the container, the signal set through --signal may be non-terminal, depending on the container’s main process. For example, the SIGHUP signal in most cases will be non-terminal, and the container will continue running after receiving the signal.
 -   [$ docker rm](): ``
 
-    -   `$ docker rm <container_id | container_name>`
-
-        -   Remove the instance of container previously created.
-
-    -   `$ docker images`
-
-        -   List out images available in docker host (local machine or remote server)
+    -   `$ docker rm <container_id | container_name>` → Remove the instance of container previously created.
+    -   `$ docker images` → List out images available in docker host (local machine or remote server)
 
     -   `$ docker rmi <image_name>`
         -   Remove the image_name previously build or pulled down from docker registry.
@@ -143,10 +126,7 @@
     -   When you run the Docker run Ubuntu command it runs an instance of Ubuntu image and exits immediately.
     -   Now why is that? Unlike virtual machine containers are not meant to host an operating system. Containers are meant to run a specific task or process such as to host an instance of a web server or application server or a database, or simply to carry some kind of computation or analysis task. Once the task is complete, the container exits. A container only lives as long as the process inside it is alive. If the web service inside the container is stopped, or crash, then the container exits.
 
-    -   `$ docker run ubuntu`
-
-        -   Runs an Ubuntu image
-        -   it exites immediately.
+    -   `$ docker run ubuntu` → Runs an Ubuntu image and it exites immediately.
 
         -   `$ docker ps`
 
@@ -161,15 +141,12 @@
 
 -   [$ docker exec](https://docs.docker.com/engine/reference/commandline/exec/): `docker exec [OPTIONS] CONTAINER COMMAND [ARG...]`
 
-    -   `$ docker exec -it <container_id | container_name> bash`
-        -   This command is used to access the running container
+    -   `$ docker exec -it <container_id | container_name> bash` → This command is used to access the running container
 
 -   [$ docker image](): ``
 
-    -   `docker images`
-        -   List our images
-    -   `$ docker image tag image_name new_image_name`
-        -   Take the backup of image_name by new name `new_image_name`
+    -   `docker images` → List our images
+    -   `$ docker image tag image_name new_image_name` → Take the backup of image_name by new name `new_image_name`
 
 -   [$ docker build](https://docs.docker.com/engine/reference/commandline/build/): `docker build [OPTIONS] PATH | URL | -`
 
@@ -350,13 +327,11 @@ services:
             timeout: 10s
             retries: 5
         restart: always
-        depends_on:
-            <<: *airflow-common-depends-on
+        depends_on: <<: *airflow-common-depends-on
             airflow-init:
                 condition: service_completed_successfully
 
-    airflow-scheduler:
-        <<: *airflow-common
+    airflow-scheduler: <<: *airflow-common
         command: scheduler
         healthcheck:
             test:
@@ -373,8 +348,7 @@ services:
             airflow-init:
                 condition: service_completed_successfully
 
-    airflow-worker:
-        <<: *airflow-common
+    airflow-worker: <<: *airflow-common
         command: celery worker
         healthcheck:
             test:
@@ -383,19 +357,16 @@ services:
             interval: 10s
             timeout: 10s
             retries: 5
-        environment:
-            <<: *airflow-common-env
+        environment: <<: *airflow-common-env
             # Required to handle warm shutdown of the celery workers properly
             # See https://airflow.apache.org/docs/docker-stack/entrypoint.html#signal-propagation
             DUMB_INIT_SETSID: "0"
         restart: always
-        depends_on:
-            <<: *airflow-common-depends-on
+        depends_on: <<: *airflow-common-depends-on
             airflow-init:
                 condition: service_completed_successfully
 
-    airflow-triggerer:
-        <<: *airflow-common
+    airflow-triggerer: <<: *airflow-common
         command: triggerer
         healthcheck:
             test:
@@ -407,13 +378,11 @@ services:
             timeout: 10s
             retries: 5
         restart: always
-        depends_on:
-            <<: *airflow-common-depends-on
+        depends_on: <<: *airflow-common-depends-on
             airflow-init:
                 condition: service_completed_successfully
 
-    airflow-init:
-        <<: *airflow-common
+    airflow-init: <<: *airflow-common
         entrypoint: /bin/bash
         # yamllint disable rule:line-length
         command:
@@ -479,8 +448,7 @@ services:
                 chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}
                 exec /entrypoint airflow version
         # yamllint enable rule:line-length
-        environment:
-            <<: *airflow-common-env
+        environment: <<: *airflow-common-env
             _AIRFLOW_DB_UPGRADE: "true"
             _AIRFLOW_WWW_USER_CREATE: "true"
             _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
@@ -490,12 +458,10 @@ services:
         volumes:
             - .:/sources
 
-    airflow-cli:
-        <<: *airflow-common
+    airflow-cli: <<: *airflow-common
         profiles:
             - debug
-        environment:
-            <<: *airflow-common-env
+        environment: <<: *airflow-common-env
             CONNECTION_CHECK_MAX_COUNT: "0"
         # Workaround for entrypoint issue. See: https://github.com/apache/airflow/issues/16252
         command:
@@ -506,8 +472,7 @@ services:
     # You can enable flower by adding "--profile flower" option e.g. docker-compose --profile flower up
     # or by explicitly targeted on the command line e.g. docker-compose up flower.
     # See: https://docs.docker.com/compose/profiles/
-    flower:
-        <<: *airflow-common
+    flower: <<: *airflow-common
         command: celery flower
         profiles:
             - flower
@@ -519,8 +484,7 @@ services:
             timeout: 10s
             retries: 5
         restart: always
-        depends_on:
-            <<: *airflow-common-depends-on
+        depends_on: <<: *airflow-common-depends-on
             airflow-init:
                 condition: service_completed_successfully
 
@@ -630,7 +594,10 @@ volumes:
 </details>
 
 <details>
-<summary style="font-size:25px;color:Orange;text-align:left">Dockerfile</summary>
+<summary style="font-size:25px;color:Orange;text-align:left"> Sample Dockerfiles </summary>
+
+-   [Dockerfile sample for Jupyter notebook images](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.5.x?topic=image-dockerfile-sample-jupyter-notebook-images)
+-   [Dockerfile Components](https://github.com/wsargent/docker-cheat-sheet#dockerfile)
 
 ```Dockerfile
 ARG

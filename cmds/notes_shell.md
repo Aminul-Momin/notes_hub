@@ -68,8 +68,8 @@
 -   [Understanding the Difference Between ssh and sshd](https://www.secur.cc/what-is-the-difference-between-ssh-and-sshd/#:~:text=The%20main%20difference%20is%20that,server%20using%20the%20users%20credentials.)
 
 -   SSH (Secure Shell or Secure Socket Shell): SSH is a network protocol that gives users, particularly system administrators, a secure way to access a computer over an unsecured network.
--   SSH Agent:
 -   SSH Clint:
+-   SSH Agent:
 
 -   **ssh-keygen:**
 

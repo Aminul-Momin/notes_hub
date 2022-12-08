@@ -1,28 +1,34 @@
 -   [How to make your own VS Code theme!](https://www.youtube.com/watch?v=pGzssFNtWXw)
 
 -   𝑳𝒊𝒔𝒕 𝒐𝒇 𝐔𝐬𝐞𝐟𝐮𝐥𝐥 𝑺𝒚𝒎𝒃𝒐𝒍𝒔
-    ⮐ ⎇ ⬆︎ ⌘ ⌥ + ⌃ + ⤶ ⇧  ⤶ ⬋ ↩︎ ↲ ↵ ↫ ⭿ ♥ ★ ## &
+    ⇧ ⮐ ⎇ ⌘ ⌥ + ⌃ + ⤶  ⤶ ⬋ ↩︎ ↲ ↵ ↫ ⭿ ♥ ★ ## & → ➡️ ⬅️ ⬆︎ ⬇️
 
-### USEFULL PATH OF FILES AND FOLDERS
+<details>
+<summary style="font-size:25px;color:Orange;text-align:left">Notes Link</summary>
+
+</details>
+
+### TWEAK SETTINGS:
+
+-   `⌘ + ⇧ + P`
+    -   🔥search: `setting`; Select: `Open Workspace Setting (JSON)` → to create local workspace Settings? - python.terminal.activateEnvironment": true
+    -   search: `key mapping`; Select: `Inspect key mapping` → to inspect key-mapping file.
+    -   search: `keyboard shortcut`; Select: `Open Default keyboard shortcut (JSON)` → to inspect shortcut file.
+    -   search: `user snippet`; Select: `configure user snippet` → to configure user snippets.
+        -   Project wise user's snippet are saved in `.vscode` folder
+
+### USEFULL PATH OF FILES AND FOLDERS on MACOS
 
 -   ~/Library/Application\ Support/Code/User/settings.json
 -   ~/Library/Application\ Support/Code/User/keybindings.json
 -   ~/Library/Application\ Support/Code/User/snippets
 
-### SETTINGS
+<details>
+<summary style="font-size:25px;color:Orange;text-align:left">USEFULL SHORTCUTS</summary>
 
--   `⌘+⇧+P`
-    -   type `setting`, select `open workspace setting`
-    -   python.terminal.activateEnvironment": true
+#### How to find differences between two files?
 
-### Notes:
-
--   🔥 How to get usr Snippet?
-    -   Setting $→$ User Snippet
-
-🔥 Project wise user's snippet are saved in .vscode folder
-
-## USEFULL SHORTCUTS
+#### Shortcuts
 
 -   `⌘ + ⇧ + k`
 
@@ -133,14 +139,25 @@
 
 -   Transform to lowercase, UPPERCASE and titlecase selected text.
 
-    -   `⌘+⇧+P` type 'transform to uppencase' ↦ ⮐
+    -   `⌘+⇧+P`; Select: 'transform to UPPERCASE/lowercase/titlecase' ↦ ⮐
 
 -   Transform indentation to Spaces.
 
     -   `⌘+⇧+P` ↦ type 'ndentationToSpaces' ↦ ⮐
 
--   Transform indentation to Tab.
-    -   `⌘+⇧+P` type 'indentationToTabs' ↦ ⮐
+-   Transform indentation to Tab. - `⌘+⇧+P` type 'indentationToTabs' ↦ ⮐
+</details>
+
+<details>
+<summary style="font-size:25px;color:Orange;text-align:left">Windows OS</summary>
+    
+- Keyboard Shortcut (`^ + k + s`):
+    - Search: `View: Open Next/Previous Editor`; Set: `⌃ + ⎇ + ➡️` / `⌃ + ⎇ + ⬅️`.
+    - Search: `cursorTop/cursorBottom`; Set: `⌃ + ⬆︎` / `⌃ + ⬇️`.
+    - Search: `cursorTopSelect/cursorBottomSelect`; Set: `⌃ + ⇧ + ⬆︎` / `⌃ + ⇧ + ⬇️`.
+    - Search: `cursorHomeSelect/cursorEndSelect`; Set: `⌃ + ⇧ + ⬅️` / `⌃ + ⇧ + ➡️`.
+    - 
+</details>
 
 ### MANAGE EXTENSIONS FROM COMMAND LINE
 
