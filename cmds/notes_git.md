@@ -121,7 +121,6 @@
 -   `$ git config --local user.email "A.Momin.NYC@gmail.com"`
 -   `$ git config --local user.email "bbcredcap3@gmail.com"`
 -   `$ git config --local user.email [author.name | author.email | committer.name | committer.email]`
-
 -   `$ git config user.name [author.name | author.email | committer.name | committer.email]`
 
     -   Returns a specific key’s value ( here, key = user.name).
@@ -134,18 +133,9 @@
 
     -   Change your remote's URL from HTTPS to SSH. (HTTPS (Token) based Authentication)
 
--   `$ git remote show origin`
-
-    -   get the remote origin URL
-
--   `$ git config --get remote.origin.url`
-
-    -   get the remote origin URL
-
--   `$ git config --get user.email`
-
-    -   Returns email address of current git user
-
+-   `$ git remote show origin` → get the remote origin URL
+-   `$ git config --get remote.origin.url` → get the remote origin URL
+-   `$ git config --get user.email` → Returns email address of current git user
 -   `$ ssh -T git@github.com`
 
 -   [Git and Vimdiff](https://medium.com/usevim/git-and-vimdiff-a762d72ced86)
@@ -238,10 +228,12 @@
 -   `$ git branch –a` → Show all the name of branches that has been created so far
 -   `$ git log –graph –onetime <branch_name1 branch_name2 … >` → Visulize the branches Structure
 -   🔥 TAG:
-    -   `$ git tag` → Verifying Tag
+    -   `$ git tag` → List out all tags created fo far.
+    -   `$ git tag BASELINE` → Create the 'BASELINE' tag.
     -   `$ git tag -a <lebel_of_tag>` → Creates a Annoted Tag, extra informations.
     -   `$ git tag -d <name_of_tag_to_be_deleted>` → Deletes the specified tag.
     -   `$ git tag -a <lebel_of_tag> <commit_id>` → Tags a older commit.
+    -   `$ git push --tags` → Push all the tags into remote (github.com)
 
 🔥 [MERGING](https://www.atlassian.com/git/tutorials/using-branches/git-merge):
 

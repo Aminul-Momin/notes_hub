@@ -2,11 +2,11 @@
 create_alias(){
     alias python=python3
     alias pip=pip3
-    alias tmux="tmux 2"
+    # alias tmux="tmux 2"
 }
 create_alias
 
-
+# ============================================================================
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 
