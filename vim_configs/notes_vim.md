@@ -1,1 +1,0 @@
-/Users/a.momin/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_vim.md

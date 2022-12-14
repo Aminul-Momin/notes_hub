@@ -9,7 +9,7 @@
 -   `<Space> t` → Toggle Tagbar
 -   `<Space> m` → Toggle mouse ON/OFF
 
--   How comment out multiple lines?
+-   How to comment out multiple lines?
 
 ```
 1. marks lines
@@ -24,61 +24,30 @@
 ### EXITING:
 
 -   `:q! or ZQ` → Quit and throw away unsaved changes
-
 -   `:q` → Quit (fails if there are unsaved changes)
-
 -   `:w` → Write (save) the file, but don’t exit
-
 -   `:w !sudo tee %` → Write out the current file using sudo
-
--   `:wq or :x or ZZ` → Write (save) and quit
-
+-   `:wq` / `:x` / `ZZ` → Write (save) and quit
 -   `:source %` → source (`run`) the current file (lua files) you are working on.
-
 -   i + gt (i in [1-9]) → Focus i-th buffer (Vim Tab)
-
 -   `<SPACE> + [` / `<SPACE> + ]` → Changes the focus across the Buffer (Vim Tab)
-
 -   Usage of: `f,t,w,b,%,h,j,k,l`
-
 -   `v` → to select range of text
-
     -   After selecting the text, try d to delete, or y to copy, or :s/match/replace/, or :center, or !sort, or...
-
--   `🔥 ⬆︎ + v` → to select a line.
-
+-   🔥`⬆︎ + v` → to select a line.
 -   `⌃ + v` → to select columns of text
-
 -   `yiw` → copy the word where the curson on
-
 -   `:m 12` → move current line to after line 12
-
 -   `:5,7m 21` → move lines 5, 6 and 7 to after line 21
-
--   `:/pattern + ⮐`
-
-    -   Highlight the pattern.
-    -   `n` / `shift+n` to hop over the highlighted patterns.
-
-    -   to search a text pattern
-
--   `shift + *` (repeat to get the next occurance, `shift + #` previous occurance)
-
-    -   search for the word currently cursor is in
-
+-   `:/pattern + ⮐` → Highlight the pattern.
+    -   `n` / `shift+n` → to hop over the highlighted patterns.
+-   `shift + *`/`shift + #` → Search for the word currently cursor is in.Repeat to get the next/previous occurance
 -   `x` → to cut character.
-
 -   `g;` → to go through changes in backward
-
 -   `g,` → to go through changes in forword
-
 -   `~` → to switch cases
-
 -   `:changes` → to see all the changes
-
 -   `:jumps`
-
----
 
 ---
 
@@ -90,9 +59,9 @@
 -   `🔥 a` → Insert (append) `after the focused character`.
 -   `🔥 o` → Append (open) a new line `below the current line`.
 -   `🔥 I` → Insert at the `beginning of the line`
--   `🔥 A` → Insert (append) at the end of the line
+-   `🔥 A` → Insert (append) `at the end of the line`
 -   `🔥 O` → Append (open) a new line `above the current line`.
--   `ea` → Insert (append) at the end of the word
+-   `ea` → Insert (append) `at the end of the word`
 -   `Esc` → Exit insert mode
 
 ### CUT AND PASTE IN NORMAL MODE:
@@ -168,57 +137,25 @@
 
 ### SEARCH AND REPLACE:
 
--   `🔥 /pattern`
-
-    -   search for pattern
-
--   `🔥 ?pattern`
-
-    -   search backward for pattern
-
--   `\vpattern`
-
-    -   ‘very magic’ pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)
-
--   `n`
-
-    -   repeat search in same direction
-
--   `N`
-
-    -   repeat search in opposite direction
-
--   `:/pattern + ⮐` (then `shift+n`/'n' to hop over the patterns back and forth)
-
-    -   to search a text pattern
-
--   `shift + #` / `shift + *`
-
-    -   highlighting for the word currently cursor is in
-    -   repeat to get the next occurance, previous occurance
-
--   `🔥 :%s/old/new/g`
-
-    -   replace all old with new throughout file
-
--   `🔥 :%s/old/new/gc`
-
-    -   replace all old with new throughout file with confirmations
-
--   `:noh`
-    -   remove highlighting of search matches
+-   `🔥 /pattern` → Search for pattern
+-   `🔥 ?pattern` → Search backward for pattern
+-   `\vpattern` → ‘Very magic’ pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)
+-   `n` → Repeat search in same direction
+-   `N` → Repeat search in opposite direction
+-   `:/pattern + ⮐` → Highlight the pattern.
+    -   `n` / `shift+n` → to hop over the highlighted patterns.
+-   `shift + *`/`shift + #` → Search for the word currently cursor is in.Repeat to get the next/previous occurance
+-   `🔥 :%s/old/new/g` → Replace all old with new throughout file
+-   `🔥 :%s/old/new/gc` → Replace all 'old' with 'new' throughout file with confirmations
+-   `:noh` → Highlighting of search matches
 
 ### SEARCH IN MULTIPLE FILES:
 
--   `:vimgrep /pattern/ {file}`
-    -   search for pattern in multiple files
-    -   Ex: `:vimgrep /foo/ **/*`
--   `:cn`
-    -   jump to the next match
--   `:cp`
-    -   jump to the previous match
--   `:copen`
-    -   open a window containing the list of matches
+-   `:vim[grep] /pattern/ {`{file}`}`
+-   `:vimgrep /pattern/ {file}` → Search for pattern in multiple files (EX: `:vimgrep /foo/ **/*`)
+-   `:cn` → Jump to the next match
+-   `:cp` → Jump to the previous match
+-   `:copen` → Open a window containing the list of matches
 
 ### WORKING WITH MULTIPLE FILES:
 
@@ -331,15 +268,13 @@
 -   [Vim Configurations](https://www.youtube.com/watch?v=n9k9scbTuvQ&list=PLm323Lc7iSW9kRCuzB3J_h7vPjIDedplM&index=4):
 -   [NeoVim Configuration](https://www.youtube.com/watch?v=DogKdiRx7ls&t=516s):
 
-### Vim
-
 -   [NeuralNine/Vim](https://www.youtube.com/playlist?list=PL7yh-TELLS1Eevqs4-XmlSfrFOKb5C97K)
     -   [GitHub/config](https://github.com/NeuralNine/config-files)
--   <font color=red size=5>`~/.vimrc`</font> $\rightarrow$ Configuration file
 
-### neovim
+### Config Files
 
--   Configuration File: `~/.config/nvim/init.vim`
+-   `~/.vimrc` → Configuration file for `vim`.
+-   `~/.config/nvim/init.vim` → Configuration File for `Neovim`.
 
 **NOTES**
 
@@ -349,31 +284,28 @@
 -   `:echo has('python3')`
 -   `:checkhealth`
 
-#### How to use [vim-plug](https://github.com/junegunn/vim-plug):
+-   How to use vim-plug:
 
--   <font color=red>Download the vim plugins manager called **vim-plug** from git hub. Then use following comands to manage your vim plugins.</font>
+    -   Download the vim plugins manager called **[vim-plug](https://github.com/junegunn/vim-plug)** from git hub. Then use following comands to manage your vim plugins.
+    -   `:PlugInstall` → Install plugins
+    -   `$ vim +PlugInstall +qall` → Install vim plugins from terminal.
+    -   `:PlugUpdate` → Update plugins：
+    -   `:PlugClean` → Remove plugins： (Before run this command, comment the plugin install command in init.vim)
+    -   `:PlugStatus` → Check the plugin status：
+    -   `:PlugUpgrade` → Upgrade vim-plug itself：
 
--   `:PlugInstall` → Install plugins
--   `$ vim +PlugInstall +qall` → Install vim plugins from terminal.
--   `:PlugUpdate` → Update plugins：
--   `:PlugClean` → Remove plugins： (Before run this command, comment the plugin install command in init.vim)
--   `:PlugStatus` → Check the plugin status：
--   `:PlugUpgrade` → Upgrade vim-plug itself：
-
-### Helpful Commands on Vim:
-
--   coc commands:
+-   How to use [coc commands]():
 
     -   `:CocConfig`
     -   `CocInstall coc-python`
     -   `CocCommand`
 
--   `:! python file_name.py` → Run python file from vim.
--   `: echo has('clipboard')`
+    -   `:! python file_name.py` → Run python file from vim.
+    -   `: echo has('clipboard')`
 
--   `:help popupmenu-completion`
--   `:help popupmenu-keys`
--   `$ brew install ctags`
+    -   `:help popupmenu-completion`
+    -   `:help popupmenu-keys`
+    -   `$ brew install ctags`
 
 ### [Technical Problems](https://superuser.com/questions/1115159/how-do-i-install-vim-on-osx-with-python-3-support):
 
@@ -387,3 +319,8 @@
 ## </details>
 
 ---
+
+<details>
+<summary style="font-size:25px;color:Orange;text-align:left">Tmux</summary>
+
+</details>

@@ -191,60 +191,33 @@
 -   [git checkout]()
 
     -   `$ git checkout <commit_id>`
-
     -   `$ git checkout master`
-
-    -   `$ git checkout <file_name>`
-
-        -   Discard the specified file from Working Area.
-
-    -   `$ git checkout .`
-
-        -   Discard all the changes to the Working Area.
-
+    -   `$ git checkout <file_name>` → Discard the specified file from Working Area.
+    -   `$ git checkout .` → Discard all the changes to the Working Area.
     -   `$ git checkout <commit_id>`
-
-    -   `$ git checkout -- <file> ...`
-
-        -   to discard changes in working directory
+    -   `$ git checkout -- <file> ...` → to discard changes in working directory
 
 -   [git reset]()
 
-    -   g`$ it rm --cached <file_name>`
+    -   <span style="color:orange">How to discard committed files in Git? Extra care should be given using the reset command</span>
 
-        -   Unstage the specified file from Staging Area.
-
-    -   <span style="color:orange">Extra care should be given using the reset command</span>
-
-    -   `$ git reset HEAD <file_name>`
-
-        -   Unstage the specified file from Staging Area.
-
-    -   `$ git reset HEAD */.`
-
-        -   Unstage all the file from Staging Area
-
-    -   `$ git reset HEAD~1`
-
-        -   Discard the FIRST commit from Local Repository (Committing Area). Discarted file kept in Working Area
-
-    -   `$ git reset HEAD~3`
-
-        -   Discard the FIRST THREE commit from Local Repository (Committing Area). Discarted file kept in Working Area
-
-    -   `$ git reset --soft HEAD~3`
-
-        -   Discard the first three commit from Local Repository (Committing Area). Discarted file kept in Staging Area
-
-    -   `$ git reset --hard`
-        -   🔥 COMPLETELY REMOVE EVERYTHING FROM LOCAL REPOSITORY (COMMITTING AREA) !!!!!!!!!!!!
+    -   `$ git reset HEAD <file_name>` → Unstage the specified file from Staging Area.
+    -   `$ git reset HEAD */.` → Unstage all the file from Staging Area
+    -   `$ git reset HEAD~1` → Discard the FIRST commit from Local Repository (Committing Area). Discarted file kept in Working Area
+    -   `$ git reset HEAD~3` → Discard the FIRST THREE commit from Local Repository (Committing Area). Discarted file kept in Working Area
+    -   `$ git reset --soft HEAD~3` → Discard the first three commit from Local Repository (Committing Area). Discarted file kept in Staging Area
+    -   `$ git reset --hard` → COMPLETELY REMOVE EVERYTHING FROM LOCAL REPOSITORY (COMMITTING AREA) !!!!!!!!!!!!
     -   `$ git reset --hard HEAD~2`
 
     -   <font color="orange">How do I discard unstaged changes in Git?</font>
 
-        -   `$ git restore .` - For all unstaged files in current working directory use: -`$ git-clean` - Remove untracked files from the working tree.
-        -   `$ git restore path/to/file/to/revert`
-            -   For a specific file use
+    -   `$ git restore .`
+        -   It can be used to undo the effects of `git add` and unstage changes you have previously added to the Staging Area.
+        -   It can also be used to discard local changes in a file, thereby restoring its last committed state.
+    -   `$ git restore path/to/file/to/revert` → Unstage the given file from Staging Area into Working Directory.
+    -   `$ git-clean` → Remove untracked files from the working tree.
+    -   `$ git rm --cached <file_name>` → Unstage the specified file (`file_name`) from Staging Area.
+    -   `$ git rm -r --cached store` → Unstage all (`store/*`) files recursively from Staging Area.
 
     -   🔥 REMOVING A COMMIT FROM REMOTE REPOSITORY:
 
@@ -255,99 +228,44 @@
 
 [git branch](https://www.atlassian.com/git/tutorials/using-branches)
 
--   git branch -h
--   git checkout -h
-
--   `$ git branch <new_branch_name>`
-
-    -   Creates a brnch with the specified branch_name.
-
--   `$ git checkout -b <new_branch_name>`
-
-    -   Create & checkout the specified new_branch_name.
-
--   `$ git branch –d <branch_name>`
-
-    -   Deleting a branch won’t delete the commits. It only deletes the label.
-
+-   `$ git branch -h`
+-   `$ git checkout -h`
+-   `$ git branch <new_branch_name>` → Creates a brnch with the specified branch_name.
+-   `$ git checkout -b <new_branch_name>` → Create & checkout the specified new_branch_name.
+-   `$ git branch –d <branch_name>` → Deleting a branch won’t delete the commits. It only deletes the label.
 -   `$ git branch <branch_name> <commit_id>`
-
--   `$ git checkout <branch_name>`
-
-    -   Checkout the specified branch_name.
-
--   `$ git branch –a`
-
-    -   Show all the name of branches that has been created so far
-
--   `$ git log –graph –onetime <branch_name1 branch_name2 … >`
-
-    -   Visulize the branches Structure
-
+-   `$ git checkout <branch_name>` → Checkout the specified branch_name.
+-   `$ git branch –a` → Show all the name of branches that has been created so far
+-   `$ git log –graph –onetime <branch_name1 branch_name2 … >` → Visulize the branches Structure
 -   🔥 TAG:
-
-    -   `$ git tag`
-        -   Verifying Tag
-    -   `$ git tag -a <lebel_of_tag>`
-        -   Creates a Annoted Tag, extra informations.
-    -   `$ git tag -d <name_of_tag_to_be_deleted>`
-        -   Deletes the specified tag.
-    -   `$ git tag -a <lebel_of_tag> <commit_id>`
-
-        -   Tags a older commit.
+    -   `$ git tag` → Verifying Tag
+    -   `$ git tag -a <lebel_of_tag>` → Creates a Annoted Tag, extra informations.
+    -   `$ git tag -d <name_of_tag_to_be_deleted>` → Deletes the specified tag.
+    -   `$ git tag -a <lebel_of_tag> <commit_id>` → Tags a older commit.
 
 🔥 [MERGING](https://www.atlassian.com/git/tutorials/using-branches/git-merge):
 
--   `$ git merge <origin_branch_name> < local_branch_name>`
-
-    -   Merge a local branch into a origin branch.
-
--   `$ git merge <local_branch_name1> < local_branch_name2>`
-
-    -   Merges two branches in local repository.
-
--   `$ git merge —abort`
-
-    -   Abort merge if it is not possible to merge for any reason.
-
-🔥 PUSH/PULL/FETCH:
-
--   `$ git remote set-url origin git@github.com:Aminul-Momin/Algorithms_and_Data_Structures.git`
-
-    -   to set remote origin url
-
--   `$ git remote show origin`
-
-    -   get the remote origin URL
-
+-   `$ git merge <origin_branch_name> < local_branch_name>` → Merge a local branch into a origin branch.
+-   `$ git merge <local_branch_name1> < local_branch_name2>` → Merges two branches in local repository.
+-   `$ git merge —abort` → Abort merge if it is not possible to merge for any reason.
+    🔥 PUSH/PULL/FETCH:
+-   `$ git remote set-url origin git@github.com:Aminul-Momin/Algorithms_and_Data_Structures.git` → to set remote origin url
+-   `$ git remote show origin` → get the remote origin URL
 -   `$ git remote add upstream <URL>`
-
 -   `$ git push origin master`
-
     -   `origin` is master branch of remote repository
     -   `master` is master branch of local repository
     -   Pushes the master branch of local repository to master branch of remote repository.
-
 -   `$ git push -u origin master`
-
--   `$ git push origin`
-
-    -   push all the branches to origin
-
+-   `$ git push origin` → push all the branches to origin
 -   `git fetch` is the command that tells your local git to retrieve the latest meta-data info from the original (yet doesn’t do any file transferring. It’s more like just checking to see if there are any changes available).
-
 -   `git pull` on the other hand does that AND brings (copy) those changes from the remote repository.
-
 -   `$ git pull origin master`
-
     -   `origin` is master branch of remote repository
     -   `master` is master branch of local repository
     -   pulls the master branch of remote repository into master branch of local repository.
-
     -   It's equivalent to `$ git fetch origin && git merge origin master`
-
 -   `$ git pull upstream Master`
-
 -   `$ git fetch`
 -   `$ git fetch origin`
 -   `$ git fetch origin/master master`

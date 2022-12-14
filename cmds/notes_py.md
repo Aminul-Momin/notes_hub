@@ -64,9 +64,18 @@
 
 ### pyenv:
 
+-   `$ brew install pyenv`
+-   `$ brew install pyenv-virtualenv` → [Install pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
+
+    -   `$ pyenv virtualenvs`
+    -   `$ pyenv activate <virtualenv_name>`
+    -   `$ pyenv deactivate`
+    -   `$ pyenv virtualenv-delete virtualenv_name`
+
 -   [pyenv doc](https://github.com/pyenv/pyenv-installer)
 -   [How to Install and Run Multiple Python Versions on macOS](https://www.youtube.com/watch?v=31WU0Dhw4sk)
 -   `$ pyenv` → list out all _pyenv_ commands.
+-   `$ pyenv help <command>` → Provide information on the specified command.
 -   `$ pyenv versions` → List out all the installed python versions in your machine.
 -   `$ pyenv install -l` → List out all the python versions available to install.
 -   `$ pyenv install 3.9.7` → Install python3.9.7 through pyenv.
@@ -78,21 +87,51 @@
 -   `$ pyenv `
 -   `$ `
 
+-   Some useful pyenv commands are:
+    -   `$ pyenv --version` → Display the version of pyenv
+    -   `$ pyenv commands` → List all available pyenv commands
+    -   `$ pyenv exec` → Run an executable with the selected Python version
+    -   `$ pyenv global` → Set or show the global Python version(s)
+    -   `$ pyenv help` → Display help for a command
+    -   `$ pyenv hooks` → List hook scripts for a given pyenv command
+    -   `$ pyenv init` → Configure the shell environment for pyenv
+    -   `$ pyenv install` → Install a Python version using python-build
+    -   `$ pyenv latest` → Print the latest installed or known version with the given prefix
+    -   `$ pyenv local` → Set or show the local application-specific Python version(s)
+    -   `$ pyenv prefix` → Display prefixes for Python versions
+    -   `$ pyenv rehash` → Rehash pyenv shims (run this after installing executables)
+    -   `$ pyenv root` → Display the root directory where versions and shims are kept
+    -   `$ pyenv shell` → Set or show the shell-specific Python version
+    -   `$ pyenv shims` → List existing pyenv shims
+    -   `$ pyenv uninstall` → Uninstall Python versions
+    -   `$ pyenv version` → Show the current Python version(s) and its origin
+    -   `$ pyenv version-file` → Detect the file that sets the current pyenv version
+    -   `$ pyenv version-name` → Show the current Python version
+    -   `$ pyenv version-origin` → Explain how the current Python version is set
+    -   `$ pyenv versions` → List all Python versions available to pyenv
+    -   `$ pyenv whence` → List all Python versions that contain the given executable
+    -   `$ pyenv which` → Display the full path to an executable
+
 ### PIP3 (PYTHON PACKAGE MENEGER):
 
--   HELP:
-    -   `$ pip3 -h`
-    -   `$ pip3 <command> -h`
-    -   `$ pip3 install -h`
 -   `$ pip3 -V` → Version of the pip3
 -   `$ type pip3` → pip3 is `/usr/local/bin/pip3`
 -   `$ sudo -H pip3 install --upgrade pip3`
 -   🔥 `$ python3 -m pip install --upgrade pip`
 -   `$ python3 -m pip uninstall pip`
 -   `$ pip3 <command> [options]`
+
+---
+
+-   HELP:
+    -   `$ pip3 -h`
+    -   `$ pip3 <command> -h` → EX: `$ pip3 install -h`
 -   `$ pip3 help` → Prints out all the availabel commands can be used in conjunction with pip3.
 -   `$ pip3 <comand_name> help | -h` → Apply help command to the specified pip command. Ex. pip3 install -h. NOTE: The vertical var, '|', indicate 'OR'
 -   `$ pip3 help install` → Provide help with pip3 'install' command.
+
+---
+
 -   `$ pip3 show <package_name>`
 -   `$ pip3 show numpy`
 -   `$ pip3 search <package_name>` → Ex. pip3 search numpy
