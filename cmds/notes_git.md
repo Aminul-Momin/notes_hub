@@ -1,3 +1,6 @@
+<details>
+<summary style="font-size:25px;color:Orange;text-align:left">Git Terminology</summary>
+
 🔥 GIT TUTORIALS:
 
 -   [Learn Git with Bitbucket Cloud](https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud)
@@ -45,6 +48,10 @@
 
 -   You cannot delete the branch you are on.
 -   If you checkout a branch and then commits, the branch’s label autometically updates to the new commits.
+</details>
+
+<details open>
+<summary style="font-size:25px;color:Orange;text-align:left">Git Commands</summary>
 
 🔥 HELP:
 
@@ -261,3 +268,4 @@
 -   `$ git fetch`
 -   `$ git fetch origin`
 -   `$ git fetch origin/master master`
+</details>

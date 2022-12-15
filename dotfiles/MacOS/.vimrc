@@ -1,15 +1,9 @@
-
-set path+=** "Enable recursive file find"
-set wildmenu
-set wildignore+=**/.venv/** "Exclude the given diractory from recursive searching for file find command"
 "set nohlsearch
-set hlsearch
-set magic " Set magic on, for regex
-set hidden " Allow switch buffer without saving (wirting) it"
 set noerrorbells
 set nowrap
 set incsearch
 set scrolloff=8
+
 
 let need_to_install_plugins = 0
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -19,40 +13,36 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     let need_to_install_plugins = 1
 endif
 
-
-
 call plug#begin()
 
+Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
-"Plug 'vim-airline/vim-airline' " Use vim-airline/lightline as your statusbar theme
 Plug 'gruvbox-community/gruvbox'
-Plug 'joshdick/onedark.vim'
+"Plug 'joshdick/onedark.vim'
 Plug 'ap/vim-buftabline'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
+Plug 'dense-analysis/ale'       " Asyncronus Linting Engine
+Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'lepture/vim-jinja'
-Plug 'alvan/vim-closetag'
 Plug 'pangloss/vim-javascript'
+Plug 'alvan/vim-closetag'
 Plug 'maxmellon/vim-jsx-pretty'
 
 " Vim needed to be compiled with python3.6+ support
 "Plug 'Valloric/YouCompleteMe'
 
-"Plug 'dense-analysis/ale'       " Asyncronus Linting Engine
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Conquer of Completion
 " You have to install coc extension or configure language servers for LSP support.
-" `$ cd .vim/plugged/coc.nvim/ && yarn install && yarn build` if you setup `.vimrc`
+" `$ cd .vim/plugged/coc.nvim/ && yarn install && yarn build`
 " `$ vim ~/.vimrc`; `:CocInstall coc-python`; `:CocInstall coc-jedi`     " Install python COC support
 
-"Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
+Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
 " `$ vim ~/.vimrc`; `:CocInstall coc-htmldjango`     " Install python COC support
 
 call plug#end()
@@ -67,9 +57,9 @@ if need_to_install_plugins == 1
     q
 endif
 
-"""""""""""""" Set leader """"""""""""""""""
+""""""""""""""Set leader""""""""""""""""""
 let mapleader = "\<Space>"
-""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""
 " always show the status bar
 set laststatus=2
 
@@ -106,7 +96,18 @@ autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 " auto-pairs
 au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b'" : "'"})
 
+" word movement
+imap <S-Left> <Esc>bi
+nmap <S-Left> b
+imap <S-Right> <Esc><Right>wi
+nmap <S-Right> w
 
+" indent/unindent with tab/shift-tab
+nmap <Tab> >>
+nmap <S-tab> <<
+imap <S-Tab> <Esc><<i
+vmap <Tab> >gv
+vmap <S-Tab> <gv
 
 " mouse
 set mouse=a
@@ -133,7 +134,7 @@ filetype plugin indent on
 " lightline
 set noshowmode
 let g:lightline = { 'colorscheme': 'onedark' }
-
+let g:ale_linters = { 'pyhton': ['flake8'] }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Specific colorscheme settings (must come before setting your colorscheme).
@@ -197,7 +198,16 @@ function ToggleWrap()
 endfunction
 
 
+" move through split windows
+nmap <leader><Up> :wincmd k<CR>
+nmap <leader><Down> :wincmd j<CR>
+nmap <leader><Left> :wincmd h<CR>
+nmap <leader><Right> :wincmd l<CR>
 
+" move through buffers
+nmap <leader>[ :bp!<CR>
+nmap <leader>] :bn!<CR>
+nmap <leader>x :bp<bar>bd#<CR>
 
 " restore place in file from previous session
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -226,6 +236,15 @@ autocmd VimEnter * call StartUp()
 
 
 
+" tags
+map <leader>t :TagbarToggle<CR>
+
+" copy, cut and paste
+vmap <C-c> "+y
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
+
 " disable autoindent when pasting text
 " source: https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
 let &t_SI .= "\<Esc>[?2004h"
@@ -239,84 +258,42 @@ endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
+" Move 1 more lines up or down in normal and visual selection modes.
+"nnoremap K :m .-2<CR>==
+"nnoremap J :m .+1<CR>==
+"vnoremap K :m '<-2<CR>gv=gv
+"vnoremap J :m '>+1<CR>gv=gv
+
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Set this. Airline will handle the rest.
-"let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 
 """"""""""""" Asyncronus Linting Engine """""""""""""
 " consult `:help ale-options` for global options and `:help ale-integration-options` for options specified to particular linters.
 " Use the global executable with a special name for flake8.
 "let g:ale_python_flake8_executable = '/foo/bar/flake8'
 
-"let g:ale_python_flake8_use_global = 1
-"let g:ale_linters = {'python': 'all'}
-"let g:ale_linters = { 'pyhton': ['flake8'] }
-"let g:ale_fixers = {'python': ['isort', 'yapf', 'remove_trailing_lines', 'trim_whitespace']}
-"let g:ale_lsp_suggestions = 1
-"let g:ale_fix_on_save = 1
-"let g:ale_go_gofmt_options = '-s'
-"let g:ale_go_gometalinter_options = '— enable=gosimple — enable=staticcheck'
-"let g:ale_completion_enabled = 1
-"let g:ale_echo_msg_error_str = 'E'
-"let g:ale_echo_msg_warning_str = 'W'
-"let g:ale_echo_msg_format = '[%linter%] [%severity%] %code: %%s'
+let g:ale_python_flake8_use_global = 1
+let g:ale_linters = {'python': 'all'}
+let g:ale_fixers = {'python': ['isort', 'yapf', 'remove_trailing_lines', 'trim_whitespace']}
+let g:ale_lsp_suggestions = 1
+let g:ale_fix_on_save = 1
+let g:ale_go_gofmt_options = '-s'
+let g:ale_go_gometalinter_options = '— enable=gosimple — enable=staticcheck'
+let g:ale_completion_enabled = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] [%severity%] %code: %%s'
 
 " ale
-"map <C-e> <Plug>(ale_next_wrap)
-"map <C-r> <Plug>(ale_previous_wrap)
+map <C-e> <Plug>(ale_next_wrap)
+map <C-r> <Plug>(ale_previous_wrap)
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""" My Vim Mappings """""""""""""""""""
-nnoremap ; : " Maps ; into SHIFT+;.
-vnoremap ; : " Maps ; into SHIFT+;.
 
-" tags
-map <leader>t :TagbarToggle<CR>
-
-" copy, cut and paste
-vmap <C-c> "+y
-vmap <C-x> "+c
-vmap <C-v> c<ESC>"+p
-imap <C-v> <ESC>"+pa
-
-" move through split windows
-nmap <leader><Up> :wincmd k<CR>
-nmap <leader><Down> :wincmd j<CR>
-nmap <leader><Left> :wincmd h<CR>
-nmap <leader><Right> :wincmd l<CR>
-
-" word movement
-imap <S-Left> <Esc>bi
-nmap <S-Left> b
-imap <S-Right> <Esc><Right>wi
-nmap <S-Right> w
-
-" indent/unindent with tab/shift-tab
-nmap <Tab> >>
-nmap <S-tab> <<
-imap <S-Tab> <Esc><<i
-vmap <Tab> >gv
-vmap <S-Tab> <gv
-
-" move through buffers
-nmap <leader>[ :bp!<CR>
-nmap <leader>] :bn!<CR>
-nmap <leader>x :bp<bar>bd#<CR>
-
-" Move 1 more lines up or down in normal and visual selection modes.
-nnoremap K :m .-2<CR>==
-nnoremap J :m .+1<CR>==
-vnoremap K :m '<-2<CR>gv=gv
-vnoremap J :m '>+1<CR>gv=gv
-
-"nnoremap <A-j> :m .+1<CR>==
-"nnoremap <A-k> :m .-2<CR>==
-"inoremap <A-j> <Esc>:m .+1<CR>==gi
-"inoremap <A-k> <Esc>:m .-2<CR>==gi
-"vnoremap <A-j> :m '>+1<CR>gv=gv
-"vnoremap <A-k> :m '<-2<CR>gv=gv
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"Enable executing python code from vim
-autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>

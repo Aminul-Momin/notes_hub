@@ -2,22 +2,16 @@
 
 ---
 
-<details>
+<details open>
 <summary style="font-size:25px;color:Orange;text-align:left">Vim Shortcutes</summary>
 
 -   `<Space> n` → Toggle folder/file explorer
 -   `<Space> t` → Toggle Tagbar
 -   `<Space> m` → Toggle mouse ON/OFF
-
+-   `⌃ + w` + `→/←/↑/⬇️` → Shift focus across vim pane.
 -   How to comment out multiple lines?
-
-```
-1. marks lines
-2. `:/s/^/#`
-    - `⬆︎+:` to get `:`
-    - '#' is comenting character.
-    - '^' is indication of beginning of line as regex.
-```
+    -   mark lines needed to be commented
+    -   `:/s/^/#` → substitute starting of marked lines by `#`
 
 ---
 
@@ -51,7 +45,7 @@
 
 ---
 
-🔥 Tip: Prefix a cursor movement command with a number to repeat it. For example, 4j moves down 4 lines.
+🔥 Tip: Prefix a cursor movement command with a number to repeat it. For example, `4j` moves down 4 lines.
 
 ### ENTERING INTO INSERT MODE:
 
@@ -97,13 +91,8 @@
 
 ### CURSOR MOVEMENTS:
 
--   `h` → Move cursor left
--   `j` → Move cursor down
--   `k` → Move cursor up
--   `l` → Move cursor right
--   `H` → Move to top of screen
--   `M` → Move to middle of screen
--   `L` → Move to bottom of screen
+-   `h`/`j`/`k`/`l` → Move cursor Left/Down/Up/Right
+-   `H`/`M`/`L` → Move to Top/Middle/Bottom of screen
 -   `🔥 w` → Jump forwards to the start of a word
 -   `W` → Jump forwards to the start of a word (words can contain punctuation)
 -   `🔥 e` → Jump forwards to the end of a word
@@ -275,6 +264,8 @@
 
 -   `~/.vimrc` → Configuration file for `vim`.
 -   `~/.config/nvim/init.vim` → Configuration File for `Neovim`.
+-   `~/.config/nvim/plugged` → Plug-ins Folder for `Neovim`.
+-   `~/.local/share/nvim/site/autoload/plug.vim` → Autoload file for `Neovim`
 
 **NOTES**
 

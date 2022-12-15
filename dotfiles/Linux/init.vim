@@ -28,16 +28,15 @@ Plug 'maxmellon/vim-jsx-pretty'
 
 " Vim needed to be compiled with python3.6+ support
 "Plug 'Valloric/YouCompleteMe'
-
 "Plug 'dense-analysis/ale'       " Asyncronus Linting Engine
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Conquer of Completion
 " You have to install coc extension or configure language servers for LSP support.
-" `$ cd .vim/plugged/coc.nvim/ && yarn install && yarn build`
-" `$ vim ~/.vimrc`; `:CocInstall coc-python`; `:CocInstall coc-jedi`     " Install python COC support
+" `$ cd ~/.config/nvim/plugged/coc.nvim/ && yarn install && yarn build`
+" `$ nvim ~/.config/nvim/init.vim`; `:CocInstall coc-python`; `:CocInstall coc-jedi`     " Install python COC support
 
 "Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
-" `$ vim ~/.vimrc`; `:CocInstall coc-htmldjango`     " Install python COC support
+" `$ nvim ~/.config/nvim/init.vim`; `:CocInstall coc-htmldjango`     " Install python COC support
 
 call plug#end()
 

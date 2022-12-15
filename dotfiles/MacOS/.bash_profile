@@ -2,6 +2,7 @@
 create_alias(){
     alias python=python3
     alias pip=pip3
+    alias vim=nvim
     # alias tmux="tmux 2"
 }
 create_alias
