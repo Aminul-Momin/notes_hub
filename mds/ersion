@@ -1,0 +1,2530 @@
+
+chdir(/usr/share/vim)
+fchdir() to previous dir
+sourcing "$VIM/vimrc"
+finished sourcing $VIM/vimrc
+chdir(/usr/share/vim/vim81)
+fchdir() to previous dir
+could not source "$VIMRUNTIME/macmap.vim"
+chdir(/Users/a.momin)
+fchdir() to previous dir
+sourcing "$HOME/.vimrc"
+Searching for "autoload/plug.vim" in "/Users/a.momin/.vim,/usr/share/vim/vimfiles,/usr/share/vim/vim81,/usr/share/vim/vimfiles/after,/Users/a.momin/.vim/after"
+Searching for "/Users/a.momin/.vim/autoload/plug.vim"
+chdir(/Users/a.momin/.vim/autoload)
+fchdir() to previous dir
+line 10: sourcing "/Users/a.momin/.vim/autoload/plug.vim"
+finished sourcing /Users/a.momin/.vim/autoload/plug.vim
+continuing in /Users/a.momin/.vimrc
+Searching for "filetype.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momin/.vim/p
+Searching for "/Users/a.momin/.vim/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/filetype.vim"
+Searching for "/Users/a.momin/.fzf/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/filetype.vim"
+Searching for "/usr/share/vim/vimfiles/filetype.vim"
+Searching for "/usr/share/vim/vim81/filetype.vim"
+chdir(/usr/share/vim/vim81)
+fchdir() to previous dir
+line 83: sourcing "/usr/share/vim/vim81/filetype.vim"
+Searching for "ftdetect/*.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momin/.vim
+Searching for "/Users/a.momin/.vim/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/ftdetect/*.vim"
+Searching for "/Users/a.momin/.fzf/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/ftdetect/*.vim"
+chdir(/Users/a.momin/.vim/plugged/ultisnips/ftdetect)
+fchdir() to previous dir
+line 2181: sourcing "/Users/a.momin/.vim/plugged/ultisnips/ftdetect/snippets.vim"
+finished sourcing /Users/a.momin/.vim/plugged/ultisnips/ftdetect/snippets.vim
+continuing in /usr/share/vim/vim81/filetype.vim
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/ftdetect/*.vim"
+Searching for "/usr/share/vim/vimfiles/ftdetect/*.vim"
+Searching for "/usr/share/vim/vim81/ftdetect/*.vim"
+Searching for "/usr/share/vim/vimfiles/after/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/ftdetect/*.vim"
+Searching for "/Users/a.momin/.vim/after/ftdetect/*.vim"
+finished sourcing /usr/share/vim/vim81/filetype.vim
+continuing in function plug#end
+Searching for "/usr/share/vim/vimfiles/after/filetype.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/filetype.vim"
+Searching for "/Users/a.momin/.vim/after/filetype.vim"
+Searching for "ftplugin.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momin/.vim/p
+Searching for "/Users/a.momin/.vim/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/ftplugin.vim"
+Searching for "/Users/a.momin/.fzf/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/ftplugin.vim"
+Searching for "/usr/share/vim/vimfiles/ftplugin.vim"
+Searching for "/usr/share/vim/vim81/ftplugin.vim"
+chdir(/usr/share/vim/vim81)
+fchdir() to previous dir
+line 83: sourcing "/usr/share/vim/vim81/ftplugin.vim"
+finished sourcing /usr/share/vim/vim81/ftplugin.vim
+continuing in function plug#end
+Searching for "/usr/share/vim/vimfiles/after/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/ftplugin.vim"
+Searching for "/Users/a.momin/.vim/after/ftplugin.vim"
+Searching for "indent.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momin/.vim/plu
+Searching for "/Users/a.momin/.vim/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/indent.vim"
+Searching for "/Users/a.momin/.fzf/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/indent.vim"
+Searching for "/usr/share/vim/vimfiles/indent.vim"
+Searching for "/usr/share/vim/vim81/indent.vim"
+chdir(/usr/share/vim/vim81)
+fchdir() to previous dir
+line 83: sourcing "/usr/share/vim/vim81/indent.vim"
+finished sourcing /usr/share/vim/vim81/indent.vim
+continuing in function plug#end
+Searching for "/usr/share/vim/vimfiles/after/indent.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/indent.vim"
+Searching for "/Users/a.momin/.vim/after/indent.vim"
+chdir(/usr/share/vim/vim81/syntax)
+fchdir() to previous dir
+line 86: sourcing "/usr/share/vim/vim81/syntax/syntax.vim"
+Searching for "syntax/synload.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momin/
+Searching for "/Users/a.momin/.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/syntax/synload.vim"
+Searching for "/Users/a.momin/.fzf/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/syntax/synload.vim"
+Searching for "/usr/share/vim/vimfiles/syntax/synload.vim"
+Searching for "/usr/share/vim/vim81/syntax/synload.vim"
+chdir(/usr/share/vim/vim81/syntax)
+fchdir() to previous dir
+line 19: sourcing "/usr/share/vim/vim81/syntax/synload.vim"
+Searching for "syntax/syncolor.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momin
+Searching for "/Users/a.momin/.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.fzf/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/syntax/syncolor.vim"
+Searching for "/usr/share/vim/vimfiles/syntax/syncolor.vim"
+Searching for "/usr/share/vim/vim81/syntax/syncolor.vim"
+chdir(/usr/share/vim/vim81/syntax)
+fchdir() to previous dir
+line 21: sourcing "/usr/share/vim/vim81/syntax/syncolor.vim"
+finished sourcing /usr/share/vim/vim81/syntax/syncolor.vim
+continuing in /usr/share/vim/vim81/syntax/synload.vim
+Searching for "/usr/share/vim/vimfiles/after/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/after/syntax/syncolor.vim"
+finished sourcing /usr/share/vim/vim81/syntax/synload.vim
+continuing in /usr/share/vim/vim81/syntax/syntax.vim
+finished sourcing /usr/share/vim/vim81/syntax/syntax.vim
+continuing in function plug#end
+chdir(/usr/share/vim/vim81/syntax)
+fchdir() to previous dir
+line 137: sourcing "/usr/share/vim/vim81/syntax/syntax.vim"
+chdir(/usr/share/vim/vim81/syntax)
+fchdir() to previous dir
+line 15: sourcing "/usr/share/vim/vim81/syntax/nosyntax.vim"
+finished sourcing /usr/share/vim/vim81/syntax/nosyntax.vim
+continuing in /usr/share/vim/vim81/syntax/syntax.vim
+Searching for "syntax/synload.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momin/
+Searching for "/Users/a.momin/.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/syntax/synload.vim"
+Searching for "/Users/a.momin/.fzf/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/syntax/synload.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/syntax/synload.vim"
+Searching for "/usr/share/vim/vimfiles/syntax/synload.vim"
+Searching for "/usr/share/vim/vim81/syntax/synload.vim"
+chdir(/usr/share/vim/vim81/syntax)
+fchdir() to previous dir
+line 19: sourcing "/usr/share/vim/vim81/syntax/synload.vim"
+Searching for "syntax/syncolor.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momin
+Searching for "/Users/a.momin/.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.fzf/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/syntax/syncolor.vim"
+Searching for "/usr/share/vim/vimfiles/syntax/syncolor.vim"
+Searching for "/usr/share/vim/vim81/syntax/syncolor.vim"
+chdir(/usr/share/vim/vim81/syntax)
+fchdir() to previous dir
+line 21: sourcing "/usr/share/vim/vim81/syntax/syncolor.vim"
+finished sourcing /usr/share/vim/vim81/syntax/syncolor.vim
+continuing in /usr/share/vim/vim81/syntax/synload.vim
+Searching for "/usr/share/vim/vimfiles/after/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/after/syntax/syncolor.vim"
+finished sourcing /usr/share/vim/vim81/syntax/synload.vim
+continuing in /usr/share/vim/vim81/syntax/syntax.vim
+finished sourcing /usr/share/vim/vim81/syntax/syntax.vim
+continuing in /Users/a.momin/.vimrc
+Searching for "colors/gruvbox.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momin/
+Searching for "/Users/a.momin/.vim/colors/gruvbox.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/colors/gruvbox.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/colors/gruvbox.vim"
+chdir(/Users/a.momin/.vim/plugged/gruvbox/colors)
+fchdir() to previous dir
+line 145: sourcing "/Users/a.momin/.vim/plugged/gruvbox/colors/gruvbox.vim"
+Searching for "syntax/syncolor.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momin
+Searching for "/Users/a.momin/.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.fzf/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/syntax/syncolor.vim"
+Searching for "/usr/share/vim/vimfiles/syntax/syncolor.vim"
+Searching for "/usr/share/vim/vim81/syntax/syncolor.vim"
+chdir(/usr/share/vim/vim81/syntax)
+fchdir() to previous dir
+line 13: sourcing "/usr/share/vim/vim81/syntax/syncolor.vim"
+finished sourcing /usr/share/vim/vim81/syntax/syncolor.vim
+continuing in /Users/a.momin/.vim/plugged/gruvbox/colors/gruvbox.vim
+Searching for "/usr/share/vim/vimfiles/after/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/after/syntax/syncolor.vim"
+Searching for "syntax/syncolor.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momin
+Searching for "/Users/a.momin/.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.fzf/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/syntax/syncolor.vim"
+Searching for "/usr/share/vim/vimfiles/syntax/syncolor.vim"
+Searching for "/usr/share/vim/vim81/syntax/syncolor.vim"
+chdir(/usr/share/vim/vim81/syntax)
+fchdir() to previous dir
+line 15: sourcing "/usr/share/vim/vim81/syntax/syncolor.vim"
+finished sourcing /usr/share/vim/vim81/syntax/syncolor.vim
+continuing in /Users/a.momin/.vim/plugged/gruvbox/colors/gruvbox.vim
+Searching for "/usr/share/vim/vimfiles/after/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/after/syntax/syncolor.vim"
+finished sourcing /Users/a.momin/.vim/plugged/gruvbox/colors/gruvbox.vim
+continuing in /Users/a.momin/.vimrc
+Searching for "colors/gruvbox.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momin/
+Searching for "/Users/a.momin/.vim/colors/gruvbox.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/colors/gruvbox.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/colors/gruvbox.vim"
+chdir(/Users/a.momin/.vim/plugged/gruvbox/colors)
+fchdir() to previous dir
+line 146: sourcing "/Users/a.momin/.vim/plugged/gruvbox/colors/gruvbox.vim"
+Searching for "syntax/syncolor.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momin
+Searching for "/Users/a.momin/.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.fzf/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/syntax/syncolor.vim"
+Searching for "/usr/share/vim/vimfiles/syntax/syncolor.vim"
+Searching for "/usr/share/vim/vim81/syntax/syncolor.vim"
+chdir(/usr/share/vim/vim81/syntax)
+fchdir() to previous dir
+line 13: sourcing "/usr/share/vim/vim81/syntax/syncolor.vim"
+finished sourcing /usr/share/vim/vim81/syntax/syncolor.vim
+continuing in /Users/a.momin/.vim/plugged/gruvbox/colors/gruvbox.vim
+Searching for "/usr/share/vim/vimfiles/after/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/after/syntax/syncolor.vim"
+Searching for "syntax/syncolor.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momin
+Searching for "/Users/a.momin/.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.fzf/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/syntax/syncolor.vim"
+Searching for "/usr/share/vim/vimfiles/syntax/syncolor.vim"
+Searching for "/usr/share/vim/vim81/syntax/syncolor.vim"
+chdir(/usr/share/vim/vim81/syntax)
+fchdir() to previous dir
+line 15: sourcing "/usr/share/vim/vim81/syntax/syncolor.vim"
+finished sourcing /usr/share/vim/vim81/syntax/syncolor.vim
+continuing in /Users/a.momin/.vim/plugged/gruvbox/colors/gruvbox.vim
+Searching for "/usr/share/vim/vimfiles/after/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/syntax/syncolor.vim"
+Searching for "/Users/a.momin/.vim/after/syntax/syncolor.vim"
+finished sourcing /Users/a.momin/.vim/plugged/gruvbox/colors/gruvbox.vim
+continuing in /Users/a.momin/.vimrc
+Searching for "spell/en.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momin/.vim/p
+Searching for "/Users/a.momin/.vim/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/spell/en.vim"
+Searching for "/Users/a.momin/.fzf/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/spell/en.vim"
+Searching for "/usr/share/vim/vimfiles/spell/en.vim"
+Searching for "/usr/share/vim/vim81/spell/en.vim"
+Searching for "/usr/share/vim/vimfiles/after/spell/en.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/spell/en.vim"
+Searching for "/Users/a.momin/.vim/after/spell/en.vim"
+not found in 'runtimepath': "spell/en.vim"
+Searching for "macros/matchit.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momin/
+Searching for "/Users/a.momin/.vim/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/macros/matchit.vim"
+Searching for "/Users/a.momin/.fzf/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/macros/matchit.vim"
+Searching for "/usr/share/vim/vimfiles/macros/matchit.vim"
+Searching for "/usr/share/vim/vim81/macros/matchit.vim"
+chdir(/usr/share/vim/vim81/macros)
+fchdir() to previous dir
+line 250: sourcing "/usr/share/vim/vim81/macros/matchit.vim"
+Searching for "pack/*/start/matchit" in "/Users/a.momin/.vim,/usr/share/vim/vimfiles,/usr/share/vim/vim81,/usr/share/vim/vimfiles/after,/Users/a.momin/.vim/after"
+Searching for "/Users/a.momin/.vim/pack/*/start/matchit"
+Searching for "/usr/share/vim/vimfiles/pack/*/start/matchit"
+Searching for "/usr/share/vim/vim81/pack/*/start/matchit"
+Searching for "/usr/share/vim/vimfiles/after/pack/*/start/matchit"
+Searching for "/Users/a.momin/.vim/after/pack/*/start/matchit"
+not found in 'packpath': "pack/*/start/matchit"
+Searching for "pack/*/opt/matchit" in "/Users/a.momin/.vim,/usr/share/vim/vimfiles,/usr/share/vim/vim81,/usr/share/vim/vimfiles/after,/Users/a.momin/.vim/after"
+Searching for "/Users/a.momin/.vim/pack/*/opt/matchit"
+Searching for "/usr/share/vim/vimfiles/pack/*/opt/matchit"
+Searching for "/usr/share/vim/vim81/pack/*/opt/matchit"
+chdir(/usr/share/vim/vim81)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-one)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/gruvbox)
+fchdir() to previous dir
+chdir(/Users/a.momin/.fzf)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/fzf.vim)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-obsession)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-zoom)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-tmux-focus-events)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/fern.vim)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-eunuch)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-dirdiff)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/linediff.vim)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-ingo-library)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-SpellCheck)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-highlightedyank)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/quick-scope)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-visual-star-search)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/is.vim)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-grepper)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-better-whitespace)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-commentary)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-sleuth)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-unimpaired)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/FastFold)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-signify)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-fugitive)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/limelight.vim)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/goyo.vim)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/ultisnips)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-snippets)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/AutoComplPop)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-test)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/scss-syntax.vim)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/nginx.vim)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/csv.vim)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/dockerfile.vim)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-elixir)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/tabular)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-markdown)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/markdown-preview.nvim)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-hcl)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/pgsql.vim)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/html5.vim)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-javascript)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/i3-vim-syntax)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-yaml)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-tmux)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-git)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-liquid)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-rails)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/python-syntax)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-ruby)
+fchdir() to previous dir
+chdir(/Users/a.momin/.vim/plugged/vim-systemd-syntax)
+fchdir() to previous dir
+chdir(/usr/share/vim/vimfiles)
+fchdir() to previous dir
+chdir(/usr/share/vim/vim81)
+fchdir() to previous dir
+chdir(/usr/share/vim/vim81/pack/dist/opt)
+fchdir() to previous dir
+chdir(/usr/share/vim/vim81/pack/dist/opt/matchit/plugin)
+fchdir() to previous dir
+line 4: sourcing "/usr/share/vim/vim81/pack/dist/opt/matchit/plugin/matchit.vim"
+finished sourcing /usr/share/vim/vim81/pack/dist/opt/matchit/plugin/matchit.vim
+continuing in /usr/share/vim/vim81/macros/matchit.vim
+Searching for "/usr/share/vim/vimfiles/after/pack/*/opt/matchit"
+Searching for "/Users/a.momin/.vim/after/pack/*/opt/matchit"
+finished sourcing /usr/share/vim/vim81/macros/matchit.vim
+continuing in /Users/a.momin/.vimrc
+Searching for "/usr/share/vim/vimfiles/after/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/macros/matchit.vim"
+Searching for "/Users/a.momin/.vim/after/macros/matchit.vim"
+finished sourcing $HOME/.vimrc
+Searching for "pack/*/start/*" in "/Users/a.momin/.vim,/usr/share/vim/vimfiles,/usr/share/vim/vim81,/usr/share/vim/vimfiles/after,/Users/a.momin/.vim/after"
+Searching for "/Users/a.momin/.vim/pack/*/start/*"
+Searching for "/usr/share/vim/vimfiles/pack/*/start/*"
+Searching for "/usr/share/vim/vim81/pack/*/start/*"
+Searching for "/usr/share/vim/vimfiles/after/pack/*/start/*"
+Searching for "/Users/a.momin/.vim/after/pack/*/start/*"
+not found in 'packpath': "pack/*/start/*"
+Searching for "plugin/**/*.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momin/.vi
+Searching for "/Users/a.momin/.vim/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/plugin/**/*.vim"
+Searching for "/Users/a.momin/.fzf/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/plugin/**/*.vim"
+chdir(/Users/a.momin/.vim/plugged/ultisnips/plugin)
+fchdir() to previous dir
+sourcing "/Users/a.momin/.vim/plugged/ultisnips/plugin/UltiSnips.vim"
+Searching for "autoload/UltiSnips/map_keys.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/U
+Searching for "/Users/a.momin/.vim/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.fzf/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/autoload/UltiSnips/map_keys.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim"
+chdir(/Users/a.momin/.vim/plugged/ultisnips/autoload/UltiSnips)
+fchdir() to previous dir
+line 28: sourcing "/Users/a.momin/.vim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim"
+finished sourcing /Users/a.momin/.vim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim
+continuing in /Users/a.momin/.vim/plugged/ultisnips/plugin/UltiSnips.vim
+finished sourcing /Users/a.momin/.vim/plugged/ultisnips/plugin/UltiSnips.vim
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/plugin/**/*.vim"
+Searching for "/usr/share/vim/vimfiles/plugin/**/*.vim"
+Searching for "/usr/share/vim/vim81/plugin/**/*.vim"
+chdir(/usr/share/vim/vim81/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim81/plugin/getscriptPlugin.vim"
+finished sourcing /usr/share/vim/vim81/plugin/getscriptPlugin.vim
+chdir(/usr/share/vim/vim81/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim81/plugin/gzip.vim"
+finished sourcing /usr/share/vim/vim81/plugin/gzip.vim
+chdir(/usr/share/vim/vim81/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim81/plugin/logiPat.vim"
+finished sourcing /usr/share/vim/vim81/plugin/logiPat.vim
+chdir(/usr/share/vim/vim81/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim81/plugin/manpager.vim"
+finished sourcing /usr/share/vim/vim81/plugin/manpager.vim
+chdir(/usr/share/vim/vim81/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim81/plugin/matchparen.vim"
+finished sourcing /usr/share/vim/vim81/plugin/matchparen.vim
+chdir(/usr/share/vim/vim81/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim81/plugin/netrwPlugin.vim"
+finished sourcing /usr/share/vim/vim81/plugin/netrwPlugin.vim
+chdir(/usr/share/vim/vim81/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim81/plugin/rrhelper.vim"
+finished sourcing /usr/share/vim/vim81/plugin/rrhelper.vim
+chdir(/usr/share/vim/vim81/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim81/plugin/spellfile.vim"
+finished sourcing /usr/share/vim/vim81/plugin/spellfile.vim
+chdir(/usr/share/vim/vim81/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim81/plugin/tarPlugin.vim"
+finished sourcing /usr/share/vim/vim81/plugin/tarPlugin.vim
+chdir(/usr/share/vim/vim81/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim81/plugin/tohtml.vim"
+finished sourcing /usr/share/vim/vim81/plugin/tohtml.vim
+chdir(/usr/share/vim/vim81/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim81/plugin/vimballPlugin.vim"
+finished sourcing /usr/share/vim/vim81/plugin/vimballPlugin.vim
+chdir(/usr/share/vim/vim81/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim81/plugin/zipPlugin.vim"
+finished sourcing /usr/share/vim/vim81/plugin/zipPlugin.vim
+Searching for "/usr/share/vim/vim81/pack/dist/opt/matchit/plugin/**/*.vim"
+chdir(/usr/share/vim/vim81/pack/dist/opt/matchit/plugin)
+fchdir() to previous dir
+sourcing "/usr/share/vim/vim81/pack/dist/opt/matchit/plugin/matchit.vim"
+finished sourcing /usr/share/vim/vim81/pack/dist/opt/matchit/plugin/matchit.vim
+Searching for "pack/*/start/*" in "/Users/a.momin/.vim,/usr/share/vim/vimfiles,/usr/share/vim/vim81,/usr/share/vim/vimfiles/after,/Users/a.momin/.vim/after"
+Searching for "/Users/a.momin/.vim/pack/*/start/*"
+Searching for "/usr/share/vim/vimfiles/pack/*/start/*"
+Searching for "/usr/share/vim/vim81/pack/*/start/*"
+Searching for "/usr/share/vim/vimfiles/after/pack/*/start/*"
+Searching for "/Users/a.momin/.vim/after/pack/*/start/*"
+not found in 'packpath': "pack/*/start/*"
+Searching for "plugin/**/*.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momin/.vi
+Searching for "/usr/share/vim/vimfiles/after/plugin/**/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/plugin/**/*.vim"
+chdir(/Users/a.momin/.vim/plugged/ultisnips/after/plugin)
+fchdir() to previous dir
+sourcing "/Users/a.momin/.vim/plugged/ultisnips/after/plugin/UltiSnips_after.vim"
+finished sourcing /Users/a.momin/.vim/plugged/ultisnips/after/plugin/UltiSnips_after.vim
+Searching for "/Users/a.momin/.vim/after/plugin/**/*.vim"
+Reading viminfo file "/Users/a.momin/.viminfo" info oldfiles
+Executing BufWinEnter Autocommands for "*"
+autocommand setlocal cursorline
+
+Executing BufEnter Autocommands for "*"
+autocommand :checktime
+
+Executing BufEnter Autocommands for "*"
+autocommand call s:hijack_directory()
+
+Executing VimEnter Autocommands for "*"
+autocommand setlocal cursorline
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+
+Searching for "doc/tags doc/tags-??" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momi
+Searching for "/Users/a.momin/.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/doc/tags-??"
+Searching for "/Users/a.momin/.fzf/doc/tags"
+Searching for "/Users/a.momin/.fzf/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/tabular/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/tabular/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/doc/tags-??"
+Searching for "/usr/share/vim/vimfiles/doc/tags"
+Searching for "/usr/share/vim/vimfiles/doc/tags-??"
+Searching for "/usr/share/vim/vim81/doc/tags"
+Searching for "/usr/share/vim/vim81/doc/tags-??"
+Searching for "/usr/share/vim/vim81/pack/dist/opt/matchit/doc/tags"
+Searching for "/usr/share/vim/vim81/pack/dist/opt/matchit/doc/tags-??"
+Searching for "/usr/share/vim/vimfiles/after/doc/tags"
+Searching for "/usr/share/vim/vimfiles/after/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/doc/tags-??"
+Searching for "/Users/a.momin/.vim/after/doc/tags"
+Searching for "/Users/a.momin/.vim/after/doc/tags-??"
+Searching tags file /Users/a.momin/.vim/plugged/ultisnips/doc/tags
+Searching tags file /usr/share/vim/vim81/doc/tags
+Searching tags file /usr/share/vim/vim81/pack/dist/opt/matchit/doc/tags
+Executing WinLeave Autocommands for "*"
+autocommand setlocal nocursorline
+
+Executing WinEnter Autocommands for "*"
+autocommand setlocal cursorline
+
+Executing WinEnter Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing BufEnter Autocommands for "*"
+autocommand :checktime
+
+Executing BufEnter Autocommands for "*"
+autocommand call s:hijack_directory()
+
+Executing BufWinEnter Autocommands for "*"
+autocommand setlocal cursorline
+
+Searching for "doc/tags doc/tags-??" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momi
+Searching for "/Users/a.momin/.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/doc/tags-??"
+Searching for "/Users/a.momin/.fzf/doc/tags"
+Searching for "/Users/a.momin/.fzf/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/tabular/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/tabular/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/doc/tags-??"
+Searching for "/usr/share/vim/vimfiles/doc/tags"
+Searching for "/usr/share/vim/vimfiles/doc/tags-??"
+Searching for "/usr/share/vim/vim81/doc/tags"
+Searching for "/usr/share/vim/vim81/doc/tags-??"
+Searching for "/usr/share/vim/vim81/pack/dist/opt/matchit/doc/tags"
+Searching for "/usr/share/vim/vim81/pack/dist/opt/matchit/doc/tags-??"
+Searching for "/usr/share/vim/vimfiles/after/doc/tags"
+Searching for "/usr/share/vim/vimfiles/after/doc/tags-??"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/doc/tags"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/doc/tags-??"
+Searching for "/Users/a.momin/.vim/after/doc/tags"
+Searching for "/Users/a.momin/.vim/after/doc/tags-??"
+Searching tags file /Users/a.momin/.vim/plugged/ultisnips/doc/tags
+Searching tags file /usr/share/vim/vim81/doc/tags
+Searching tags file /usr/share/vim/vim81/pack/dist/opt/matchit/doc/tags
+chdir(/usr/share/vim/vim81/doc)
+fchdir() to previous dir
+chdir(/usr/share/vim/vim81/doc)
+fchdir() to previous dir
+chdir(/usr/share/vim/vim81/doc)
+fchdir() to previous dir
+                        "various.txt" 
+"various.txt" [readonly] 758L, 30327C
+Reading viminfo file "/Users/a.momin/.viminfo" marks
+Executing BufRead Autocommands for "/usr/share/vim/vim81/doc/*.txt"
+autocommand setf help
+
+Executing FileType Autocommands for "*"
+autocommand call s:LoadFTPlugin()
+
+Searching for "ftplugin/help.vim ftplugin/help_*.vim ftplugin/help/*.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim
+Searching for "/Users/a.momin/.vim/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.fzf/ftplugin/help.vim"
+Searching for "/Users/a.momin/.fzf/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.fzf/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/ftplugin/help/*.vim"
+Searching for "/usr/share/vim/vimfiles/ftplugin/help.vim"
+Searching for "/usr/share/vim/vimfiles/ftplugin/help_*.vim"
+Searching for "/usr/share/vim/vimfiles/ftplugin/help/*.vim"
+Searching for "/usr/share/vim/vim81/ftplugin/help.vim"
+chdir(/usr/share/vim/vim81/ftplugin)
+fchdir() to previous dir
+line 17: sourcing "/usr/share/vim/vim81/ftplugin/help.vim"
+finished sourcing /usr/share/vim/vim81/ftplugin/help.vim
+continuing in function <SNR>6_LoadFTPlugin
+Searching for "/usr/share/vim/vim81/ftplugin/help_*.vim"
+Searching for "/usr/share/vim/vim81/ftplugin/help/*.vim"
+Searching for "/usr/share/vim/vim81/pack/dist/opt/matchit/ftplugin/help.vim"
+Searching for "/usr/share/vim/vim81/pack/dist/opt/matchit/ftplugin/help_*.vim"
+Searching for "/usr/share/vim/vim81/pack/dist/opt/matchit/ftplugin/help/*.vim"
+Searching for "/usr/share/vim/vimfiles/after/ftplugin/help.vim"
+Searching for "/usr/share/vim/vimfiles/after/ftplugin/help_*.vim"
+Searching for "/usr/share/vim/vimfiles/after/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/ftplugin/help/*.vim"
+Searching for "/Users/a.momin/.vim/after/ftplugin/help.vim"
+Searching for "/Users/a.momin/.vim/after/ftplugin/help_*.vim"
+Searching for "/Users/a.momin/.vim/after/ftplugin/help/*.vim"
+Executing FileType Autocommands for "*"
+autocommand call s:LoadIndent()
+
+Searching for "indent/help.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,/Users/a.momin/.vi
+Searching for "/Users/a.momin/.vim/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/indent/help.vim"
+Searching for "/Users/a.momin/.fzf/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/indent/help.vim"
+Searching for "/usr/share/vim/vimfiles/indent/help.vim"
+Searching for "/usr/share/vim/vim81/indent/help.vim"
+Searching for "/usr/share/vim/vim81/pack/dist/opt/matchit/indent/help.vim"
+Searching for "/usr/share/vim/vimfiles/after/indent/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/indent/help.vim"
+Searching for "/Users/a.momin/.vim/after/indent/help.vim"
+not found in 'runtimepath': "indent/help.vim"
+Executing FileType Autocommands for "*"
+autocommand exe "set syntax=" . expand("<amatch>")
+
+Executing Syntax Autocommands for "*"
+autocommand call s:SynSet()
+
+Searching for "syntax/help.vim syntax/help/*.vim" in "/Users/a.momin/.vim,/Users/a.momin/.vim/plugged/vim-one,/Users/a.momin/.vim/plugged/gruvbox,/Users/a.momin/.fzf,/Users/a.momin/.vim/plugged/fzf.vim,/Users/a.momin/.vim/plugged/vim-obsession,/Users/a.momin/.vim/plugged/vim-zoom,/Users/a.momin/.vim/plugged/vim-tmux-focus-events,/Users/a.momin/.vim/plugged/fern.vim,/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim,/Users/a.momin/.vim/plugged/vim-eunuch,/Users/a.momin/.vim/plugged/vim-dirdiff,/Users/a.momin/.vim/plugged/linediff.vim,/Users/a.momin/.vim/plugged/vim-ingo-library,/Users/a.momin/.vim/plugged/vim-SpellCheck,/Users/a.momin/.vim/plugged/vim-highlightedyank,/Users/a.momin/.vim/plugged/quick-scope,/Users/a.momin/.vim/plugged/vim-visual-star-search,/Users/a.momin/.vim/plugged/is.vim,/Users/a.momin/.vim/plugged/vim-grepper,/Users/a.momin/.vim/plugged/vim-better-whitespace,/Users/a.momin/.vim/plugged/vim-commentary,/Users/a.momin/.vim/plugged/vim-sleuth,/Users/a.momin/.vim/plugged/vim-unimpaired,
+Searching for "/Users/a.momin/.vim/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-one/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/gruvbox/syntax/help/*.vim"
+Searching for "/Users/a.momin/.fzf/syntax/help.vim"
+Searching for "/Users/a.momin/.fzf/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/fzf.vim/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-obsession/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-zoom/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux-focus-events/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern.vim/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/fern-mapping-mark-children.vim/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-eunuch/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-dirdiff/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/linediff.vim/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ingo-library/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-SpellCheck/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-highlightedyank/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/quick-scope/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-visual-star-search/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/is.vim/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-grepper/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-better-whitespace/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-commentary/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-sleuth/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-unimpaired/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/FastFold/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-signify/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-fugitive/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/limelight.vim/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/goyo.vim/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-snippets/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/AutoComplPop/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-test/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/scss-syntax.vim/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/nginx.vim/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/csv.vim/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/dockerfile.vim/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-elixir/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/Vim-Jinja2-Syntax/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/tabular/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-markdown/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/markdown-preview.nvim/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-hcl/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/pgsql.vim/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/html5.vim/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-javascript/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/i3-vim-syntax/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-yaml/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-tmux/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-git/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-liquid/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-rails/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/python-syntax/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-ruby/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/vim-systemd-syntax/syntax/help/*.vim"
+Searching for "/usr/share/vim/vimfiles/syntax/help.vim"
+Searching for "/usr/share/vim/vimfiles/syntax/help/*.vim"
+Searching for "/usr/share/vim/vim81/syntax/help.vim"
+chdir(/usr/share/vim/vim81/syntax)
+fchdir() to previous dir
+line 24: sourcing "/usr/share/vim/vim81/syntax/help.vim"
+finished sourcing /usr/share/vim/vim81/syntax/help.vim
+continuing in function <SNR>9_SynSet
+Searching for "/usr/share/vim/vim81/syntax/help/*.vim"
+Searching for "/usr/share/vim/vim81/pack/dist/opt/matchit/syntax/help.vim"
+Searching for "/usr/share/vim/vim81/pack/dist/opt/matchit/syntax/help/*.vim"
+Searching for "/usr/share/vim/vimfiles/after/syntax/help.vim"
+Searching for "/usr/share/vim/vimfiles/after/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/plugged/ultisnips/after/syntax/help/*.vim"
+Searching for "/Users/a.momin/.vim/after/syntax/help.vim"
+Searching for "/Users/a.momin/.vim/after/syntax/help/*.vim"
+Executing BufRead Autocommands for "*"
+autocommand if !did_filetype() && expand("<amatch>") !~ g:ft_ignore_pat | runtime! scripts.vim | endif
+
+Executing BufRead Autocommands for "*.txt"
+autocommand if getline('$') !~ 'vim:.*ft=help'|   setf text| endif
+
+Executing BufRead Autocommands for "*"
+autocommand if !did_filetype() && expand("<amatch>") !~ g:ft_ignore_pat    && (getline(1) =~ '^#' || getline(2) =~ '^#' || getline(3) =~ '^#'^I|| getline(4) =~ '^#' || getline(5) =~ '^#') |   setf FALLBACK conf | endif
+
+Executing BufEnter Autocommands for "*"
+autocommand :checktime
+
+Executing BufEnter Autocommands for "*"
+autocommand call s:hijack_directory()
+
+Executing BufWinEnter Autocommands for "*"
+autocommand setlocal cursorline
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+
+Executing WinLeave Autocommands for "*"
+autocommand setlocal nocursorline
+
+Executing WinEnter Autocommands for "*"
+autocommand setlocal cursorline
+
+Executing WinEnter Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing BufEnter Autocommands for "*"
+autocommand :checktime
+
+Executing BufEnter Autocommands for "*"
+autocommand call s:hijack_directory()
+
+Executing CursorMoved Autocommands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+
+Writing viminfo file "/Users/a.momin/.viminfo"

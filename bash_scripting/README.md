@@ -1,0 +1,1 @@
+- [Linux Essentials for Ethical Hackers - Full InfoSec Course](https://www.youtube.com/watch?v=1hvVcEhcbLM)
