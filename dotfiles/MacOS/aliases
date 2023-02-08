@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 source ~/.git-aliases.bash;
 
 # Easier navigation: .., ..., ...., ....., ~ and -
@@ -8,83 +9,96 @@ alias ....="cd ../../.. && ls -1"
 alias .....="cd ../../../.. && ls -1"
 alias -- -="cd -"
 
+#========== Docker Shortcuts =============
+#image_name="roboxes/rhel8"
+#container=$(docker ps | grep $image_name)
+
+#alias dps="docker ps | grep $1"
+#alias dstp="docker stop ${container:0:12}"
+#alias dbld="""docker build -t "${image_name}-img""""
+#alias dlg="docker logs --follow $image_name ."
+#alias dx="docker exec -it $1 bash"
+#=========================================
+
 alias chrome="open -na 'Google Chrome' --args --new-window"
-alias pbp='code /Users/a.momin/.pbp.bash'
-alias bp='code /Users/a.momin/.bash_profile'
+alias pbp="code $HOME/.pbp.bash"
+alias bp="code $HOME/.bash_profile"
 
 
 # NOTES & BOOKS of various Development Tools.
 
-alias nts="open ~/gd/Software_Development/Machine_Learning/notes_hub/cmds && open ~/gd/Software_Development/Machine_Learning/notes_hub/PDFs"
-alias nthub="cd ~/gd/Software_Development/Machine_Learning/notes_hub && code ."
-alias ntbash="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_bash.md"
-alias ntshell="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_shell.md"
-alias ntgcp="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_gcp.md"
-alias ntfw="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_fw.md"
-alias ntmd="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_md.md"
-alias ntaws="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_aws.md"
-alias ntre="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_re.md"
-alias ntsql="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_sql.md"
-alias ntcssatr="open ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_css_attr.gdoc"
-alias ntcss="open ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_css.gdoc"
-alias nthtml="open ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_html.gdoc"
-alias ntflask="code ~/gd/Software_Development/Web_Development/flask-course/notes_flask.md"
+alias nts="open $GD/gd/Software_Development/notes_hub/cmds && open $GD/gd/Software_Development/notes_hub/PDFs"
+alias nthub="cd $GD/gd/Software_Development/notes_hub"
+alias ntbash="code $GD/gd/Software_Development/notes_hub/cmds/notes_bash.md"
+alias ntshell="code $GD/gd/Software_Development/notes_hub/cmds/notes_shell.md"
+alias ntgcp="code $GD/gd/Software_Development/notes_hub/cmds/notes_gcp.md"
+alias ntfw="code $GD/gd/Software_Development/notes_hub/cmds/notes_fw.md"
+alias ntmd="code $GD/gd/Software_Development/notes_hub/cmds/notes_md.md"
+alias ntaws="code $GD/gd/Software_Development/notes_hub/cmds/notes_aws.md"
+alias ntre="code $GD/gd/Software_Development/notes_hub/cmds/notes_re.md"
+alias ntsql="code $GD/gd/Software_Development/notes_hub/cmds/notes_sql.md"
+alias ntyml="code $GD/gd/Software_Development/notes_hub/cmds/notes_yml.md"
+alias ntrmp="code $GD/gd/Software_Development/notes_hub/cmds/notes_rmp.md"
+alias ntgit="code $GD/gd/Software_Development/notes_hub/cmds/notes_git.md"
+alias ntdkr="code $GD/gd/Software_Development/notes_hub/cmds/notes_docker.md"
+alias ntaf="code $GD/gd/Software_Development/notes_hub/cmds/notes_airflow.md"
+alias ntvim="code $GD/gd/Software_Development/notes_hub/cmds/notes_vim.md"
+alias ntde="code $GD/gd/Software_Development/notes_hub/cmds/notes_dataeng.md"
+alias ntvsc="code $GD/gd/Software_Development/notes_hub/cmds/notes_vscode.md"
+alias ntmac="code $GD/gd/Software_Development/notes_hub/cmds/notes_mac.md"
+alias ntpy="code $GD/gd/Software_Development/notes_hub/cmds/notes_py.md"
+alias ntcssatr="open $GD/gd/Software_Development/notes_hub/cmds/notes_css_attr.gdoc"
+alias ntcss="open $GD/gd/Software_Development/notes_hub/cmds/notes_css.gdoc"
+alias nthtml="open $GD/gd/Software_Development/notes_hub/cmds/notes_html.gdoc"
+alias ntflask="code $GD/gd/Software_Development/Web_Development/flask-course/notes_flask.md"
 
-alias passdb="open ~/gd/Files_Docs/Password_DB.gsheet"
-alias jobdb="open ~/gd/Jobs_DB/Jobs_DB.gsheet"
-alias mel="open ~/gd/Files_Docs/Master_Electrician_License.gsheet"
-alias ntgit="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_git.md"
-alias ntdkr="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_docker.md"
-alias ntaf="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_airflow.md"
-alias ntvim="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_vim.md"
-alias ntde="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_dataeng.md"
+alias passdb="open $GD/gd/Files_Docs/Password_DB.gsheet"
+alias jobdb="open $GD/gd/Jobs_DB/Jobs_DB.gsheet"
+alias mel="open $GD/gd/Files_Docs/Master_Electrician_License.gsheet"
+alias cmdr="code $GD/gd/Software_Development/notes_hub/cmds/cmd_r.txt"
+alias ntjnb="code $GD/gd/Software_Development/notes_hub/cmds/notes_jnb.md"
+alias cmdnpm="code $GD/gd/Software_Development/notes_hub/cmds/cmd_npm.txt"
+alias cmdreact="code $GD/gd/Software_Development/notes_hub/cmds/cmd_react.txt"
+alias cmdcpp="code $GD/gd/Software_Development/notes_hub/cmds/cmd_cpp.txt"
 
-alias ntvsc="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_vscode.md"
-alias ntmac="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_mac.md"
-alias ntpy="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_py.md"
-alias cmdr="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/cmd_r.txt"
-alias ntjnb="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/notes_jnb.md"
-alias cmdnpm="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/cmd_npm.txt"
-alias cmdreact="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/cmd_react.txt"
-alias cmdcpp="code ~/gd/Software_Development/Machine_Learning/notes_hub/cmds/cmd_cpp.txt"
-
-alias nbstat="jupyter notebook ~/gd/Software_Development/Machine_Learning/notes_hub/nbs/statistics.ipynb"
-alias nbepp="jupyter notebook ~/gd/Software_Development/Machine_Learning/notes_hub/nbs/nt_epp.ipynb"
-alias nbml="jupyter notebook ~/gd/Software_Development/Machine_Learning/notes_hub/nbs/nt_ml.ipynb"
-alias nbpd="jupyter notebook ~/gd/Software_Development/Machine_Learning/notes_hub/nbs/nt_pd.ipynb"
-alias nbplt="jupyter notebook ~/gd/Software_Development/Machine_Learning/notes_hub/nbs/nt_plt.ipynb"
-alias nbnp="jupyter notebook ~/gd/Software_Development/Machine_Learning/notes_hub/nbs/nt_np.ipynb"
-alias nbtorch="jupyter notebook ~/gd/Software_Development/Machine_Learning/notes_hub/nbs/nt_torch.ipynb"
+alias nbstat="jupyter notebook $GD/gd/Software_Development/notes_hub/nbs/statistics.ipynb"
+alias nbepp="jupyter notebook $GD/gd/Software_Development/notes_hub/nbs/nt_epp.ipynb"
+alias nbml="jupyter notebook $GD/gd/Software_Development/notes_hub/nbs/nt_ml.ipynb"
+alias nbpd="jupyter notebook $GD/gd/Software_Development/notes_hub/nbs/nt_pd.ipynb"
+alias nbplt="jupyter notebook $GD/gd/Software_Development/notes_hub/nbs/nt_plt.ipynb"
+alias nbnp="jupyter notebook $GD/gd/Software_Development/notes_hub/nbs/nt_np.ipynb"
+alias nbtorch="jupyter notebook $GD/gd/Software_Development/notes_hub/nbs/nt_torch.ipynb"
 
 alias nteng="open /Users/a.momin/gd/Writing\ English/Notes_English.gsheet"
 
-# alias fastai="cd ~/gd/Software_Development/Machine_Learning/fastai && conda activate fastai && jupyter notebook"
+# alias fastai="cd $GD/gd/Software_Development/Machine_Learning/fastai && conda activate fastai && jupyter notebook"
 alias ae="deactivate &> /dev/null; source .venv/bin/activate"
 alias cae="conda activate $1"
 alias de="deactivate"
 alias cde="conda deactivate"
 
-alias bigdata="cd ~/gd/Software_Development/Big_Data && open ."
-alias books="cd ~/gd/BOOKS/PDF\ Books && ls -1"
-alias jnb="jupyter notebook"
-alias mlcourses="cd ~/gd/Software_Development/Machine_Learning/ml_courses && ls -1"
-alias ml="cd ~/gd/Software_Development/Machine_Learning && ls -1"                 # ml ==> Machine_Learning
+alias bigdata="cd $GD/gd/Software_Development/Big_Data && open ."
+alias books="cd $GD/gd/BOOKS/PDF\ Books && ls -1"
+alias jnb="jupyter-lab"
+alias mlcourses="cd $GD/gd/Software_Development/Machine_Learning/ml_courses && ls -1"
+alias ml="cd $GD/gd/Software_Development/Machine_Learning && ls -1"                 # ml ==> Machine_Learning
 
-alias ads="cd ~/gd/Software_Development/Python_Program/Python3/Algorithms_and_Data_Structures && deactivate &> /dev/null; source .venv/bin/activate"
-alias epi="cd ~/gd/Software_Development/Python_Program/Python3/elements-of-programming-interview && deactivate &> /dev/null; source .venv/bin/activate"
-alias pp="cd ~/gd/Software_Development/Python_Program && ls -1"                   # pp ==> Python Program
-alias pp2="cd ~/gd/Software_Development/Python_Program/Python2 && ls -1"          # pp2 ==> Python2 Program
-alias pp3="cd ~/gd/Software_Development/Python_Program/Python3 && ls -1"          # pp3 ==> Python3 Program
+# alias ads="cd $GD/gd/Software_Development/Algorithms_and_Data_Structures && deactivate &> /dev/null; source .venv/bin/activate"
+alias ads="cd $GD/gd/Software_Development/Algorithms_and_Data_Structures"
+alias epi="cd $GD/gd/Software_Development/Python_Program/Python3/elements-of-programming-interview && deactivate &> /dev/null; source .venv/bin/activate"
+alias pp="cd $GD/gd/Software_Development/Python_Program && ls -1"                   # pp ==> Python Program
+alias pp2="cd $GD/gd/Software_Development/Python_Program/Python2 && ls -1"          # pp2 ==> Python2 Program
+alias pp3="cd $GD/gd/Software_Development/Python_Program/Python3 && ls -1"          # pp3 ==> Python3 Program
 
-alias jp="cd ~/gd/Software_Development/JavaPragrams && ls -1"                     # cpp ==> C++ Programs
-alias jsp="cd ~/gd/Software_Development/Web_Development/Javascript_Program && ls -1"                         # pp3 ==> Python3 Program
-alias cpp="cd ~/gd/Software_Development/C++_Programs && ls -1"                    # cpp ==> C++ Programs
-alias algs4="cd ~/gd/Software_Development/algs4/src/main/java/edu/princeton/cs/algs4"
-alias db="cd ~/gd/Software_Development/Big_Data/Databases && ls -1"               # sql ==> MySQL Program
+alias jp="cd $GD/gd/Software_Development/JavaPragrams && ls -1"                     # cpp ==> C++ Programs
+alias jsp="cd $GD/gd/Software_Development/Web_Development/Javascript_Program && ls -1"                         # pp3 ==> Python3 Program
+alias cpp="cd $GD/gd/Software_Development/C++_Programs && ls -1"                    # cpp ==> C++ Programs
+alias algs4="cd $GD/gd/Software_Development/algs4/src/main/java/edu/princeton/cs/algs4"
+alias db="cd $GD/gd/Software_Development/Big_Data/Databases && ls -1"               # sql ==> MySQL Program
 
-alias gd="cd ~/gd && ls -1"
-alias sd="cd ~/gd/Software_Development && ls -1"
-alias wd="cd ~/gd/Software_Development/Web_Development && ls -1"
+alias gd="cd $GD/gd && ls -1"
+alias sd="cd $GD/gd/Software_Development && ls -1"
+alias wd="cd $GD/gd/Software_Development/Web_Development && ls -1"
 alias react="cd ~/Documents/React && ls -1"
 
 # Shortcuts

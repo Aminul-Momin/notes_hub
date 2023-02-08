@@ -56,9 +56,9 @@
     -   `$ ipython kernel install --user --name=jnb_flaskapp_env`
     -   `$ jupyter notebook`
         -   select `jnb_flaskapp_env` from select manu of jupyter karnel.
-    -   Installed kernelspec jnb_flaskapp_env in /Users/a.momin/Library/Jupyter/kernels/jnb_flaskapp_env
+    -   Installed kernelspec jnb_flaskapp_env in $HOME/Library/Jupyter/kernels/jnb_flaskapp_env
 
--   `$ jupyter kernelspec list `
+-   `$ jupyter kernelspec list`
 -   `$ jupyter kernelspec remove kernel_name`
 
 ### pyenv:
@@ -219,13 +219,13 @@
 ##### [How to Manage Multiple Projects, Virtual Environments, and Environment Variables](https://www.youtube.com/watch?v=cY2NXB_Tqq0&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU&index=16)
 
 -   Create a bash file in corresponding conda environment.
-    -   mkdir -p /Users/a.momin/opt/anaconda3/envs/fastai/etc/conda/activate.d
-    -   mkdir -p /Users/a.momin/opt/anaconda3/envs/fastai/etc/conda/deactivate.d
-    -   touch /Users/a.momin/opt/anaconda3/envs/fastai/etc/conda/activate.d/env_vars.sh
+    -   mkdir -p $HOME/opt/anaconda3/envs/fastai/etc/conda/activate.d
+    -   mkdir -p $HOME/opt/anaconda3/envs/fastai/etc/conda/deactivate.d
+    -   touch $HOME/opt/anaconda3/envs/fastai/etc/conda/activate.d/env_vars.sh
         -   #!/bin/sh
         -   export SECRET_KEY='SDFLKJ;LASKJF;LAKSD;L'
         -   export DATABASE_URI="postgresql://user:pass@bd_server:5432/test_db"
-    -   touch /Users/a.momin/opt/anaconda3/envs/fastai/etc/conda/deactivate.d/env_vars.sh
+    -   touch $HOME/opt/anaconda3/envs/fastai/etc/conda/deactivate.d/env_vars.sh
         -   #!/bin/sh
         -   unset SECRET_KEY
         -   unset DATABASE_URI
@@ -245,7 +245,7 @@
 -   `$ pip3 freeze > requirement.txt ` → create the requirement.txt file with the list of dependencies recorded in the current env.
 -   `$ rm -rf project_env ` → to delete the environment, project_env
 -   `$ pip3 install -r requirement.txt ` → install the dependencies recorded in requirement.txt into the environment
--   `$ python3 -m venv project_name_env --system-site-packages`
+-   `$ python3 -m venv project_name_env --system-site-packages` → Make global site packages available into to your virtual environment
 -   `$ pip3 list --local`
 
 -   How to create python environment from requirment.txt (Python >= 3.6.x):

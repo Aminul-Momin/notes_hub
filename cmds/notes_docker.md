@@ -7,8 +7,13 @@
 -   [The Docker Handbook – 2021 Edition](https://www.freecodecamp.org/news/the-docker-handbook/)
     -   [the-docker-handbook](https://github.com/fhsinchy/the-docker-handbook)
 
-### [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+### Troubleshooting:
 
+-   [unix:///var/run/docker.sock](https://www.youtube.com/watch?v=FcZ1Dh3X5JQ)
+
+### [Install Docker Engine on Linux](https://docs.docker.com/engine/install/ubuntu/)
+
+-   [How to use Docker on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-centos-7)
 -   [Install using the repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
 -   [Install using the convenience script](https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script)
 
@@ -28,12 +33,21 @@
 <details>
 <summary style="font-size:25px;color:Orange;text-align:left">Terminology</summary>
 
+-   [Glossary](https://docs.docker.com/glossary/)
 -   Attach Mode: In the attached mode, Docker can start the process in the container and attach the console to the process’s standard input, standard output, and standard error.When you run a Docker run command, it runs in the foreground or in an attached mode, meaning you will be attached to the console or the standard out of the Docker container. And you will see the output of the web service on your screen. You won't be able to do anything else on this console other than view the output until this Docker container stops. It won't respond to your inputs. press the `ctrl+c` combination to stop the container and the application hosted on the container exits and you get back to your prompt.
 -   Detach Mode: Detach mode started by the option `--detach` or `–d` flag in docker run command, means that a Docker container runs in the background of your terminal. It does not receive input or display output. Using detached mode also allows you to close the opened terminal session without stopping the container. The container will continue to run in the backend, run the docker ps command to view the running container. Now if you would like to attach back to the running container later, run the `docker attach con_id/con_name` command and specify the name or ID of the Docker container.
--   Bind Mount vs Volium Mount:
--   Context
--   Build Stage
--   Layer
+-   Context:
+-   Build Stage:
+-   Layer: A layer is modification to the image, represented by an instruction in the Dockerfile. Layers are applied in sequence to the base image to create the final image. When an image is updated or rebuilt, only layers that change need to be updated, and unchanged layers are cached locally. This is part of why Docker images are so fast and lightweight. The sizes of each layer add up to equal the size of the final image.
+
+-   Volumes:
+    -   Named Volumes: are user-defined volumes that are managed by Docker and can be created, backed up, and migrated. Named volumes can be created using the docker volume create command and mounted into containers using the --mount or -v flag. Named volumes are stored on the host file system, but their location can be specified using the --mount-path option.
+    -   Anonymous Volumes: are created automatically when a container is created with the --mount or -v flag, without specifying a named volume. Anonymous volumes are not managed by Docker and their contents are lost when the container is deleted. Anonymous volumes are useful for testing and debugging, but not recommended for production use.
+    -   In summary, named volumes are a better choice for production use, as they provide a way to manage and persist data, while anonymous volumes are useful for testing and debugging, but should not be used for production data.
+-   Mounts (There are mainly two types of Mounts):
+    -   Bind Mounts: allows you to mount a host file or directory into a container. The host file or directory is mounted directly into the container's file system and changes made to the mounted file or directory are reflected in both the host and container file systems.
+    -   Volume Mounts: creates a new, dedicated directory in the Docker host's file system that is managed by Docker. Data stored in a volume is persistently stored and is not tied to the life cycle of the container. The data in the volume can be shared among multiple containers and can be backed up or migrated.
+    -   Both types of mounts are useful for different purposes. Bind mounts are often used for development purposes where you need to quickly mount a host directory into a container for testing or debugging. Volume mounts are useful for storing data that needs to persist, even if the container is deleted or recreated.
 
 </details>
 
@@ -41,20 +55,24 @@
 <summary style="font-size:25px;color:Orange;text-align:left">docker</summary>
 
 -   [docker](https://docs.docker.com/engine/reference/commandline/docker/) | [Use the Docker command line](https://docs.docker.com/engine/reference/commandline/cli/)
--   [docker run](https://docs.docker.com/engine/reference/commandline/run/)
--   [Add bind mounts, volumes or memory filesystems](https://docs.docker.com/engine/reference/commandline/service_create/#add-bind-mounts-volumes-or-memory-filesystems)
 
--   `docker run [OPTIONS] IMAGE [COMMAND] [ARG...]`
+-   [$ docker build](https://docs.docker.com/engine/reference/commandline/build/): `docker build [OPTIONS] PATH | URL | -`
+
+    -   `$ docker build -t image_name .`
+        -   The `-t` flag is used to tag the new built image by the image-name of "image_name". The `.` is used to indicate that the Dockerfile is in the current directory (`.`), along with so-called “context” — that is, the rest of the files that may be in that location
+    -   `$ docker run -dit --rm -v /Volumes/GoogleDrive/My\ Drive/gd/Software_Development/notes_hub/dotfiles/Linux:/root --name=rhel8 roboxes/rhel8 sleep 9000`
+
+-   [docker run](https://docs.docker.com/engine/reference/commandline/run/): `docker run [OPTIONS] IMAGE [COMMAND] [ARG...]`
 
     ```bash
-    docker run -dit -- rm \
+    docker run -dit --rm \
     -e WORKING_DIR=/User/a.momin/Data \     # Set environment variables
     -w /code \                              # Working directory inside the container
     -p 8010:8012 \                          # Publish a container's port(s) to the host
-    -- expose 80 \                          # Expose a port or a range of ports
+    --expose 80 \                           # Expose a port or a range of ports
     --read-only -v /icanwrite \             # Mount the container's root filesystem as read only
     -v `pwd`:`pwd` \
-    -v /doesnt/exist:/foo \                 # When the host directory of a bind-mounted volume doesn’t exist, Docker will automatically create this directory on the host for you.
+    -v /doesnt/exist:/foo \                 # Docker will automatically create this directory on the host if a bind-mounted volume doesn’t exist.
     --read-only --mount type=volume,target=/icanwritetoo \
     --mount type=bind,src=/data,dst=/data \
     -w `pwd` \
@@ -142,16 +160,12 @@
 -   [$ docker exec](https://docs.docker.com/engine/reference/commandline/exec/): `docker exec [OPTIONS] CONTAINER COMMAND [ARG...]`
 
     -   `$ docker exec -it <container_id | container_name> bash` → This command is used to access the running container
+    -   `$ docker exec -it -u 0 <container_id | container_name> bash` → This command is used to access the running container as a root user.
 
 -   [$ docker image](): ``
 
     -   `docker images` → List our images
     -   `$ docker image tag image_name new_image_name` → Take the backup of image_name by new name `new_image_name`
-
--   [$ docker build](https://docs.docker.com/engine/reference/commandline/build/): `docker build [OPTIONS] PATH | URL | -`
-
-    -   `$ docker build -t my_image .`
-        -   passing the -t flag to “tag” the new image with a name, which in this case will be my_image. The `.` indicates that the Dockerfile is in the current directory, along with so-called “context” — that is, the rest of the files that may be in that location
 
 -   `$ docker pull image_name` - Just pull the image from docker registry but don't run it.
 
@@ -175,6 +189,7 @@
 
 <details open>
 <summary style="font-size:25px;color:Orange;text-align:left">docker volume</summary>
+-   [Add bind mounts, volumes or memory filesystems](https://docs.docker.com/engine/reference/commandline/service_create/#add-bind-mounts-volumes-or-memory-filesystems)
 
 -   `$ docker volume create [OPTIONS] [VOLUME]`
 -   `$ docker volume create [OPTIONS] [VOLUME]`
@@ -204,297 +219,17 @@
 
 -   [Compose CLI environment variables](https://docs.docker.com/compose/reference/envvars/)
 
--   `$ docker-compose up -d`
--   `$ docker-compose up --build`
--   `$ docker-compose build`
--   `$ docker-compose down`
--   `$ docker-compose `
+-   `$ docker-compose down` →
+-   `$ docker-compose up --build` → It builds the image before getting up.
+-   `$ docker-compose up -d` → It just spin up the container assuming the image is built already.
+-   `$ docker-compose build` → It just build the image.
+-   `$ docker-compose ` →
 
 ### [$ ](): ``
 
 ### [$ ](): ``
-
-<details open>
-<summary style="font-size:25px;color:Orange;text-align:left">Sample docker-compose.yaml</summary>
-
--   [Sample docker-compose.yaml](https://airflow.apache.org/docs/apache-airflow/stable/docker-compose.yaml)
-
-```yaml
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-#
-
-# Basic Airflow cluster configuration for CeleryExecutor with Redis and PostgreSQL.
-#
-# WARNING: This configuration is for local development. Do not use it in a production deployment.
-#
-# This configuration supports basic configuration using environment variables or an .env file
-# The following variables are supported:
-#
-# AIRFLOW_IMAGE_NAME           - Docker image name used to run Airflow.
-#                                Default: apache/airflow:2.4.2
-# AIRFLOW_UID                  - User ID in Airflow containers
-#                                Default: 50000
-# Those configurations are useful mostly in case of standalone testing/running Airflow in test/try-out mode
-#
-# _AIRFLOW_WWW_USER_USERNAME   - Username for the administrator account (if requested).
-#                                Default: airflow
-# _AIRFLOW_WWW_USER_PASSWORD   - Password for the administrator account (if requested).
-#                                Default: airflow
-# _PIP_ADDITIONAL_REQUIREMENTS - Additional PIP requirements to add when starting all containers.
-#                                Default: ''
-#
-# Feel free to modify this file to suit your needs.
----
-version: "3"
-x-airflow-common: &airflow-common
-    # In order to add custom dependencies or upgrade provider packages you can use your extended image.
-    # Comment the image line, place your Dockerfile in the directory where you placed the docker-compose.yaml
-    # and uncomment the "build" line below, Then run `docker-compose build` to build the images.
-    image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.4.2}
-    # build: .
-    environment: &airflow-common-env
-        AIRFLOW__CORE__EXECUTOR: CeleryExecutor
-        AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
-        # For backward compatibility, with Airflow <2.3
-        AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
-        AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
-        AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
-        AIRFLOW__CORE__FERNET_KEY: ""
-        AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "true"
-        AIRFLOW__CORE__LOAD_EXAMPLES: "true"
-        AIRFLOW__API__AUTH_BACKENDS: "airflow.api.auth.backend.basic_auth"
-        _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
-    volumes:
-        - ./dags:/opt/airflow/dags
-        - ./logs:/opt/airflow/logs
-        - ./plugins:/opt/airflow/plugins
-    user: "${AIRFLOW_UID:-50000}:0"
-    depends_on: &airflow-common-depends-on
-        redis:
-            condition: service_healthy
-        postgres:
-            condition: service_healthy
-
-services:
-    postgres:
-        image: postgres:13
-        environment:
-            POSTGRES_USER: airflow
-            POSTGRES_PASSWORD: airflow
-            POSTGRES_DB: airflow
-        volumes:
-            - postgres-db-volume:/var/lib/postgresql/data
-        healthcheck:
-            test: ["CMD", "pg_isready", "-U", "airflow"]
-            interval: 5s
-            retries: 5
-        restart: always
-
-    redis:
-        image: redis:latest
-        expose:
-            - 6379
-        healthcheck:
-            test: ["CMD", "redis-cli", "ping"]
-            interval: 5s
-            timeout: 30s
-            retries: 50
-        restart: always
-
-    airflow-webserver:
-        <<: *airflow-common
-        command: webserver
-        ports:
-            - 8080:8080
-        healthcheck:
-            test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
-            interval: 10s
-            timeout: 10s
-            retries: 5
-        restart: always
-        depends_on: <<: *airflow-common-depends-on
-            airflow-init:
-                condition: service_completed_successfully
-
-    airflow-scheduler: <<: *airflow-common
-        command: scheduler
-        healthcheck:
-            test:
-                [
-                    "CMD-SHELL",
-                    'airflow jobs check --job-type SchedulerJob --hostname "$${HOSTNAME}"',
-                ]
-            interval: 10s
-            timeout: 10s
-            retries: 5
-        restart: always
-        depends_on:
-            <<: *airflow-common-depends-on
-            airflow-init:
-                condition: service_completed_successfully
-
-    airflow-worker: <<: *airflow-common
-        command: celery worker
-        healthcheck:
-            test:
-                - "CMD-SHELL"
-                - 'celery --app airflow.executors.celery_executor.app inspect ping -d "celery@$${HOSTNAME}"'
-            interval: 10s
-            timeout: 10s
-            retries: 5
-        environment: <<: *airflow-common-env
-            # Required to handle warm shutdown of the celery workers properly
-            # See https://airflow.apache.org/docs/docker-stack/entrypoint.html#signal-propagation
-            DUMB_INIT_SETSID: "0"
-        restart: always
-        depends_on: <<: *airflow-common-depends-on
-            airflow-init:
-                condition: service_completed_successfully
-
-    airflow-triggerer: <<: *airflow-common
-        command: triggerer
-        healthcheck:
-            test:
-                [
-                    "CMD-SHELL",
-                    'airflow jobs check --job-type TriggererJob --hostname "$${HOSTNAME}"',
-                ]
-            interval: 10s
-            timeout: 10s
-            retries: 5
-        restart: always
-        depends_on: <<: *airflow-common-depends-on
-            airflow-init:
-                condition: service_completed_successfully
-
-    airflow-init: <<: *airflow-common
-        entrypoint: /bin/bash
-        # yamllint disable rule:line-length
-        command:
-            - -c
-            - |
-                function ver() {
-                  printf "%04d%04d%04d%04d" $${1//./ }
-                }
-                airflow_version=$$(AIRFLOW__LOGGING__LOGGING_LEVEL=INFO && gosu airflow airflow version)
-                airflow_version_comparable=$$(ver $${airflow_version})
-                min_airflow_version=2.2.0
-                min_airflow_version_comparable=$$(ver $${min_airflow_version})
-                if (( airflow_version_comparable < min_airflow_version_comparable )); then
-                  echo
-                  echo -e "\033[1;31mERROR!!!: Too old Airflow version $${airflow_version}!\e[0m"
-                  echo "The minimum Airflow version supported: $${min_airflow_version}. Only use this or higher!"
-                  echo
-                  exit 1
-                fi
-                if [[ -z "${AIRFLOW_UID}" ]]; then
-                  echo
-                  echo -e "\033[1;33mWARNING!!!: AIRFLOW_UID not set!\e[0m"
-                  echo "If you are on Linux, you SHOULD follow the instructions below to set "
-                  echo "AIRFLOW_UID environment variable, otherwise files will be owned by root."
-                  echo "For other operating systems you can get rid of the warning with manually created .env file:"
-                  echo "    See: https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#setting-the-right-airflow-user"
-                  echo
-                fi
-                one_meg=1048576
-                mem_available=$$(($$(getconf _PHYS_PAGES) * $$(getconf PAGE_SIZE) / one_meg))
-                cpus_available=$$(grep -cE 'cpu[0-9]+' /proc/stat)
-                disk_available=$$(df / | tail -1 | awk '{print $$4}')
-                warning_resources="false"
-                if (( mem_available < 4000 )) ; then
-                  echo
-                  echo -e "\033[1;33mWARNING!!!: Not enough memory available for Docker.\e[0m"
-                  echo "At least 4GB of memory required. You have $$(numfmt --to iec $$((mem_available * one_meg)))"
-                  echo
-                  warning_resources="true"
-                fi
-                if (( cpus_available < 2 )); then
-                  echo
-                  echo -e "\033[1;33mWARNING!!!: Not enough CPUS available for Docker.\e[0m"
-                  echo "At least 2 CPUs recommended. You have $${cpus_available}"
-                  echo
-                  warning_resources="true"
-                fi
-                if (( disk_available < one_meg * 10 )); then
-                  echo
-                  echo -e "\033[1;33mWARNING!!!: Not enough Disk space available for Docker.\e[0m"
-                  echo "At least 10 GBs recommended. You have $$(numfmt --to iec $$((disk_available * 1024 )))"
-                  echo
-                  warning_resources="true"
-                fi
-                if [[ $${warning_resources} == "true" ]]; then
-                  echo
-                  echo -e "\033[1;33mWARNING!!!: You have not enough resources to run Airflow (see above)!\e[0m"
-                  echo "Please follow the instructions to increase amount of resources available:"
-                  echo "   https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#before-you-begin"
-                  echo
-                fi
-                mkdir -p /sources/logs /sources/dags /sources/plugins
-                chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}
-                exec /entrypoint airflow version
-        # yamllint enable rule:line-length
-        environment: <<: *airflow-common-env
-            _AIRFLOW_DB_UPGRADE: "true"
-            _AIRFLOW_WWW_USER_CREATE: "true"
-            _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
-            _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
-            _PIP_ADDITIONAL_REQUIREMENTS: ""
-        user: "0:0"
-        volumes:
-            - .:/sources
-
-    airflow-cli: <<: *airflow-common
-        profiles:
-            - debug
-        environment: <<: *airflow-common-env
-            CONNECTION_CHECK_MAX_COUNT: "0"
-        # Workaround for entrypoint issue. See: https://github.com/apache/airflow/issues/16252
-        command:
-            - bash
-            - -c
-            - airflow
-
-    # You can enable flower by adding "--profile flower" option e.g. docker-compose --profile flower up
-    # or by explicitly targeted on the command line e.g. docker-compose up flower.
-    # See: https://docs.docker.com/compose/profiles/
-    flower: <<: *airflow-common
-        command: celery flower
-        profiles:
-            - flower
-        ports:
-            - 5555:5555
-        healthcheck:
-            test: ["CMD", "curl", "--fail", "http://localhost:5555/"]
-            interval: 10s
-            timeout: 10s
-            retries: 5
-        restart: always
-        depends_on: <<: *airflow-common-depends-on
-            airflow-init:
-                condition: service_completed_successfully
-
-volumes:
-    postgres-db-volume:
-```
 
 </details>
-
-## </details>
 
 ---
 
@@ -594,17 +329,27 @@ volumes:
 </details>
 
 <details>
-<summary style="font-size:25px;color:Orange;text-align:left"> Sample Dockerfiles </summary>
+<summary style="font-size:25px;color:Orange;text-align:left"> Dockerfile </summary>
 
 -   [Dockerfile sample for Jupyter notebook images](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.5.x?topic=image-dockerfile-sample-jupyter-notebook-images)
 -   [Dockerfile Components](https://github.com/wsargent/docker-cheat-sheet#dockerfile)
 
-```Dockerfile
-ARG
-FROM
-ADD
-COPY
-CMD
-```
+`FROM`: sets the base image for the build process
+`LABEL`: adds metadata to the image in the form of key-value pairs
+`ENV`: sets an environment variable. ENV - sets an environment variable that will persist in the final image. The value of an ENV variable can be referenced in the Dockerfile using $VAR_NAME syntax and can be used to configure the behavior of applications or scripts running in the container. The value of an ENV variable can also be overridden at runtime using the -e flag when running the container.
+`ARG`: sets a build-time argument with a default value. ARG - is used to define a variable that can be passed at build-time using the --build-arg flag. The value of an ARG variable can be changed for each build, and the variable is not persisted in the final image. ARG variables are often used to specify image configuration parameters that can be adjusted without changing the Dockerfile.
+`COPY <src> <dest>`: It is a simple instruction that only supports copying files or directories from the host file system into the image. The COPY instruction is faster than ADD, as it does not perform any additional functionality like URL extraction or decompression.
+`ADD <src> <dest>`: .It is a more versatile instruction that supports copying files or directories from the host file system into the image, as well as extracting tar archives and decompressing gzip files.
+`EXPOSE`: exposes one or more ports for external access. The purpose of the EXPOSE instruction in a Dockerfile is to inform the user and other containers about the network ports that the container listens on. When you specify the EXPOSE instruction in your Dockerfile, you are declaring the ports that the container will use for communication. The EXPOSE instruction does not actually publish the ports, it simply provides information about the ports to the user and other containers. To make the exposed ports accessible from the network, you need to use the -p or --publish flag when running the container, which maps the container's exposed ports to ports on the host machine.
+`HEALTHCHECK`: specifies how to check the health of the container
+`ONBUILD`: triggers a command when the image is used as the base for another build
+`RUN`: runs a command in a new layer on top of the current image
+`SHELL`: sets the default shell to use for commands specified in RUN, CMD, and ENTRYPOINT
+`STOPSIGNAL`: sets the system call signal that will be sent to the container to exit
+`VOLUME`: creates a mount point for data volumes in the container
+`USER`: sets the UID (user ID) or username that will run the command specified in CMD, ENTRYPOINT, and RUN
+`WORKDIR`: sets the working directory for subsequent instructions
+`ENTRYPOINT`: specifies the command to run when the container starts and cannot be overridden from the command line
+`CMD`: specifies the command to run when the container starts
 
 </details>

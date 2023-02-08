@@ -39,33 +39,46 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 
 
-
 ## -------------- From udacity.com on August 2, 2017 -------------- ##
 source ~/.git-completion.bash
-
-# colors:
-green="\[\033[0;32m\]"
-blue="\[\033[0;34m\]"
-purple="\[\033[0;35m\]"
-reset="\[\033[0m\]"
-
-# Change command prompt :
 source ~/.git-prompt.sh
-
 export GIT_PS1_SHOWDIRTYSTATE=1
 
-# Prompt String
-export PS1="$purple\u -->>|$green\$(__git_ps1)$blue\W$purple|\n$ $reset"
+beautify_prompt(){
+    # colors:
+    green="\[\033[0;32m\]"
+    blue="\[\033[0;34m\]"
+    purple="\[\033[0;35m\]"
+    reset="\[\033[0m\]"
+    BRed='\033[1;31m'       # Bold Red
+    Yellow='\033[0;33m' # Yellow
+    # orange='\033[40m'
+    # orange='\033[1;32m'
 
-# Meaning of
-	#	\h     ->> the host name
-	#	\n     ->> the new line
-	#	\s     ->> the name of the shell
-	#	\t     ->> the current time in 24-hour format
-	#	\u     ->> the user name of current user
-	#	\w     ->> the current working directory
-	#	\W     ->> the basename of the current working directory
 
+    host=$(hostname)
+    host="RHEL8"
+    host_color=$BRed
+    arrow_color=$purple
+
+    if [[ $host == "RHEL8" ]]; then
+        host_color=$BRed
+    fi
+
+    # Prompt String
+    export PS1="$host_color\u@${host}$arrow_color =>|$green\$(__git_ps1)$blue\W$arrow_color|\n$ $reset"
+    # export PS1="$purple\u =>> |$green\$(__git_ps1)$blue\W$purple|\n$ $reset"
+
+    # Meaning of
+        #	\h     ->> the host name
+        #	\n     ->> the new line
+        #	\s     ->> the name of the shell
+        #	\t     ->> the current time in 24-hour format
+        #	\u     ->> the user name of current user
+        #	\w     ->> the current working directory
+        #	\W     ->> the basename of the current working directory
+}
+beautify_prompt
 ## ------------------------ End of Udacity Block ------------------------ ##
 
 

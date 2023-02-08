@@ -2,7 +2,8 @@
 
 
 install_data(){
-    :'Install data into a Notebook instance of GCP Virtual Machine'
+    :'Install data into a Notebook instance of GCP Virtual Machine
+    '
 
     echo "MAKE SURE KAGGLE API IS INSTALLED AND WEB TOKEN IS IN YOUR HOME DIRECTORY!"
     kaggle datasets download gpiosenka/100-bird-species -p /home/jupyter/
@@ -116,43 +117,4 @@ create_pip_env(){
     source .venv/bin/activate
     ipython kernel install --user --name=.venv
     pip install numpy PDPbox plotnine pandas pandas-summary scikit-learn sklearn_pandas graphviz waterfallcharts treeinterpreter
-}
-
-remove_spark(){
-    
-    sprk="/Users/a.momin/opt/anaconda3/envs/fastai/bin/beeline
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/beeline.cmd
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/docker-image-tool.sh
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/find-spark-home
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/find-spark-home.cmd
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/find_spark_home.py
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/load-spark-env.cmd
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/load-spark-env.sh
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/pyspark
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/pyspark.cmd
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/pyspark2.cmd
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/run-example
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/run-example.cmd
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/spark-class
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/spark-class.cmd
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/spark-class2.cmd
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/spark-shell
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/spark-shell.cmd
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/spark-shell2.cmd
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/spark-sql
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/spark-sql.cmd
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/spark-sql2.cmd
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/spark-submit
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/spark-submit.cmd
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/spark-submit2.cmd
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/sparkR
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/sparkR.cmd
-    /Users/a.momin/opt/anaconda3/envs/fastai/bin/sparkR2.cmd
-    /Users/a.momin/opt/anaconda3/envs/fastai/lib/python3.8/site-packages/pyspark-3.2.0.dist-info/*
-    /Users/a.momin/opt/anaconda3/envs/fastai/lib/python3.8/site-packages/pyspark/*"
-    
-    for file in sprk; do
-        echo "$file"
-        rm -fr $file
-    done
 }

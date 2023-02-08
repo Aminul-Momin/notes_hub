@@ -7,6 +7,15 @@
 -   `$ cat /etc/shells.` → List available shells by typing
 -   `$ chsh -s /bin/bash` → update your account to use bash run
 
+#### Usefull Terminal Commands
+
+-   `$ sudo scutil --set HostName MOS01;sudo scutil --set LocalHostName MOS01;sudo scutil --set ComputerName MOS01` → Change your Computer namte to 'MOS01'
+-   `$ whoami` → get current active username
+-   `$ id -un` → get current active username
+-   `$ open -a Docker` → Open Docker App
+-   `$ `
+-   `$ `
+
 ### Homebrew:
 
 -   `/usr/local/Caskroom/`

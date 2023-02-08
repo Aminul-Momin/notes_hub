@@ -4,9 +4,9 @@
 
 <details><summary style="font-size:25px;color:Orange;text-align:left">Notes Link</summary>
 
+-   [Linux TV: Linux Crash Course](https://www.youtube.com/playlist?list=PLT98CRl2KxKHKd_tH3ssq0HPrThx2hESW)
+-   [Linux](https://www.digitalocean.com/community/tutorials?q=%5BLinux%20Basics%5D)
 -   [LinuxHowTo](https://www.linuxhowto.net/)
--   [[notes_bash]]
--   [[notes_linux]]
 -   [The 50 Most Popular Linux & Terminal Commands - Full Course for Beginners](https://www.youtube.com/watch?v=ZtqBQ68cfJc&t=119s)
 -   [18 Commands That Will Change The Way You Use Linux Forever](https://www.youtube.com/watch?v=AVXYq8aL47Q)
 </details>
@@ -45,13 +45,13 @@
 
 ### How to set default shell to bash.
 
--   `$ cat /etc/shells.`→ List out available shells.
--   `$ chsh -s /bin/bash`→ Change current Shell to bash shell on MacOS.
--   `$ usermod -s /bin/bash <username>`→ Set current shell to /bin/bash on RHEL.
--   `$ exec $SHELL -l`→ Reload your shell.
+-   `$ cat /etc/shells.` → List out available shells.
+-   `$ chsh -s /bin/bash` → Set the shell to `/bin/bash` for the current user on MacOS only.
+-   `$ usermod -s /bin/bash <username>` → Set the shell to `/bin/bash` for the given user.
+-   `$ exec $SHELL -l` → Reload your shell.
 -   `$ `
 
-### Important Directories in RHEL:
+### Important Directories in Linux Distribution:
 
 -   `$ cat /etc/redhat-release`
 -   `$ cat /etc/passwd `
@@ -61,14 +61,14 @@
 -   `$ cat /etc/services`
 
 <details open><summary style="text-align:left"><a style="font-size:15px;color:red;" href="https://www.ssh.com/academy/ssh/command#ssh-client-configuration-file">SSH: Usage, Options, Configuration</a></summary>
-<!-- ### [SSH: Usage, Options, Configuration](https://www.ssh.com/academy/ssh/command#ssh-client-configuration-file) -->
 
+-   [SSH: Usage, Options, Configuration](https://www.ssh.com/academy/ssh/command#ssh-client-configuration-file)
 -   [SSH Agent Explained](https://smallstep.com/blog/ssh-agent-explained/)
--   [Understanding the Difference Between ssh and sshd](https://www.secur.cc/what-is-the-difference-between-ssh-and-sshd/#:~:text=The%20main%20difference%20is%20that,server%20using%20the%20users%20credentials.)
 
 -   SSH (Secure Shell or Secure Socket Shell): SSH is a network protocol that gives users, particularly system administrators, a secure way to access a computer over an unsecured network.
--   SSH Clint:
--   SSH Agent:
+-   OpenSSH: OpenSSH is a free and open-source implementation of the SSH protocol, including both the client and server programs. It is one of the most widely used SSH implementations in the world and is included with many operating systems.
+-   SSH Clint: An SSH client is a software program that allows you to connect to a remote server using the Secure Shell (SSH) protocol. An SSH client can interact with an SSH agent to perform passwordless authentication to remote servers, which can be more convenient and secure than using a password.
+-   SSH Agent: ssh-agent is a key manager for SSH. It holds your keys and certificates in memory, unencrypted, and ready for use by ssh. It saves you from typing a passphrase every time you connect to a server. It runs in the background on your system, separately from ssh, and it usually starts up the first time you run ssh after a reboot.
 
 -   **ssh-keygen:**
 
@@ -80,6 +80,7 @@
     -   `$ ssh-add ~/.ssh/id_rsa` → In order not to have prompted passphrase at login, cache the passphrase into 'ssh-agent' if you generate a key with passphrase.
     -   `alias sshadd='eval $(ssh-agent) && ssh-add'` → Create alias to cache passphrase since `ssh-add` is temporary for a shell session.
     -   `$ ssh-add -K ~/.ssh/id_rsa` → Add your SSH private key to the ssh-agent and store your passphrase in the keychain. The -K option is Apple's standard version of ssh-add, which stores the passphrase in your keychain for you when you add an ssh key to the ssh-agent. If you chose not to add a passphrase to your key, run the command without the -K option.
+    -   `$ ssh-add --apple-use-keychain ~/.ssh/github_AMOminNYC02`
     -   `$ cat ~/.ssh/file_name.pub >> ~/.ssh/authorized_keys`
     -   `$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys`
     -   `$ pbcopy < ~/.ssh/id_rsa.pub` → Copies the contents of the id_rsa.pub file to your clipboard in MacOS
@@ -112,28 +113,23 @@
 ```bash
 rsync -avz \                        # run in archival and vervose mode
     --rsh="ssh -i ~/.ssh/id_rsa" \  # make sure id_rsa file generated and coppied id_rsa.pub into remote server
-    user@remote_server:/src_path \
-    target_path
+    user@remote_server:/src_path \  # Remote source
+    target_path                     # local target
 ```
 
 ---
 
 ### curl
 
+-   [curl](https://www.hostinger.com/tutorials/curl-command-with-examples-linux/)
 -   [Using Curl and Telnet Command To Make HTTP Requests](https://www.youtube.com/watch?v=cn3u7-dP3S0)
 -   [Telnet vs SSH Explained](https://www.youtube.com/watch?v=tZop-zjYkrU)
 -   `$ curl -vvv localhost:8000` → Simple get request.
 -   `$ curl -vvv http://www.google.com` → Simple get request.
 -   `curl –data “text=Hello” https://myDomain.com/firstPage.jsp` → Simple post request
 -   `$ curl -x  sampleproxy.com:8090 -U username:password -O http://testdomain.com/testfile.tar.gz`
--   `$ curl`
--   `$ curl`
--   `$ curl`
 -   `$ telnet www.google.com 80`
-
-```bash
-
-```
+-   `$ curl`
 
 ### Archive
 
@@ -143,7 +139,6 @@ rsync -avz \                        # run in archival and vervose mode
     -   `$ wget -O my-file.csv ~/Data http://file-to-download.csv` → download 'file-to-download.csv' and save it as 'my-file.csv' instead of 'file-to-download.csv' into '~/Data'. (`-O` indicates Output)
     -   `$ wget --directory-prefix=~/Data --output-document=my-file.csv http://file-to-download.csv` →
 
--   [curl](https://www.hostinger.com/tutorials/curl-command-with-examples-linux/)
 -   [tar](https://linuxhint.com/linux-tar-command/)
 
     -   `$ tar xvf ~/Data/file-to-untar.tar -C ~/Download` → Untar file-to-untar.tar and save it into '~/Download' directory
@@ -156,6 +151,27 @@ rsync -avz \                        # run in archival and vervose mode
     -   `$ gzip <filename>` → Compresses files using gzip algorithm
     -   `$ gunzip <filename>` → Uncompresses files compressed by gzip
     -   `$ gzcat <filename>` → Lets you look at gzipped file without actually having to gunzip it
+
+---
+
+### Symbolic Links
+
+-   symbolic links (also known as “soft links” or “symlinks”): Refer to a symbolic path indicating the abstract location of another file.
+-   hard links : Refer to the specific location of physical data.
+
+-   `$ ln -s path/source_file_name.extn`
+    -   Create a symlink from destination directory
+-   `$ ln -s {absolute_path/source_filename} {absolute_path/symbolic_filename}`
+    -   Create symbolic link from any directory.
+    -
+
+---
+
+### diff
+
+-   [The diff Command](https://www.youtube.com/watch?v=qLRQspQxvFk)
+-   `$ diff -s file1 file2`
+-   `$ diff `
 
 ---
 
@@ -218,20 +234,9 @@ rsync -avz \                        # run in archival and vervose mode
 
 ---
 
-### Links
-
--   symbolic links (also known as “soft links” or “symlinks”): Refer to a symbolic path indicating the abstract location of another file.
--   hard links : Refer to the specific location of physical data.
-
--   `$ ln -s path/source_file_name.extn`
-    -   Create a symlink from destination directory
--   `$ ln -s {absolute_path/source_filename} {absolute_path/symbolic_filename}`
-    -   Create symbolic link from any directory.
-    -
-
----
-
 ### Manging Users & Groups
+
+-   **useradd**
 
 -   `$ su user_name` → Switch/set/substitute user into the given user_name.
 -   `$ su Farzana --login` → Log into a user Farzana's profile.
@@ -246,7 +251,7 @@ sudo useradd \
     -d /path/username \         # If you want to create the user’s home directory in other location
     -u 1500 \                   # to create a user with a specific UID. (verify: `id -u username`)
     -g group_name \             # set the login group to (Verify: `id -gn username`)
-    -G wheel,developers \       # You to specify a list of supplementary groups which the user will be a member of
+    -G sudo,admins \            # You to specify a list of supplementary groups which the user will be a member of
     -s /usr/bin/bash \          # allows you to specify the new user’s login shell. (verify: `grep username /etc/passwd`)
     -c "Test User Account" \    # option allows you to add a short description for the new user. Typically the user’s full name or the contact information are added as a comment.
     username
@@ -255,6 +260,31 @@ sudo useradd \
 -   `$ useradd -D` # To view the current default options for `useradd` (`/etc/default/useradd`)
 -   `$ `
 -   `$ `
+
+-   **usermod**
+-   `$ usermod -aG sudo user_name` → add Shah to the sudo user; login as root user to do that
+-   `$ sudo usermod -aG admins,sudo Shah` # -a (append); -G(group); sudo (a group)
+-   `$ sudo usermod -d /home/myhome --move-home SHAH` → move the home directory of 'Shah' user into the ne location.
+-   `$ sudo usermod -l new_user_name cur_user_name` → Change Username
+-   `$ sudo usermod -L user_name` → Lock a user
+-   `$ sudo usermod -U user_name` → Unlock a user
+-   `$ sudo usermod  Shah -e 2024-01-10` → Expire the password for the gieven user on the given date.
+-   `$ sudo usermod  Shah` →
+
+-   `$ sudo groupadd admins` →
+-   `$ groups user_name` →
+-   `$ chage -l username` → Show account aging information for the given user
+-   `$ ` →
+
+-   **Group Management:**
+
+-   `$ cat /etc/group` → To view all groups present on the system
+-   `$ groups`
+-   `$ groups user_name`
+-   `$ sudo groupadd group_name`
+-   `$ sudo groupdel group_name`
+-   `$ sudo gpasswd -a user_name group_name`
+-   `$ groups `
 
 ### Netowrking
 
@@ -277,9 +307,9 @@ sudo useradd \
 
 -   **Systemd:**
 
-    systemd is a software suite that provides an array of system components for Linux[6] operating systems. Its main aim is to unify service configuration and behavior across Linux distributions;[7] Its primary component is a "system and service manager"—an init system used to bootstrap user space and manage user processes. It also provides replacements for various daemons and utilities, including device management, login management, network connection management, and event logging.
+    systemd is a software suite that provides an array of system components for Linux operating systems. Its main aim is to unify service configuration and behavior across Linux distributions. Its primary component is a "system and service manager"—an init system used to bootstrap user space and manage user processes. It also provides replacements for various daemons and utilities, including device management, login management, network connection management, and event logging.
 
--   **Core components and libraries**
+-   **Core components and libraries:**
 
     Following its integrated approach, systemd also provides replacements for various daemons and utilities, including the startup shell scripts, pm-utils, inetd, acpid, syslog, watchdog, cron and atd. systemd's core components include the following:
 
@@ -293,7 +323,7 @@ sudo useradd \
         `systemd-journald` is a daemon responsible for event logging, with append-only binary files serving as its logfiles. The system administrator may choose whether to log system events with systemd-journald, syslog-ng or rsyslog. The potential for corruption of the binary format has led to much heated debate.
         Journalctl is a utility for querying and displaying logs from journald, systemd’s logging service. Since journald stores log data in a binary format instead of a plaintext format, journalctl is the standard way of reading log messages processed by journald.
 
--   **Configuration of systemd**
+-   **Configuration of systemd:**
 
     -   systemd records initialization instructions for each daemon in a configuration file (referred to as a "unit file") that uses a declarative language, replacing the traditionally used per-daemon startup shell scripts. The syntax of the language is inspired by .ini files.
     -   Unit-file types include:
@@ -312,7 +342,7 @@ sudo useradd \
 
 </details>
 
-**systemctl**
+**systemctl:**
 
 -   [How to Use Systemctl Utility in Linux](https://linuxhint.com/systemctl-utility-linux/)
 -   `$ sudo systemctl list-units`
@@ -333,7 +363,7 @@ sudo useradd \
 -   `$ `
 -   `$ `
 
-**journalctl**
+**journalctl:**
 
 -   [Using journalctl](https://www.loggly.com/ultimate-guide/using-journalctl/)
 
@@ -642,27 +672,18 @@ trap returntrap RETURN  # is executed each time a shell function or a script exe
 -   [Interview Bit](https://www.interviewbit.com/shell-scripting-interview-questions/)
 -   [Interview Questions](https://www.guru99.com/shell-scripting-interview-questions.html)
 
-### The Linux Kernel
+-   **Kernel**: Every operating system (OS) has a kernel. The kernel is the layer of the OS that bridges the hardware with the main programs that run on a computer. The kernel is the core of the OS and is the first to load when the computer boots up. It remains in the computer's memory throughout a session. It is responsible for providing an interface for all applications, controlling the hardware and allowing processes to get information from each other. There are three types of kernel:
 
-Every operating system (OS) has a kernel. The kernel is the layer of the OS that bridges the hardware with the main programs that run on a computer. The kernel is the core of the OS and is the first to load when the computer boots up. It remains in the computer's memory throughout a session. It is responsible for providing an interface for all applications, controlling the hardware and allowing processes to get information from each other. There are three types of kernel:
+    -   Microkernel
+    -   Hybrid
+    -   Monolithic
+    -   Linux uses a monolithic kernel, so called because it includes device drivers and the file management system and therefore requires more memory. On the opposite end of the spectrum, a microkernel aims to occupy the smallest amount of memory by managing only the necessities such as the CPU, memory and inter-process communication (IPC).
 
--   Microkernel
--   Hybrid
--   Monolithic
+-   **The Shell**: The shell forms the layer between the user and the kernel so the user can enter commands. The kernel 'understands' only binary language, which is composed exclusively of ones and zeros. In early computing, any instructions/commands from the users were entered in binary language, but this evolved so that the user can enter commands in a more recognizable language. It is the shell that acts as the go-between, accepting the commands entered in the language recognizable by the user, and translating them to binary language for the kernel.
 
-Linux uses a monolithic kernel, so called because it includes device drivers and the file management system and therefore requires more memory. On the opposite end of the spectrum, a microkernel aims to occupy the smallest amount of memory by managing only the necessities such as the CPU, memory and inter-process communication (IPC).
+-   **Bash**: Bash stands for Bourne Again SHell, and is **a type of shell** found in Linux, which is the default shell in several versions ('distributions') of Linux. Other common types of shell are cshell and kshell, though there are others. The most primitive type of shell in Linux is sh.
 
-### The Shell
-
-The shell forms the layer between the user and the kernel so the user can enter commands. The kernel 'understands' only binary language, which is composed exclusively of ones and zeros. In early computing, any instructions/commands from the users were entered in binary language, but this evolved so that the user can enter commands in a more recognizable language. It is the shell that acts as the go-between, accepting the commands entered in the language recognizable by the user, and translating them to binary language for the kernel.
-
-### Bash
-
-Bash stands for Bourne Again SHell, and is **a type of shell** found in Linux, which is the default shell in several versions ('distributions') of Linux. Other common types of shell are cshell and kshell, though there are others. The most primitive type of shell in Linux is sh.
-
-### Terminal
-
-The terminal is the application that brings it all together, in the sense that it provides a visual representation of the shell for the user to enter commands. In other words, in a GUI (graphical user interface), where applications and other features are visually represented by images that the user can manipulate by clicking on them with a cursor, a terminal application opens a window where the user can type in commands for the shell to interpret into binary language for the kernel.
+-   **Terminal**: The terminal is the application that brings it all together, in the sense that it provides a visual representation of the shell for the user to enter commands. In other words, in a GUI (graphical user interface), where applications and other features are visually represented by images that the user can manipulate by clicking on them with a cursor, a terminal application opens a window where the user can type in commands for the shell to interpret into binary language for the kernel.
 
 Summing it all up, we could say that we've discussed three layers so far: the terminal, where the user enters written commands; the shell, and Bash being a type of shell, which takes those commands and interprets them into binary language; the kernel which takes the binary language commands and executes the task on hand.
 
@@ -679,14 +700,14 @@ Summing it all up, we could say that we've discussed three layers so far: the te
 -   [Grouping Commands](https://ss64.com/bash/syntax-brackets.html):
 
 -   [Shell Expansion](https://tiswww.case.edu/php/chet/bash/bashref.html#Shell-Expansions): Expansion is performed on the command line after it has been split into tokens. There are seven kinds of expansion performed:
-    -   **Brace Expansion** $→$ Expansion of expressions within braces.
-    -   **Tilde Expansion** $→$ Expansion of the ~ character.
-    -   [Shell Parameter Expansion](https://tiswww.case.edu/php/chet/bash/bashref.html#Shell-Parameter-Expansion) $→$ How Bash expands variables to their values.
-    -   **Command Substitution** $→$ Using the output of a command as an argument.
-    -   **Arithmetic Expansion** $→$ How to use arithmetic in shell expansions.
-    -   **Process Substitution** $→$ A way to write and read to and from a command.
-    -   **Word Splitting** $→$ How the results of expansion are split into separate arguments.
-    -   **Filename Expansion** $→$ A shorthand for specifying filenames matching patterns.
+    -   **Brace Expansion** → Expansion of expressions within braces.
+    -   **Tilde Expansion** → Expansion of the ~ character.
+    -   [Shell Parameter Expansion](https://tiswww.case.edu/php/chet/bash/bashref.html#Shell-Parameter-Expansion) → How Bash expands variables to their values.
+    -   **Command Substitution** → Using the output of a command as an argument.
+    -   **Arithmetic Expansion** → How to use arithmetic in shell expansions.
+    -   **Process Substitution** → A way to write and read to and from a command.
+    -   **Word Splitting** → How the results of expansion are split into separate arguments.
+    -   **Filename Expansion** → A shorthand for specifying filenames matching patterns.
 
 ### Flags/Options in Bash:
 

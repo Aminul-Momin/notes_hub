@@ -1,12 +1,17 @@
+export GD="$HOME"
+
+source ~/.pbp.bash
+source ~/.secrets.bash
 
 create_alias(){
     alias python=python3
     alias pip=pip3
-    alias vim=nvim
+    # alias vim=nvim
     # alias tmux="tmux 2"
 }
 create_alias
 
+# ============================================================================
 # ============================================================================
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
@@ -60,6 +65,8 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 ## -------------- From udacity.com on August 2, 2017 -------------- ##
 source ~/.git-completion.bash
+source ~/.git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
 
 beautify_prompt(){
     # colors:
@@ -72,16 +79,10 @@ beautify_prompt(){
     # orange='\033[40m'
     # orange='\033[1;32m'
 
-    source ~/.git-prompt.sh
-    export GIT_PS1_SHOWDIRTYSTATE=1
 
-    hn=$(hostname)
-    host=${hn:0:3}
-    host_color=$purple
+    host=$(hostname)
+    host_color=$BRed
     arrow_color=$purple
-    if [[ $host == "am1" ]]; then
-        host_color=$BRed
-    fi
 
     # Prompt String
     export PS1="$host_color${host}$arrow_color =>|$green\$(__git_ps1)$blue\W$arrow_color|\n$ $reset"
@@ -113,5 +114,26 @@ tmxkill(){
     fi
 }
 
-source ~/.secrets.bash
-source ~/.pbp.bash
+# ============================================================================
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+# ============================================================================
+
+
+# Setting PATH for Python 3.11
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:${PATH}"
+export PATH

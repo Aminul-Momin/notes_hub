@@ -39,7 +39,12 @@
 <details open>
 <summary style="font-size:25px;color:Orange;text-align:left">Installation & Configurations:</summary>
 
-### Installation and Configurations
+### Installation and Configurations of Jupyter Lab
+
+-   `$ pip install jupyterlab`
+-   `$ pip install ipykernel; pip install bash_kernel; python -m bash_kernel.install` → Installing a Bash Kernel
+
+### Installation and Configurations of Jupyter Notebook
 
 -   `$ python3 -m pip install jupyter` → install Jupyter Notebook
 -   `$ pip3 install --upgrade notebook` → Upgrade Jupyter Notebook
@@ -57,15 +62,42 @@
 -   🔥 `$ pip install ipykernel`
 -   🔥 `$ ipython kernel install --user --name=ads_jnb_kernel`
 
-### ENABLE NOTEBOOK EXTENSION & THEMES:
+-   Installing a Bash Kernel:
 
+    -   `$ python -m venv .venv`
+    -   `$ source .venv/bin/activate`
+    -   `$ pip install ipykernel`
+    -   `$ pip install bash_kernel`
+    -   `$ python -m bash_kernel.install`
+    -   `$ rm -fr bash_kernel`
+
+-   Run Jupyter from Virtual Environment:
+
+    -   `$ python -m venv .venv`
+    -   `$ source .venv/bin/activate`
+    -   `$ pip install ipykernel`
+    -   `$ ipython kernel install --user --name=jnb_flaskapp_env`
+    -   `$ jupyter notebook`
+        -   select `jnb_flaskapp_env` from select manu of jupyter karnel.
+    -   Installed kernelspec jnb_flaskapp_env in $HOME/Library/Jupyter/kernels/jnb_flaskapp_env
+
+-   `$ jupyter kernelspec list`
+-   `$ jupyter kernelspec remove kernel_name`
+
+### ENABLE JUPYTER NOTEBOOK EXTENSION & THEMES:
+
+-   [Installing jupyter_contrib_nbextensions](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html)
+
+-   `$ conda install -c conda-forge jupyter_contrib_nbextensions` → Install the extention
 -   `$ pip install jupyter_contrib_nbextensions` → Install the extention
 -   `$ jupyter contrib nbextension install --user` → Setup the configuration
+-   `$ pip install jupyter_nbextensions_configurator`
+-   `$ jupyter nbextensions_configurator enable --user`
 -   `$ jupyter nbextension enable <nbextension require path>` → Enable the extension
 -   `$ pip install jupyterthemes` → install jupyterthemes
 -   `$ pip install --upgrade jupyterthemes` → upgrade to latest version
 -   `$ jt -l` → List out all the available themes available in package called 'jupyterthemes'
--   `$ jt -t onedork` → Enable 'onedork' theme
+-   `$ jt -t gruvboxd` → Enable 'gruvboxd' theme
 -   `$ jt -r` → Reset the theme of this notebook to default setting.
 
 -   It’s time to make your jupyter notebook cool again. One can customize each and every aspect of the notebooks. Lets start with customizing colours. On both windows and linux (ubuntu), the process is fairly straight.

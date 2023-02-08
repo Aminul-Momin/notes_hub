@@ -94,7 +94,7 @@
 -   🔥 <bold style="color:orange">NOTES</bold>: When reading, the values are read from the system, global and repository local configuration files by default, and options `--system`, `--global`, `--local`, `--worktree` and `--file <filename>` can be used to tell the command to read from only that location (see FILES).
 -   `$ git config --global core.editor code –wait [“subl –n -w”, emacs, “atom-wait”]`
 -   `$ git config --global color.ui auto`
--   `$ git config --local user.name 'Aminul Momin'`
+-   `$ git config --local user.name 'Aminul Momin'` → '--local' can only be used inside a git repository
 -   `$ git config --local user.email "A.Momin.NYC@gmail.com"`
 -   `$ git config --local user.email "A.Momin.NYC@gmail.com"`
 -   `$ git config --local user.email "bbcredcap3@gmail.com"`

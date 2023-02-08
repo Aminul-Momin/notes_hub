@@ -82,10 +82,11 @@ notes_cmds(){
 
 # To install VSCode extentions
 install_vscode_extensions(){
-    :" Downloads VSCode extensions into the directory, `~/.vscode/extensions`.
+    
+    :' Downloads VSCode extensions into the directory, `~/.vscode/extensions`.
     Args:
         file_name: The file name containg vscode extention-ids seperated by new line.
-    "
+    '
 
     while read line; do
         echo "Installing $line . . . . . "
@@ -96,10 +97,10 @@ install_vscode_extensions(){
 
 # To uninstall VSCode extentions
 uninstall_vscode_extensions(){
-    :" Uninstall VSCode extensions.
+    :' Uninstall VSCode extensions.
     Args:
         file_name: The file name containg vscode extention-ids seperated by new line.
-    "
+    '
 
     while read line; do
         echo "Uninstalling $line . . . . . "
@@ -127,7 +128,7 @@ download_vim_config_files(){
     # then Open `~/.vimrc` file with vim.
 }
 
-mac_dotfiles(){
+mac_curl_dotfiles(){
 
     dot_files="https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/MacOS"
     for file in .{bashrc,bash_profile,aliases,git-completion.bash,git-prompt.sh,git-aliases.bash,pbp.bash,tmux.conf}; do
@@ -142,3 +143,26 @@ mac_dotfiles(){
         curl $dot_files/init.vim > $HOME/init.vim
     done
 }
+
+mac_symlink_dotfiles(){
+    # dir="$GD/gd/Software_Development/notes_hub/dotfiles/MacOS"
+    # for dot_file in {bash_profile,bashrc,secrets.bash,pbp.bash,aliases,git-aliases.bash,git-completion.bash,git-prompt.sh,tmux.conf}; do
+    #     echo $dir/$dot_file
+    #     echo .$dot_file
+    #     if [! -f $HOME/.$dot_file]; then
+    #         touch $HOME/.$dot_file
+    #     fi
+    #     ln -fs $dir/$dot_file ~/.$dot_file
+    # done
+    # ln -fs $dir/init.vim init.vim
+
+    ln -sf $NTHUB/dotfiles/MacOS/bash_profile $HOME/.bash_profile
+    ln -sf $NTHUB/dotfiles/MacOS/bashrc $HOME/.bashrc
+    ln -sf $NTHUB/dotfiles/MacOS/aliases $HOME/.aliases
+    ln -sf $NTHUB/dotfiles/MacOS/git-aliases.bash $HOME/.git-aliases.bash
+    ln -sf $NTHUB/dotfiles/MacOS/git-completion.bash $HOME/.git-completion.bash
+    ln -sf $NTHUB/dotfiles/MacOS/git-prompt.sh $HOME/.git-prompt.sh
+    ln -sf $NTHUB/dotfiles/MacOS/secrets.bash $HOME/.secrets.bash
+    ln -sf $NTHUB/dotfiles/MacOS/init.vim $HOME/init.vim
+    ln -sf $NTHUB/dotfiles/MacOS/settings.json /Users/am/Library/Application\ Support/Code/User/settings.json
+}    
