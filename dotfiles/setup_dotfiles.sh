@@ -1,27 +1,26 @@
-
-# for_mac_only(){
-
-# }
-
-# for_lnx_only(){
-
-# }
-
-# for_gitbash_only(){
-    
-# }
-
-bash_dotfiles_lnx(){
-    nt_dotfiles="https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/Linux"
-    curl $nt_dotfiles/.bashrc > ~/.bashrc
-    curl $nt_dotfiles/.bash_profile > ~/.bash_profile
-    curl $nt_dotfiles/.aliases > ~/.aliases
-    curl $nt_dotfiles/.git-completion.bash > ~/.git-completion.bash
-    curl $nt_dotfiles/.git-prompt.sh > ~/.git-prompt.sh
-    curl $nt_dotfiles/.git-aliases.bash > ~/.git-aliases.bash
+lnx_load_dotfiles(){
+    : ' Install short version 'notes_hub' into home directory
+        NOTE:
+    '
+    mkdir -p $HOME/notes_hub/dotfiles/lnx
+    export NTHUB="$HOME/notes_hub"
+    dotfiles="https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/lnx"
+    files=(bashrc bash_profile aliases git-completion.bash git-prompt.sh git-aliases.bash)
+    for file in "${files[@]}"; do
+        if [! -f $NTHUB/dotfiles/lnx/$file ]; then
+            touch $NTHUB/dotfiles/lnx/$file
+        fi
+        curl $dotfiles/.$file > $NTHUB/dotfiles/lnx/$file
+        # echo $file
+    done
+    # curl $nt_dotfiles/bash_profile > $NTHUB/dotfiles/lnx/bash_profile
+    # curl $nt_dotfiles/aliases > $NTHUB/dotfiles/lnx/aliases
+    # curl $nt_dotfiles/git-completion.bash > $NTHUB/dotfiles/lnx/git-completion.bash
+    # curl $nt_dotfiles/git-prompt.sh > $NTHUB/dotfiles/lnx/git-prompt.sh
+    # curl $nt_dotfiles/git-aliases.bash > $NTHUB/dotfiles/lnx/git-aliases.bash
 }
 
-vim_dotfiles_lnx(){
+lnx_vim_dotfiles(){
     # my_home=/home/$USER
     # vimrc_file="$my_home/.vimrc"
     # if [ -e $vimrc_file ]; then      # Check if file exists.
@@ -57,7 +56,7 @@ vim_dotfiles_lnx(){
         # `:PlugInstall`
 }
 
-nvim_dotfiles_lnx(){
+lnx_nvim_dotfiles(){
     # Install `vim-plug` package manager to be used with nvim (`init.vim`). Check the documentation to use it with vim (`.vimrc`)
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
     
@@ -69,7 +68,16 @@ nvim_dotfiles_lnx(){
     ## configuration: ~/.config/nvim/
 }
 
-notes_cmds(){
+
+download_vim_config_files(){
+    cd ~
+    curl https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/vim_configs/vim01_python/.vimrc >> ~/.vimrc
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    # then Open `~/.vimrc` file with vim.
+}
+
+
+lnx_notes_cmds(){
 
     nt_cmds="https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/cmds"
     for file in notes_{airflow,docker,git,py,vim}.md; do
@@ -80,20 +88,6 @@ notes_cmds(){
     done
 }
 
-# To install VSCode extentions
-install_vscode_extensions(){
-    
-    :' Downloads VSCode extensions into the directory, `~/.vscode/extensions`.
-    Args:
-        file_name: The file name containg vscode extention-ids seperated by new line.
-    '
-
-    while read line; do
-        echo "Installing $line . . . . . "
-        code --install-extension $line
-        # printf "%$(tput cols)s\n"|tr " " "="
-    done < $1
-}
 
 # To uninstall VSCode extentions
 uninstall_vscode_extensions(){
@@ -109,35 +103,16 @@ uninstall_vscode_extensions(){
     done < $1
 }
 
-ln_bash_dotfiles(){
-    for dot_file in $NTS/dotfiles/MacOS/.{aliases,bash_profile,bashrc,git-*}; do
-        if [! -d $1]; then
-            ln -fsv $dot_file $HOME
-        else
-            mkdir $HOME/DUMMY_HM
-            ln -fsv $dot_file $HOME/DUMMY_HM
-        fi
-    done
-}
-
-
-download_vim_config_files(){
-    cd ~
-    curl https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/vim_configs/vim01_python/.vimrc >> ~/.vimrc
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    # then Open `~/.vimrc` file with vim.
-}
-
 mac_curl_dotfiles(){
 
     dot_files="https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/MacOS"
     for file in .{bashrc,bash_profile,aliases,git-completion.bash,git-prompt.sh,git-aliases.bash,pbp.bash,tmux.conf}; do
-        if [! -f $HOME/$file]; then
+        if [ ! -f $HOME/$file ]; then
             touch $HOME/$file
         fi
         curl $dot_files/$file > $HOME/$file
 
-        if [! -f $HOME/init.vim]; then
+        if [ ! -f $HOME/init.vim ]; then
             touch $HOME/init.vim
         fi
         curl $dot_files/init.vim > $HOME/init.vim
@@ -145,24 +120,108 @@ mac_curl_dotfiles(){
 }
 
 mac_symlink_dotfiles(){
-    # dir="$GD/gd/Software_Development/notes_hub/dotfiles/MacOS"
-    # for dot_file in {bash_profile,bashrc,secrets.bash,pbp.bash,aliases,git-aliases.bash,git-completion.bash,git-prompt.sh,tmux.conf}; do
-    #     echo $dir/$dot_file
-    #     echo .$dot_file
-    #     if [! -f $HOME/.$dot_file]; then
-    #         touch $HOME/.$dot_file
-    #     fi
-    #     ln -fs $dir/$dot_file ~/.$dot_file
-    # done
-    # ln -fs $dir/init.vim init.vim
+    host_name=$(hostname)
 
-    ln -sf $NTHUB/dotfiles/MacOS/bash_profile $HOME/.bash_profile
-    ln -sf $NTHUB/dotfiles/MacOS/bashrc $HOME/.bashrc
-    ln -sf $NTHUB/dotfiles/MacOS/aliases $HOME/.aliases
-    ln -sf $NTHUB/dotfiles/MacOS/git-aliases.bash $HOME/.git-aliases.bash
-    ln -sf $NTHUB/dotfiles/MacOS/git-completion.bash $HOME/.git-completion.bash
-    ln -sf $NTHUB/dotfiles/MacOS/git-prompt.sh $HOME/.git-prompt.sh
-    ln -sf $NTHUB/dotfiles/MacOS/secrets.bash $HOME/.secrets.bash
-    ln -sf $NTHUB/dotfiles/MacOS/init.vim $HOME/init.vim
-    ln -sf $NTHUB/dotfiles/MacOS/settings.json /Users/am/Library/Application\ Support/Code/User/settings.json
-}    
+    if [ $host_name = "MOS01" ]; then
+        ln -sf $NTHUB/dotfiles/macos/bash_profile_mos01 $HOME/.bash_profile
+    elif [ $host_name = "MOS02" ]; then
+        ln -sf $NTHUB/dotfiles/macos/bash_profile_mos02 $HOME/.bash_profile
+    else
+        ln -sf $NTHUB/dotfiles/macos/bash_profile_mos01 $HOME/.bash_profile
+    fi
+
+    ln -sf $NTHUB/dotfiles/macos/bashrc $HOME/.bashrc
+    ln -sf $NTHUB/dotfiles/macos/aliases $HOME/.aliases
+    ln -sf $NTHUB/dotfiles/macos/pbp.bash $HOME/.pbp.bash
+    ln -sf $NTHUB/dotfiles/macos/git-aliases.bash $HOME/.git-aliases.bash
+    ln -sf $NTHUB/dotfiles/macos/git-completion.bash $HOME/.git-completion.bash
+    ln -sf $NTHUB/dotfiles/macos/git-prompt.sh $HOME/.git-prompt.sh
+    ln -sf $NTHUB/dotfiles/macos/secrets.bash $HOME/.secrets.bash
+    ln -sf $NTHUB/dotfiles/macos/config $HOME/.ssh/config
+}
+
+mac_setup_vscode(){
+
+    : '
+    Downloads VSCode extensions into the directory, `~/.vscode/extensions`.
+    Args:
+        file_name: The file name containg vscode extention-ids seperated by new line.
+    '
+
+    while read line; do
+        echo "Installing $line . . . . . "
+        code --install-extension $line
+        # printf "%$(tput cols)s\n"|tr " " "="
+    done < $NTHUB/dotfiles/vscode_extension_list.txt
+
+    if [! -f ~/Library/Application\ Support/Code/User/settings.json]; then
+        echo "'~/Library/Application Support/Code/User/settings.json' is not found"
+    fi
+    ln -sf $NTHUB/dotfiles/macos/settings.json ~/Library/Application\ Support/Code/User/settings.json
+
+    if [! -d ~/.mume]; then
+        mkdir ~/.mume
+    fi
+    ln -fs $NTHUB/dotfiles/macos/style.less ~/.mume/style.less
+}
+
+mac_nvim_tmux_config(){
+    : ' Configure nvim for your mac.
+        NOTE: It removes 'vim' (.vimrc) configuration if there is any.
+    '
+
+    if [ -h ~/.vimrc] || [ -d ~/.vim]; then # (`-h` indicates ` ~/.vimrc` exist and it's symbolic link)
+        rm -fr ~/.vimrc ~/.vim ~/.viminfo
+    fi
+
+    # Install `vim-plug` package manager to be used with nvim (`init.vim`). Check the documentation to use it with vim (`.vimrc`)
+    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+    if [! -d ~/.config/nvim]; then
+        mkdir -p ~/.config/nvim
+    fi
+    ln -fs $NTHUB/dotfiles/macos/init.vim ~/.config/nvim/init.vim
+    
+    # Install all plugins mentioned on `~/.config/nvim/init.vim` file
+    nvim +PlugInstall +qall
+
+    ## Build COC as follows:
+    cd .local/share/nvim/pluged/coc.nvim && yarn install && yarn build
+
+    ## Symlink to the tmux configuration file
+    ln -fs $NTHUB/dotfiles/macos/tmux.conf ~/.tmux.conf
+}
+
+mac_vim_tmux_config(){
+    : ' Configure nvim for your mac.
+        NOTE: It removes 'vim' (.vimrc) configuration if there is any.
+    '
+
+    # (`-h` indicates `~/.config/nvim/init.vim` exist and it's symbolic link)
+    if [ -h ~/.config/nvim/init.vim] || [ -d ~/.local/share/nvim]; then
+        rm -fr ~/.config/nvim .local/share/nvim ~/.viminfo
+    fi
+
+    ln -fs $NTHUB/dotfiles/macos/vimrc ~/.vimrc
+
+    # Install `vim-plug` package manager to be used with vim (`.vimrc`). Check the documentation to use it with neovim (`init.vim`)
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+   
+    # Install all plugins mentioned on `~/.vimrc` file
+    vim +PlugInstall +qall
+
+    ## Symlink to the tmux configuration file
+    ln -fs $NTHUB/dotfiles/macos/tmux.conf ~/.tmux.conf
+}
+
+prepare_my_mac(){
+    : ' Not done yet
+        NOTE: rough !!
+    '
+    brew install mysql
+    brew install tmux
+    brew install postgresql
+    brew install vscode
+    brew install tmux
+
+}

@@ -60,10 +60,8 @@ update_sm_ip(){
 }
 
 scp_to_vm(){
-    :'
-    Copy files from local machine to virtual machine using secure-copy (scp).
-    It assumes that '~/.ssh/config' file is properly configured for VM named 'sm'
-    '
+    # Copy files from local machine to virtual machine using secure-copy (scp).
+    # It assumes that '~/.ssh/config' file is properly configured for VM named 'sm'
 
     paths="$SD/WORKSPACE_SETUP/workspace_funcs.sh
     ~/.kaggle/kaggle.json
@@ -84,23 +82,21 @@ scp_to_vm(){
 }
 
 create_sql_kernel(){
-    # create conda environment with the name `sql_kernel_name`
-    conda create -n $1 python=3 ipython notebook
-    conda activate $1
+    # It install a mysql kernel for jupyter notebook. 
+    # NOTE: It's recommanded to install it in a perticular conda environment.
+
     pip install mysql-kernel #
     python -m mysql_kernel.install
-    conda deactivate
+    pip install --user --upgrade "sqlalchemy<2.0"
 }
 
 create_bash_kernel(){
-    
-    # send the conda environment name as the first parameter.
-    
-    conda create -n $1 python=3 ipython notebook
-    conda activate $1
+    # It install a bash kernel for jupyter notebook. 
+    # NOTE: It's recommanded to install it in a perticular conda environment.
+
     pip install bash_kernel
     python -m bash_kernel.install
-    conda deactivate
+    rm -fr bash_kernel
 }
 
 create_conda_env(){

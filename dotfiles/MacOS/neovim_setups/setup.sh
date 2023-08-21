@@ -4,6 +4,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 #Install COC
-cd .local/share/nvim/pluged/coc.nvim
+cd .local/share/nvim/plugged/coc.nvim
 yarn install
 yarn build

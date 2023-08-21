@@ -27,9 +27,10 @@
         "selection.background": "#2979FF40"
     },
     "workbench.statusBar.visible": true,
+    "workbench.startupEditor": "none",
     "workbench.colorTheme": "Gruvbox Dark Hard",
     "workbench.sideBar.location": "right",
-    "workbench.iconTheme": "material-icon-theme",
+
 
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.foldingStrategy": "indentation",
@@ -61,6 +62,9 @@
         "**/*.class": true,
         "**/CVS": true
     },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
@@ -68,9 +72,10 @@
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "[html]": {
-        "editor.defaultFormatt÷er": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[python]": {
+        "editor.formatOnType": true
         // "editor.defaultFormatter": "remimarsal.prettier-now"
     },
     "[markdown]": {
@@ -78,8 +83,14 @@
         "editor.tabSize": 4,
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.wordWrapColumn": 80,
+        "editor.wordWrapColumn": 80
     },
+    "markdown.styles": ["/Users/am/gd/Software_Development/notes_hub/dotfiles/styles.css"],
+    "markdown-preview-enhanced.hideDefaultVSCodeMarkdownPreviewButtons": false,
+    "markdown-preview-enhanced.previewTheme": "none.css",
+    "markdown-preview-enhanced.codeBlockTheme": "darcula.css",
+    "markdown.extension.print.absoluteImgPath": false,
+    "markdown.extension.print.theme": "dark",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     // "java.configuration.checkProjectSettingsExclusions": false,
     "python.jediEnabled": false,
@@ -97,22 +108,12 @@
     "python.analysis.typeCheckingMode": "off",
     "python.languageServer": "Pylance",
     "extensions.ignoreRecommendations": false,
-    "bracket-pair-colorizer-2.activeScopeCSS": [
-        "borderStyle : solid",
-        "borderWidth : 3px",
-        "borderColor : {color}",
-        "opacity: 0.5"
-    ],
-    "bracket-pair-colorizer-2.colors": [
-        "#FF9900",
-        "FireBrick",
-        "Tomato",
-        "DodgerBlue",
-        "DeepPink",
-        "Orchid"
-    ],
-    "material-icon-theme.folders.color": "#4169E1",
+    "bracket-pair-colorizer-2.activeScopeCSS": ["borderStyle : solid","borderWidth : 3px","borderColor : {color}","opacity: 0.5"],
+    "bracket-pair-colorizer-2.colors": ["#FF9900", "FireBrick", "Tomato", "DodgerBlue", "DeepPink", "Orchid"],
     "bracket-pair-colorizer-2.depreciation-notice": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.folders.color": "#4169E1",
+    "material-icon-theme.activeIconPack": "react_redux",
     "security.workspace.trust.untrustedFiles": "open",
     // "emmet.triggerExpansionOnTab": true,
     "files.associations": {
@@ -126,14 +127,7 @@
         "django-html": "html"
 
     },
-    "material-icon-theme.activeIconPack": "react_redux",
-    "markdown.extension.print.theme": "dark",
-    "markdown.styles": [
-        "/Users/a.momin/gd/Software_Development/WORKSPACE_SETUP/style.css"
-    ],
-    "markdown-preview-enhanced.hideDefaultVSCodeMarkdownPreviewButtons": false,
-    "markdown.extension.print.absoluteImgPath": false,
-    "markdown-preview-enhanced.previewTheme": "none.css",
+
     "prettier.tabWidth": 4,
     "redhat.telemetry.enabled": false,
     "terminal.integrated.fontSize": 16,
@@ -141,9 +135,7 @@
     "liveServer.settings.donotShowInfoMsg": true,
     "liveServer.settings.CustomBrowser": "chrome",
     "breadcrumbs.enabled": true,
-    "workbench.startupEditor": "none",
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "git.openRepositoryInParentFolders": "never"
+    "git.openRepositoryInParentFolders": "never",
+    "chatgpt.gpt3.apiKey": "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",
+
 }
