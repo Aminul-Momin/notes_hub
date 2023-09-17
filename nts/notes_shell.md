@@ -4,6 +4,7 @@
 
 <details><summary style="font-size:18px;color:Orange;text-align:left">Notes Link</summary>
 
+-   [Introduction to Linux – Full Course for Beginners](https://www.youtube.com/watch?v=sWbUDq4S6Y8)
 -   [Learn CentOS](https://www.youtube.com/playlist?list=PLT98CRl2KxKHjHLIHrmmi5FmBGIZ8cNJE)
 -   [Linux TV: Linux Crash Course](https://www.youtube.com/playlist?list=PLT98CRl2KxKHKd_tH3ssq0HPrThx2hESW)
 -   [Linux](https://www.digitalocean.com/community/tutorials?q=%5BLinux%20Basics%5D)
@@ -14,7 +15,7 @@
 
 ---
 
-<details><summary style="font-size:18px;color:Orange;text-align:left">Terma & Concepts</summary>
+<details><summary style="font-size:18px;color:Orange;text-align:left">Terms, Concepts & Helps</summary>
 
 -   `man <command_name>` & COMMAND DESCRIPTION SYNTAX:
 
@@ -58,8 +59,6 @@
 -   `Built-in Commands`: Built-in commands are commands that are an integral part of the Bash shell itself. They are implemented directly within the shell's executable and do not require separate binary files on the system. When you execute a built-in command, it runs directly within the current shell process, which makes them generally faster and more efficient compared to external utilities. Examples of built-in commands include `cd`, `echo`, `pwd`, `export`, `alias`, `history`, `read`, and many others. You can use the type command to check whether a command is a built-in: type command_name.
 
 -   `Utilities` (`External Commands`): Utilities, also known as external commands, are separate programs installed on the system that can be executed from within the Bash shell. These utilities are usually located in directories specified in the PATH environment variable, allowing Bash to find and run them. Examples of utilities include common Unix tools like `ls`, `grep`, `sed`, `awk`, `sort`, and others. Unlike built-in commands, utilities are executed in separate processes from the Bash shell. You can use the which command to determine the path of a utility: `which utility_name`.
-
-## </details>
 
 ### How to set default shell to bash.
 
@@ -131,7 +130,7 @@
 -   `$ cat /etc/ssh/sshd_config` → SSH Clint Configuration File
 -   `$ cat /etc/services`
 
-## Bash Utilities
+### Bash Utilities
 
 -   `$ man command_name`
 -   `$ help enable`
@@ -148,29 +147,25 @@
 -   `$ `
 -   `$ `
 
--   `compgen`: It is a built-in command used for generating completions, which means it helps in completing commands, keywords, and other items while using the command-line interface. It is often used in shell scripts or by advanced users who want to interactively explore available commands and options. The compgen command has several options to generate completions for different types of items:
-    -   `$ compgen -k`: Lists all keywords that are recognized by the shell. Keywords are reserved words that have special meaning in the shell language.
-    -   `$ compgen -b`: Lists all the built-in shell commands. These are commands that are part of the shell itself and don't require external programs.
-    -   `$ compgen -v`: Lists all the names of variables currently defined in the shell.
-    -   `$ compgen -a`: Lists all the aliases defined in the current shell session.
-    -   `$ compgen -c`: Lists all the commands and utilities (built-in and external) available in the current shell session.
-    -   `$ compgen -A function`: Lists all the names of user-defined functions available in the shell.
-    -   `$ compgen -A function -abck`: Combines multiple options to list all the available completions for commands, built-ins, and keywords.
+-   `compgen`: It is a built-in command used for generating completions, which means it helps in completing commands, keywords, and other items while using the command-line interface. It is often used in shell scripts or by advanced users who want to interactively explore available commands and options. The compgen command has several options to generate completions for different types of items: - `$ compgen -k`: Lists all keywords that are recognized by the shell. Keywords are reserved words that have special meaning in the shell language. - `$ compgen -b`: Lists all the built-in shell commands. These are commands that are part of the shell itself and don't require external programs. - `$ compgen -v`: Lists all the names of variables currently defined in the shell. - `$ compgen -a`: Lists all the aliases defined in the current shell session. - `$ compgen -c`: Lists all the commands and utilities (built-in and external) available in the current shell session. - `$ compgen -A function`: Lists all the names of user-defined functions available in the shell. - `$ compgen -A function -abck`: Combines multiple options to list all the available completions for commands, built-ins, and keywords.
 
-<details open><summary style="text-align:left"><a style="font-size:15px;color:red;">SSH: Usage, Options, Configuration</a></summary>
+</details>
 
--   [Documents](https://www.ssh.com/academy/ssh/command#ssh-client-configuration-file)
--   [SSH: Usage, Options, Configuration](https://www.ssh.com/academy/ssh/command#ssh-client-configuration-file)
--   [SSH Agent Explained](https://smallstep.com/blog/ssh-agent-explained/)
+---
+
+<details><summary style="font-size:18px;color:Orange;text-align:left">SSH: Usage, Options, Configuration</summary>
+
+-   [Documents](https://www.ssh.com/academy/ssh/command#ssh-client-configuration-file) || [SSH: Usage, Options, Configuration](https://www.ssh.com/academy/ssh/command#ssh-client-configuration-file) || [SSH Agent Explained](https://smallstep.com/blog/ssh-agent-explained/)
 
 -   SSH (Secure Shell), SSH Agent, and SSH Client are all components of the SSH protocol, but they have different roles and functions.
--   SSH (Secure Shell or Secure Socket Shell): SSH is a network protocol that gives users, particularly system administrators, a secure way to access a computer over an unsecured network.
--   SSH Clint: An SSH client is a software program that allows you to connect to a remote server using the Secure Shell (SSH) protocol. An SSH client can interact with an SSH agent to perform passwordless authentication to remote servers, which can be more convenient and secure than using a password.
--   SSH Agent: SSH Agent is a utility that allows a user to store and use private keys for SSH authentication, without having to re-enter the passphrase for each use. It runs as a background process on the user's local system, holding the private key in memory and responding to authentication requests from remote systems.
--   OpenSSH: OpenSSH is a free and open-source implementation of the SSH protocol, including both the client and server programs. It is one of the most widely used SSH implementations in the world and is included with many operating systems.
--   `$ cat /etc/ssh/sshd_config` → SSH Clint Configuration File
+-   `SSH (Secure Shell or Secure Socket Shell)`: SSH is a network protocol that gives users, particularly system administrators, a secure way to access a computer over an unsecured network.
+-   `SSH Clint`: An SSH client is a software program that allows you to connect to a remote server using the Secure Shell (SSH) protocol. An SSH client can interact with an SSH agent to perform passwordless authentication to remote servers, which can be more convenient and secure than using a password.
+-   `SSH Agent`: SSH Agent is a utility that allows a user to store and use private keys for SSH authentication, without having to re-enter the passphrase for each use. It runs as a background process on the user's local system, holding the private key in memory and responding to authentication requests from remote systems.
+-   `OpenSSH`: OpenSSH is a free and open-source implementation of the SSH protocol, including both the client and server programs. It is one of the most widely used SSH implementations in the world and is included with many operating systems.
 
-    -   The file `/etc/ssh/sshd_config` is a configuration file used by the OpenSSH server (sshd) on Linux systems.
+-   The file `/etc/ssh/sshd_config` is a configuration file used by the OpenSSH server (sshd) on Linux systems.
+
+    -   `$ cat /etc/ssh/sshd_config` → List out SSH Clint Configurations.
 
 -   **ssh-keygen:**
 
@@ -194,7 +189,7 @@
     -   `$ ssh A.Momin@mos02.local`
     -   `$ ssh farzana@mos02.local`
     -   `$ ssh datanode1 'cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub`
-    -   `$ ssh user@hostname 'bash -s' < local_machine/path/to/script.sh`
+    -   `$ ssh -i ~/.ssh/id_rsa user@hostname 'bash -s' < local_machine/path/to/script.sh`
 
 -   **scp:**
 
@@ -210,13 +205,18 @@
 
 -   **sshpass:**
 
-    -   sshpass -p <password> scp [options] [source] [destination]
-    -   sshpass -p am5202844 scp data/demofile.txt a.momin@mos02.local:/Users/a.momin/Data/
+    -   `$ sshpass -p <password> scp [options] [source] [destination]`
+    -   `$ sshpass -p am5202844 scp data/demofile.txt a.momin@mos02.local:/Users/a.momin/Data/`
+
     </details>
 
 ---
 
 ### find
+
+-   `$ find -type f -name *.gdoc`
+-   `$ find . -name <name> <type>`
+-   `$ find . -type d -name .venv`
 
 -   `$ find . -type l` → Find all the links recursively from given directory
 -   `$ find $(pwd) -maxdepth 1 -type f -not -path '_/\._' | sort`
@@ -262,6 +262,12 @@ rsync -avz \                            # run in archival and vervose mode
 -   `$ curl --request POST --url http://localhost:8000/ --header 'content-type: image/jpeg' --data-binary @'/path/to/image.jpeg'`
 -   `$ telnet www.google.com 80`
 -   `$ curl`
+
+---
+
+### jq
+
+-   To process JSON data efficiently, Linux provides a command-line tool called jq. This powerful tool enables users to extract, manipulate, and transform JSON data with ease. With jq, users can quickly perform a wide range of tasks on JSON data, including filtering, sorting, and selecting specific fields.
 
 ---
 
@@ -316,7 +322,13 @@ rsync -avz \                            # run in archival and vervose mode
 
 ---
 
-### File Permission
+### htop
+
+-   [Linux Crash Course - htop](https://www.youtube.com/watch?v=tU9cO9FwDx0)
+
+---
+
+<details><summary style="font-size:18px;color:Orange;text-align:left">File Permission</summary>
 
 -   [chmod:](https://en.wikipedia.org/wiki/Chmod)
 
@@ -392,9 +404,11 @@ rsync -avz \                            # run in archival and vervose mode
 -   `$ chgrp -hR www-data /var/www`
     -   Change the group ownership recursively including symbolic links, pass the `-h` option
 
+</details>
+
 ---
 
-### Managing Users & Groups
+<details><summary style="font-size:18px;color:Orange;text-align:left">Managing Users & Groups</summary>
 
 -   `$ cut -d: -f1 /etc/passwd` → get the list of all users
     -   The `-d` option specifies the delimiter (in this case, a colon)
@@ -405,7 +419,7 @@ rsync -avz \                            # run in archival and vervose mode
 
 -   `$ su user_name` → Switch/set/substitute user into the given user_name.
 -   `$ su Farzana --login` → Log into a user Farzana's profile.
--   `$ sudo su -` → How to become sudo user in RHEL.
+-   `$ sudo su -` → How to become sudo user in RHEL/Ubuntu.
 -   `$ useradd [OPTIONS] USERNAME`
 -   `$ sudo useradd username`
 -   `$ sudo passwd username` → To be able to log in as the newly created user, you need to set the user password.
@@ -451,7 +465,11 @@ sudo useradd \
 -   `$ sudo gpasswd -a user_name group_name`
 -   `$ groups `
 
-### Netowrking
+</details>
+
+---
+
+<details><summary style="font-size:18px;color:Orange;text-align:left">Netowrking </summary>
 
 -   What the hell are a TCP and UDP ports?
 
@@ -492,9 +510,11 @@ A registered port is a network port assigned by the Internet Assigned Numbers Au
 -   Header Size: TCP has a larger header size compared to UDP. TCP headers contain additional fields for sequence numbers, acknowledgments, window size, and other control information, making the overall overhead higher. UDP headers are smaller and more lightweight.
 -   Application Use Cases: TCP is commonly used for applications that require reliable and ordered delivery of data, such as web browsing, email, file transfer, and database communication. UDP is often used in applications where real-time data delivery and low latency are more important than reliability, such as streaming media, online gaming, VoIP, and DNS.
 
-<details open><summary style="font-size:18px;color:red;">Service Management & Systemd</summary>
+</details>
 
-<details open><summary style="font-size:15px;color:orange;">Terminology</summary>
+<details><summary style="font-size:18px;color:Orange;text-align:left">Service Management & Systemd</summary>
+
+<details><summary style="font-size:15px;color:red;">Terminology</summary>
 
 -   **System Services:**
 
@@ -621,11 +641,12 @@ A registered port is a network port assigned by the Internet Assigned Numbers Au
 -   `$ journalctl -u apache2.service -r -o json-pretty` → The `-o` parameter enables us to format the output of journalctl query.
 -   `$ `
 -   `$ `
+
 </details>
 
 ---
 
-<details open><summary style="font-size:18px;color:red;">Make & Makefile</summary>
+<details><summary style="font-size:18px;color:Orange;text-align:left">Make & Makefile</summary>
 
 -   `make` is a command-line utility in Linux and other Unix-like operating systems that is used to build and manage software projects. It automates the process of compiling source code, linking object files, and creating executables and libraries. The basic idea behind make is that it reads a set of instructions, called a `Makefile`, that describe how to build the project. The `Makefile` specifies a set of targets, dependencies, and commands that make can use to build the project.
 -   A `Makefile` is a text file that contains a set of rules that tell make how to build a software project. Each rule defines a target, which is the name of the file that make should create, and a set of dependencies, which are the files that the target depends on. The rule also specifies a set of commands that make should execute to build the target.
@@ -743,42 +764,27 @@ bar.o: bar.c
 
 ### FILE COMMANDS
 
-| Bash Commands                       | What it Does                                                                                                                                                       |
-| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `$ ls`                              | lists your files in current directory, `ls <dir>` to print files in a specific directory                                                                           |
-| `$ ls -l`                           | lists your files in 'long format', which contains the exact size of the file, who owns the file and who has the right to look at it, and when it was last modified |
-| `$ ls -a`                           | lists all files in 'long format', including hidden files (name beginning with '.')                                                                                 |
-| `$ ln -s <filename> <link>`         | creates symbolic link to file                                                                                                                                      |
-| `$ touch <filename>`                | creates or updates (edit) your file                                                                                                                                |
-| `$ cat <filename>`                  | prints file raw content (will not be interpreted)                                                                                                                  |
-| `$ any_command > <filename>`        | '>' is used to perform redirections, it will set any_command's stdout to file instead of "real stdout" (generally /dev/stdout)                                     |
-| `$ more <filename>`                 | shows the first part of a file (move with space and type q to quit)                                                                                                |
-| `$ head <filename>`                 | outputs the first lines of file (default: 10 lines)                                                                                                                |
-| `$ tail <filename>`                 | outputs the last lines of file (useful with -f option) (default: 10 lines)                                                                                         |
-| `$ vim <filename>`                  | opens a file in VIM (VI iMproved) text editor, will create it if it doesn't exist                                                                                  |
-| `$ mv <filename1> <dest>`           | moves a file to destination, behavior will change based on 'dest' type (dir: file is placed into dir; file: file will replace dest (tip: useful for renaming))     |
-| `$ cp <filename1> <dest>`           | copies a file                                                                                                                                                      |
-| `$ rm <filename>`                   | removes a file                                                                                                                                                     |
-| `$ rm -fr ~/Desktop/{val,tst,tra*}` | Remove valid, test, train, and flower\* directories from ~/Desktop directory                                                                                       |
-| `$ find . -name <name> <type>`      | searches for a file or a directory in the current directory and all its sub-directories by its name                                                                |
-| `$ find . -type d -name .venv`      | Search in current directory for a directory whose name is `.venv`                                                                                                  |
-| `$ diff <filename1> <filename2>`    | compares files, and shows where they differ                                                                                                                        |
-| `$ wc <filename>`                   | tells you how many lines, words and characters there are in a file. Use -lwc (lines, word, character) to ouput only 1 of those informations                        |
-| `$ sort <filename>`                 | sorts the contents of a text file line by line in alphabetical order, use -n for numeric sort and -r for reversing order.                                          |
-| `$ sort -t -k <filename>`           | sorts the contents on specific sort key field starting from 1, using the field separator t.                                                                        |
-| `$ chmod -options <filename>`       | lets you change the read, write, and execute permissions on your files (more infos: SUID, GUID)                                                                    |
-| `$ gzip <filename>`                 | compresses files using gzip algorithm                                                                                                                              |
-| `$ gunzip <filename>`               | uncompresses files compressed by gzip                                                                                                                              |
-| `$ gzcat <filename>`                | lets you look at gzipped file without actually having to gunzip it                                                                                                 |
-| `$ lpr <filename>`                  | prints the file                                                                                                                                                    |
-| `$ lpq`                             | checks out the printer queue                                                                                                                                       |
-| `$ lprm <jobnumber>`                | removes something from the printer queue                                                                                                                           |
-| `$ genscript`                       | converts plain text files into postscript for printing and gives you some options for formatting                                                                   |
-| `$ dvips <filename>`                | prints .dvi files (i.e. files produced by LaTeX)                                                                                                                   |
-| `$ grep <pattern> <filenames>`      | looks for the string in the files                                                                                                                                  |
-| `$ grep -r <pattern> <dir>`         | search recursively for pattern in directory                                                                                                                        |
-| `$ head -n file_name \| tail +n`    | Print nth line from file.                                                                                                                                          |
-| `$ head -y lines.txt \| tail +x`    | want to display all the lines from x to y. This includes the xth and yth lines.                                                                                    |
+| Bash Commands                    | What it Does                                                                                                                                |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `$ cat <filename>`               | prints file raw content (will not be interpreted)                                                                                           |
+| `$ more <filename>`              | shows the first part of a file (move with space and type q to quit)                                                                         |
+| `$ head <filename>`              | outputs the first lines of file (default: 10 lines)                                                                                         |
+| `$ tail <filename>`              | outputs the last lines of file (useful with -f option) (default: 10 lines)                                                                  |
+| `$ find . -name <name> <type>`   | searches for a file or a directory in the current directory and all its sub-directories by its name                                         |
+| `$ find . -type d -name .venv`   | Search in current directory for a directory whose name is `.venv`                                                                           |
+| `$ diff <filename1> <filename2>` | compares files, and shows where they differ                                                                                                 |
+| `$ wc <filename>`                | tells you how many lines, words and characters there are in a file. Use -lwc (lines, word, character) to ouput only 1 of those informations |
+| `$ sort <filename>`              | sorts the contents of a text file line by line in alphabetical order, use -n for numeric sort and -r for reversing order.                   |
+| `$ sort -t -k <filename>`        | sorts the contents on specific sort key field starting from 1, using the field separator t.                                                 |
+| `$ lpr <filename>`               | prints the file                                                                                                                             |
+| `$ lpq`                          | checks out the printer queue                                                                                                                |
+| `$ lprm <jobnumber>`             | removes something from the printer queue                                                                                                    |
+| `$ genscript`                    | converts plain text files into postscript for printing and gives you some options for formatting                                            |
+| `$ dvips <filename>`             | prints .dvi files (i.e. files produced by LaTeX)                                                                                            |
+| `$ grep <pattern> <filenames>`   | looks for the string in the files                                                                                                           |
+| `$ grep -r <pattern> <dir>`      | search recursively for pattern in directory                                                                                                 |
+| `$ head -n file_name \| tail +n` | Print nth line from file.                                                                                                                   |
+| `$ head -y lines.txt \| tail +x` | want to display all the lines from x to y. This includes the xth and yth lines.                                                             |
 
 ---
 

@@ -63,6 +63,10 @@
     -   `Tilde Expansion` → Expansion of the ~ character.
     -   [Shell Parameter Expansion](https://tiswww.case.edu/php/chet/bash/bashref.html#Shell-Parameter-Expansion) → How Bash expands variables to their values.
     -   `Command Substitution` → Using the output of a command as an argument.
+
+        -   `$(command)`: Executes the command within the parentheses and substitutes the output of the command into the command line.
+        -   `` `command` `` (backticked): Similar to $(command), it executes the command within the backticks and substitutes the output.
+
     -   `Arithmetic Expansion` → How to use arithmetic in shell expansions.
     -   `Process Substitution` → A way to write and read to and from a command.
     -   `Word Splitting` → How the results of expansion are split into separate arguments.
@@ -93,6 +97,74 @@
 -   `$!` → The process number of the last background command.
 -   `$IFS` → In Bash, IFS (Internal Field Separator) is an environment variable that determines how Bash recognizes word boundaries when it performs word splitting on strings. By default, the IFS variable is set to whitespace characters (space, tab, and newline).
 
+<details><summary style="font-size:18px;color:Orange;text-align:left">Regular Expressions</summary>
+
+A regular expression (regex or regexp) in Bash is a powerful pattern-matching language used for searching, matching, and manipulating text strings. Regular expressions are widely used in programming, scripting, and text processing tasks to perform operations like searching for specific patterns, replacing text, and extracting information from strings. Bash supports regular expressions through various commands and tools, such as grep, sed, and awk.
+
+Here's a detailed breakdown of regular expressions in Bash:
+
+-   `Basic Characters`:
+
+    -   `Literal Characters`: Regular expressions can include literal characters (`alphabets`, `digits`, `symbols`) that match the exact character in the text.
+    -   `Metacharacters`: Special characters that have a special meaning in regex, such as `.`, `*`, `+`, `?`, `[`, `]`, `(`, `)`, `{`, `}`, `^`, `$`, `\`.
+
+-   `Anchors`:
+
+    -   `^ (caret)`: Matches the start of a line or string.
+    -   `$ (dollar)`: Matches the end of a line or string.
+
+-   `Character Classes`:
+
+    -   `[abc]`: Matches any one of the characters 'a', 'b', or 'c'.
+    -   `[a-z]`: Matches any lowercase alphabet character.
+    -   `[0-9]`: Matches any digit character.
+
+-   `Quantifiers`:
+
+    -   `*`: Matches zero or more occurrences of the previous element.
+    -   `+`: Matches one or more occurrences of the previous element.
+    -   `?`: Matches zero or one occurrence of the previous element.
+    -   `{n}`: Matches exactly 'n' occurrences of the previous element.
+    -   `{n,}`: Matches 'n' or more occurrences of the previous element.
+    -   `{n,m}`: Matches between 'n' and 'm' occurrences of the previous element.
+
+-   `Grouping and Alternation`:
+
+    -   `(abc)`: Groups the enclosed characters.
+    -   `a|b`: Matches either 'a' or 'b'.
+
+-   `Escaping Special Characters`:
+
+    -   `\.`: Matches a literal period character.
+    -   `\\`: Matches a literal backslash character.
+    -   `\(, \), \{, \}`: Matches literal parentheses and curly braces.
+
+-   `Special Character Classes`:
+
+    -   `\d`: Matches any digit character (equivalent to [0-9]).
+    -   `\w`: Matches any word character (alphabets, digits, underscore).
+    -   `\s`: Matches whitespace characters (spaces, tabs, newlines).
+
+-   `Negation`:
+
+    -   `[^abc]`: Matches any character that is not 'a', 'b', or 'c'.
+
+-   `Quantifiers with Lazy Matching`:
+
+    -   `\*?, +?, ??`: Perform quantifiers in a non-greedy or lazy manner.
+
+-   `Backreferences`:
+
+    -   `\(abc\)\1`: Matches 'abcabc'.
+
+-   Common Commands:
+
+    -   `grep`: Searches for a pattern in text.
+    -   `sed`: Stream editor for text transformations based on regex.
+    -   `awk`: Pattern scanning and text processing language.
+    -   `egrep` (or grep -E): Enables extended regular expression syntax.
+
+</details>
 ### Meta-Characters:
 
 In Bash scripting, meta-characters are special characters that have specific meanings or functions within the shell. These characters are used to control the interpretation or behavior of commands and can be used for tasks such as redirection, expansion, quoting, and more. Here are some commonly used meta-characters in Bash:
@@ -116,21 +188,6 @@ In Bash scripting, meta-characters are special characters that have specific mea
 
     -   `|`: Connects the standard output of one command to the standard input of another command, allowing the output of one command to serve as input to another.
     -   `|&` (Pipe with Ampersand): The pipe with ampersand operator (`|&`) is used to redirect both the standard output (stdout) and the standard error (stderr) of a command as the input to another command. It combines both streams and sends them to the next command.
-
--   Command Substitution:
-
-    -   `$(command)`: Executes the command within the parentheses and substitutes the output of the command into the command line.
-    -   `command` (backticks): Similar to $(command), it executes the command within the backticks and substitutes the output.
-
--   Variable Expansion:
-
-    -   `$variable`: Expands the value of a variable.
-    -   `${variable}`: Allows more complex variable expansions and modifications.
-
-    ```bash
-    name="John"
-    echo "Hello, $name"
-    ```
 
 -   Globbing (Wildcards): Globbing, also known as filename expansion, is a feature provided by shells (such as Bash) and some other command-line interfaces that allows you to match and expand patterns into a list of matching filenames or paths.
 

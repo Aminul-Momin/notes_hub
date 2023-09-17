@@ -105,8 +105,8 @@ uninstall_vscode_extensions(){
 
 mac_curl_dotfiles(){
 
-    dot_files="https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/MacOS"
-    for file in .{bashrc,bash_profile,aliases,git-completion.bash,git-prompt.sh,git-aliases.bash,pbp.bash,tmux.conf}; do
+    dot_files="https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles/macos"
+    for file in .{bashrc,bash_profile,aliases,git-completion.bash,git-prompt.sh,git-aliases.bash,bash_utils.bash,tmux.conf}; do
         if [ ! -f $HOME/$file ]; then
             touch $HOME/$file
         fi
@@ -147,22 +147,37 @@ mac_setup_vscode(){
     Args:
         file_name: The file name containg vscode extention-ids seperated by new line.
     '
+    # Install vscode
+    brew install vscode
+
+    dot_files="https://raw.githubusercontent.com/Aminul-Momin/notes_hub/master/dotfiles"
+    
+    if [! -f $HOME/Library/Application\ Support/Code/User/settings.json]; then
+        echo "'~/Library/Application Support/Code/User/settings.json' is not found"
+    else
+        if [! -d $HOME/tmp]; then
+            echo "Creating '$HOME/tmp' Directory"
+            mkdir $HOME/tmp
+        fi
+        
+        curl $dot_files/vscode/settings.json > $HOME/tmp
+        curl $dot_files/vscode/vscode_extension_list.txt > $HOME/tmp
+        ln -sf $HOME/tmp/settings.json ~/Library/Application\ Support/Code/User/settings.json
+
+    fi
 
     while read line; do
         echo "Installing $line . . . . . "
         code --install-extension $line
         # printf "%$(tput cols)s\n"|tr " " "="
-    done < $NTHUB/dotfiles/vscode_extension_list.txt
+    done < $HOME/tmp/vscode_extension_list.txt
 
-    if [! -f ~/Library/Application\ Support/Code/User/settings.json]; then
-        echo "'~/Library/Application Support/Code/User/settings.json' is not found"
+    if [! -f $HOME/.local/state/crossnote/style.less]; then
+        echo "'$HOME/.local/state/crossnote/style.less' file is not fount"
+    else
+        curl $dot_files/vscode/style.less > $HOME/tmp
+        ln -sf $HOME/tmp/style.less $HOME/.local/state/crossnote/style.less
     fi
-    ln -sf $NTHUB/dotfiles/macos/settings.json ~/Library/Application\ Support/Code/User/settings.json
-
-    if [! -d ~/.mume]; then
-        mkdir ~/.mume
-    fi
-    ln -fs $NTHUB/dotfiles/macos/style.less ~/.mume/style.less
 }
 
 mac_nvim_tmux_config(){
@@ -221,7 +236,6 @@ prepare_my_mac(){
     brew install mysql
     brew install tmux
     brew install postgresql
-    brew install vscode
     brew install tmux
 
 }

@@ -1,27 +1,26 @@
--   [Security tips for web developers](https://www.squarefree.com/securitytips/web-developers.html#CSRF)
-
 ## Notes on Django
+
+![Django Architecture](/assets/django/django_model_view_template.png)
 
 -   How do I check Django installation?
     -   `$ django-admin --version`
 
-### Important Objects and Functions in Django:
+<details><summary style="font-size:18px;color:Orange;text-align:left">Importing Important Objects</summary>
 
 ```python
 from django.db import models
 
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
-from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User, AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordResetForm, SetPasswordForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 from django.contrib.admin import ModelAdmin
+from django.contrib.sites.shortcuts import get_current_site
 from django.contrib import messages
 from django.contrib import admin
-from django.contrib.sites.shortcuts import get_current_site
 
 from django.views.generic import ( ListView, DetailView, CreateView, UpdateView, DeleteView )
 
@@ -38,17 +37,41 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 from django.template.loader import render_to_string
 
+from django.db import models
+
+from decimal import Decimal
 # =============================================================================
 
 from django.core.mail import send_mail
 send_mail('Subject here','Here is the message.','from@example.com',['to@example.com'],fail_silently=False,)
-
 ```
+
+</details>
 
 ---
 
-<details>
-<summary style="font-size:18px;color:Orange;text-align:left">Django CLI</summary>
+<details><summary style="font-size:18px;color:Orange;text-align:left">Django Terms & Concepts</summary>
+
+Django is a popular web framework for building scalable and maintainable web applications in Python. Here are some of the most important terms and concepts to know when working with Django:
+
+-   `Model`: A model is a Python class that represents a database table. Each attribute of the class corresponds to a field in the table.
+-   `View`: A view is a Python function that handles a user request and returns an HTTP response. In Django, views are responsible for handling business logic and rendering templates.
+-   `Template`: A template is an HTML file that contains placeholders for dynamic data. In Django, templates can be rendered by views to create dynamic web pages.
+-   `URLconf`: A URLconf is a Python module that maps URLs to views. It defines a set of patterns that match incoming requests and route them to the appropriate view.
+-   `Middleware`: Middleware is a way to add extra functionality to the request/response processing pipeline in Django. Middleware can be used for authentication, caching, logging, and more.
+-   `Forms`: In Django, forms are a way to handle user input. They provide a way to validate user input and convert it to Python objects.
+-   `Admin site`: The Django admin site is a built-in application that provides an interface for managing data in the database. It allows authorized users to create, read, update, and delete records in the database.
+-   `Migration`: A migration is a way to update the database schema to match changes to the models. Migrations are created automatically by Django when changes are made to the models.
+-   `QuerySet`: A QuerySet is a collection of database objects that can be filtered, sorted, and manipulated. QuerySets are created by calling a method on a model manager.
+-   `ModelForm`: A ModelForm is a Django form that is automatically generated from a model. It provides a way to create, update, and delete records in the database using a form.
+-   `CSRF (Cross-Site Request Forgery)`:
+-   `CORS (Cross-Origin Resource Sharing)`
+-   `Cross-Site Scripting (XSS)`
+</details>
+
+---
+
+<details><summary style="font-size:18px;color:Orange;text-align:left">Django CLI</summary>
 
 -   `$ django-admin -h`
 -   `$ django-admin check`
@@ -128,26 +151,9 @@ send_mail('Subject here','Here is the message.','from@example.com',['to@example.
 
 ---
 
-### Django Terms & Concepts
+<details><summary style="font-size:18px;color:Orange;text-align:left">Models</summary>
 
-Django is a popular web framework for building scalable and maintainable web applications in Python. Here are some of the most important terms and concepts to know when working with Django:
-
--   `Model`: A model is a Python class that represents a database table. Each attribute of the class corresponds to a field in the table.
--   `View`: A view is a Python function that handles a user request and returns an HTTP response. In Django, views are responsible for handling business logic and rendering templates.
--   `Template`: A template is an HTML file that contains placeholders for dynamic data. In Django, templates can be rendered by views to create dynamic web pages.
--   `URLconf`: A URLconf is a Python module that maps URLs to views. It defines a set of patterns that match incoming requests and route them to the appropriate view.
--   `Middleware`: Middleware is a way to add extra functionality to the request/response processing pipeline in Django. Middleware can be used for authentication, caching, logging, and more.
--   `Forms`: In Django, forms are a way to handle user input. They provide a way to validate user input and convert it to Python objects.
--   `Admin site`: The Django admin site is a built-in application that provides an interface for managing data in the database. It allows authorized users to create, read, update, and delete records in the database.
--   `Migration`: A migration is a way to update the database schema to match changes to the models. Migrations are created automatically by Django when changes are made to the models.
--   `QuerySet`: A QuerySet is a collection of database objects that can be filtered, sorted, and manipulated. QuerySets are created by calling a method on a model manager.
--   `ModelForm`: A ModelForm is a Django form that is automatically generated from a model. It provides a way to create, update, and delete records in the database using a form.
--   `CSRF (Cross-Site Request Forgery)`:
--   `CORS (Cross-Origin Resource Sharing)`
-
----
-
-### Models ([doc](https://docs.djangoproject.com/en/4.1/ref/models/))
+-   Models ([doc](https://docs.djangoproject.com/en/4.1/ref/models/))
 
 -   `Fields`: A Django model's fields define the data that can be stored in the corresponding database table. Fields can represent different data types such as text, integers, dates, booleans, etc.
 -   `Primary Key`: A primary key is a unique identifier for each row in a database table. In Django, every model must have a primary key field.
@@ -279,11 +285,13 @@ Django is a popular web framework for building scalable and maintainable web app
     -   `index_together`
     -   `constraints`
 
--   Read-only Meta attributes:
-    -   `label`
-    -   `label_lower`
+-   Read-only Meta attributes: - `label` - `label_lower`
+</details>
 
-### Forms
+---
+
+<details>
+<summary style="font-size:18px;color:Orange;text-align:left">Forms</summary>
 
 -   [Forms](https://docs.djangoproject.com/en/4.1/ref/forms/)
 -   [Form fields](https://docs.djangoproject.com/en/4.1/ref/forms/fields/)
@@ -342,60 +350,52 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, Pass
 
 #### Django Widget
 
--   [Widgets](https://docs.djangoproject.com/en/4.1/ref/forms/widgets/)
--   [Built-in widgets](https://docs.djangoproject.com/en/4.1/ref/forms/widgets/#built-in-widgets)
+-   [Widgets](https://docs.djangoproject.com/en/4.1/ref/forms/widgets/) || [Built-in widgets](https://docs.djangoproject.com/en/4.1/ref/forms/widgets/#built-in-widgets)
 
--   How does Widget get used in Form's Model:
+-   In Django, a widget is a graphical representation of an HTML form input element. Widgets are used to render HTML forms in Django templates and to handle user input.
 
-```python
-class PwdResetForm(PasswordResetForm):
+-   Django provides a number of built-in widgets for different types of form fields, such as text inputs, checkboxes, radio buttons, and more. Widgets can also be customized or extended to create new types of form inputs or to modify the behavior of existing ones.
 
-    email = forms.EmailField(
-        max_length=254,
-        widget=forms.TextInput(attrs={'class': 'form-control mb-3', 'placeholder': 'Email', 'id': 'form-email'})
-    )
+-   Widgets are defined as classes in Django and are associated with form fields through the widget attribute of the field. For example, the TextInput widget is associated with the CharField form field, while the CheckboxInput widget is associated with the BooleanField form field.
 
-    def clean_email(self):
-        email = self.cleaned_data['email']
-        u = UserBase.objects.filter(email=email)
-        if not u:
-            raise forms.ValidationError(
-                'Unfortunatley we can not find that email address')
-        return email
-```
+-   Widgets can be customized by subclassing the built-in widget classes or by creating new widget classes that inherit from the Widget class. Custom widgets can be used to render form inputs in a specific way or to handle user input in a custom way.
 
-In Django, a widget is a graphical representation of an HTML form input element. Widgets are used to render HTML forms in Django templates and to handle user input.
+-   Widgets can also be used to specify additional attributes for HTML form input elements, such as CSS classes, placeholder text, or default values. This can be done by passing additional parameters to the widget constructor.
 
-Django provides a number of built-in widgets for different types of form fields, such as text inputs, checkboxes, radio buttons, and more. Widgets can also be customized or extended to create new types of form inputs or to modify the behavior of existing ones.
+-   Some Widget classes are:
 
-Widgets are defined as classes in Django and are associated with form fields through the widget attribute of the field. For example, the TextInput widget is associated with the CharField form field, while the CheckboxInput widget is associated with the BooleanField form field.
+    -   `class TextInput`
 
-Widgets can be customized by subclassing the built-in widget classes or by creating new widget classes that inherit from the Widget class. Custom widgets can be used to render form inputs in a specific way or to handle user input in a custom way.
+        -   input_type: 'text'
+        -   template_name: 'django/forms/widgets/text.html'
+        -   Renders as: <input type="text" ...>
 
-Widgets can also be used to specify additional attributes for HTML form input elements, such as CSS classes, placeholder text, or default values. This can be done by passing additional parameters to the widget constructor.
+    -   `class EmailInput`:
 
-Some Widget classes are:
+        -   input_type: 'email'
+        -   template_name: `django/forms/widgets/email.html`
+        -   Renders as: <input type="email" ...>
 
--   `class TextInput`
+    -   `class PasswordInput` - input_type: 'password' - template_name: `django/forms/widgets/password.html` - Renders as: <input type="password" ...> - Takes one optional argument: - render_value → Determines whether the widget will have a value filled in when the form is re-displayed after a validation error (default is False).
 
-    -   input_type: 'text'
-    -   template_name: 'django/forms/widgets/text.html'
-    -   Renders as: <input type="text" ...>
+-   Specifying widgets:
 
--   `class EmailInput`:
+    ```python
+    from django import forms
 
-    -   input_type: 'email'
-    -   template_name: `django/forms/widgets/email.html`
-    -   Renders as: <input type="email" ...>
+    class Person(forms.Form):
+        name = forms.CharField()
+        web_url = forms.URLField()
+        about = forms.CharField(widget=forms.Textarea)
+        email = forms.EmailField(widget=forms.TextInput(attrs={'class': 'form-control mb-3', 'placeholder': 'Email', 'id': 'form-email'}), max_length=254)
+    ```
 
--   `class PasswordInput`
-    -   input_type: 'password'
-    -   template_name: `django/forms/widgets/password.html`
-    -   Renders as: <input type="password" ...>
-    -   Takes one optional argument:
-        -   render_value → Determines whether the widget will have a value filled in when the form is re-displayed after a validation error (default is False).
+</details>
 
-### Djangoo Class-based Views
+---
+
+<details>
+<summary style="font-size:18px;color:Orange;text-align:left">Class-Based Views (CBVs)</summary>
 
 -   [Views reference](https://docs.djangoproject.com/en/4.1/ref/class-based-views/)
 
@@ -428,141 +428,126 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 -   Overall, class-based views are a powerful and flexible way to define views in Django, providing a consistent and extensible interface for handling HTTP requests and responses in a variety of contexts.
 
-### Django Templating
+</details>
+
+---
+
+<details>
+<summary style="font-size:18px;color:Orange;text-align:left">Templating</summary>
 
 -   [Templates](https://docs.djangoproject.com/en/4.1/topics/templates/)
--   [Built-in template tags and filters](https://docs.djangoproject.com/en/4.0/ref/templates/builtins/)
 
-    ```html
-    <form
-        class="account-form p-4 rounded"
-        action="{% url 'account:login' %}"
-        method="post"
-        {%
-        csrf_token
-        %}
-    ></form>
-    ```
+#### Examples of using Variables, Tags and Filters in Django Templates
 
-    ```html
-    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item" href="{% url "store:product_all" %}">All</a></li>
-        {% for c in categories %}
-        <li {% if category.slug == c.slug %}class="selected" {% endif %}>
-            <a class="dropdown-item" href="{{ c.get_absolute_url }}">{{ c.name|title }}</a>
-        </li>
-        {% endfor %}
-    </ul>
-    ```
+```html
+<form
+    class="account-form p-4 rounded"
+    action="{% url 'account:login' %}"
+    method="post"
+    {%
+    csrf_token
+    %}
+></form>
+```
 
-    ```html
-    <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
-    <a href="{% url 'post-update' object.id %}">Update</a>
-    ```
+```html
+<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <li><a class="dropdown-item" href="{% url "store:product_all" %}">All</a></li>
+    {% for c in categories %}
+    <li {% if category.slug == c.slug %}class="selected" {% endif %}>
+        <a class="dropdown-item" href="{{ c.get_absolute_url }}">{{ c.name|title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+```
 
--   `autoescape`:
+```html
+<small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+<a href="{% url 'post-update' object.id %}">Update</a>
+```
 
-Django auto-escaping is a feature of the Django web framework that helps prevent Cross-Site Scripting (XSS) attacks by automatically escaping potentially dangerous characters in output templates. To prevent XSS attacks, Django automatically escapes output in templates by default. Developers can also use a special syntax in Django templates to disable auto-escaping for a particular block of content if they need to output HTML or other markup.
+#### Django Context Processors:
 
-    ```html
-    {% autoescape off %}
-        ...
-    {% endautoescape %}
-    ```
-
-#### Template Tag
-
--   [Creating Custom Template Tags and Filters](https://www.youtube.com/watch?v=XtbvBlCyfT4)
-
-A template tag is a Python function that is executed within a template and allows you to perform more complex operations or logic than what is typically possible with the template language alone. Template tags provide additional functionality and allow you to manipulate data, control the flow of the template, or generate dynamic content.
-
-Template tags are surrounded by `{% %}` tags in Django templates. There are two types of template tags: simple tags and inclusion tags.
-
--   `Simple Tags`: Simple tags are used for performing simple operations or transformations on the data.
-    They are defined as Python functions that take the context and any number of arguments and return a string that will be inserted into the template.
-
-    -   Example: `{% tag_name argument1 argument2 %}`
-
--   `Inclusion Tags`: Inclusion tags are used when you want to include another template and pass it a set of context data.
-    They are defined as Python functions that take the context and any number of arguments and return a rendered template as a string.
-    -   Example: `{% include_tag_name argument1 argument2 %}`
-
-Template tags can accept arguments and perform operations such as querying the database, manipulating strings, iterating over lists, or applying conditional logic. They provide a way to extend the functionality of Django templates and keep the presentation logic separate from the business logic.
-
-Django comes with a set of built-in template tags that cover common use cases, such as looping over lists, conditionally displaying content, formatting dates, and more. Additionally, you can create your own custom template tags to encapsulate reusable functionality specific to your project.
-
-To use a custom template tag, you need to follow these steps:
-
--   Create a Python module (e.g., templatetags) inside your app directory.
--   Define your template tag functions in the module.
--   Load the template tags in your template using the {% load %} tag.
--   Use the template tag within your template.
--   Example of using a built-in template tag to loop over a list:
-
-    ```html
-    {% for item in my_list %} {{ item }} {% endfor %}
-    ```
-
--   Example of using a custom template tag to perform a custom operation:
-
-    ```html
-    {% custom_tag argument1 argument2 %}
-    ```
-
-Template tags provide a powerful mechanism for extending the capabilities of Django templates and allow you to create reusable and modular templates that can handle complex tasks and display dynamic content.
-
-### Django Context Processors:
-
-a context processor is a Python function that allows you to add extra data to the context of every template rendered within a Django project. It's a convenient way to make certain data available globally to all templates without explicitly passing it in every view.
-
-A context processor is a function that takes a request object as its parameter and returns a dictionary of values that will be added to the context of the template. The context processor function is executed for every request, and its returned values are accessible in templates.
-
+-   a context processor is a Python function that allows you to add extra data to the context of every template rendered within a Django project. It's a convenient way to make certain data available globally to all templates without explicitly passing it in every view.
+-   A context processor is a function that takes a request object as its parameter and returns a dictionary of values that will be added to the context of the template. The context processor function is executed for every request, and its returned values are accessible in templates.
 -   `django.contrib.auth.context_processors.auth` is enabled by default & contains the variable `user`.
 
-### Django Logging System
+#### Variables
 
--   [Using the Django authentication system](https://docs.djangoproject.com/en/4.1/topics/auth/default/)
--   []()
--   []()
--   []()
+-   A variable outputs a value from the context, which is a dict-like object mapping keys to values.
+-   Variables are surrounded by `{{`` and ``}}`` like this:
 
-### Django Fixtures
+```html
+My first name is {{ first_name }}. My last name is {{ last_name }}.
+```
 
--   Django fixtures are a way of loading data into the database that your Django application is using. A fixture is a collection of data that Django knows how to import into a database.
--   Fixtures are typically written as a JSON, XML or YAML file and can be used to load initial data into your database when you set up your application, as well as to provide test data when running tests. They can be useful for populating your database with sample data for development, for sharing data between different instances of an application, and for resetting the database to a known state for testing purposes.
+#### Tag
 
--   [How to use Django loaddata and dumpdata?](https://zerotobyte.com/how-to-use-django-loaddata-and-dumpdata/)
+-   A template tag is a Python function that is executed within a template and allows you to perform more complex operations or logic than what is typically possible with the template language alone. Template tags provide additional functionality and allow you to manipulate data, control the flow of the template, or generate dynamic content.
+-   Template tags can accept arguments and perform operations such as querying the database, manipulating strings, iterating over lists, or applying conditional logic. They provide a way to extend the functionality of Django templates and keep the presentation logic separate from the business logic.
+-   Template tags are surrounded by `{% %}` tags in Django templates. There are two types of template tags: simple tags and inclusion tags.
 
--   `$ python manage.py dumpdata account.UserBase -o account/fixtures/users.json --indent 2`
--   `$ python manage.py dumpdata account.UserBase --output users.xml --format xml`
--   `$ python manage.py dumpdata account.UserBase --output users.yaml --format yaml`
--   `$ python manage.py loaddata users.json` → load data from `user.json` file across all fixtures.
--   `$ python manage.py loaddata fixture_name` → load data only from given fixture.
+    -   `Simple Tags`: Simple tags are used for performing simple operations or transformations on the data.
+        They are defined as Python functions that take the context and any number of arguments and return a string that will be inserted into the template.
 
-### Django Admin Panel
+        -   Example: `{% tag_name argument1 argument2 %}`
 
--   `django.contrib.admin` is a built-in Django application that provides a powerful and customizable administrative interface for managing the content of a Django website or application. The admin application allows developers to easily create, read, update, and delete (CRUD) records in the database through a web-based interface.
--   The admin application automatically generates an interface for each registered model in the Django project, allowing administrators to manage the database records in a user-friendly and secure way. The generated interface includes search, filtering, sorting, pagination, and CRUD operations for each model. The interface can also be customized by developers to fit the specific needs of their project.
--   The admin application is highly configurable and can be customized using Python code or templates to change the look and feel of the interface or to add custom functionality. Developers can define custom views, templates, forms, and widgets to extend the admin application's functionality.
--   `django.contrib.admin` is included in the Django core and is available by default in every Django project. It is designed to simplify the process of creating and managing database content for non-technical users, allowing them to focus on managing content rather than dealing with the underlying database and code.
--   [django-admin and manage.py](https://docs.djangoproject.com/en/4.0/ref/django-admin/#django-admin-createsuperuser)
+    -   `Inclusion Tags`: Inclusion tags are used when you want to include another template and pass it a set of context data.
+        They are defined as Python functions that take the context and any number of arguments and return a rendered template as a string.
+        -   Example: `{% include_tag_name argument1 argument2 %}`
 
-The Django Admin panel is a built-in feature of the Django web framework that provides a user-friendly interface for managing the administrative tasks of a Django project. It is a powerful tool that allows developers, administrators, and authorized users to perform various administrative operations without having to write custom views or templates.
+-   Built-in Template Tag: Django comes with a set of built-in template tags that cover common use cases, such as looping over lists, conditionally displaying content, formatting dates, and more. Additionally, you can create your own custom template tags to encapsulate reusable functionality specific to your project.
 
-The Django Admin panel offers the following features:
+    -   [Built-in template tags and filters](https://docs.djangoproject.com/en/4.0/ref/templates/builtins/)
 
--   `User Authentication`: The Admin panel provides a secure authentication system for administrators. It supports user registration, login, and password management.
--   `CRUD Operations`: It allows administrators to perform Create, Read, Update, and Delete (CRUD) operations on the database records. Administrators can add, edit, and delete records directly from the Admin interface.
--   `Automatic Interface Generation`: The Admin panel automatically generates the user interface based on the registered models in your Django project. It creates a customizable interface for each model, displaying fields, relationships, and actions associated with the model.
--   `Filtering and Searching`: Administrators can filter and search records based on specific criteria. The Admin panel provides filter options for each field in a model, allowing administrators to narrow down the displayed records.
--   `Permission Management`: Django Admin allows fine-grained control over user permissions and access rights. Administrators can define different user roles and assign specific permissions to each role, determining what operations users can perform in the Admin panel.
--   `Customization`: The Admin panel can be customized to match the project's branding and requirements. Developers can override templates, customize the layout, and add custom functionality to enhance the Admin interface.
+    -   `autoescape`: Django auto-escaping is a feature of the Django web framework that helps prevent Cross-Site Scripting (XSS) attacks by automatically escaping potentially dangerous characters in output templates. To prevent XSS attacks, Django automatically escapes output in templates by default. Developers can also use a special syntax in Django templates to disable auto-escaping for a particular block of content if they need to output HTML or other markup.
 
-The Django Admin panel is automatically enabled when you create a Django project. By registering your models with the Admin panel, you can easily manage and interact with your project's data through a user-friendly interface. It is particularly useful for managing content, performing administrative tasks, and quickly prototyping functionality during the development process.
+        ```html
+        {% autoescape off %} ... {% endautoescape %}
+        ```
 
-### Django ORM
+-   Custom Template Tag:
 
--   [Making queries](https://docs.djangoproject.com/en/4.2/topics/db/queries/#lookups-that-span-relationships)
+    -   [Creating Custom Template Tags and Filters](https://www.youtube.com/watch?v=XtbvBlCyfT4)
+
+    -   To use a custom template tag, you need to follow these steps:
+
+        -   Create a Python module (e.g., templatetags) inside your app directory.
+        -   Define your template tag functions in the module.
+        -   Load the template tags in your template using the {% load %} tag.
+        -   Use the template tag within your template.
+
+    -   Example of using a built-in template tag to loop over a list:
+
+        ```html
+        {% for item in my_list %} {{ item }} {% endfor %}
+        ```
+
+    -   Example of using a custom template tag to perform a custom operation:
+
+        ```html
+        {% custom_tag argument1 argument2 %}
+        ```
+
+    -   Template tags provide a powerful mechanism for extending the capabilities of Django templates and allow you to create reusable and modular templates that can handle complex tasks and display dynamic content.
+
+#### Filters:
+
+-   [Built-in Filters](https://docs.djangoproject.com/en/4.1/ref/templates/builtins/#ref-templates-builtins-filters)
+-   [Writing custom template filters](https://docs.djangoproject.com/en/4.1/howto/custom-template-tags/#howto-writing-custom-template-filters)
+
+Filters transform the values of variables and tag arguments.
+
+</details>
+
+---
+
+<details>
+<summary style="font-size:18px;color:Orange;text-align:left">Object Relational Mapper (ORM)</summary>
+
+-   [Django Documentations: QuerySet API](https://docs.djangoproject.com/en/4.2/ref/models/querysets/#queryset-api-reference)
+-   [Django Documentations: Making queries](https://docs.djangoproject.com/en/4.2/topics/db/queries/#lookups-that-span-relationships)
+-   [When QuerySets are evaluated](https://docs.djangoproject.com/en/4.2/ref/models/querysets/#when-querysets-are-evaluated)
 -   [Django ORM Cookbook](https://books.agiliq.com/projects/django-orm-cookbook/en/latest/)
 
 Django ORM (Object-Relational Mapping) is a component of the Django web framework that provides a high-level, Pythonic way to interact with databases. It allows developers to work with databases using Python objects and methods, rather than writing raw SQL queries.
@@ -577,34 +562,197 @@ Key features of Django ORM include:
 -   `Database Abstraction`: Django ORM provides a database abstraction layer that allows developers to write database-agnostic code. It supports multiple database backends, including PostgreSQL, MySQL, SQLite, and Oracle. Developers can switch between different database engines without changing their code.
 -   `Migrations`: Django ORM includes a built-in migration system that helps manage database schema changes over time. Migrations allow you to evolve the database schema as your application evolves, keeping it in sync with your models. Migrations handle tasks such as creating tables, adding or modifying columns, and managing data migrations.
 
-Django ORM offers a powerful and expressive way to work with databases in Django projects. It promotes a clean and efficient approach to database operations, reduces the amount of boilerplate code needed, and enhances code reusability. By leveraging Django ORM, developers can focus more on application logic and less on low-level database interactions.
+#### Manager() vs QuerySet():
 
-### Django Signals
+In Django, both Manager and QuerySet are integral parts of the Object-Relational Mapping (ORM) system, which allows you to interact with your database using Python objects instead of writing raw SQL queries. However, they serve different purposes within the Django ORM.
 
--   [Django ORM - Introducing Django Signals and the Observer Pattern](https://www.youtube.com/watch?v=p4vLpz1D4ow&list=PLOLrQ9Pn6cayYycbeBdxHUFrzTqrNE7Pe&index=38)
--   [Django ORM - Receiving Signals](https://www.youtube.com/watch?v=c4NEn7H5czA&list=PLOLrQ9Pn6cayYycbeBdxHUFrzTqrNE7Pe&index=36)
--   [Django ORM - Receiving Signals Specifying a Model](https://www.youtube.com/watch?v=BZ0vJDclU74&list=PLOLrQ9Pn6cayYycbeBdxHUFrzTqrNE7Pe&index=37)
--   []()
+-   `Manager`:
 
-signals are a way to allow decoupled applications to get notified when certain actions occur elsewhere in the application. They provide a means for sending and receiving notifications between different parts of the codebase without having direct dependencies between them.
+    -   [Managers doc](https://docs.djangoproject.com/en/4.0/topics/db/managers/)
+    -   A Manager is an interface through which database queries are executed. It's like a higher-level API that provides methods for creating, retrieving, updating, and deleting objects in the database. By default, every Django model has a default manager called objects. You can also define your own custom managers to add specific methods or query functionality to your models.
+    -   For example, you might create a custom manager to encapsulate common queries that you frequently use with a specific model. This allows you to encapsulate logic and reusability within the manager's methods.
 
-Signals are used to enable the "sender" of a signal to notify a group of "receivers" that something has happened. Receivers are functions or methods that are triggered when a signal is sent.
+    ```python
+    from django.db import models
 
-Here are some key concepts related to signals in Django:
+    class CustomManager(models.Manager):
+        def get_published(self):
+            return self.filter(published=True)
 
--   `Signals`: Signals are objects representing specific actions or events that occur within a Django application. Django provides built-in signals, such as pre_save, post_save, pre_delete, post_delete, etc., which are triggered at different points during the lifecycle of a model.
--   `Senders`: A sender is the entity that sends a signal. In Django, senders are typically Django model classes, but they can be any Python object.
--   `Receivers`: A receiver is a function or method that gets executed in response to a signal being sent. Receivers define the actions to be performed when a specific signal is received. Receivers are registered to signals and can be located anywhere in the codebase.
--   `Signal Handlers`: Signal handlers are the functions or methods that implement the logic to be executed when a signal is received. They perform the desired actions based on the received signal.
--   `Signal Registration`: Signal receivers need to be registered with the appropriate signal to establish the connection between the sender and the receiver. This registration usually occurs in the ready() method of the application's configuration module or in a separate signals.py module.
+    class Post(models.Model):
+        title = models.CharField(max_length=100)
+        content = models.TextField()
+        published = models.BooleanField(default=False)
 
-Signals in Django provide a way to implement decoupled and reusable functionality. They allow different parts of an application to communicate with each other without tight coupling, enabling modularity and extensibility. Signals are commonly used for tasks like updating related models, sending notifications, triggering background tasks, and more.
+        objects = CustomManager()  # Using the custom manager
+    ```
 
-To use signals in your Django project, you'll need to import the necessary signals, write signal handlers, and register the handlers with the corresponding signals. Django's documentation provides detailed information on how to work with signals and examples of their usage.
+    -   In the above example, the CustomManager class defines a method get_published() which returns published posts. The objects attribute is assigned an instance of CustomManager, making the method accessible as a query method on the model.
 
-### Request and response objects
+-   `QuerySet`:
 
--   [Quick overview](https://docs.djangoproject.com/en/4.0/ref/request-response/#httprequest-objects)
+    -   [QuerySet API doc](https://docs.djangoproject.com/en/4.1/ref/models/querysets/)
+    -   A QuerySet is a representation of a database query. When you perform a query using a Manager method, it returns a QuerySet object. A QuerySet allows you to chain methods together to build complex queries. It is lazy-evaluated, meaning that the actual database query is executed only when the results are needed, typically when you iterate over the QuerySet or retrieve data from it.
+
+    ```python
+    published_posts = Post.objects.get_published()
+    filtered_posts = published_posts.filter(title__icontains='Django')
+    ```
+
+    -   In the above example, get_published() returns a QuerySet of published posts, and then the filter() method is chained to further narrow down the selection to posts with titles containing "Django".
+    -   In summary, Manager is responsible for defining query methods on a model, while QuerySet is the representation of the actual query and allows you to chain methods to build and refine queries. They work together to provide a powerful way to interact with your database using Python code.
+
+#### 'model.Manager.create()' and 'model.Model.save()'
+
+-   `model.Manager.create(**kwargs)`:
+
+    -   The `create()` method is a convenient way to create a new instance of a model and save it to the database in a single step. It's available on the model's default manager (usually named objects).
+
+    ```python
+    # Using create() to create and save a new instance
+    new_person = Person.objects.create(first_name='John', last_name='Doe')
+    ```
+
+    -   Benefits:
+
+        -   Short and concise syntax.
+        -   Automatically creates and saves the object in a single call.
+
+    -   Drawbacks:
+
+        -   Limited flexibility compared to save(). You can't modify the instance after it's created before saving.
+        -   Does not allow easy handling of exceptions during creation and saving separately.
+
+-   `model.Model.save()`:
+
+    -   The `save()` method is used on an instance of a model to save changes to the database. It's available on any instance of a model.
+
+    ```python
+    # Creating an instance and saving it separately using save()
+    new_person = Person(first_name='John', last_name='Doe')
+    new_person.save()
+    ```
+
+    ```python
+    # Modifying an instance and then saving it using save()
+    person = Person.objects.get(pk=1)
+    person.first_name = 'Jane'
+    person.save()
+    ```
+
+    -   Benefits:
+
+        -   Offers more flexibility as you can modify the instance's attributes before saving.
+        -   Allows you to handle exceptions more granularly (e.g., you can catch specific database-related exceptions).
+
+    -   Drawbacks:
+
+        -   Requires two steps (creating instance, then saving) compared to create().
+        -   Requires more verbose code when compared to create().
+
+### [What is `Q` object in Djanog ORM?](https://docs.djangoproject.com/en/4.2/topics/db/queries/#complex-lookups-with-q-objects)
+
+-   the `Q` object is a powerful tool for building complex database queries using the logical OR and AND operators. It allows you to create more flexible and dynamic queries when filtering database records.
+
+-   The `Q` object is part of Django's django`.db.models module`, and you typically use it in combination with the `filter()` method on a queryset to construct complex conditions for data retrieval. Here's how it works
+
+    ```python
+    from django.db.models import Q
+
+    # Retrieve all books where the title contains "Django" OR the author's name is "John Doe"
+    books = Book.objects.filter(Q(title__icontains='Django') | Q(author='John Doe'))
+    ```
+
+### How to perform `JOIN` query ?
+
+-   In Django's Object-Relational Mapping (ORM), you can perform JOIN operations to retrieve data from multiple database tables using various methods. Below are some common ways to perform a JOIN query in Django ORM:
+-   Assuming you have two Django models: Author and Book, and you want to join them based on a common field, such as author_id, here's a demonstration of multiple ways to perform a JOIN query:
+
+#### Using `.select_related()` for `ForeignKey` Relationships:
+
+-   If you have a ForeignKey relationship defined between two models, you can use `.select_related()` to perform an SQL `INNER JOIN`. This is the most common method for joining related models in Django.
+
+```python
+from myapp.models import Author, Book
+
+# Using select_related for an INNER JOIN
+books = Book.objects.select_related('author').all()
+
+# Accessing related fields
+for book in books:
+    print(f"Book Title: {book.title}, Author: {book.author.name}")
+```
+
+#### Using `.prefetch_related()` for `ManyToMany` Relationships:
+
+-   When dealing with `ManyToMany` relationships, you can use `.prefetch_related()` to perform a `JOIN` and prefetch related objects.
+
+    ```python
+    from myapp.models import Author, Book
+
+    # Using prefetch_related for an INNER JOIN on a ManyToMany relationship
+    authors = Author.objects.prefetch_related('books').all()
+
+    # Accessing related objects
+    for author in authors:
+        print(f"Author: {author.name}, Books: {[book.title for book in author.books.all()]}")
+    Using .filter() and annotate() for Custom Joins:
+    ```
+
+-   If you need to perform a custom join with specific conditions, you can use `.filter()` and `.annotate()` to join tables and create custom queries.
+
+    ```python
+    from myapp.models import Author, Book
+
+    # Custom JOIN query using filter and annotate
+    authors_with_books = Author.objects.filter(book__isnull=False).annotate(
+        book_count=Count('book')
+    ).all()
+
+    # Accessing custom annotated fields
+    for author in authors_with_books:
+        print(f"Author: {author.name}, Number of Books: {author.book_count}")
+    ```
+
+#### Using Raw SQL Queries:
+
+-   In cases where you need to perform complex joins that are not easily expressible in Django's query syntax, you can use raw SQL queries. Be cautious when using raw SQL to ensure security and portability.
+
+    ```python
+    from django.db import connection
+
+    # Execute a raw SQL query with JOIN
+    with connection.cursor() as cursor:
+        cursor.execute(
+            """
+            SELECT myapp_author.name, myapp_book.title
+            FROM myapp_author
+            INNER JOIN myapp_book ON myapp_author.id = myapp_book.author_id
+            """
+        )
+        results = cursor.fetchall()
+
+    # Process the results
+    for row in results:
+        print(f"Author: {row[0]}, Book Title: {row[1]}")
+    ```
+
+### Django Fixtures
+
+-   Django fixtures are a way of loading data into the database that your Django application is using. A fixture is a collection of data that Django knows how to import into a database.
+-   Fixtures are typically written as a JSON, XML or YAML file and can be used to load initial data into your database when you set up your application, as well as to provide test data when running tests. They can be useful for populating your database with sample data for development, for sharing data between different instances of an application, and for resetting the database to a known state for testing purposes.
+
+-   [How to use Django loaddata and dumpdata?](https://zerotobyte.com/how-to-use-django-loaddata-and-dumpdata/)
+
+-   `$ python manage.py dumpdata account.UserBase -o account/fixtures/users.json --indent 2`
+-   `$ python manage.py dumpdata account.UserBase --output users.xml --format xml`
+-   `$ python manage.py dumpdata account.UserBase --output users.yaml --format yaml`
+-   `$ python manage.py loaddata users.json` → load data from `user.json` file across all fixtures.
+-   `$ python manage.py loaddata fixture_name` → load data only from given fixture.
+
+</details>
+
+---
 
 <details>
 <summary style="font-size:18px;color:Orange;text-align:left">Middleware</summary>
@@ -613,8 +761,8 @@ To use signals in your Django project, you'll need to import the necessary signa
 
 ### What is middleware:
 
-Middleware is a framework of hooks into Django’s request/response processing. It’s a light, low-level “plugin” system for globally altering Django’s input or output.
-Each middleware component is responsible for doing some specific function. For example, Django includes a middleware component, AuthenticationMiddleware, that associates users with requests using sessions.
+-   Middleware is a framework of hooks into Django’s request/response processing. It’s a light, low-level “plugin” system for globally altering Django’s input or output.
+-   Each middleware component is responsible for doing some specific function. For example, Django includes a middleware component, AuthenticationMiddleware, that associates users with requests using sessions.
 
 -   There's middleware that isn't applied by default which we could activate obviously.
 -   Security middleware is there by default.
@@ -622,7 +770,7 @@ Each middleware component is responsible for doing some specific function. For e
 
 #### Writing your own middleware
 
-A middleware factory is a callable that takes a get_response callable and returns a middleware. A middleware is a callable that takes a request and returns a response, just like a view.
+-   A middleware factory is a callable that takes a get_response callable and returns a middleware. A middleware is a callable that takes a request and returns a response, just like a view.
 
 -   A middleware can be written as a function that looks like this:
 
@@ -695,6 +843,83 @@ Middleware hooks are specific methods that can be implemented in middleware clas
 
 By implementing these middleware hooks, you can extend the functionality of middleware classes and customize their behavior according to your application's needs.
 
+</details>
+
+---
+
+<details>
+<summary style="font-size:18px;color:Orange;text-align:left">Django Admin Panel</summary>
+
+-   `django.contrib.admin` is a built-in Django application that provides a powerful and customizable administrative interface for managing the content of a Django website or application. The admin application allows developers to easily create, read, update, and delete (CRUD) records in the database through a web-based interface.
+-   The admin application automatically generates an interface for each registered model in the Django project, allowing administrators to manage the database records in a user-friendly and secure way. The generated interface includes search, filtering, sorting, pagination, and CRUD operations for each model. The interface can also be customized by developers to fit the specific needs of their project.
+-   The admin application is highly configurable and can be customized using Python code or templates to change the look and feel of the interface or to add custom functionality. Developers can define custom views, templates, forms, and widgets to extend the admin application's functionality.
+-   `django.contrib.admin` is included in the Django core and is available by default in every Django project. It is designed to simplify the process of creating and managing database content for non-technical users, allowing them to focus on managing content rather than dealing with the underlying database and code.
+-   [django-admin and manage.py](https://docs.djangoproject.com/en/4.0/ref/django-admin/#django-admin-createsuperuser)
+
+The Django Admin panel is a built-in feature of the Django web framework that provides a user-friendly interface for managing the administrative tasks of a Django project. It is a powerful tool that allows developers, administrators, and authorized users to perform various administrative operations without having to write custom views or templates.
+
+The Django Admin panel offers the following features:
+
+-   `User Authentication`: The Admin panel provides a secure authentication system for administrators. It supports user registration, login, and password management.
+-   `CRUD Operations`: It allows administrators to perform Create, Read, Update, and Delete (CRUD) operations on the database records. Administrators can add, edit, and delete records directly from the Admin interface.
+-   `Automatic Interface Generation`: The Admin panel automatically generates the user interface based on the registered models in your Django project. It creates a customizable interface for each model, displaying fields, relationships, and actions associated with the model.
+-   `Filtering and Searching`: Administrators can filter and search records based on specific criteria. The Admin panel provides filter options for each field in a model, allowing administrators to narrow down the displayed records.
+-   `Permission Management`: Django Admin allows fine-grained control over user permissions and access rights. Administrators can define different user roles and assign specific permissions to each role, determining what operations users can perform in the Admin panel.
+-   `Customization`: The Admin panel can be customized to match the project's branding and requirements. Developers can override templates, customize the layout, and add custom functionality to enhance the Admin interface.
+
+The Django Admin panel is automatically enabled when you create a Django project. By registering your models with the Admin panel, you can easily manage and interact with your project's data through a user-friendly interface. It is particularly useful for managing content, performing administrative tasks, and quickly prototyping functionality during the development process.
+
+### Django Logging System
+
+-   [Using the Django authentication system](https://docs.djangoproject.com/en/4.1/topics/auth/default/)
+-   []()
+-   []()
+-   []()
+
+</details>
+
+---
+
+<details>
+<summary style="font-size:18px;color:Orange;text-align:left">Django Signals</summary>
+
+-   [Django ORM - Introducing Django Signals and the Observer Pattern](https://www.youtube.com/watch?v=p4vLpz1D4ow&list=PLOLrQ9Pn6cayYycbeBdxHUFrzTqrNE7Pe&index=38)
+-   [Django ORM - Receiving Signals](https://www.youtube.com/watch?v=c4NEn7H5czA&list=PLOLrQ9Pn6cayYycbeBdxHUFrzTqrNE7Pe&index=36)
+-   [Django ORM - Receiving Signals Specifying a Model](https://www.youtube.com/watch?v=BZ0vJDclU74&list=PLOLrQ9Pn6cayYycbeBdxHUFrzTqrNE7Pe&index=37)
+-   []()
+
+signals are a way to allow decoupled applications to get notified when certain actions occur elsewhere in the application. They provide a means for sending and receiving notifications between different parts of the codebase without having direct dependencies between them.
+
+Signals are used to enable the "sender" of a signal to notify a group of "receivers" that something has happened. Receivers are functions or methods that are triggered when a signal is sent.
+
+Here are some key concepts related to signals in Django:
+
+-   `Signals`: Signals are objects representing specific actions or events that occur within a Django application. Django provides built-in signals, such as pre_save, post_save, pre_delete, post_delete, etc., which are triggered at different points during the lifecycle of a model.
+-   `Senders`: A sender is the entity that sends a signal. In Django, senders are typically Django model classes, but they can be any Python object.
+-   `Receivers`: A receiver is a function or method that gets executed in response to a signal being sent. Receivers define the actions to be performed when a specific signal is received. Receivers are registered to signals and can be located anywhere in the codebase.
+-   `Signal Handlers`: Signal handlers are the functions or methods that implement the logic to be executed when a signal is received. They perform the desired actions based on the received signal.
+-   `Signal Registration`: Signal receivers need to be registered with the appropriate signal to establish the connection between the sender and the receiver. This registration usually occurs in the ready() method of the application's configuration module or in a separate signals.py module.
+
+Signals in Django provide a way to implement decoupled and reusable functionality. They allow different parts of an application to communicate with each other without tight coupling, enabling modularity and extensibility. Signals are commonly used for tasks like updating related models, sending notifications, triggering background tasks, and more.
+
+To use signals in your Django project, you'll need to import the necessary signals, write signal handlers, and register the handlers with the corresponding signals. Django's documentation provides detailed information on how to work with signals and examples of their usage.
+
+</details>
+
+---
+
+### Django Session
+
+-   ![Django Session Archictures](/assets/django/django-session-steps.png)
+
+---
+
+### Request and response objects
+
+-   [Quick overview](https://docs.djangoproject.com/en/4.0/ref/request-response/#httprequest-objects)
+
+---
+
 ### CSRF (Cross Site Request Forgery):
 
 -   [CSRF Documentation](https://docs.djangoproject.com/en/4.2/ref/csrf/)
@@ -704,6 +929,9 @@ By implementing these middleware hooks, you can extend the functionality of midd
 ### CORS (Cross Origin Resource Sharing):
 
 -   [Django CORS Guide](https://www.stackhawk.com/blog/django-cors-guide/)
+
+### Cross-Site Scripting (XSS)
+
 </details>
 
 ### Configure logging for Django app
@@ -711,217 +939,5 @@ By implementing these middleware hooks, you can extend the functionality of midd
 -   [Logging](https://docs.djangoproject.com/en/4.2/topics/logging/)
 
 ---
-
----
-
-<details>
-<summary style="font-size:25px;color:Orange;text-align:left">Deployment</summary>
-
--   `Gunicorn` and `uWSGI` are two popular Python WSGI (Web Server Gateway Interface) servers that are commonly used to serve Python web applications.
--   `Gunicorn` (short for Green Unicorn) is a Python WSGI HTTP server that is designed to be lightweight, fast, and easy to use. It can handle multiple requests concurrently and can scale to handle large numbers of requests. `Gunicorn` is commonly used in conjunction with a reverse proxy server, such as `Nginx` or `Apache`, which handles incoming requests and passes them on to `Gunicorn`.
-    -   `gunicorn.socket` vs `gunicorn.service`: these are systemd units used for running Gunicorn, a Python WSGI HTTP server. They serve different purposes within the systemd service management system.
-        -   `gunicorn.socket`: This unit represents a socket unit file. It defines a system socket that listens for incoming connections and passes them to the associated service unit (gunicorn.service). The gunicorn.socket unit allows systemd to manage the socket activation process, where the socket is created on-demand when a connection is received. This helps improve resource usage by only starting the Gunicorn process when needed.
-        -   `gunicorn.service`: This unit represents a service unit file. It defines the Gunicorn service that handles the incoming connections received through the associated socket (gunicorn.socket). The gunicorn.service unit specifies the command to start the Gunicorn process, along with its configuration options and other settings.
--   `uWSGI` is a more feature-rich WSGI server that is designed to be highly configurable and extensible. It supports multiple protocols and interfaces, including WSGI, FastCGI, and HTTP. `uWSGI` is known for its ability to handle high traffic volumes and its support for a variety of advanced features, including load balancing, caching, and process management.
--   `Apache` is a popular web server that has been around for a long time. It is widely used and supports a wide range of features and modules, making it highly configurable and adaptable to different use cases. `Apache` is primarily used for serving static content and dynamic content through the use of modules such as PHP or Python.
--   `Nginx` is a newer web server that has gained popularity in recent years due to its high performance and scalability. `Nginx` is designed to handle large volumes of traffic and can serve both static and dynamic content. `Nginx` is often used as a reverse proxy in front of other web servers, such as `Apache` or `Tomcat`, to improve performance and reliability.
--   `Tomcat` is a Java-based web server and application server that is designed to serve Java applications. It supports the Java Servlet and JavaServer Pages (JSP) specifications and is often used to serve Java web applications. `Tomcat` is highly configurable and can be extended through the use of plugins and modules.
--   `Proxy Server` vs `Reverse Proxy Server`:
-
-    -   `Proxy Server`: A proxy server acts as an intermediary between a client and a server. When a client makes a request to access a resource (e.g., a web page), the request is first sent to the proxy server. The proxy server then forwards the request to the destination server on behalf of the client. The response from the server is relayed back to the client through the proxy server. A proxy server can reside in various locations within a network architecture, depending on its intended purpose and the network's configuration; for example, On-Premises Network, Data Center, Cloud Environment, Content Delevary Networks (CDNs) etc. The key characteristics of a proxy server include:
-
-        -   `Client-side configuration`: The client needs to be aware of and configured to use the proxy server.
-        -   `Client anonymity`: The server sees the proxy server's IP address instead of the client's IP address.
-        -   `Caching`: Proxy servers can cache responses, allowing subsequent requests for the same resource to be served directly from the cache instead of going to the server again.
-        -   Proxy servers are often used for purposes such as improving performance through caching, controlling access to resources (e.g., content filtering, firewall), and providing anonymity for clients.
-
-    -   `Reverse Proxy Server`: A reverse proxy server is similar to a proxy server but operates on the server-side instead of the client-side. It sits between the client and the destination server and forwards client requests to the appropriate backend servers based on various criteria (e.g., load balancing, request routing, SSL termination). The client is unaware of the presence of the reverse proxy and communicates directly with it. The key characteristics of a reverse proxy server include:
-
-        -   `Server-side configuration`: The server is configured to use the reverse proxy to handle incoming requests.
-        -   `Load balancing`: Reverse proxies distribute client requests across multiple backend servers to balance the load.
-        -   `SSL termination`: Reverse proxies can handle SSL encryption/decryption, offloading this task from backend servers.
-        -   `Caching`: Reverse proxies can also cache responses to improve performance.
-        -   Reverse proxy servers are commonly used for load balancing, high availability, SSL termination, request routing, and as a security layer protecting backend servers by shielding them from direct access.
-
-#### How to configure the following setup for Django project?
-
--   [How to use Django with uWSGI](https://docs.djangoproject.com/en/4.2/howto/deployment/wsgi/uwsgi/)
--   [How to use Django with Gunicorn](https://docs.djangoproject.com/en/4.2/howto/deployment/wsgi/gunicorn/)
--   [Setting up Django and your web server with uWSGI and nginx](https://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html#)
--   [Deploying Django with Docker Compose](https://www.youtube.com/watch?v=mScd-Pc_pX0&t=1928s)
-
-The ultimate goal in this tutorial is to send requests from the client to Nginx which will pass them to a socket that will hand them off to uWSGI before finally being given to Django.
-
-![server configuration for Django](/assets/django/nginx-uwsgi.webp)
-
-<details><summary style="font-size:18px;color:Orange;text-align:left">Gunicorn</summary>
-
--   [https://docs.gunicorn.org/en/latest/settings.html](https://docs.gunicorn.org/en/latest/settings.html)
--   `gunicorn.socket` vs `gunicorn.service`: these are systemd units used for running Gunicorn, a Python WSGI HTTP server. They serve different purposes within the systemd service management system.
-
-    -   `gunicorn.socket`: This unit represents a socket unit file. It defines a system socket that listens for incoming connections and passes them to the associated service unit (gunicorn.service). The gunicorn.socket unit allows systemd to manage the socket activation process, where the socket is created on-demand when a connection is received. This helps improve resource usage by only starting the Gunicorn process when needed.
-    -   `gunicorn.service`: This unit represents a service unit file. It defines the Gunicorn service that handles the incoming connections received through the associated socket (gunicorn.socket). The gunicorn.service unit specifies the command to start the Gunicorn process, along with its configuration options and other settings.
-
--   `$ gunicorn core.wsgi:application --bind 0.0.0.0:8000`
--   `$ gunicorn core.wsgi:application --config ./gunicorn_config.py`
-
-</details>
-
-<details><summary style="font-size:18px;color:Orange;text-align:left">uWSGI</summary>
-
--   [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/index.html)
-
-</details>
-
-<details><summary style="font-size:18px;color:Orange;text-align:left">Nginx</summary>
-
--   [Learn Proper NGINX Configuration Context Logic](https://www.youtube.com/watch?v=C5kMgshNc6g&t=683s)
--   [How to Deploy Django on Nginx with uWSGI (full tutorial)](https://www.youtube.com/watch?v=ZpR1W-NWnp4&t=21s)
-
-#### Terms and Concepts
-
-The nginx configuration file, typically named `nginx.conf`, is a text-based file that specifies how the Nginx web server should behave. The `nginx.conf` file is written in a language called NGINX configuration language or NGINX Configuration Syntax. It is a custom configuration syntax specific to NGINX. It contains a set of directives within different contexts to specify their scope and define various aspects of server functionality, such as server listening ports, request handling, load balancing, caching, and security settings. The main contexts in an `nginx.conf` file are:
-
--   `Main Context`: The main context includes directives that apply globally to the entire Nginx server. It is typically defined within the http block. Directives within this context affect the overall behavior of the server, such as the number of worker processes, the user and group that the server runs as, and the configuration for logging. It typically contains directives such as server, upstream, and include.
-    -   ![Main Context](/assets/nginx/main-context.png)
--   `Events Context`: The events context, also defined within the http block, is used to configure how Nginx handles connections and events. Directives in this context control parameters such as the maximum number of connections, the worker connections, and the multi_accept setting.
-
--   `HTTP Context`: The HTTP context contains server-level configurations and is defined within the http block. It includes directives related to HTTP protocol settings, server-wide proxies, gzip compression, SSL/TLS settings, and default MIME types. Server blocks (virtual servers) are typically defined within the HTTP context.
-
--   `Server Context`: The server context defines the configuration for a specific virtual server (server block). It is contained within the http context and includes directives that apply to a particular server or group of servers. Directives within the server context may include the server name, listening ports, SSL/TLS configurations, proxy settings, and location blocks.
-
--   `Location Context`: The location context is defined within a server context and is used to configure how Nginx handles specific URL patterns or paths. Directives within the location context determine how requests matching the specified pattern are processed. Examples of directives within the location context are root, try_files, proxy_pass, rewrite, and access control directives such as allow and deny.
-
-Each directive is placed within the appropriate context to ensure it is applied at the desired level, whether it is server-wide, specific to a virtual server, or for handling requests matching a particular URL pattern. The context hierarchy and directive placement allow for fine-grained control over the server's behavior and functionality.
-
--   `Directive`: A directive is a command that configures a specific aspect of the server's behavior. Examples of commonly used directives are:
-
-    -   ![Directives](/assets/nginx/directives.png)
-
-    -   `listen`: Specifies the IP address and port on which Nginx should listen for incoming requests.
-    -   `server_name`: Defines the domain name(s) associated with the server block.
-    -   `root`: Specifies the document root directory where static files are located.
-    -   `proxy_pass`: Forwards requests to a specified backend server.
-    -   `try_files`: Defines the fallback behavior for file requests that do not exist.
-    -   `ssl_certificate and ssl_certificate_key`: Configures SSL/TLS certificates for secure connections.
-    -   `gzip`: Enables compression of HTTP responses to reduce file size.
-    -   `access_log and error_log`: Specifies the log file locations for access and error logging.
-
--   `Include Directives`: The include directive allows you to split your configuration into multiple files for better organization. It is often used to include additional configuration snippets or separate files for server blocks and locations.
-
--   `Comments`: Lines starting with the # symbol are treated as comments and are ignored by Nginx. Comments are useful for adding explanatory notes or temporarily disabling directives.
-
-It's important to note that the structure and directives in the `nginx.conf` file may vary depending on the specific setup and requirements of your web server. Understanding the purpose and proper usage of each directive is essential for configuring Nginx to meet your application's needs.
-
--   `Block` vs `Context`: In Nginx configuration files, the terms "block" and "context" are often used interchangeably to refer to a section of directives that serve a specific purpose. The distinction between blocks and contexts can be a bit nuanced, but in general, blocks refer to the specific groups of directives enclosed within curly braces, while contexts refer to the overall hierarchical structure and scope of the configuration file.
-
--   `Block`: A block in Nginx refers to a group of directives enclosed within curly braces {}. Blocks define the scope and boundaries of a configuration section and determine where directives are applicable. There are several types of blocks in an nginx.conf file:
-
--   `Include Directive`: The include directive in Nginx is used to include external configuration files within the main nginx.conf file. It allows you to split your configuration into multiple files for better organization and easier maintenance. Here's how the include directive works:
-
-    -   `Syntax`: The include directive is written as follows:
-
-        ```txt
-        include file_path;
-        ```
-
-        -   `file_path` represents the path to the external configuration file you want to include. It can be an absolute path or a relative path to the nginx.conf file.
-
-    -   `Usage`: The include directive can be used in various contexts within the nginx.conf file. For example:
-
-        -   `Global context`: It can be placed in the main http block of the nginx.conf file to include global configurations that apply to the entire server.
-        -   `Server context`: It can be placed within individual server blocks to include server-specific configurations.
-        -   `Location context`: It can be placed within location blocks to include specific configuration snippets related to handling requests for specific URL patterns.
-
-    -   `Multiple Includes`: You can use multiple include directives to include multiple configuration files. They can be specified in the same context or in different contexts, depending on where you want the configurations to apply. For example:
-
-        ```txt
-        include /path/to/file1.conf;
-        include /path/to/file2.conf;
-        ```
-
-    -   `Wildcard Includes`: The include directive also supports wildcard patterns (_) to include multiple files that match a specific pattern. For example, you can use include /path/to/_.conf; to include all configuration files with the .conf extension in the specified directory.
-
-Using the include directive can help simplify the management of complex configurations by dividing them into smaller, modular files. It allows you to reuse common configurations across multiple server blocks, separate different aspects of the configuration, and make it easier to maintain and update your Nginx setup.
-
-#### Basic Nignx Commands
-
--   `$ nginx -v` → Check Nginx version
--   `$ sudo nginx -t` → Check configuration file syntex before reloading
--   `$ nginx -T` → Display current configuration
--   `$ nginx -s reload` → Reload Nginx
-
-#### Configuration file
-
--   `/ect/nginx/nginx.conf` → Main file location of Nginx
--   `/ect/nginx/conf.d/*.conf` → Include file location of Nginx
-
-#### What is 'uwsgi_params' file?
-
-The "uwsgi_params" file is a configuration file used by uWSGI, which is a fast and flexible application server commonly used for hosting Python web applications. The "uwsgi_params" file contains a set of predefined variables and configurations that are used to communicate between the web server (such as Nginx) and the uWSGI application server.
-The contents of the "uwsgi_params" file typically include directives that define how certain aspects of the communication between Nginx and uWSGI should be handled. These directives often include settings related to request buffering, proxying, and headers.
-Some common directives found in the "uwsgi_params" file include:
-
--   `uwsgi_param QUERY_STRING $query_string;`
-
-    -   This directive sets the value of the QUERY_STRING variable to the value of the query string provided in the original HTTP request.
-
--   `uwsgi_param REQUEST_METHOD $request_method;`
-
-    -   This directive sets the value of the REQUEST_METHOD variable to the HTTP request method (e.g., GET, POST, etc.).
-
--   `uwsgi_param CONTENT_TYPE $content_type;`
-
-    -   This directive sets the value of the CONTENT_TYPE variable to the type of the content being sent in the request, such as "application/json" or "text/html".
-
--   `uwsgi_param CONTENT_LENGTH $content_length;`
-    -   This directive sets the value of the CONTENT_LENGTH variable to the size of the content being sent in the request.
-
-These directives are used to pass information from Nginx to the uWSGI application server, enabling proper handling of requests and responses.
-The "uwsgi_params" file is typically included in the Nginx configuration when using uWSGI as the application server. It ensures that the necessary variables and configurations are available for the communication between Nginx and uWSGI to work correctly.
-It's important to note that the specific contents of the "uwsgi_params" file can vary depending on the configuration and requirements of your specific application or environment.
-
-</details>
-</details>
-
----
-
-<details>
-<summary style="font-size:25px;color:Orange;text-align:left">HTTP Status Code Explainations</summary>
-
-HTTP status codes are three-digit numbers that are returned by a server in response to a client's request. They provide information about the outcome of the request and the current state of the communication between the client and the server. Each status code has a specific meaning and is grouped into different categories.
-
-Here is an overview of the main HTTP status code categories and their meanings:
-
--   1xx Informational: These status codes indicate that the server has received the request and is processing it. They are mainly used for communication purposes and do not represent a final response.
-
-    -   `100 Continue`: The server has received the initial part of the request and expects the client to continue sending the rest of it.
-    -   `101 Switching Protocols`: The server is changing the protocol used in the request.
-
--   2xx Success: These status codes indicate that the request was successfully received, understood, and accepted by the server.
-
-    -   `200 OK`: The request was successful, and the server is returning the requested resource.
-    -   `201 Created`: The request was successful, and a new resource was created as a result.
-    -   `204 No Content`: The request was successful, but there is no content to return.
-
--   3xx Redirection: These status codes indicate that the client needs to take additional steps to complete the request.
-
-    -   `301 Moved Permanently`: The requested resource has been permanently moved to a new location.
-    -   `302 Found`: The requested resource has been temporarily moved to a different location.
-
--   4xx Client Error: These status codes indicate that there was an error on the client's side, and the request cannot be fulfilled.
-
-    -   `400 Bad Request`: The server cannot understand the request due to malformed syntax or other client-side errors.
-    -   `403 Forbidden`: The server understood the request, but the client does not have permission to access the requested resource.
-    -   `404 Not Found`: The requested resource could not be found on the server.
-
--   5xx Server Error:These status codes indicate that there was an error on the server's side, and the request could not be fulfilled.
-
-    -   `500 Internal Server Error`: A generic server error occurred, indicating that something went wrong on the server.
-    -   `502 Bad Gateway`: The server acting as a gateway or proxy received an invalid response from an upstream server.
-
-HTTP status codes provide valuable information for understanding the outcome of a request and troubleshooting issues. By analyzing the status code received in the response, clients can take appropriate actions based on the specific situation encountered during the communication with the server.
-
-</details>
 
 ---

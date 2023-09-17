@@ -1,5 +1,4 @@
-<details>
-<summary style="font-size:25px;color:Orange;text-align:left">Git Terminology</summary>
+<details><summary style="font-size:25px;color:Orange;text-align:left">Git Terminology</summary>
 
 🔥 GIT TUTORIALS:
 
@@ -19,24 +18,104 @@
     -   Head Pointer always points to the Active Branch. When it points to a branch, Git doesn’t complain, but when you check out a commit, it switches into a “detached HEAD” state.
     -   Detached Head
 -   TAG:
+
     -   Tag is an extra lebel for a commit in the commit chain that can indicate usefull informations. A tag is not updated by the commit command.
     -   Annoted Tag
     -   Lightwaight Tag
--   `remote`
--   `origin`
-    -   origin/master is the state of master branch on remote repository
-    -   origin - This is a custom and most common name to point to remote.
-    -   origin/master - This is just a pointer to refer master branch in remote repo. Remember I said origin points to remote.
--   `master`
 
-    -   master - The default branch name in Git is master. For both remote and local repository.
-    -   master is the state of master branch on local repository
+-   `Remote`:
 
--   `working directory`
--   `staging area`
--   `local master`
--   `GitHub master`
--   fork
+    -   In Git, a `remote` typically refers to a repository that is hosted on a separate server or location from your local repository. `Remote`s allow you to connect and interact with repositories that may be located on the internet or on another machine.
+    -   `Remote`s can be repositories you contribute to, collaborate with, or simply synchronize your local repository with to stay up-to-date. Examples of popular `remote` hosting services include GitHub, GitLab, and Bitbucket.
+
+    -   When you add a `remote` repository to your local Git configuration, you give it a name. Common names include "origin," "upstream," "fork," or any other descriptive name you choose.
+
+-   `Origin`:
+
+    -   `Origin` is a specific name that is commonly used as the default `remote` repository name when you clone a repository or when you push to a repository. It's a convention, not a Git keyword.
+    -   When you clone a repository from a `remote` location, Git sets up a `remote` called `origin` by default to point to the repository you cloned from. So, when you push changes, it knows where to send them.
+
+-   `Master`
+
+    -   The default branch name in Git is master. For both `remote` and local repository.
+
+-   `Repository (Repo)`:
+
+    -   A Git repository is a collection of files and directories along with the version history of those files.
+    -   There are two types of repositories: local (on your computer) and `remote` (typically hosted on a server).
+
+-   `Working Directory`:
+
+    -   The working directory is the directory on your local machine where you edit, create, delete, and organize files.
+    -   It contains the current state of your project.
+
+-   `Staging Area (Index)`:
+
+    -   The staging area, also known as the index, is an intermediate area where you prepare changes for the next commit.
+    -   Files are added to the staging area using the git add command before they are committed to the repository.
+
+-   `Commit`:
+
+        -   A commit is a snapshot of the project's state at a particular point in time.
+        -   Each commit has a unique identifier (a hash) and includes changes made to files since the last commit.
+        -   Commits create a chronological history of your project.
+
+-   `Branch`:
+
+        -   A branch is a separate line of development within a Git repository.
+        -   Branches allow multiple users to work on different features or fixes simultaneously without affecting each other's work.
+        -   The default branch is usually called master or main.
+
+-   `HEAD`:
+
+    -   HEAD is a reference to the latest commit in the currently checked-out branch.
+    -   It represents the snapshot of your project that is currently being worked on.
+
+-   ``Remote` Repository`:
+
+        -   A `remote` repository is a copy of your project hosted on a server or another machine.
+        -   It allows multiple developers to collaborate on the same project.
+        -   Common `remote` repository hosting services include GitHub, GitLab, and Bitbucket.
+
+-   `Clone`:
+
+    -   Cloning is the process of creating a copy of a `remote` repository on your local machine.
+    -   It sets up a connection between your local repository and the `remote` repository, enabling you to fetch and push changes.
+
+-   `Pull`:
+
+    -   Pulling refers to fetching changes from a `remote` repository and integrating them into your local branch.
+    -   It combines the git fetch and git merge commands into a single operation.
+
+-   `Push`:
+
+    -   Pushing is the process of uploading your local commits to a `remote` repository.
+    -   It makes your changes available to others and updates the `remote` repository's history.
+
+-   `Merge`:
+
+    -   Merging is the process of combining changes from one branch into another.
+    -   It is often used to integrate features or bug fixes from one branch into the main branch.
+
+-   `Conflict`:
+
+    -   A conflict occurs when Git cannot automatically merge changes because there are conflicting changes in the same part of a file.
+    -   Conflicts must be manually resolved by the user before proceeding with the merge or commit.
+
+-   `Pull Request (PR)`:
+
+    -   A pull request is a feature commonly found on platforms like GitHub and GitLab.
+    -   It allows developers to propose changes to a project and request that those changes be reviewed and merged into the main branch.
+
+-   `Fork`:
+
+    -   Forking is the process of creating a personal copy of a repository in which you can make changes without affecting the original repository.
+    -   It's commonly used for contributing to open-source projects.
+
+-   `Tag`:
+
+    -   A tag is a reference to a specific commit.
+    -   It is often used to mark significant milestones or releases in a project's history.
 
 🔥 NOTES:
 
@@ -44,7 +123,7 @@
 
     -   One copy is your own repository with your own commit history (the already saved one, so to say).
     -   The second copy is your working copy where you are editing and building (not committed yet to your repo).
-    -   The third copy is your local “cached” copy of a remote repository (probably the original from where you cloned yours).
+    -   The third copy is your local “cached” copy of a `remote` repository (probably the original from where you cloned yours).
 
 -   You cannot delete the branch you are on.
 -   If you checkout a branch and then commits, the branch’s label autometically updates to the new commits.
@@ -143,11 +222,14 @@
 
 ##### [git stash](https://www.youtube.com/watch?v=fXGug4itlTk)
 
--   `$ git stash` → stash uncommited local changes
-    -   git stash temporarily shelves (or stashes) changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on. Stashing is handy if you need to quickly switch context and work on something else, but you're mid-way through a code change and aren't quite ready to commit.
+-   git stash temporarily shelves (or stashes) changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on. Stashing is handy if you need to quickly switch context and work on something else, but you're mid-way through a code change and aren't quite ready to commit.
+
 -   `$ git stash show` → show the content of your most recent stash.
 -   `$ git stash list` → List out all your repository's stashes.
     -   `git stash show stash@{index}`
+-   `$ git stash` → stash uncommited local changes
+-   `$ git stash push -m stashname` → name and retrieve a Git stash by the name?
+-   `$ git stash save "my_stash_name"` → name and retrieve a Git stash by the name? (deprecated since v2.16)
 -   `$ git stash pop` → Popping your stash removes the changes from your stash and reapplies them to your working copy.
 -   `$ git stash drop stash@{n}` → drop specific stash - see git stash list (`n` is a integer)
 -   `$ git stash pop stash@{n}` → pop specific stash - see git stash list (`n` is a integer)
@@ -198,12 +280,12 @@
 
     -   `$ git branch -h`
     -   `$ git checkout -h`
-    -   `$ git branch <new_branch_name>` → Creates a brnch with the specified branch_name.
+    -   `$ git branch –a` → Show all the name of branches that has been created so far.
     -   `$ git checkout -b <new_branch_name>` → Create & checkout the specified new_branch_name.
+    -   `$ git branch <new_branch_name>` → Creates a brnch with the specified branch_name.
     -   `$ git branch –d <branch_name>` → Deleting a branch won’t delete the commits. It only deletes the label.
     -   `$ git branch <branch_name> <commit_id>`
     -   `$ git checkout <branch_name>` → Checkout the specified branch_name.
-    -   `$ git branch –a` → Show all the name of branches that has been created so far
     -   `$ git log –graph –onetime <branch_name1 branch_name2 … >` → Visulize the branches Structure
 
 -   🔥 TAG:

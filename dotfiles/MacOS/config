@@ -17,7 +17,7 @@ User ec2-user
 IdentityFile ~/.ssh/MOS01_ADMIN_HARNESS.pem
 
 Host ubuntu_server
-HostName 184.73.37.164
+HostName 34.205.157.90
 StrictHostKeyChecking no
 User ubuntu
 IdentityFile ~/.ssh/MOS01_ADMIN_HARNESS.pem

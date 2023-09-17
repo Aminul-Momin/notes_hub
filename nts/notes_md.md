@@ -1,3 +1,9 @@
+### Useful VSCode Plugins
+
+#### [Markdown All in One](yzhang.markdown-all-in-one)
+
+#### [Markdown Preview Enhancer](shd101wyy.markdown-preview-enhanced)
+
 ### References and documentation:
 
 -   [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)
@@ -26,6 +32,8 @@ Specifically, Visual Studio Code uses the [CommonMark](http://commonmark.org/) M
     -   [Links](#links)
     -   [Images](#images)
     -   [Code](#code)
+    -   [Tables](#tables)
+    -   [Custom HTML](#custom-html)
     -   [Custom CSS](#custom-css)
     -   [Additional Resources](#additional-resources)
 

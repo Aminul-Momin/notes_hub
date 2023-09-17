@@ -85,11 +85,10 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.wordWrapColumn": 80
     },
-    "markdown.styles": ["/Users/am/gd/Software_Development/notes_hub/dotfiles/styles.css"],
     "markdown-preview-enhanced.hideDefaultVSCodeMarkdownPreviewButtons": false,
-    "markdown-preview-enhanced.previewTheme": "none.css",
-    "markdown-preview-enhanced.codeBlockTheme": "darcula.css",
-    "markdown.extension.print.absoluteImgPath": false,
+    // "markdown-preview-enhanced.previewTheme": "none.css",
+    "markdown-preview-enhanced.codeBlockTheme": "monokai.css",
+    // "markdown.extension.print.absoluteImgPath": false,
     "markdown.extension.print.theme": "dark",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     // "java.configuration.checkProjectSettingsExclusions": false,
@@ -137,5 +136,8 @@
     "breadcrumbs.enabled": true,
     "git.openRepositoryInParentFolders": "never",
     "chatgpt.gpt3.apiKey": "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",
+    "markdown.extension.toc.omittedFromToc": {},
+    "markdown-preview-enhanced.previewTheme": "night.css",
+    "markdown-preview-enhanced.revealjsTheme": "simple.css",
 
 }

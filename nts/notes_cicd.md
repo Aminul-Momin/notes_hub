@@ -1,4 +1,4 @@
-<details open>
+<details>
 <summary style="font-size:18px;color:Orange;text-align:left">GitLab:</summary>
 
 -   [Learn GitLab in 3 Hours | GitLab Complete Tutorial For Beginners](https://www.youtube.com/watch?v=8aV5AxJrHDg)
@@ -23,7 +23,7 @@
 
 ---
 
-<details open>
+<details>
 <summary style="font-size:18px;color:Orange;text-align:left">GitHub Actions:</summary>
 
 -   [E1 - GitHub Actions: Write your first workflow with GitHub APIs || Beginner friendly tutorial](https://www.youtube.com/watch?v=-hVG9z0fCac&list=PLArH6NjfKsUhvGHrpag7SuPumMzQRhUKY&index=1)
@@ -56,7 +56,7 @@
 
 ---
 
-<details open>
+<details>
 <summary style="font-size:18px;color:Orange;text-align:left">Jenkins:</summary>
 
 -   [Documentation](https://www.jenkins.io/doc/)
@@ -82,7 +82,7 @@
 -   `Build Types`: In Jenkins, there are several types of builds that you can configure based on your requirements. Here are two most commonly used build types in Jenkins.
     -   `Freestyle Build`: This is the most basic and flexible type of build in Jenkins. It allows you to define a series of build steps that can execute shell commands, run scripts, perform actions, or invoke external tools. Freestyle builds are highly customizable and suitable for various project types.
     -   `Pipeline Build`: Jenkins Pipeline is a powerful feature that allows you to define and manage your build process using a Groovy-based domain-specific language (DSL). Pipeline builds provide a way to define your build pipeline as code, allowing for better version control, repeatability, and advanced customization. Pipelines can have multiple stages, parallel execution, and integrate with source control systems.
--   `Jenkins Master`: In Jenkins, the term "Jenkins master" refers to the central component that manages the overall Jenkins automation server. The Jenkins master, also known as the "Jenkins controller" or "Jenkins server," is responsible for orchestrating and coordinating the execution of build jobs and workflows.
+-   `Jenkins Master`: In Jenkins, the term "Jenkins master" refers to the central component that manages the overall Jenkins automation server. The Jenkins master, also known as the "Jenkins controller" or "Jenkins server," is responsible for orchestrating and coordinating the execution of jobs and workflows.
 -   `Executor`: A slot/component for execution of work defined by a Pipeline or job on a Node. A Node may have zero or more Executors configured which corresponds to how many concurrent Jobs or Pipelines are able to execute on that Node. Executors are typically configured on agent machines, which can be physical or virtual machines, containers, or cloud instances. When a job is triggered in Jenkins, it is assigned to an available executor on a compatible agent. The executor then executes the job's tasks or steps, performing the build, test, or deployment actions specified in the job configuration. This allows for parallel execution of jobs, enabling faster builds and reducing overall execution time.
 -   `Slave`/`Agent`: A slave in Jenkins is a machine or container that connects to a Jenkins controller, is used to distribute workload across multiple machines and executes tasks when directed by the controller. Slaves can be used to increase the capacity of a Jenkins server, or to run jobs on specific hardware or operating systems. There are two types of Agents.
     -   `Permanant Agent`: In Jenkins, a "permanent agent" refers to a long-running worker node or build agent that is permanently connected to the Jenkins master. Unlike ephemeral agents that are dynamically provisioned for each build and then terminated, permanent agents remain connected to the Jenkins master even when idle, ready to accept build tasks whenever assigned.
@@ -154,7 +154,7 @@ In addition to these main categories, the Jenkins web dashboard also includes se
 
 ---
 
-<details open>
+<details>
 <summary style="font-size:18px;color:Orange;text-align:left">Ansible</summary>
 
 -   [Ansible Full Course | 34 Topics in 2 Hours | Ansible Tutorial for Beginners](https://www.youtube.com/watch?v=Wr8zAU-0uR4)
@@ -201,9 +201,11 @@ In addition to these main categories, the Jenkins web dashboard also includes se
 -   `become`: Used to elevate privileges on the target hosts.
 -   `become_user`: Specifies the user account that should be used when elevating privileges.
 
-</details>
+## </details>
 
-<details open>
+---
+
+<details>
 <summary style="font-size:18px;color:Orange;text-align:left">Jira</summary>
 
 Atlassian Jira is a popular issue and project tracking tool widely used for software development, project management, and various other types of projects. It helps teams plan, track, and manage work efficiently. Here are some key terms and concepts in Atlassian Jira:
@@ -230,3 +232,5 @@ Atlassian Jira is a popular issue and project tracking tool widely used for soft
 -   `Issue Link`: Issue links establish relationships between issues, like "blocks," "relates to," "is part of," etc.
 
 </details>
+
+---

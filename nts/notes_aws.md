@@ -13,19 +13,6 @@
 -   AWS Resources, on the other hand, refer to specific instances of AWS services that have been created by customers or by other AWS services on their behalf. For example, if a customer creates an EC2 instance, that instance is an AWS resource. Similarly, if a customer creates an S3 bucket, that bucket is an AWS resource.
 -   In summary, AWS Services are the various capabilities provided by AWS, while AWS Resources are the specific instances of those services that customers create and manage. Understanding the distinction between these terms is important for effectively using and managing AWS infrastructure.
 
-##### HTTP API vs REST API
-
-HTTP API and REST API are both ways to communicate with an application or a web service, but they differ in the way they are designed and implemented.
-
--   HTTP API (also known as Web API) is a general term that describes any API that is accessed over the HTTP protocol. It can use various formats such as JSON, XML, or HTML, and can have different methods such as GET, POST, PUT, and DELETE. HTTP APIs can be designed to be lightweight and simple, and they can be used for various purposes, including web applications, mobile applications, or machine-to-machine communication.
--   REST API (Representational State Transfer) is a specific type of HTTP API that follows a set of architectural principles to make it more efficient, scalable, and maintainable. REST API uses a client-server model and is based on the HTTP protocol. It uses standard HTTP methods such as GET, POST, PUT, and DELETE, and it employs a set of conventions to define resources, URIs, and responses. REST API aims to make the client-server communication stateless and cacheable, and it uses hypermedia (links) to navigate between resources.
-
-In summary, the main differences between HTTP API and REST API are:
-
--   HTTP API is a general term that describes any API that is accessed over the HTTP protocol, while REST API is a specific type of HTTP API that follows a set of architectural principles.
--   HTTP API can use different formats and methods, while REST API uses standard HTTP methods and employs a set of conventions to define resources and responses.
--   HTTP API can be simple and lightweight, while REST API aims to make the client-server communication more efficient, scalable, and maintainable.
-
 ##### HTTP API vs REST API in Context of AWS
 
 HTTP (Hypertext Transfer Protocol) APIs and REST (Representational State Transfer) APIs are both used for communication between client and server over HTTP. However, they have some key differences:
