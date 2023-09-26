@@ -23,8 +23,7 @@ export DATA="$HOME/DATA"
 export FLASK_APP=run.py
 export FLASK_DEBUG=1
 export FLASK_ENV=dev
-export EMAIL_USER='amominnj@gmail.com'
-export EMAIL_PASS='recall'
+
 
 
 
@@ -52,6 +51,9 @@ establish_symlinks(){
         /Users/am/mydocs/Software_Development/Databases/RDBMS/sql/notes_db.md
     ln -sf $NTHUB/nts/notes_fastapi.md \
         /Users/am/mydocs/Software_Development/Web_Development/fast_API/notes_fastapi.md
+    ln -sf $NTHUB/nts/notes_flask.md \
+        /Users/am/mydocs/Software_Development/Web_Development/flask-course/notes_flask.md
+
 
     # VSCode User Settings.json
     ln -sf $NTHUB/dotfiles/vscode/settings.json \

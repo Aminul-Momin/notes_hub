@@ -1,5 +1,4 @@
-<details>
-<summary style="font-size:18px;color:Orange;text-align:left">GitLab:</summary>
+<details><summary style="font-size:18px;color:Orange;text-align:left">GitLab:</summary>
 
 -   [Learn GitLab in 3 Hours | GitLab Complete Tutorial For Beginners](https://www.youtube.com/watch?v=8aV5AxJrHDg)
 -   [Nana: GitLab CI CD](https://www.youtube.com/watch?v=qP8kir2GUgo)
@@ -23,8 +22,7 @@
 
 ---
 
-<details>
-<summary style="font-size:18px;color:Orange;text-align:left">GitHub Actions:</summary>
+<details><summary style="font-size:18px;color:Orange;text-align:left">GitHub Actions:</summary>
 
 -   [E1 - GitHub Actions: Write your first workflow with GitHub APIs || Beginner friendly tutorial](https://www.youtube.com/watch?v=-hVG9z0fCac&list=PLArH6NjfKsUhvGHrpag7SuPumMzQRhUKY&index=1)
 -   [E3 - GitHub Actions: Write continuous deployment (CD) pipelines || Beginner Friendly](https://www.youtube.com/watch?v=-JvHif_CxTs&list=PLArH6NjfKsUhvGHrpag7SuPumMzQRhUKY&index=3)
@@ -56,8 +54,7 @@
 
 ---
 
-<details>
-<summary style="font-size:18px;color:Orange;text-align:left">Jenkins:</summary>
+<details><summary style="font-size:18px;color:Orange;text-align:left">Jenkins:</summary>
 
 -   [Documentation](https://www.jenkins.io/doc/)
 -   [Learn Jenkins! Complete Jenkins Course - Zero to Hero](https://www.youtube.com/watch?v=6YZvp2GwT0A)
@@ -154,8 +151,7 @@ In addition to these main categories, the Jenkins web dashboard also includes se
 
 ---
 
-<details>
-<summary style="font-size:18px;color:Orange;text-align:left">Ansible</summary>
+<details><summary style="font-size:18px;color:Orange;text-align:left">Ansible</summary>
 
 -   [Ansible Full Course | 34 Topics in 2 Hours | Ansible Tutorial for Beginners](https://www.youtube.com/watch?v=Wr8zAU-0uR4)
 -   [LinuxTV: Getting started with Ansible](https://www.youtube.com/playlist?list=PLT98CRl2KxKEUHie1m24-wkyHpEsa4Y70)
@@ -205,8 +201,7 @@ In addition to these main categories, the Jenkins web dashboard also includes se
 
 ---
 
-<details>
-<summary style="font-size:18px;color:Orange;text-align:left">Jira</summary>
+<details><summary style="font-size:18px;color:Orange;text-align:left">Jira</summary>
 
 Atlassian Jira is a popular issue and project tracking tool widely used for software development, project management, and various other types of projects. It helps teams plan, track, and manage work efficiently. Here are some key terms and concepts in Atlassian Jira:
 

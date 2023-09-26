@@ -147,74 +147,140 @@ An API, or Application Programming Interface, is a set of rules, protocols, and 
 
 ---
 
-### Proxy Server vs API Gateway:
-
-A proxy server and an API gateway are both intermediaries that sit between clients (such as applications or users) and backend services, but they serve slightly different purposes and have distinct features. Let's explore the differences between a proxy server and an API gateway:
-
--   `Proxy Server`:
-
-    -   `Purpose`: A proxy server acts as an intermediary between clients and one or more backend servers. Its primary function is to forward requests from clients to the appropriate backend server and then relay the responses back to the clients.
-
-    -   `Network-Level`: Proxy servers operate at the network level. They can be used to manage and optimize network traffic, enforce security policies, and provide caching and load balancing.
-
-    -   `Functionality`: Proxy servers are generally focused on basic tasks such as forwarding requests, load balancing, and potentially caching responses to reduce the load on backend servers.
-
-    -   `Use Cases`: Proxy servers are commonly used for tasks like distributing traffic across multiple servers, improving security by acting as a barrier between clients and servers, and caching content to reduce latency.
-
--   `API Gateway`:
-
-    -   `Purpose`: An API gateway is a more specialized form of a proxy server that is designed specifically for managing and exposing APIs to clients. Its primary role is to handle API-related tasks such as request routing, authentication, rate limiting, response transformation, and more.
-
-    -   `API-Centric`: API gateways are designed to handle the intricacies of managing APIs. They often provide features like API versioning, documentation generation, and response formatting.
-
-    -   `Functionality`: API gateways offer more advanced functionalities for API management, including authentication and authorization mechanisms, request and response transformations (such as data validation and enrichment), rate limiting, and analytics.
-
-    -   `Use Cases`: API gateways are commonly used to provide a unified entry point for accessing multiple microservices or backend services through a single API. They help ensure consistency, security, and efficient management of API traffic.
-
-In summary, while both proxy servers and API gateways serve as intermediaries between clients and backend services, proxy servers are more general-purpose, handling basic tasks like load balancing and security, whereas API gateways are tailored for API management, providing advanced features to streamline and optimize API interactions. Depending on your use case and requirements, you might choose one over the other or even use both in combination for comprehensive traffic management and API exposure.
-
 ### CSRF (Cross-Site Request Forgery):
 
 ### CORS (Cross-Origin Resource Sharing):
 
 ### Cross-Site Scripting (XSS):
 
+-   `Autoescaping`: Autoescaping is the concept of automatically escaping special characters for you. Special characters in the sense of HTML (or XML, and thus XHTML) are &, >, <, " as well as '. Because these characters carry specific meanings in documents on their own you have to replace them by so called “entities” if you want to use them for text. Not doing so would not only cause user frustration by the inability to use these characters in text, but can also lead to security problems.
+-   [Flask: Cross-Site Scripting (XSS)](https://flask.palletsprojects.com/en/2.3.x/security/#security-xss)
+
 ---
 
-<details>
-<summary style="font-size:25px;color:Orange;text-align:left">Deployment</summary>
+<details><summary style="font-size:25px;color:Orange;text-align:left">Deployment</summary>
 
 -   [How to use Django with uWSGI](https://docs.djangoproject.com/en/4.2/howto/deployment/wsgi/uwsgi/)
 -   [How to use Django with Gunicorn](https://docs.djangoproject.com/en/4.2/howto/deployment/wsgi/gunicorn/)
 -   [Setting up Django and your web server with uWSGI and nginx](https://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html#)
 -   [Deploying Django with Docker Compose](https://www.youtube.com/watch?v=mScd-Pc_pX0&t=1928s)
 
--   `Gunicorn` and `uWSGI` are two popular Python WSGI (Web Server Gateway Interface) servers that are commonly used to serve Python web applications.
--   `Gunicorn` (short for Green Unicorn) is a Python WSGI HTTP server that is designed to be lightweight, fast, and easy to use. It can handle multiple requests concurrently and can scale to handle large numbers of requests. `Gunicorn` is commonly used in conjunction with a reverse proxy server, such as `Nginx` or `Apache`, which handles incoming requests and passes them on to `Gunicorn`.
--   `uWSGI` is a more feature-rich WSGI server that is designed to be highly configurable and extensible. It supports multiple protocols and interfaces, including WSGI, FastCGI, and HTTP. `uWSGI` is known for its ability to handle high traffic volumes and its support for a variety of advanced features, including load balancing, caching, and process management.
+---
+
+---
+
+-   `Gunicorn` vs `uWSGI`: `Gunicorn` and `uWSGI` are two popular Python WSGI (Web Server Gateway Interface) servers that are commonly used to serve Python web applications.
+    -   `Gunicorn` (short for Green Unicorn) is a Python WSGI HTTP server that is designed to be lightweight, fast, and easy to use. It can handle multiple requests concurrently and can scale to handle large numbers of requests. `Gunicorn` is commonly used in conjunction with a reverse proxy server, such as `Nginx` or `Apache`, which handles incoming requests and passes them on to `Gunicorn`.
+    -   `uWSGI` is a more feature-rich WSGI server that is designed to be highly configurable and extensible. It supports multiple protocols and interfaces, including WSGI, FastCGI, and HTTP. `uWSGI` is known for its ability to handle high traffic volumes and its support for a variety of advanced features, including load balancing, caching, and process management.
+-   `Uvicorn`:
 -   `Apache` is a popular web server that has been around for a long time. It is widely used and supports a wide range of features and modules, making it highly configurable and adaptable to different use cases. `Apache` is primarily used for serving static content and dynamic content through the use of modules such as PHP or Python.
 -   `Nginx` is a newer web server that has gained popularity in recent years due to its high performance and scalability. `Nginx` is designed to handle large volumes of traffic and can serve both static and dynamic content. `Nginx` is often used as a reverse proxy in front of other web servers, such as `Apache` or `Tomcat`, to improve performance and reliability.
 -   `Tomcat` is a Java-based web server and application server that is designed to serve Java applications. It supports the Java Servlet and JavaServer Pages (JSP) specifications and is often used to serve Java web applications. `Tomcat` is highly configurable and can be extended through the use of plugins and modules.
--   `Proxy Server` vs `Reverse Proxy Server`:
 
-    -   `Proxy Server`: A proxy server acts as an intermediary between a client and a server. When a client makes a request to access a resource (e.g., a web page), the request is first sent to the proxy server. The proxy server then forwards the request to the destination server on behalf of the client. The response from the server is relayed back to the client through the proxy server. A proxy server can reside in various locations within a network architecture, depending on its intended purpose and the network's configuration; for example, On-Premises Network, Data Center, Cloud Environment, Content Delevary Networks (CDNs) etc. The key characteristics of a proxy server include:
+### `Proxy Server` vs `Reverse Proxy Server`:
 
-        -   `Client-side configuration`: The client needs to be aware of and configured to use the proxy server.
-        -   `Client anonymity`: The server sees the proxy server's IP address instead of the client's IP address.
-        -   `Caching`: Proxy servers can cache responses, allowing subsequent requests for the same resource to be served directly from the cache instead of going to the server again.
-        -   Proxy servers are often used for purposes such as improving performance through caching, controlling access to resources (e.g., content filtering, firewall), and providing anonymity for clients.
+-   `Proxy Server`: A proxy server acts as an intermediary between a client and a server. When a client makes a request to access a resource (e.g., a web page), the request is first sent to the proxy server. The proxy server then forwards the request to the destination server on behalf of the client. The response from the server is relayed back to the client through the proxy server. A proxy server can reside in various locations within a network architecture, depending on its intended purpose and the network's configuration; for example, On-Premises Network, Data Center, Cloud Environment, Content Delevary Networks (CDNs) etc. The key characteristics of a proxy server include:
 
-    -   `Reverse Proxy Server`: A reverse proxy server is similar to a proxy server but operates on the server-side instead of the client-side. It sits between the client and the destination server and forwards client requests to the appropriate backend servers based on various criteria (e.g., load balancing, request routing, SSL termination). The client is unaware of the presence of the reverse proxy and communicates directly with it. The key characteristics of a reverse proxy server include:
+    -   `Client-side configuration`: The client needs to be aware of and configured to use the proxy server.
+    -   `Client anonymity`: The server sees the proxy server's IP address instead of the client's IP address.
+    -   `Caching`: Proxy servers can cache responses, allowing subsequent requests for the same resource to be served directly from the cache instead of going to the server again.
+    -   Proxy servers are often used for purposes such as improving performance through caching, controlling access to resources (e.g., content filtering, firewall), and providing anonymity for clients.
 
-        -   `Server-side configuration`: The server is configured to use the reverse proxy to handle incoming requests.
-        -   `Load balancing`: Reverse proxies distribute client requests across multiple backend servers to balance the load.
-        -   `SSL termination`: Reverse proxies can handle SSL encryption/decryption, offloading this task from backend servers.
-        -   `Caching`: Reverse proxies can also cache responses to improve performance.
-        -   Reverse proxy servers are commonly used for load balancing, high availability, SSL termination, request routing, and as a security layer protecting backend servers by shielding them from direct access.
+-   `Reverse Proxy Server`: A reverse proxy server is similar to a proxy server but operates on the server-side instead of the client-side. It sits between the client and the destination server and forwards client requests to the appropriate backend servers based on various criteria (e.g., load balancing, request routing, SSL termination). The client is unaware of the presence of the reverse proxy and communicates directly with it. The key characteristics of a reverse proxy server include:
+
+    -   `Server-side configuration`: The server is configured to use the reverse proxy to handle incoming requests.
+    -   `Load balancing`: Reverse proxies distribute client requests across multiple backend servers to balance the load.
+    -   `SSL termination`: Reverse proxies can handle SSL encryption/decryption, offloading this task from backend servers.
+    -   `Caching`: Reverse proxies can also cache responses to improve performance.
+    -   Reverse proxy servers are commonly used for load balancing, high availability, SSL termination, request routing, and as a security layer protecting backend servers by shielding them from direct access.
 
 -   The image below show how 'client', 'Nginx', and 'uWSGI' work together.
 
 ![server configuration for Django](/assets/django/nginx-uwsgi.webp)
+
+### `Reverse Proxy Server` vs `Web Server Gateway Interface` (WSGI):
+
+A Reverse Proxy Server and a Web Server Gateway Interface (WSGI) serve different roles in web application architecture, but they are complementary components. Here's a comparison of the two:
+
+-   `Reverse Proxy Server`:
+
+    -   `Definition`:
+
+        -   A reverse proxy server is a server that sits between client devices and backend web servers.
+        -   It receives incoming client requests, such as HTTP requests, and forwards those requests to the appropriate backend server or application.
+
+    -   `Purpose`:
+
+        -   `Load Balancing`: Reverse proxies can distribute client requests across multiple backend servers to balance the load and improve performance and reliability.
+        -   `Security`: They can provide an additional layer of security by hiding the internal structure of the network and filtering out malicious traffic.
+        -   `SSL Termination`: Reverse proxies can handle SSL/TLS encryption and decryption, offloading this resource-intensive task from the backend servers.
+        -   `Caching`: They can cache frequently requested content to reduce the load on backend servers and improve response times.
+
+    -   `Examples`:
+
+        -   Nginx and Apache HTTP Server are commonly used as reverse proxy servers.
+        -   CDNs (Content Delivery Networks) often use reverse proxies to cache and serve static content.
+
+-   `Web Server Gateway Interface (WSGI)`:
+
+    -   `Definition`:
+
+        -   WSGI is a specification in Python that defines a standard interface between web servers and web applications or frameworks.
+        -   It allows web servers to communicate with Python web applications in a consistent and standardized way.
+
+    -   `Purpose`:
+
+        -   WSGI serves as an interface between a web server and a Python web application or framework.
+        -   It allows different web servers to run Python web applications written using various frameworks, such as Flask, Django, or Pyramid.
+
+    -   `Examples`:
+
+        -   Popular Python web servers like Gunicorn, uWSGI, and mod_wsgi (for Apache) implement the WSGI standard.
+        -   Python web frameworks, including Flask and Django, can be deployed using WSGI servers.
+
+-   `Relationship`:
+
+    -   `A reverse proxy server and WSGI serve different but complementary roles`:
+
+        -   The reverse proxy server handles tasks like load balancing, SSL termination, and security at the network level, sitting between clients and backend servers.
+        -   WSGI, on the other hand, handles the communication between a web server and a Python web application at the application level, allowing the Python code to receive and process HTTP requests.
+
+    -   In a typical web application architecture, a reverse proxy server (e.g., Nginx) may be used to handle tasks like load balancing and SSL termination, while a WSGI server (e.g., Gunicorn or uWSGI) interfaces with the Python web application to serve dynamic content.
+
+In summary, a reverse proxy server and WSGI serve different purposes in web application architecture. The reverse proxy manages network-level tasks, while WSGI provides a standardized interface for communication between web servers and Python web applications. Together, they enable the deployment of Python web applications in a scalable and secure manner.
+
+### ASGI (Asynchronous Server Gateway Interface):
+
+-   `Definition`:
+
+    -   ASGI is a specification for asynchronous web servers and frameworks in Python.
+    -   It allows Python web applications to handle asynchronous operations, such as long-lived connections and real-time communication, in an efficient and non-blocking manner.
+
+-   `Purpose`:
+
+    -   ASGI is designed to handle asynchronous web applications and services that require real-time interactions, like chat applications, streaming, and server-sent events.
+    -   It provides a standardized interface for handling asynchronous HTTP requests and WebSocket connections.
+
+-   `ASGI Servers`:
+
+    -   ASGI servers are the web servers that implement the ASGI specification.
+    -   These servers are responsible for handling incoming ASGI requests and routing them to the appropriate ASGI application or framework.
+
+-   `Examples of ASGI Servers`:
+
+    -   Some popular ASGI servers include Daphne, Uvicorn, Hypercorn, and more.
+    -   Uvicorn, for example, is widely used and known for its simplicity and performance.
+
+-   `Usage`:
+
+    -   ASGI servers are commonly used with asynchronous web frameworks like FastAPI and Starlette to build high-performance web applications that require real-time capabilities.
+    -   To run an ASGI application with a server like Uvicorn, you typically use a command like this:
+
+        ```python
+        uvicorn myapp:app --host 0.0.0.0 --port 8000
+        ```
+
+    -   In this example, myapp is the Python module containing your ASGI application, and app is the instance of your ASGI application within that module.
 
 <details><summary style="font-size:18px;color:Orange;text-align:left">Gunicorn (Green Unicorn)</summary>
 
@@ -228,6 +294,20 @@ In summary, while both proxy servers and API gateways serve as intermediaries be
 -   `$ gunicorn core.wsgi:application --config ./gunicorn_config.py`
 
 </details>
+
+---
+
+<details><summary style="font-size:18px;color:Orange;text-align:left">uvicorn</summary>
+
+-   `uvicorn myapp:app --host 0.0.0.0 --port 8000`
+
+    -   `myapp` refers to the Python module containing your ASGI application.
+    -   `app` is the instance of your ASGI application within that module.
+    -   `--host` and `--port` options specify the host and port on which `uvicorn` should listen.
+
+</details>
+
+---
 
 <details><summary style="font-size:18px;color:Orange;text-align:left">uWSGI (universal Web Server Gateway Interface)</summary>
 
@@ -261,6 +341,8 @@ In summary, while both proxy servers and API gateways serve as intermediaries be
     -   It's important to note that the specific contents of the `uwsgi_params` file can vary depending on the configuration and requirements of your specific application or environment.
 
 </details>
+
+---
 
 <details><summary style="font-size:18px;color:Orange;text-align:left">Nginx</summary>
 

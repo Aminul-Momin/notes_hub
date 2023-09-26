@@ -87,7 +87,7 @@
     },
     "markdown-preview-enhanced.hideDefaultVSCodeMarkdownPreviewButtons": false,
     // "markdown-preview-enhanced.previewTheme": "none.css",
-    "markdown-preview-enhanced.codeBlockTheme": "monokai.css",
+    "markdown-preview-enhanced.codeBlockTheme": "one-dark.css",
     // "markdown.extension.print.absoluteImgPath": false,
     "markdown.extension.print.theme": "dark",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -137,7 +137,13 @@
     "git.openRepositoryInParentFolders": "never",
     "chatgpt.gpt3.apiKey": "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",
     "markdown.extension.toc.omittedFromToc": {},
-    "markdown-preview-enhanced.previewTheme": "night.css",
+    "markdown-preview-enhanced.previewTheme": "monokai.css",
     "markdown-preview-enhanced.revealjsTheme": "simple.css",
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.editorAssociations": {
+        "*.db": "default"
+    },
 
 }

@@ -1,4 +1,7 @@
 -   [FastAPI](https://fastapi.tiangolo.com/)
+-   [Templates](https://fastapi.tiangolo.com/advanced/templates/)
+
+---
 
 ```python
 # ============================================================================
@@ -109,6 +112,65 @@ from pydantic import BaseModel, constr
     ```
 
 -   `Conclusion`: Pydantic is a valuable library in the Python ecosystem that ensures data integrity, simplifies data validation, and streamlines the process of parsing and working with structured data. It's commonly used in various scenarios, including web applications, configuration management, and data transformation.
+
+### Pydentic Models vs Database Models
+
+In FastAPI, Pydantic models and data models serve different purposes but are closely related. They are both integral to defining and validating data in your web application, but they are used in different contexts.
+
+-   `Pydantic Models`:
+
+    -   `Purpose`: Pydantic models are primarily used for request and response data validation and serialization. They allow you to define the expected structure and data types of incoming JSON data (request bodies) and outgoing JSON data (response payloads).
+
+    -   `Validation`: Pydantic models automatically validate incoming JSON data against the defined structure, ensuring that it adheres to your expectations. If the data doesn't match the model's schema, FastAPI will raise a validation error and return a meaningful error response.
+
+    -   `Usage`: Pydantic models are commonly used as function parameters to automatically parse and validate incoming data in request handlers. They are also used to declare response models to specify the structure of data returned by API endpoints.
+
+    -   `Example`:
+
+        ```python
+
+        from pydantic import BaseModel
+
+        class Item(BaseModel):
+            name: str
+            price: float
+
+        @app.post("/items/")
+        async def create_item(item: Item):
+            # `item` is automatically validated against the `Item` model.
+            # If the data doesn't match the structure, FastAPI raises an error.
+            # Otherwise, you can work with the validated data.
+            return {"name": item.name, "price": item.price}
+        ```
+
+-   `Data Models (Database Models)`:
+
+    -   `Purpose`: Data models, also known as database models, are used to define the structure of data that will be stored in a database. They represent the tables, fields, and relationships within your database.
+
+    -   `Validation`: While data models in FastAPI don't perform data validation in the same way as Pydantic models, they often rely on ORM (Object-Relational Mapping) libraries like SQLAlchemy to define data constraints and relationships at the database level.
+
+    -   `Usage`: Data models are typically used with database libraries to create and query the database. ORM libraries allow you to map data models to database tables, making it easier to work with database records in your application.
+
+    -   Example (using SQLAlchemy):
+
+        ```python
+
+        from sqlalchemy import Column, Integer, String
+        from sqlalchemy.ext.declarative import declarative_base
+
+        Base = declarative_base()
+
+        class Item(Base):
+            __tablename__ = "items"
+
+            id = Column(Integer, primary_key=True, index=True)
+            name = Column(String, index=True)
+            price = Column(Float)
+        ```
+
+-   `Note`: While Pydantic models and data models serve different purposes, they can work together. You can use Pydantic models to validate incoming data, then convert and save it to your database using data models.
+
+In summary, Pydantic models are primarily used for request and response data validation in FastAPI, while data models are used to define the structure of data stored in databases. Both play crucial roles in building robust and data-validating web applications with FastAPI, especially when used in combination.
 
 </details>
 
@@ -227,195 +289,196 @@ from pydantic import BaseModel, constr
 
 ---
 
-<details><summary style="font-size:15px;color:Orange;text-align:left">SQLAlchemy query methods</summary>
+<details><summary style="font-size:20px;color:Orange;text-align:left">SQLAlchemy query methods</summary>
 
 -   `query()`: This method is the starting point for creating a query.
 
-```python
-from sqlalchemy import create_engine, Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+    ```python
+    from sqlalchemy import create_engine, Column, Integer, String
+    from sqlalchemy.ext.declarative import declarative_base
+    from sqlalchemy.orm import sessionmaker
 
-# Define the model
-Base = declarative_base()
+    # Define the model
+    Base = declarative_base()
 
-class User(Base):
-    __tablename__ = 'users'
-    id = Column(Integer, primary_key=True)
-    username = Column(String)
-    email = Column(String)
+    class User(Base):
+        __tablename__ = 'users'
+        id = Column(Integer, primary_key=True)
+        username = Column(String)
+        email = Column(String)
 
-# Create the engine and session
-engine = create_engine('sqlite:///example.db')
-Session = sessionmaker(bind=engine)
-session = Session()
+    # Create the engine and session
+    engine = create_engine('sqlite:///example.db')
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-# Example of using query methods on model object
-user = session.query(User).filter_by(username='alice').first()
-print(user.username, user.email)
+    # Example of using query methods on model object
+    user = session.query(User).filter_by(username='alice').first()
+    print(user.username, user.email)
 
-session.close()
-```
+    session.close()
+    ```
 
 -   `filter()`: Adds filtering conditions to the query.
 
-```python
-# Filtering users with age greater than 25
-users = session.query(User).filter(User.age > 25).all()
-```
+    ```python
+    # Filtering users with age greater than 25
+    users = session.query(User).filter(User.age > 25).all()
+    ```
 
 -   `filter_by()`: Similar to filter(), but uses keyword arguments for filtering conditions.
 
-```python
-# Filtering users with name 'Alice'
-users = session.query(User).filter_by(name='Alice').all()
-```
+    ```python
+    # Filtering users with name 'Alice'
+    users = session.query(User).filter_by(name='Alice').all()
+    ```
 
 -   `join()`: Creates a SQL JOIN operation between tables.
 
-```python
-from sqlalchemy.orm import joinedload
+    ```python
+    from sqlalchemy.orm import joinedload
 
-# Joining User and Address tables
-users_with_addresses = session.query(User).join(Address).all()
-```
+    # Joining User and Address tables
+    users_with_addresses = session.query(User).join(Address).all()
+    ```
 
 -   `outerjoin()`: Creates an OUTER JOIN operation between tables.
 
-```python
-# Outer joining User and Address tables
-users_with_optional_addresses = session.query(User).outerjoin(Address).all()
-```
+    ```python
+    # Outer joining User and Address tables
+    users_with_optional_addresses = session.query(User).outerjoin(Address).all()
+    ```
 
 -   `group_by()`: Groups the results based on specified columns.
 
-```python
-from sqlalchemy import func
+    ```python
+    from sqlalchemy import func
 
-# Grouping users by age and counting
-age_group_counts = session.query(User.age, func.count()).group_by(User.age).all()
-```
+    # Grouping users by age and counting
+    age_group_counts = session.query(User.age, func.count()).group_by(User.age).all()
+    ```
 
 -   `order_by()`: Specifies the order in which the results should be sorted.
 
-```python
-# Ordering users by name in descending order
-users_ordered_by_name = session.query(User).order_by(User.name.desc()).all()
-```
+    ```python
+    # Ordering users by name in descending order
+    users_ordered_by_name = session.query(User).order_by(User.name.desc()).all()
+    ```
 
 -   `limit()`: Limits the number of results returned by the query.
 
-```python
-# Limiting to retrieve only 5 users
-limited_users = session.query(User).limit(5).all()
-```
+    ```python
+    # Limiting to retrieve only 5 users
+    limited_users = session.query(User).limit(5).all()
+    ```
 
 -   `offset()`: Skips a certain number of results before starting to fetch.
 
-```python
-# Retrieving users after skipping the first 10
-users_after_offset = session.query(User).offset(10).all()
-```
+    ```python
+    # Retrieving users after skipping the first 10
+    users_after_offset = session.query(User).offset(10).all()
+    ```
 
 -   `distinct()`: Applies the DISTINCT keyword to the query.
 
-```python
-# Retrieving distinct age values
-distinct_ages = session.query(User.age).distinct().all()
-```
+    ```python
+    # Retrieving distinct age values
+    distinct_ages = session.query(User.age).distinct().all()
+    ```
 
 -   `count()`: Returns the count of rows matching the query.
 
-```python
-# Counting the number of users
-user_count = session.query(User).count()
-```
+    ```python
+    # Counting the number of users
+    user_count = session.query(User).count()
+    ```
 
 -   `first()`: Returns the first result of the query.
 
-```python
-# Retrieving the first user
-first_user = session.query(User).first()
-```
+    ```python
+    # Retrieving the first user
+    first_user = session.query(User).first()
+    ```
 
 -   `all()`: Returns all results of the query.
 
-```python
-# Retrieving all users
-all_users = session.query(User).all()
-```
+    ```python
+    # Retrieving all users
+    all_users = session.query(User).all()
+    ```
 
 -   `scalar()`: Returns the first column of the first result as a scalar value.
 
-```python
-# Retrieving the scalar value of the first user's age
-first_user_age = session.query(User.age).first()
-```
+    ```python
+    # Retrieving the scalar value of the first user's age
+    first_user_age = session.query(User.age).first()
+    ```
 
 -   `exists()`: Returns a boolean indicating whether any results exist for the query.
 
-```python
-# Checking if there are any users with age greater than 30
-users_exist = session.query(User).filter(User.age > 30).exists()
-```
+    ```python
+    # Checking if there are any users with age greater than 30
+    users_exist = session.query(User).filter(User.age > 30).exists()
+    ```
 
 -   `subquery()`: Returns a subquery representing the current query.
 
-```python
-# Using a subquery to retrieve addresses of users older than 25
-subq = session.query(Address.user_id).filter(User.age > 25).subquery()
-addresses = session.query(Address).filter(Address.user_id.in_(subq)).all()
-```
+    ```python
+    # Using a subquery to retrieve addresses of users older than 25
+    subq = session.query(Address.user_id).filter(User.age > 25).subquery()
+    addresses = session.query(Address).filter(Address.user_id.in_(subq)).all()
+    ```
 
 -   `from_self()`: Returns a new Query object with the same options as the current query.
 
-```python
-# Creating a new query from an existing query
-new_query = session.query(User).from_self()
-```
+    ```python
+    # Creating a new query from an existing query
+    new_query = session.query(User).from_self()
+    ```
 
 -   `get()`: Retrieves a row by its primary key value.
 
-```python
-# Retrieving a user by primary key
-user = session.query(User).get(1)
-```
+    ```python
+    # Retrieving a user by primary key
+    user = session.query(User).get(1)
+    ```
 
 -   `delete()`: Generates a DELETE statement based on the query and deletes matching rows.
 
-```python
-# Deleting users with age less than 25
-session.query(User).filter(User.age < 25).delete()
-```
+    ```python
+    # Deleting users with age less than 25
+    session.query(User).filter(User.age < 25).delete()
+    ```
 
 -   `update()`: Generates an UPDATE statement based on the query and updates matching rows.
 
-```python
-# Updating age of users named 'Alice'
-session.query(User).filter_by(name='Alice').update({'age': 28})
-```
+    ```python
+    # Updating age of users named 'Alice'
+    session.query(User).filter_by(name='Alice').update({'age': 28})
+    ```
 
 -   `union()`: Creates a union of two or more queries.
 
-```python
-# Creating a union of two queries
-union_query = session.query(User).filter(User.age < 30).union(session.query(User).filter(User.age > 40))
-```
+    ```python
+    # Creating a union of two queries
+    union_query = session.query(User).filter(User.age < 30).union(session.query(User).filter(User.age > 40))
+    ```
 
 -   `intersect()`: Creates an intersection of two or more queries.
 
-```python
-# Creating an intersection of two queries
-intersection_query = session.query(User).filter(User.age < 30).intersect(session.query(User).filter(User.age > 20))
-```
+    ```python
+    # Creating an intersection of two queries
+    intersection_query = session.query(User).filter(User.age < 30).intersect(session.query(User).filter(User.age > 20))
+    ```
 
 -   `except_()`: Creates a difference between two queries.
 
-```python
-# Creating a difference between two queries
-difference_query = session.query(User).filter(User.age < 30).except_(session.query(User).filter(User.age < 25))
-```
+    ```python
+    # Creating a difference between two queries
+    difference_query = session.query(User).filter(User.age < 30).except_(session.query(User).filter(User.age < 25))
+    ```
 
 -   These are some of the many query methods provided by SQLAlchemy's Query API. Keep in mind that this is a simplified demonstration, and you can combine and customize these methods to build complex and efficient queries for your database interactions. For more comprehensive information and examples, refer to the official SQLAlchemy documentation.
+
 </details>
 </details>

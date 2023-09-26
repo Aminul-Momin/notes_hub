@@ -1,7 +1,21 @@
-### [AWS Cocumentations](https://docs.aws.amazon.com/index.html)
+### [AWS Documentations](https://docs.aws.amazon.com/index.html)
 
 -   [How To Learn AWS? Starting Points for Devops, Frontend, Backend, and DE Career Paths](https://www.youtube.com/watch?v=N8lcedBPmE8)
 -   [The Most Important AWS Core Services That You NEED To Know About!](https://www.youtube.com/watch?v=B08iQQhXG1Y)
+
+<details><summary style="font-size:15px;color:Magenta;text-align:left">AWS CLI</summary>
+
+-   `$ aws iam list-users` -> If you've just one profile set locally
+-   `$ aws iam list-users --profile <profile-name>` -> If you've multiple profiles set locally
+-   `$ aws configure set default.region us-east-2` -> aws configure set <varname> <value> [--profile profile-name]
+-   `$ `
+-   `$ `
+-   `$ `
+-   `$ `
+
+</details>
+
+---
 
 <details><summary style="font-size:15px;color:Magenta;text-align:left">Confusing Concepts</summary>
 

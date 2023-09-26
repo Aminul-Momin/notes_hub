@@ -79,6 +79,40 @@ def outer():
 outer()
 ```
 
+### Name Mangling in Python
+
+Name mangling in Python is a mechanism for making class attributes more "private" and for avoiding name clashes when subclassing. It involves adding a prefix to an attribute's name to make it harder to access or accidentally override from outside the class. It's a way to provide some level of "name privacy" within a class, although it's not a security feature and can still be bypassed if necessary. Here are the gory details of Python name mangling:
+
+-   `Double Underscore Prefix (__)`: Name mangling begins when an attribute name in a class is prefixed with a double underscore (e.g., \_\_attribute_name). This is a convention, and it signals to developers that this attribute is intended to be "private" to the class.
+
+-   `Name Transformation`: When Python encounters an attribute with a double underscore prefix, it transforms the attribute's name. Specifically, it adds a prefix to the attribute name, consisting of an underscore and the name of the class where the attribute is defined. For example, if you have a class called MyClass with a double underscore attribute **\_\_private_var_2**, Python internally renames it to **\_MyClass\_\_private_var_2**.
+
+    ```python
+    class MyClass:
+        def __init__(self):
+            self._private_var_1 = 42
+            self.__private_var_2 = 420
+    ```
+
+-   `Accessing Mangled Attributes`: To access a name-mangled attribute from outside the class, you need to use the mangled name, which includes the class name as a prefix:
+
+    ```python
+    obj = MyClass()
+    print(obj._MyClass__private_var_2)  # Accesses the name-mangled attribute.
+    ```
+
+    -   This helps avoid naming conflicts between attributes in different classes and subclasses.
+
+-   `Name Mangling Is Not Strict Encapsulation`: It's important to note that name mangling is a convention rather than a strict security feature. It does make it less likely for developers to accidentally override or access "private" attributes, but it can still be bypassed. If you know the mangled name, you can access or modify the attribute:
+
+    ```python
+    obj._MyClass__private_var_2 = 100 # Modifies the mangled attribute.
+    ```
+
+-   `Use Cases`: Name mangling is often used to indicate to other developers that an attribute is intended to be private and should not be accessed directly from outside the class. It is also used to prevent accidental name clashes when subclassing. It's especially useful when creating library code, where you want to provide a level of encapsulation without preventing users of your library from accessing or modifying attributes when necessary.
+
+`Conclusion`: In summary, name mangling in Python involves transforming attribute names with double underscores into names that include the class name as a prefix to avoid naming conflicts. However, it's a convention rather than a strict enforcement of privacy, and developers can still access mangled attributes if they know the mangled names.
+
 </details>
 
 ---
@@ -112,6 +146,11 @@ In declarative programming, the focus is on describing what should be accomplish
 ---
 
 <details><summary style="font-size:18px;color:Orange;text-align:left">Concurrency vs parallelism</summary>
+
+-   [Unlocking your CPU cores in Python (multiprocessing)](https://www.youtube.com/watch?v=X7vBbelRXn0&t=572s)
+-   [mCoding: Intro to async Python | Writing a Web Crawler](https://www.youtube.com/watch?v=ftmdDlwMwwQ&t=33s)
+-   [How To Easily Do Asynchronous Programming With Asyncio In Python](https://www.youtube.com/watch?v=2IW-ZEui4h4&t=69s)
+-   [Next-Level Concurrent Programming In Python With Asyncio](https://www.youtube.com/watch?v=GpqAQxH1Afc)
 
 Concurrency and parallelism are two related but distinct concepts in Python, as well as in many other programming languages. They both deal with executing multiple tasks simultaneously, but they achieve this in different ways and serve different purposes. While both concurrency and parallelism involve the execution of multiple tasks simultaneously, concurrency is more about structuring your code to efficiently manage tasks, especially those that may block, while parallelism is about actually executing tasks in parallel to improve performance by utilizing multiple CPU cores or processors. The choice between concurrency and parallelism depends on the nature of the tasks you need to perform and the performance goals of your application.
 
