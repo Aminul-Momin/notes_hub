@@ -27,16 +27,23 @@ HostName 34.139.107.187
 User a.momin
 IdentityFile ~/.ssh/gcp
 
-Host github.com
+### GitHub: Account 1
+
+Host gh1
+HostName github.com
 User bbcredcap3
 AddKeysToAgent yes
 UseKeychain no
-IdentityFile ~/.ssh/github_bbcredcap3
+IdentityFile ~/.ssh/ghub_bbcredcap3
 
-Host \*
+### GitHub: Account 2
+
+Host gh1
+HostName github.com
+User A.Momin.NYC
 AddKeysToAgent yes
 UseKeychain no
-IdentityFile ~/.ssh/github_AMominNYC
+IdentityFile ~/.ssh/ghub_amomin
 
 Host awsdn1
 HostName ec2-34-193-196-2.compute-1.amazonaws.com
@@ -47,13 +54,3 @@ Host main-node
 HostName 104.197.237.10
 User bbcredcap3
 IdentityFile ~/.ssh/gcp-nds-key
-
-Host gcpan1
-HostName 34.122.21.181
-User bbcredcap3
-IdentityFile ~/.ssh/gcp-nds-key
-
-Host gcpan2
-HostName 104.198.211.113
-User bbcredcap3
-IdentityFile ~/.ssh/gcp-nds-

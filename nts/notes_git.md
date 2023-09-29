@@ -131,8 +131,9 @@
 
 </details>
 
-<details open>
-<summary style="font-size:25px;color:Orange;text-align:left">Git Commands</summary>
+---
+
+<details open><summary style="font-size:25px;color:Orange;text-align:left">Git Commands</summary>
 
 🔥 HELP:
 
@@ -182,8 +183,6 @@
 -   `$ git config --global color.ui auto`
 -   `$ git config --local user.name 'Aminul Momin'` → '--local' can only be used inside a git repository
 -   `$ git config --local user.email "A.Momin.NYC@gmail.com"`
--   `$ git config --local user.email "A.Momin.NYC@gmail.com"`
--   `$ git config --local user.email "bbcredcap3@gmail.com"`
 -   `$ git config --local user.email [author.name | author.email | committer.name | committer.email]`
 -   `$ git config user.name [author.name | author.email | committer.name | committer.email]`
     -   Returns a specific key’s value ( here, key = user.name).
@@ -264,10 +263,10 @@
         -   It can be used to undo the effects of `git add` and unstage changes you have previously added to the Staging Area.
         -   It can also be used to discard local changes in a file, thereby restoring its last committed state.
     -   `$ git restore path/to/file/to/revert` → Unstage the given file from Staging Area into Working Directory.
-    -   `$ git-clean` → Remove untracked files from the working tree.
+    -   `$ git clean -f` → Remove untracked files from the working tree.
     -   `$ git rm --cached <file_name>` → Unstage the specified file (`file_name`) from Staging Area.
     -   `$ git rm --cached *_initial.py` → Unstage all the files name ended with `_initial.py` from Staging Area.
-    -   `$ git rm -r --cached */migrations/` → Unstage all (`store/*`) files recursively from Staging Area.
+    -   `$ git rm -r --cached */migrations/` → Unstage all (`migrations/*`) files recursively from Staging Area.
         -   NOTE: `--cached` option tells Git to only remove the folder from the Git repository's index (staging area) and not from the file system. The files in the folder will no longer be tracked by Git, but they will remain on your local disk.
     -   `$ git revert` → it's better to use `git revert` to create a new commit that undoes the changes made in the previous commit.
     -   <span style="color:orange">How to remove a commit from remote repository:</span>
@@ -314,8 +313,8 @@
         -   Pushes the master branch of local repository to master branch of remote repository.
     -   `$ git push -u origin master`
     -   `$ git push origin` → push all the branches to origin
-    -   `git fetch` is the command that tells your local git to retrieve the latest meta-data info from the original (yet doesn’t do any file transferring. It’s more like just checking to see if there are any changes available).
-    -   `git pull` on the other hand does that AND brings (copy) those changes from the remote repository.
+    -   `$ git fetch` is the command that tells your local git to retrieve the latest meta-data info from the original (yet doesn’t do any file transferring. It’s more like just checking to see if there are any changes available).
+    -   `$ git pull` on the other hand does that AND brings (copy) those changes from the remote repository.
     -   `$ git pull origin master`
         -   `origin` is master branch of remote repository
         -   `master` is master branch of local repository
@@ -328,8 +327,9 @@
 
 </details>
 
-<details>
-<summary style="font-size:25px;color:Orange;text-align:left">Github CLI Commands</summary>
+---
+
+<details><summary style="font-size:25px;color:Orange;text-align:left">Github CLI Commands</summary>
 
 ### Authentication and Configuration
 

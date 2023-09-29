@@ -1,0 +1,1 @@
+-   [LangChain Crash Course for Beginners](https://www.youtube.com/watch?v=lG7Uxts9SXs)

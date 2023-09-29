@@ -426,6 +426,57 @@ Mocking can be especially useful in situations where the external component is s
 
 ---
 
+<details><summary style="font-size:25px;color:Red;text-align:left">Interview Question on Pytest</summary>
+
+1. What is Pytest?
+    - Pytest is a testing framework for Python that simplifies writing and executing test cases.
+1. How does Pytest differ from other testing frameworks like unittest?
+    - Pytest provides a simpler syntax, fixtures, and powerful features like parameterized testing, making it more concise and expressive than unittest.
+1. What is a fixture in Pytest?
+
+    - A fixture is a function marked with the @pytest.fixture decorator. It allows setup code to be shared across multiple test functions.
+
+1. Explain the use of the pytest.mark decorator.
+
+    - pytest.mark is used for marking test functions or classes to customize their behavior, like skipping, marking as slow, etc.
+
+1. How does parameterized testing work in Pytest?
+    - Parameterized testing allows running the same test logic with different inputs. It can be achieved using the @pytest.mark.parametrize decorator.
+1. What is the purpose of conftest.py in Pytest?
+    - conftest.py is a file that is used to define fixtures, hooks, and plugins that are shared across multiple test modules.
+1. Explain the concept of fixtures in Pytest.
+
+    - Fixtures are functions marked with @pytest.fixture that provide data or set up conditions for test functions. They are called automatically by Pytest.
+
+1. How can you skip a test in Pytest?
+    - You can use the @pytest.mark.skip decorator or pytest.mark.skip(reason="reason for skipping") to skip a test.
+1. What is the purpose of the -k option in Pytest?
+
+    - The -k option allows you to select tests based on their names using substring matching.
+
+1. Explain the use of the -m option in Pytest.
+
+    - The -m option is used to select tests based on their markers. You can mark tests using @pytest.mark and then run tests based on these markers.
+
+1. How do you run only failed tests in Pytest?
+    - Use the --lf (short for --last-failed) option to run only the tests that failed in the last test run.
+1. What is the purpose of the pytest.fixture(scope="module")?
+    - Setting the scope="module" in a fixture ensures that the fixture is only called once per module, sharing the state across all the tests in the module.
+1. Explain the use of the capsys fixture in Pytest.
+
+    - capsys is a built-in fixture in Pytest that captures the output to sys.stdout and sys.stderr during the test.
+
+1. How do you perform mocking in Pytest?
+    - You can use the pytest-mock library or the unittest.mock module for mocking in Pytest.
+1. What is the purpose of the autouse parameter in a fixture?
+    - The autouse parameter, when set to True, makes the fixture apply automatically to all tests without explicitly requesting it.
+
+These questions cover a range of topics related to Pytest, including fixtures, markers, skipping tests, and test organization. Interviewers might also ask you to write sample tests or demonstrate the usage of specific Pytest features.
+
+</details>
+
+---
+
 <details><summary style="font-size:25px;color:Red;text-align:left">unittest</summary>
 
 The unittest library in Python is a built-in testing framework that provides a standardized way to write and execute test cases for your code. It's inspired by the JUnit framework and follows the xUnit style of testing. Here are some key terms and concepts related to the unittest library:

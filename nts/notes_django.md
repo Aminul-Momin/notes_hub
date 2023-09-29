@@ -20,6 +20,7 @@ from django.contrib.auth.models import User, AbstractBaseUser, BaseUserManager, 
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordResetForm, SetPasswordForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.tokens import PasswordResetTokenGenerator
 
 from django.contrib.admin import ModelAdmin
 from django.contrib.sites.shortcuts import get_current_site
@@ -44,6 +45,8 @@ from django.template.loader import render_to_string
 from django.db import models
 
 from decimal import Decimal
+
+from six import text_type
 # =============================================================================
 
 from django.core.mail import send_mail

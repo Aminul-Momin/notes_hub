@@ -60,6 +60,12 @@
 
 -   `Utilities` (`External Commands`): Utilities, also known as external commands, are separate programs installed on the system that can be executed from within the Bash shell. These utilities are usually located in directories specified in the PATH environment variable, allowing Bash to find and run them. Examples of utilities include common Unix tools like `ls`, `grep`, `sed`, `awk`, `sort`, and others. Unlike built-in commands, utilities are executed in separate processes from the Bash shell. You can use the which command to determine the path of a utility: `which utility_name`.
 
+</details>
+
+---
+
+<details><summary style="font-size:18px;color:Orange;text-align:left">Configurations</summary>
+
 ### How to set default shell to bash.
 
 -   `$ cat /etc/shells.` → List out available shells.
@@ -140,6 +146,7 @@
     -   `$ tree -l` → Follow symbolic links like directories.
     -   `$ tree -f` → Print the full path prefix for each file.
     -   `$ tree -P *.py` → List only those files that match the pattern given.
+    -   `$ tree -P git | grep git` →
     -   `$ tree -L level dir` → Descend only `level` directories deep.
         -   `$ tree -L 2 $NTHUB` → Descend only level directories deep.
     -   `$ tree -f $NTHUB`
@@ -170,11 +177,13 @@
 -   **ssh-keygen:**
 
     -   `$ ssh-keygen -t rsa -f ~/.ssh/<KEY_FILENAME> -C [USERNAME]` → Generate a rsa key with file-name `KEY_FILENAME` and username `USERNAME`.
+    -   `$ ssh-keygen -t rsa -f ~/.ssh/ghub_amomin -C A.Momin.NYC@gmail.com` → Generate a rsa key with file-name `KEY_FILENAME` and username `USERNAME`.
+    -   `$ ssh-keygen -t rsa -f ~/.ssh/ghub_bbcredcap3 -C bbcredcap3@gmail.com` → Generate a rsa key with file-name `KEY_FILENAME` and username `USERNAME`.
     -   `$ ssh-keygen -t rsa -f ~/.ssh/<KEY_FILENAME> -P passphrase` → Example 1: `$ ssh-keygen -f ~/.ssh/file_name -t rsa -P ""`
 
 -   **ssh-add:**
 
-    -   `$ ssh-add ~/.ssh/id_rsa` → In order not to have prompted passphrase at login, cache the passphrase into 'ssh-agent' if you generate a key with passphrase.
+    -   `$ ssh-add ~/.ssh/ghub_amomin` → In order not to have prompted passphrase at login, cache the passphrase into 'ssh-agent' if you generate a key with passphrase.
     -   `alias sshadd='eval $(ssh-agent) && ssh-add'` → Create alias to cache passphrase since `ssh-add` is temporary for a shell session.
     -   `$ ssh-add -K ~/.ssh/id_rsa` → Add your SSH private key to the `ssh-agent` and store your passphrase in the keychain. The -K option is Apple's standard version of ssh-add, which stores the passphrase in your keychain for you when you add an ssh key to the ssh-agent. If you chose not to add a passphrase to your key, run the command without the -K option.
     -   `$ ssh-add --apple-use-keychain ~/.ssh/ghub_amomin02`

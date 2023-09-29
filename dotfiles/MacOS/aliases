@@ -216,9 +216,10 @@ alias ntcss="open $NTHUB/nts/notes_css.gdoc"
 alias nthtml="open $NTHUB/nts/notes_html.gdoc"
 alias ntjnb="code $NTHUB/nts/notes_jnb.md"
 alias ntfintech="code $NTHUB/nts/notes_fintech.md"
-alias ntscicd="code $NTHUB/nts/notes_cicd.md"
+alias ntcicd="code $NTHUB/nts/notes_cicd.md"
 alias ntstat="code $NTHUB/nts/notes_statistics.md"
 alias ntnosql="code $NTHUB/nts/notes_nosql.md"
+alias ntopenai="code $NTHUB/nts/notes_openai.md"
 
 alias passdb="open $HOME/mydocs/gd/passdb.gsheet"
 alias resume="open $HOME/mydocs/gd/jobs/resumes/A.Momin-pydev.docx"
@@ -270,3 +271,9 @@ alias wd="cd $HOME/mydocs/Software_Development/Web_Development && ls -1"
 # Shortcuts
 alias dl="cd ~/Downloads && ls -1"
 alias dt="cd ~/Desktop && ls -1"
+
+# =============================================================================
+## TEMPORARY ALIASES:
+alias apartment="code $HOME/tmp/apartments.md"
+
+# =============================================================================

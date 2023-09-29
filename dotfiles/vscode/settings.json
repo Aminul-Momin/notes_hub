@@ -145,5 +145,6 @@
     "workbench.editorAssociations": {
         "*.db": "default"
     },
+    "explorer.confirmDragAndDrop": false,
 
 }
