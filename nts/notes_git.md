@@ -197,6 +197,9 @@
     <!-- To tell Git to always use Vimdiff, issue the following commands: -->
 -   `$ git config --global diff.tool vimdiff`
 -   `$ git config --global merge.tool vimdiff`
+-   `$ git remote set-url origin git@gh1:A-Momin/drf.git`
+-   `$ git remote set-url origin git@gh2:Aminul-Momin/notes_hub.git`
+-   `$ git remote set-url origin git@github.com:Aminul-Momin/notes_hub.git`
 
 ## RECORD & EXAMIN CHANGES
 

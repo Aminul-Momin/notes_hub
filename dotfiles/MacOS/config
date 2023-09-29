@@ -31,16 +31,16 @@ IdentityFile ~/.ssh/gcp
 
 Host gh1
 HostName github.com
-User bbcredcap3
+User git
 AddKeysToAgent yes
 UseKeychain no
 IdentityFile ~/.ssh/ghub_bbcredcap3
 
 ### GitHub: Account 2
 
-Host gh1
+Host gh2
 HostName github.com
-User A.Momin.NYC
+User git
 AddKeysToAgent yes
 UseKeychain no
 IdentityFile ~/.ssh/ghub_amomin
