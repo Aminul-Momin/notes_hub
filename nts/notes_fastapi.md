@@ -54,7 +54,7 @@ from pydantic import BaseModel, constr
 
 -   Conclusion: Alembic is a powerful and versatile tool for managing database migrations in Python projects. It helps developers maintain a structured approach to evolving the database schema over time, while its integration with SQLAlchemy ensures consistency between application code and the database structure.
 
-<details><summary style="font-size:20px;color:Orange;text-align:left">Data Migration with Alembic</summary>
+<details><summary style="font-size:18px;color:magenta;text-align:left">Data Migration with Alembic</summary>
 
 -   `$ pip install alembic`
 -   `$ alembic --help`
@@ -66,7 +66,7 @@ from pydantic import BaseModel, constr
 -   `$ alembic init alembic` → Create Alembic directory by the name of 'alembic'
 
 ```python
-# alembic/env.pu
+# alembic/env.py
 from app.models import Base
 ...
 
@@ -559,4 +559,126 @@ In summary, Pydantic models are primarily used for request and response data val
 -   These are some of the many query methods provided by SQLAlchemy's Query API. Keep in mind that this is a simplified demonstration, and you can combine and customize these methods to build complex and efficient queries for your database interactions. For more comprehensive information and examples, refer to the official SQLAlchemy documentation.
 
 </details>
+</details>
+
+---
+
+<details><summary style="font-size:20px;color:Orange;text-align:left">SQLAlchemy query methods</summary>
+
+-   <b style="color:magenta">What is FastAPI?</b>
+
+    -   FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.7+ based on standard Python type hints.
+
+-   <b style="color:magenta">How does FastAPI differ from traditional web frameworks like Flask or Django?</b>
+
+    -   FastAPI is designed for building APIs with automatic OpenAPI and JSON Schema documentation, automatic validation using Python type hints, and high performance through asynchronous request handling.
+
+-   <b style="color:magenta">Explain asynchronous programming in FastAPI.</b>
+
+    -   FastAPI uses Python's async and await syntax for asynchronous programming. It allows handling concurrent requests efficiently using asynchronous frameworks like Starlette and Uvicorn.
+
+-   <b style="color:magenta">What is dependency injection in FastAPI?</b>
+
+    -   Dependency injection in FastAPI refers to the automatic injection of dependencies (such as database connections or external services) into route functions or other parts of the application.
+
+-   <b style="color:magenta">How does FastAPI handle request validation?</b>
+
+    -   FastAPI uses Python type hints for automatic request validation. Input data is validated against these type hints, and validation errors are automatically handled and documented.
+
+-   <b style="color:magenta">Explain path parameters and query parameters in FastAPI.</b>
+
+    -   Path parameters are part of the URL path (e.g., /items/{item_id}). Query parameters are appended to the URL and are optional (e.g., /items?skip=10&limit=5). FastAPI can automatically parse and validate these parameters.
+
+-   <b style="color:magenta">What is Pydantic, and how is it used in FastAPI?</b>
+
+    -   Pydantic is a data validation library that is used in FastAPI to define data models with Python type hints. It is used for request and response validation, as well as for automatic API documentation generation.
+
+-   <b style="color:magenta">Explain the purpose of FastAPI's BackgroundTasks class.</b>
+
+    -   BackgroundTasks in FastAPI allows you to perform background tasks (e.g., sending emails) after a response has been delivered to the client. It ensures a faster response to the client.
+
+-   <b style="color:magenta">What is OAuth2 authentication, and how is it implemented in FastAPI?</b>
+
+    -   OAuth2 is a protocol for authorization, and FastAPI includes OAuth2 authentication features. It allows securing API routes with OAuth2-based token authentication, such as JWT (JSON Web Tokens).
+
+-   <b style="color:magenta">How does FastAPI handle file uploads?</b>
+
+    -   FastAPI supports file uploads using the UploadFile class. It allows handling file uploads in forms and validating file properties, such as size and content type.
+
+-   <b style="color:magenta">What is FastAPI's automatic documentation feature based on?</b>
+
+    -   FastAPI's automatic documentation is generated based on the OpenAPI standard and JSON Schema. It provides interactive documentation that allows users to explore and test the API.
+
+-   <b style="color:magenta">Explain FastAPI's dependency injection system.</b>
+
+    -   FastAPI's dependency injection system automatically injects dependencies into route functions based on function parameters. Dependencies are resolved at runtime, and they can be reused across multiple routes.
+
+-   <b style="color:magenta">How does FastAPI handle CORS (Cross-Origin Resource Sharing)?</b>
+
+    -   FastAPI includes middleware for handling CORS. It allows specifying which origins are allowed to access the API and which HTTP methods are allowed for cross-origin requests.
+
+-   <b style="color:magenta">What is FastAPI's WebSocket support?</b>
+
+    -   FastAPI provides native support for WebSocket communication. It allows handling WebSocket connections in a similar way to handling HTTP requests.
+
+-   <b style="color:magenta">How can you handle background tasks in FastAPI?</b>
+
+    -   Background tasks in FastAPI can be handled using the BackgroundTasks class. You can add tasks to it within a route, and they will be executed after the response is sent to the client.
+
+-   <b style="color:magenta">Explain FastAPI's dependency injection for database connections.</b>
+
+    -   FastAPI allows dependency injection for database connections by defining a dependency on a route function. The connection can be reused across multiple routes, and FastAPI takes care of its lifecycle.
+
+-   <b style="color:magenta">What is FastAPI's testing framework?</b>
+
+    -   FastAPI has a built-in testing framework that allows testing API routes using the TestClient class. It provides methods for making requests and asserting responses.
+
+-   <b style="color:magenta">How can you handle cookies in FastAPI?</b>
+
+    -   FastAPI provides a Cookie class for handling cookies. Cookies can be both read and set in API routes, and FastAPI automatically validates and documents their use.
+
+-   <b style="color:magenta">What is FastAPI's Depends function?</b>
+
+    -   Depends is a decorator in FastAPI that is used for declaring dependencies on route functions. It allows specifying which dependencies should be injected into the route.
+
+-   <b style="color:magenta">Explain FastAPI's support for request and response models.</b>
+
+    -   FastAPI supports request and response models using Pydantic. Request models are used for validating incoming data, and response models are used for defining the structure of the API response.
+
+-   <b style="color:magenta">How does FastAPI handle API versioning?</b>
+
+    -   FastAPI supports API versioning by including the version in the URL or as a header. It allows maintaining multiple versions of the API simultaneously.
+
+-   <b style="color:magenta">What is FastAPI's HTTPException class used for?</b>
+
+    -   HTTPException in FastAPI is used for raising HTTP exceptions with specific status codes. It allows customizing the exception response, including headers and JSON content.
+
+-   <b style="color:magenta">Explain FastAPI's automatic dependency injection for OAuth2 authentication.</b>
+
+    -   FastAPI provides automatic dependency injection for OAuth2 authentication by using the Depends decorator. It allows securing routes with OAuth2 token authentication.
+
+-   <b style="color:magenta">How can you handle response headers in FastAPI?</b>
+
+    -   FastAPI allows handling response headers using the Response class. Headers can be set or modified within a route function.
+
+-   <b style="color:magenta">What is FastAPI's Form class used for?</b>
+
+    -   The Form class in FastAPI is used for handling form data in requests. It allows specifying form fields with validation and automatic documentation.
+
+-   <b style="color:magenta">Explain FastAPI's APIRouter class.</b>
+
+    -   APIRouter in FastAPI is used for organizing and grouping routes. It allows creating modular route structures that can be included in the main FastAPI application.
+
+-   <b style="color:magenta">How does FastAPI handle dependency validation failures?</b>
+
+    -   FastAPI automatically handles dependency validation failures and returns an error response with details about the validation error, including JSON content and status codes.
+
+-   <b style="color:magenta">What is FastAPI's Body class used for?</b>
+
+    -   The Body class in FastAPI is used for handling request bodies. It allows specifying the request body model and its properties for validation.
+
+-   <b style="color:magenta">How can you deploy a FastAPI application?</b>
+
+    -   FastAPI applications can be deployed using ASGI servers such as Uvicorn or Hypercorn. They can be run directly or behind a proxy server like Nginx or Traef
+
 </details>

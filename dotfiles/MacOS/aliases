@@ -75,8 +75,6 @@ unset jscbin;
 # Trim new lines and copy to clipboard
 alias c="tr -d '\n' | pbcopy"
 
-# Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Empty the Trash on all mounted volumes and the main HDD.
 # Also, clear Apple’s System Logs to improve shell startup speed.
@@ -144,7 +142,26 @@ alias reload="exec $SHELL -l"
 alias path='echo -e ${PATH//:/\\n}'
 
 #=============================================================================
+# MY ALIASES
 #=============================================================================
+
+# alias findsz="find . -maxdepth ${1:-1} -type d -exec du -sh {} + | sort -h"
+# alias findsz="find . -maxdepth 2 -type d -exec du -sh {} + | sort -h"
+
+function findsz(){
+    find ${1:-.} -maxdepth ${2:-1} -type d -exec du -sh {} + | sort -h
+}
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+alias cleanvenvdir="find . -type d -name '*.venv' -exec rm -ri {} +"
+
+
+
+
+#=============================================================================
+#=============================================================================
+
 source ~/.git-aliases.bash;
 
 # Easier navigation: .., ..., ...., ....., ~ and -
@@ -195,9 +212,10 @@ alias ntaws="code $NTHUB/nts/notes_aws.md"
 alias ntdjango="code $NTHUB/nts/notes_django.md"
 alias ntre="code $NTHUB/nts/notes_re.md"
 alias ntml="code $NTHUB/nts/notes_msl.md"
-alias ntrgh="code $HOME/notes_rough.md"
+alias rgh="code $HOME/notes_rough.md"
 alias ntnsql="code $NTHUB/nts/notes_nosql.md"
-alias ntprogterm="code $NTHUB/nts/notes_prog_terms.md"
+alias sqlq="code $NTHUB/nts/query_questions_answers.md"
+# alias ntprogterm="code $NTHUB/nts/notes_prog_terms.md"
 alias ntyml="code $NTHUB/nts/notes_yml.md"
 alias ntrmp="code $NTHUB/nts/notes_rmp.md"
 alias ntgit="code $NTHUB/nts/notes_git.md"
@@ -206,7 +224,8 @@ alias ntaf="code $NTHUB/nts/notes_airflow.md"
 alias ntvim="code $NTHUB/nts/notes_vim.md"
 alias ntvsc="code $NTHUB/nts/notes_vscode.md"
 alias ntmac="code $NTHUB/nts/notes_mac.md"
-alias ntpy="code $NTHUB/nts/notes_py.md"
+alias ntpy="code $NTHUB/nts/notes_python.md"
+alias ntpytools="code $NTHUB/nts/notes_pytools.md"
 alias ntpytest="code $NTHUB/nts/notes_pytest.md"
 alias nteng="open /Users/a.momin/gd/Writing\ English/Notes_English.gsheet"
 alias ntflask="code $NTHUB/nts/notes_flask.md"
@@ -218,11 +237,16 @@ alias ntjnb="code $NTHUB/nts/notes_jnb.md"
 alias ntfintech="code $NTHUB/nts/notes_fintech.md"
 alias ntcicd="code $NTHUB/nts/notes_cicd.md"
 alias ntstat="code $NTHUB/nts/notes_statistics.md"
-alias ntnosql="code $NTHUB/nts/notes_nosql.md"
+alias ntstat="code $NTHUB/nts/notes_statistics.md"
+alias ntspark="code $NTHUB/nts/notes_spark.md"
 alias ntopenai="code $NTHUB/nts/notes_openai.md"
+alias ntoop="code $NTHUB/nts/notes_oop.md"
+alias ntdict="code $NTHUB/nts/notes_dict.md"
+alias ntdrf="code $NTHUB/nts/notes_drf.md"
+alias ntds="code $NTHUB/nts/notes_ds.md"
+
 
 alias passdb="open $HOME/mydocs/gd/passdb.gsheet"
-alias resume="open $HOME/mydocs/gd/jobs/resumes/A.Momin-pydev.docx"
 alias jobdb="open $HOME/mydocs/gd/jobs/Jobs_DB.gsheet"
 alias cmdnpm="code $NTHUB/nts/cmd_npm.txt"
 alias cmdreact="code $NTHUB/nts/cmd_react.txt"
@@ -237,20 +261,18 @@ alias nbnp="jupyter notebook $NTHUB/nbs/nt_np.ipynb"
 alias nbtorch="jupyter notebook $NTHUB/nbs/nt_torch.ipynb"
 
 
-# alias fastai="cd $HOME/mydocs/Software_Development/Machine_Learning/fastai && conda activate fastai && jupyter notebook"
 alias ae="deactivate &> /dev/null; source .venv/bin/activate"
 alias cae="conda activate $1"
 alias de="deactivate"
 alias cde="conda deactivate"
 
-alias bigdata="cd $HOME/mydocs/Software_Development/Big_Data && open ."
+alias bigdata="cd $HOME/mydocs/Software_Development/Big_Data"
 alias books="cd $HOME/mydocs/BOOKS/PDF\ Books && ls -1"
 alias jlb="jupyter-lab"
 alias jnb="jupyter notebook"
 alias mlcourses="cd $HOME/mydocs/Software_Development/Machine_Learning/ml_courses && ls -1"
 alias ml="cd $HOME/mydocs/Software_Development/Machine_Learning && ls -1"                 # ml ==> Machine_Learning
 
-# alias ads="cd $HOME/mydocs/Software_Development/Algorithms_and_Data_Structures && deactivate &> /dev/null; source .venv/bin/activate"
 alias ads="cd $HOME/mydocs/Software_Development/Algorithms_and_Data_Structures"
 alias epi="cd $HOME/mydocs/Software_Development/Python_Program/Python3/elements-of-programming-interview && deactivate &> /dev/null; source .venv/bin/activate"
 alias pp="cd $HOME/mydocs/Software_Development/Python_Program && ls -1"                   # pp ==> Python Program
@@ -262,6 +284,8 @@ alias jsp="cd $HOME/mydocs/Software_Development/Web_Development/Javascript_Progr
 alias cpp="cd $HOME/mydocs/Software_Development/C++_Programs && ls -1"                    # cpp ==> C++ Programs
 alias algs4="cd $HOME/mydocs/Software_Development/algs4/src/main/java/edu/princeton/cs/algs4"
 alias db="cd $HOME/mydocs/Software_Development/Databases && ls -1"               # sql ==> MySQL Program
+alias nttax="open $GD/TaxReturn/notes_tax.md"
+
 
 alias mydocs="cd $HOME/mydocs && ls -1"
 alias gd="cd $HOME/mydocs/gd && ls -1"
@@ -272,8 +296,13 @@ alias wd="cd $HOME/mydocs/Software_Development/Web_Development && ls -1"
 alias dl="cd ~/Downloads && ls -1"
 alias dt="cd ~/Desktop && ls -1"
 
+
 # =============================================================================
 ## TEMPORARY ALIASES:
 alias apartment="code $HOME/tmp/apartments.md"
+alias interview="cd /Users/am/mydocs/gd/jobs/interviewHelper"
+alias iq="code $NTHUB/iqs/iq_questions.md"
+alias iqdjango="code $NTHUB/iqs/iqs_django.md"
 
+alias mvntpdfs="mv $NTHUB/{nts,iqs}/*.pdf $GD/notes_pdfs/"
 # =============================================================================

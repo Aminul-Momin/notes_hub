@@ -39,6 +39,7 @@ create_alias(){
 create_alias
 
 establish_symlinks(){
+    # Source: $NTHUB
     ln -sf $NTHUB/nts/notes_cicd.md \
         $SD/Web_Development/cicd/notes_cicd.md
     ln -sf $NTHUB/nts/notes_django.md \
@@ -46,21 +47,23 @@ establish_symlinks(){
     ln -sf $NTHUB/nts/notes_aws.md \
         /Users/am/mydocs/Software_Development/Web_Development/aws/notes_aws.md
     ln -sf $NTHUB/nts/notes_docker.md \
-        /Users/am/mydocs/Software_Development/Web_Development/dockers/notes_docker.md
-    ln -sf $NTHUB/nts/notes_db.md \
-        /Users/am/mydocs/Software_Development/Databases/RDBMS/sql/notes_db.md
+        /Users/am/mydocs/Software_Development/Web_Development/cicd/dockers/notes_docker.md
     ln -sf $NTHUB/nts/notes_fastapi.md \
         /Users/am/mydocs/Software_Development/Web_Development/fast_API/notes_fastapi.md
     ln -sf $NTHUB/nts/notes_flask.md \
         /Users/am/mydocs/Software_Development/Web_Development/flask-course/notes_flask.md
-
-
+    ln -sf $NTHUB/nts/aws_interview_questions.md \
+        /Users/am/mydocs/Software_Development/Web_Development/aws/aws_interview_questions.md
     # VSCode User Settings.json
     ln -sf $NTHUB/dotfiles/vscode/settings.json \
         ~/Library/Application\ Support/Code/User/settings.json
     ln -sf $NTHUB/dotfiles/vscode/style.less \
         $HOME/.local/state/crossnote/style.less
     
+    ln -sf /Users/am/mydocs/Software_Development/Databases/RDBMS/sql/notes_db.md \
+        $NTHUB/nts/notes_db.md
+    ln -sf /Users/am/mydocs/Software_Development/Databases/RDBMS/sql/query_questions_answers.md \
+        $NTHUB/nts/query_questions_answers.md
 
     if [ ! -f $HOME/notes_rough.md ]; then
         touch $HOME/notes_rough.md;
@@ -68,8 +71,7 @@ establish_symlinks(){
 
     alias ntrgh="code $HOME/notes_rough.md"
     alias mdstyle="code $HOME/.local/state/crossnote/style.less"
-
-
+    alias ntht="code $HOME/mydocs/gd/Harness-Tech/notes_ht.md"
 }
 establish_symlinks
 
@@ -136,6 +138,8 @@ launch_ec2(){
     : ' Given the AWS EC2 inastance Name, it will launch the instance. Its assumed that the given instance is already created.
     Args:
         ($1): AWS EC2 inastance Name (Host) in your `~/.ssh/config` file.
+    Usage:
+        $ launch_ec2 ubuntu_server
     '
     local INSTANCE_NAME=$1
 
@@ -166,7 +170,9 @@ launch_ec2(){
     if [ $public_ip ]; then
         echo "Your $INSTANCE_NAME is Started (public IP address: $public_ip)"
 
-        mkdir $HOME/tmp
+        if [ ! -d "$HOME/tmp" ]; then
+            mkdir $HOME/tmp
+        fi
 
         # Backing up your current `~/.ssh/config` file into a '$HOME/tmp' folder.
         cp ~/.ssh/config $HOME/tmp/config.bak
@@ -207,3 +213,12 @@ stop_ec2(){
     aws ec2 stop-instances --instance-ids "$INSTANCE_ID"
 }
 
+setscpath(){
+
+    defaults write com.apple.screencapture location ${1:-~/Desktop/screenshots}
+    echo "Screenshots will be saved in '$(defaults read com.apple.screencapture location)'"
+}
+
+showscpath(){
+    echo "Screenshots will be saved in '$(defaults read com.apple.screencapture location)'"
+}

@@ -4,6 +4,7 @@
 
 ### Usefull Tutorials:
 
+-   [Linux File System Explained!](https://www.youtube.com/watch?v=bbmWOjuFmgA)
 -   [Learn CentOS](https://www.youtube.com/playlist?list=PLT98CRl2KxKHjHLIHrmmi5FmBGIZ8cNJE)
 -   [Learn CentOS Part 12 - Software Repositories & Adding EPEL](https://www.youtube.com/watch?v=L9ky88zTca8)
 

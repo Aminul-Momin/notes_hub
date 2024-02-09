@@ -1,6 +1,6 @@
 Host mos02
-HostName MOS02.local
-User a.momin
+HostName MOS02.lan
+User Farzana 
 
 Host mos01
 HostName MOS01.local
@@ -17,7 +17,7 @@ User ec2-user
 IdentityFile ~/.ssh/MOS01_ADMIN_HARNESS.pem
 
 Host ubuntu_server
-HostName 34.205.157.90
+HostName 3.91.181.91
 StrictHostKeyChecking no
 User ubuntu
 IdentityFile ~/.ssh/MOS01_ADMIN_HARNESS.pem
@@ -27,7 +27,11 @@ HostName 34.139.107.187
 User a.momin
 IdentityFile ~/.ssh/gcp
 
+# ============================================================================
+
 ### GitHub: Account 1
+
+### `$ git remote set-url origin git@gh1:A-Momin/project_name.git`
 
 Host gh1
 HostName github.com
@@ -38,12 +42,16 @@ IdentityFile ~/.ssh/ghub_bbcredcap3
 
 ### GitHub: Account 2
 
+### `$ git remote set-url origin git@gh2:Aminul-Momin/project_name.git`
+
 Host gh2
 HostName github.com
 User git
 AddKeysToAgent yes
 UseKeychain no
 IdentityFile ~/.ssh/ghub_amomin
+
+# ============================================================================
 
 Host awsdn1
 HostName ec2-34-193-196-2.compute-1.amazonaws.com

@@ -2,6 +2,7 @@
 
 🔥 GIT TUTORIALS:
 
+-   [Git MERGE vs REBASE: Everything You Need to Know](https://www.youtube.com/watch?v=0chZFIZLR_0)
 -   [Learn Git with Bitbucket Cloud](https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud)
 -   [Udacity: How to Use Git and GitHub](https://www.youtube.com/playlist?list=PLAwxTw4SYaPk8_-6IGxJtD3i2QAu5_s_p)
 -   https://git-scm.com/docs
@@ -51,7 +52,7 @@
 
 -   `Staging Area (Index)`:
 
-    -   The staging area, also known as the index, is an intermediate area where you prepare changes for the next commit.
+    -   The staging area, also known as the index or cache, is an intermediate area where you prepare changes for the next commit.
     -   Files are added to the staging area using the git add command before they are committed to the repository.
 
 -   `Commit`:
@@ -128,6 +129,7 @@
 -   You cannot delete the branch you are on.
 -   If you checkout a branch and then commits, the branch’s label autometically updates to the new commits.
 -   ![Git Push/Pull Cycle](/assets/git/git_cycle.png)
+-   ![Git Workflow](/assets/git/git_workflow.gif)
 
 </details>
 
@@ -166,37 +168,33 @@
 
 ## CONFIGURATIONS
 
+-   `$ Which git` → Print the full path to the git command
 -   `.git/config` → Git's local configuration file.
 -   `/usr/local/git/etc/gitconfig` → Git's Default configuration
 -   `~/.gitconfig` → Git's user configuration file
--   `$ git config --local --list`
--   `$ git config --global --list`
+-   `$ git config --local| --global --list` → List out the local or global configuration
+-   `$ git config --local| --global| --system --edit` → Edit local or global or system config file
+-   🔥 <bold style="color:orange">NOTES</bold>: When reading, the values are read from the system, global and repository local configuration files by default, and options `--system`, `--global`, `--local`, `--worktree` and `--file <filename>` can be used to tell the command to read from only that location (see FILES).
 -   `$ git config --get user.name` → Returns name of the current git user.
 -   `$ git config --get user.email` → Returns the email address of current git user.
--   `$ git config --local --edit`
--   `$ git config --system --edit`
--   `$ git config --global --edit`
--   `$ Which git` → Print the full path to the git command
--   `$ git config --list` → List all the setting git can find at this point.
--   🔥 <bold style="color:orange">NOTES</bold>: When reading, the values are read from the system, global and repository local configuration files by default, and options `--system`, `--global`, `--local`, `--worktree` and `--file <filename>` can be used to tell the command to read from only that location (see FILES).
 -   `$ git config --global core.editor code –wait [“subl –n -w”, emacs, “atom-wait”]`
+    -   → Set globaly VisualStudioCode (`code`) as your code editor.
 -   `$ git config --global color.ui auto`
--   `$ git config --local user.name 'Aminul Momin'` → '--local' can only be used inside a git repository
+-   `$ git config --local user.name 'Aminul Momin'` → Set localy user name configuration parameter. (`--local` can only be used inside a git repository)
 -   `$ git config --local user.email "A.Momin.NYC@gmail.com"`
--   `$ git config --local user.email [author.name | author.email | committer.name | committer.email]`
+-   [Git and Vimdiff](https://medium.com/usevim/git-and-vimdiff-a762d72ced86)
+    <!-- To tell Git to always use Vimdiff, issue the following commands: -->
+
+-   `$ git config --global diff.tool vimdiff`
+-   `$ git config --global merge.tool vimdiff`
+-   `$ git config --local [user.email | author.name | author.email | committer.name | committer.email]`
 -   `$ git config user.name [author.name | author.email | committer.name | committer.email]`
     -   Returns a specific key’s value ( here, key = user.name).
--   `$ 🔥 git remote set-url origin git@github.com:Aminul-Momin/Data-Analysis-Python.git`
-    -   Change your remote's URL from HTTPS to SSH. (SSH based Authentication)
--   `$ 🔥 git remote set-url origin https://github.com/Aminul-Momin/Data-Analysis-Python.git`
-    -   Change your remote's URL from HTTPS to SSH. (HTTPS (Token) based Authentication)
 -   `$ git remote show origin` → get the remote origin URL
 -   `$ git config --get remote.origin.url` → get the remote origin URL
 -   `$ ssh -T git@github.com` → Test your Authentication/Connection into remote.
--   [Git and Vimdiff](https://medium.com/usevim/git-and-vimdiff-a762d72ced86)
-    <!-- To tell Git to always use Vimdiff, issue the following commands: -->
--   `$ git config --global diff.tool vimdiff`
--   `$ git config --global merge.tool vimdiff`
+-   `$ ssh -T git@gh1` → Test your Authentication/Connection into remote.
+-   `$ ssh -T git@gh2` → Test your Authentication/Connection into remote.
 -   `$ git remote set-url origin git@gh1:A-Momin/drf.git`
 -   `$ git remote set-url origin git@gh2:Aminul-Momin/notes_hub.git`
 -   `$ git remote set-url origin git@github.com:Aminul-Momin/notes_hub.git`
@@ -233,8 +231,8 @@
 -   `$ git stash push -m stashname` → name and retrieve a Git stash by the name?
 -   `$ git stash save "my_stash_name"` → name and retrieve a Git stash by the name? (deprecated since v2.16)
 -   `$ git stash pop` → Popping your stash removes the changes from your stash and reapplies them to your working copy.
--   `$ git stash drop stash@{n}` → drop specific stash - see git stash list (`n` is a integer)
--   `$ git stash pop stash@{n}` → pop specific stash - see git stash list (`n` is a integer)
+-   `$ git stash drop stash@{n}` → drop specific stash - see `git stash list` (`n` is a integer)
+-   `$ git stash pop stash@{n}` → pop specific stash - see `git stash list` (`n` is a integer)
 -
 
 ##### [Resetting, Reverting, and Checking Out](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting)
@@ -395,5 +393,58 @@
 -   `$ gh repo delete <repository>`
 -   `$ `
 -   `$ `
+
+### Usefull Bash function on 'gh'
+
+```sh
+
+git_info(){
+    echo "List of remote URLs:"
+    git remote -v
+    git config --get user.name
+    git config --get user.email
+    git log --graph --oneline --decorate --all
+    echo "List of branches created so far:"
+    git branch --list
+}
+
+
+add_github_secrets(){
+    : ' Adds secrets to the Github
+    '
+    gh secret set DOCKERHUB_USERNAME --body ${DOCKERHUB_USERNAME}
+    gh secret set DOCKERHUB_PASSWORD --body ${DOCKERHUB_PASSWORD}
+    gh secret set DOCKER_REGISTRY --body ${DOCKER_REGISTRY}
+    gh secret set DOCKER_REPOSITORY --body ${DOCKER_REPOSITORY}
+    gh secret set STRIPE_SECRET_KEY --body ${STRIPE_SECRET_KEY}
+    gh secret set STRIPE_PUBLISHABLE_KEY --body ${STRIPE_PUBLISHABLE_KEY}
+}
+
+remove_github_secrets(){
+    : ' Removes secrets to the Github
+    '
+    gh secret remove DOCKERHUB_USERNAME
+    gh secret remove DOCKERHUB_PASSWORD
+    gh secret remove DOCKER_REGISTRY
+    gh secret remove DOCKER_REPOSITORY
+    gh secret remove STRIPE_SECRET_KEY
+    gh secret remove STRIPE_PUBLISHABLE_KEY
+}
+```
+
+-   How to set up a webhook on GitHub using the 'gh' CLI tool?
+
+    -   `$ gh repo create repo-name --webhook-url=https://your-webhook-url`
+        -   `repo-name` with the name of your repository.
+        -   `https://your-webhook-url` with the actual `payload URL` of your webhook.
+        -   This command will create a new GitHub repository and set up a webhook with the specified payload URL. Make sure that you have the necessary permissions to create webhooks in the repository.
+
+-   How to update a webhook on GitHub using the 'gh' CLI tool?
+    -   `$ gh repo view -w owner/repo-name --json webhook.url | gh api -X PATCH repos/owner/repo-name/hooks/12345 --input - -F config.url=https://your-new-webhook-url`
+        -   `owner` with the GitHub username or organization.
+        -   `repo-name` with the name of your repository.
+        -   `12345` with the actual webhook ID (you can obtain it from the output of the gh repo view command).
+        -   `https://your-new-webhook-url` with the updated payload URL.
+    -   This command retrieves the existing webhook information, and then uses the `gh` api command to update the webhook configuration with the new payload URL.
 
 </details>

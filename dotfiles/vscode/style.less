@@ -2,21 +2,26 @@
 /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
 
 .markdown-preview.markdown-preview {
+
+  // Define variables
+  @primary-color: #37db34;
   
   h1 {
-      color: rgb(189, 202, 223)
+      color: rgb(91, 133, 201)
   }
   h2 {
-    color: Magenta;
+    color: Orange;
   }
   h3 {
     color: red;
   }
   h4 {
-    color: tomato;
+    color: @primary-color;
+    // color: darken(@primary-color, 10%);
+    // color: tomato;
   }
   h5 {
-    color: Orange;
+    color: Magenta;
   }
 
 //   a {

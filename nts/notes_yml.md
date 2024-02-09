@@ -9,8 +9,7 @@
 
 ---
 
-<details>
-<summary style="font-size:25px;color:Orange;text-align:left">Terms & Concepts</summary>
+<details><summary style="font-size:25px;color:Orange;text-align:left">Terms & Concepts</summary>
 
 -   `YAML`: YAML is a human-readable data serialization language that is often used for configuration files and data exchange between languages.
 -   `Indentation`: YAML uses indentation to represent the structure of data. Indentation is used to define nested elements, such as lists and dictionaries.
@@ -110,6 +109,15 @@ content: |
 In this example, the first document has a mapping node with three scalar nodes and one sequence node, while the second document has a mapping node with three scalar nodes and a multi-line scalar node for the "content" field.
 
 </details>
+
+---
+
+### Table
+
+| EC2 vs EMR                | **AWS EMR**                           | **AWS EC2**                      |
+| :------------------------ | :------------------------------------ | :------------------------------- |
+| **Distributed computing** | Yes                                   | Yes                              |
+| **Node categorization**   | Categorizes secondary nodes into core | Does not use node categorization |
 
 ### Folding and Chomping:
 

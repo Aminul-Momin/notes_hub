@@ -6,25 +6,26 @@
 -   [IPython Doc](https://ipython.readthedocs.io/en/stable/interactive/tutorial.html#)
 -   [IPython Doc](https://ipython.org/documentation.html)
 
-<details open>
-<summary style="font-size:25px;color:Orange;text-align:left">Terminology</summary>
+<details open><summary style="font-size:25px;color:Orange;text-align:left">Magic Commands</summary>
+
+In Jupyter Notebooks, **magic commands** are special commands that are not a part of the Python language but provide additional functionality for interacting with the notebook environment. Magic commands start with either a single % (line magic) or %% (cell magic) and are used to perform various tasks.
 
 -   MAGIC:
 
     -   Magic commands come in two flavors:
-        -   Line Magics, which are denoted by a single '%' prefix and operate on a single line of input,
-        -   Cell Magics, which are denoted by a double '%%' prefix and operate on multiple lines of input.
+        -   Line Magics, which are denoted by a single `%` prefix and operate on a single line of input,
+        -   Cell Magics, which are denoted by a double `%%` prefix and operate on multiple lines of input.
 
 -   LINE MAGIC:
 
     -   They are similar to command line calls.
-    -   They start with % character.
+    -   They start with `%` character.
     -   Rest of the line is its argument passed without parentheses or quotes.
     -   Line magics can be used as expression and their return value can be assigned to variable.
 
 -   CELL MAGIC:
 
-    -   They have '%%' character prefix.
+    -   They have `%%` character prefix.
     -   They can operate on multiple lines below their call.
 
 -   `%magicfunction?` → Information of a given 'magicfunction' is printed.
@@ -34,10 +35,86 @@
 -   `%lsmagic` → list out all the magic commands available to be used.
 -   `%matplotlib inline` → %matplotlib inline sets the backend of matplotlib to the 'inline' backend: With this backend, the output of plotting commands is displayed inline within frontends like the Jupyter notebook, directly below the code cell that produced it.
 
+**Line Magic Commands:**
+
+-   Run the named file inside the Jupyter notebook as a program.
+
+    ```python
+    %run script.py
+    %time and %timeit:
+    ```
+
+-   Measure the execution time of a single statement or expression.
+
+    ```python
+    %time print("Hello, World!")
+    %timeit -n 1000 -r 3 sum(range(1000))
+    ```
+
+-   Load code into a code cell.
+
+    ```python
+    %load path/to/script.py
+    ```
+
+-   Display variables in the interactive namespace or reset the namespace.
+
+    ```python
+    %who
+    %whos
+    %reset -f
+    # Cell Magic Commands:
+    %%time and %%timeit:
+    ```
+
+**Cell Magic Commands:**
+
+-   Measure the execution time of the entire cell or a statement multiple times.
+
+    ```python
+    %%time
+    print("Hello, World!")
+    %%writefile:
+    ```
+
+-   Write the contents of a cell to a file.
+
+    ```python
+    %%writefile script.py
+    print("Hello, World!")
+    %%html:
+    ```
+
+-   Render the cell contents as HTML.
+
+    ```python
+    %%html
+    <h1>Hello, World!</h1>
+    %%bash:
+    ```
+
+-   Run cell with bash in a subprocess.
+
+    ```python
+    %%bash
+    echo "Hello, World!"
+    %%capture:
+    ```
+
+-   Capture the stdout/stderr of a cell.
+
+    ```python
+    %%capture captured_output
+    print("Hello, World!")
+    ```
+
+These are just a few examples, and there are many more magic commands available. To see a list of all available magic commands and their descriptions, you can use `%lsmagic` or `%magic` in a Jupyter cell. Additionally, you can get help on any magic command by appending ? to the command, for example, %timeit?.
+
 </details>
 
-<details open>
-<summary style="font-size:25px;color:Orange;text-align:left">Installation & Configurations:</summary>
+---
+
+<details open><summary style="font-size:25px;color:Orange;text-align:left">Installation & Configurations:</summary>
 
 ### Installation and Configurations of Jupyter Lab
 
@@ -109,6 +186,37 @@
 
 -   `$ jupyter kernelspec list`
 -   `$ jupyter kernelspec remove kernel_name`
+
+### How add custome style sheet (css) to Jupyter Notebook
+
+-   `$ jupyter notebook --generate-config`
+
+-   `Specify CSS Rules`: Add CSS rules to your custom.css file. For example, to increase the font size for code cells and Markdown cells, you can use CSS rules like the following:
+
+    ```css
+    /* Increase font size for code cells */
+    .CodeMirror pre {
+        font-size: 14px; /* Adjust the font size as needed */
+    }
+
+    /* Increase font size for Markdown cells */
+    .text_cell_render p {
+        font-size: 16px; /* Adjust the font size as needed */
+    }
+    ```
+
+-   `Specify Custom CSS File in Jupyter Notebook`:
+
+    -   To apply these CSS rules, you need to specify your custom CSS file in your Jupyter Notebook configuration. You can do this by editing the Jupyter configuration file.
+    -   Open a terminal and run the following command to generate a Jupyter Notebook configuration file if you haven't already:
+        -   `$ jupyter notebook --generate-config`
+        -   This will create a configuration file, typically named jupyter_notebook_config.py, in your Jupyter configuration directory.
+
+-   `Edit the Configuration File`: Open the generated configuration file (e.g., jupyter_notebook_config.py) in a text editor. Search for the c.NotebookApp.css_files line and uncomment it if necessary. Add the path to your custom CSS file:
+
+    ```python
+    c.NotebookApp.css_files = ["path/custom.css"]
+    ```
 
 ### ENABLE JUPYTER NOTEBOOK EXTENSION & THEMES:
 
@@ -195,8 +303,9 @@
 
 </details>
 
-<details open>
-<summary style="font-size:25px;color:Orange;text-align:left">MISC</summary>
+---
+
+<details open><summary style="font-size:25px;color:Orange;text-align:left">MISC</summary>
 
 <!-- #  Running Jupyter Notebook on an EC2 Server  -->
 

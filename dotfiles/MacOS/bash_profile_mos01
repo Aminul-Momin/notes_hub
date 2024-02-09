@@ -96,6 +96,8 @@ beautify_prompt(){
         #	\W     ->> the basename of the current working directory
 }
 beautify_prompt
+
+# =============================================================================
 # =============================================================================
 
 # >>> conda initialize >>>
@@ -114,13 +116,26 @@ unset __conda_setup
 # <<< conda initialize <<<
 # ============================================================================
 
-
 # Add mysql into the PATH variable.
 export PATH="/usr/local/mysql/bin:$PATH"
 
-
 # Setting PATH for Python 3.9
 # The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
-export PATH
+
+export PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
+# ============================================================================
+
+# add java into the path variable
+export PATH="/usr/local/opt/openjdk@11/bin:${PATH}"
+
+export SPARK_HOME="/usr/local/spark-3.3.3-bin-hadoop3"
+export PYSPARK_DRIVER_PYTHON="jupyter"
+
+# Setting PYSPARK_DRIVER_PYTHON_OPTS to "lab" implies that you want to use Jupyter Lab as your Python driver for PySpark. This can be particularly useful if you prefer the Jupyter Lab environment over the classic Jupyter Notebook interface for running PySpark code.
+# export PYSPARK_DRIVER_PYTHON_OPTS="lab"
+
+export PYSPARK_PYTHON="python3"
+export PATH=$SPARK_HOME/bin:$PATH
+# ============================================================================
+
 

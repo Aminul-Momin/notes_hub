@@ -2,8 +2,29 @@
 
 ---
 
-<details open>
-<summary style="font-size:25px;color:Orange;text-align:left">Vim Shortcutes</summary>
+<details><summary style="font-size:25px;color:Orange;text-align:left">Terms and Concepts</summary>
+
+-   **Buffer**: A buffer is the in-memory representation of a file being edited. Multiple buffers can exist simultaneously, and you can switch between them.
+-   **Window**: A window is a viewport onto a buffer. Neovim can split the editing area into multiple windows, allowing you to view and edit different parts of the same or different buffers.
+-   **Tab Page**: A tab page is a collection of windows. You can have multiple tab pages, and each tab page can contain a different arrangement of windows.
+-   **Mode**: Neovim has different modes, including Normal mode (for navigating and manipulating text), Insert mode (for inserting and editing text), Visual mode (for selecting text), and more.
+-   **Command-line mode**: Neovim has a command-line mode where you can execute various commands, such as saving files, searching, and running external commands.
+-   **Operator-Pending mode**: This mode follows an operator command and awaits a motion or text object to operate on. For example, d (delete) in Normal mode followed by w (word) operates on a word.
+-   **Mappings**: Mappings allow you to define custom keybindings for various actions. They are defined in the configuration file (usually init.vim or init.lua).
+-   **Plugins**: Neovim supports plugins to extend its functionality. Plugins can be managed using package managers like vim-plug or dein.vim.
+-   **Configuration file**: Neovim's configuration is typically stored in a file named init.vim for Vimscript or init.lua for Lua. This file contains settings, mappings, and plugin configurations.
+-   **Registers**: Registers are storage spaces that hold text. They can be used to yank (copy) and put (paste) text.
+-   **Autocommands**: Autocommands are events triggered automatically by Neovim. You can attach commands or scripts to these events, such as running commands on file read or write.
+-   **Syntax highlighting**: Neovim provides syntax highlighting for various file types. Syntax files define how different elements of the code are highlighted.
+-   **LSP (Language Server Protocol)**: Neovim supports the LSP for enhanced language-aware features such as autocompletion, linting, and code navigation.
+-   **Terminals**: Neovim has built-in terminal emulation, allowing you to run a terminal inside a Neovim window.
+-   **Folds**: Folding allows you to collapse or hide sections of code for a clearer view. You can fold and unfold sections based on various criteria.
+-   **Remote plugins**: Neovim supports remote plugins, which enables running plugins as separate processes to enhance stability and performance.
+</details>
+
+---
+
+<details open><summary style="font-size:25px;color:Orange;text-align:left">Vim Shortcutes</summary>
 
 -   `<Space> n` → Toggle folder/file explorer
 -   `<Space> t` → Toggle Tagbar
@@ -13,9 +34,7 @@
     -   mark lines needed to be commented
     -   `:/s/^/#` → substitute starting of marked lines by `#`
 
----
-
-### EXITING:
+### MUST-KNOW:
 
 -   `:q! or ZQ` → Quit and throw away unsaved changes
 -   `:q` → Quit (fails if there are unsaved changes)
@@ -23,8 +42,8 @@
 -   `:w !sudo tee %` → Write out the current file using sudo
 -   `:wq` / `:x` / `ZZ` → Write (save) and quit
 -   `:source %` → source (`run`) the current file (lua files) you are working on.
--   i + gt (i in [1-9]) → Focus i-th buffer (Vim Tab)
--   `<SPACE> + [` / `<SPACE> + ]` → Changes the focus across the Buffer (Vim Tab)
+-   `i + gt` (i in [1-9]) → Focus i-th buffer (Vim Tab)
+-   `<SPACE>` + `[` / `]` → Changes the focus across the Buffer (Vim Tab)
 -   Usage of: `f,t,w,b,%,h,j,k,l`
 -   `v` → to select range of text
     -   After selecting the text, try d to delete, or y to copy, or :s/match/replace/, or :center, or !sort, or...
@@ -42,8 +61,6 @@
 -   `~` → to switch cases
 -   `:changes` → to see all the changes
 -   `:jumps`
-
----
 
 🔥 Tip: Prefix a cursor movement command with a number to repeat it. For example, `4j` moves down 4 lines.
 
@@ -289,7 +306,7 @@
     -   `:PlugStatus` → Check the plugin status：
     -   `:PlugUpgrade` → Upgrade vim-plug itself：
 
--   How to use [coc commands]():
+-   How to use [COC (Conquer of Completion) commands]():
 
     -   `:CocConfig`
     -   `CocInstall coc-python`

@@ -1,6 +1,15 @@
+<details><summary style="font-size:25px;color:Orange;text-align:left">MISC</summary>
+
+-   How to start Docke App from terminal on MacOS?
+    -   `$ open -a Docker`
+-   How to stop Docke App from terminal on MacOS?
+    1.  `$ ps aus | grep Docker`
+    2.  `$ kil PIP`
+
 ### Refferances:
 
 -   [Complete Docker Course](https://www.youtube.com/watch?v=RqTEHSBrYFw)
+-   [Nana: Docker Tutorial for Beginners [FULL COURSE in 3 Hours]](https://www.youtube.com/watch?v=3c-iBn73dDE&t=21s)
 -   [Learn Docker - DevOps with Node.js & Express](https://www.youtube.com/watch?v=9zUHg7xjIqQ&list=PLWKjhJtqVAbkzvvpY12KkfiIGso9A_Ixs&index=8)
 -   [Docker and Kubernetes Complete Tutorial](https://www.youtube.com/playlist?list=PL0hSJrxggIQoKLETBSmgbbvE4FO_eEgoB)
 -   [Dockerfile Components](https://github.com/wsargent/docker-cheat-sheet#dockerfile)
@@ -27,7 +36,7 @@
 -   [Container Dev: Develop from anywhere with Visual Studio Code](https://www.youtube.com/watch?v=CYObXaSjj78)
 
 -   The Docker daemon is located at `unix:///var/run/docker.sock`
--   `$ sudo systemctl status docker` → Check whether Docker is running or not in Linux machine.
+-   `$ sudo systemctl status docker` → Check whether Docker is running or not on Linux machine.
 
 -   `$ docker --version`
 -   `$ docker version`
@@ -40,8 +49,11 @@
 -   `$ docker info`
 -   `$ sudo service docker status`
 -   `$ systemctl is-active docker`
-<details>
-<summary style="font-size:25px;color:Orange;text-align:left">Terms & Concepts</summary>
+</details>
+
+---
+
+<details open><summary style="font-size:25px;color:Orange;text-align:left">Terms & Concepts</summary>
 
 -   [Glossary](https://docs.docker.com/glossary/)
 
@@ -83,7 +95,44 @@
     -   `Anonymous Volumes`: are created automatically when a container is created with the `--mount` or `-v` flag, without specifying a named volume. Anonymous volumes are not managed by Docker and their contents are lost when the container is deleted. Anonymous volumes are useful for testing and debugging, but not recommended for production use.
     -   In summary, named volumes are a better choice for production use, as they provide a way to manage and persist data, while anonymous volumes are useful for testing and debugging, but should not be used for production data.
 
--   `Networking`: Docker provides networking capabilities to enable communication between containers and other services. Docker creates a default bridge network for containers to communicate with each other. Additionally, Docker supports custom networks to isolate containers, attach containers to specific networks, and define network-level policies.
+-   `Networking`: Docker provides networking capabilities to enable communication between containers and other services. Docker creates a default bridge network for containers to communicate with each other. Additionally, Docker supports custom networks to isolate containers, attach containers to specific networks, and define network-level policies. Docker provides a flexible networking model that allows you to connect containers in various ways. Here are key concepts related to Docker networks:
+
+    -   **Default Bridge Network**:
+
+        -   When Docker is installed, it creates a default bridge network named bridge.
+        -   Containers connected to the bridge network can communicate with each other, but by default, they are isolated from the host and other networks.
+
+    -   **User-Defined Bridge Networks**:
+
+        -   Docker allows you to create user-defined bridge networks.
+        -   Containers connected to the same user-defined bridge network can communicate with each other, and they can also communicate with containers on the default bridge network.
+        -   User-defined bridge networks provide better isolation and can be customized for specific applications.
+        -   `$ docker network create mynetwork`
+
+    -   **Host Network**:
+
+        -   Containers can be connected to the host network, bypassing the network isolation provided by Docker.
+        -   Containers on the host network share the network namespace with the host machine and can access services running on the host directly.
+        -   `$ docker run --network host myimage`
+
+    -   **Overlay Network**:
+
+        -   Docker supports overlay networks for connecting containers across multiple Docker hosts.
+        -   This is particularly useful in a swarm mode where you have multiple Docker hosts in a cluster.
+        -   Overlay networks use the VXLAN protocol for communication between nodes.
+        -   `$ docker network create --driver overlay myoverlay`
+
+    -   **Macvlan Network**:
+
+        -   Macvlan allows containers to have their own MAC address and appear as physical devices on the network.
+        -   This can be useful when you want containers to be directly reachable on the network.
+        -   `$ docker network create --driver macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.1 -o parent=eth0 mymacvlan`
+
+    -   **Network Inspection and Troubleshooting**:
+
+        -   You can inspect a network to view its details, including connected containers.
+        -   `$ docker network inspect mynetwork`
+        -   Troubleshooting network issues can involve checking container IP addresses, DNS configuration, and ensuring proper connectivity between containers.
 
 -   `Attach Mode`: In the attached mode, Docker can start the process in the container and attach the console to the process’s standard input, standard output, and standard error.When you run a `docker run` command, it runs in the foreground or in an attached mode, meaning you will be attached to the console or the standard out of the Docker container. And you will see the output of the web service on your screen. You won't be able to do anything else on this console other than view the output until this Docker container stops. It won't respond to your inputs. press the `ctrl+c` combination to stop the container and the application hosted on the container exits and you get back to your prompt.
 -   `Detach Mode`: Detach mode started by the option `--detach` or `–d` flag in `docker run` command, means that a Docker container runs in the background of your terminal. It does not receive input or display output. Using detached mode also allows you to close the opened terminal session without stopping the container. The container will continue to run in the backend, run the `docker ps` command to view the running container. Now if you would like to attach back to the running container later, run the `docker attach con_id/con_name` command and specify the name or ID of the Docker container.
@@ -92,14 +141,63 @@
 -   `Layer`: A layer is modification to the image, represented by an instruction in the Dockerfile. Layers are applied in sequence to the base image to create the final image. When an image is updated or rebuilt, only layers that change need to be updated, and unchanged layers are cached locally. This is part of why Docker images are so fast and lightweight. The sizes of each layer add up to equal the size of the final image.
 
 -   `Exposing`/`Publishing` Port:
+
     -   Exposing a port in Docker means that the port is made available for use within the Docker network, but it is not accessible from outside the network or from the host machine. This is done using the EXPOSE instruction in a Dockerfile or the `--expose` flag when running a container. For example, `EXPOSE 8080` would make port 8080 available within the Docker network.
     -   On the other hand, publishing a port in Docker means that the port is made accessible from outside the Docker network, allowing traffic to flow between the container and the host machine or other external networks. This is done using the `--publish` or `-p` flag when running a container. For example, `docker run -p 8080:80` would publish port 80 from the container to port 8080 on the host machine, allowing traffic to be routed to the container from the host machine.
     -   It's important to note that exposing a port does not automatically publish it, and publishing a port does not require it to be exposed. Exposing a port is simply a way of documenting which ports a container is using and making them available for use within the Docker network. Publishing a port is necessary if you want to access the container from outside the Docker network or the host machine.
 
+-   `Storage Drivers`: Docker storage drivers are responsible for managing the storage backend of Docker containers. They define how the filesystem data for containers is stored and managed. Different storage drivers have different characteristics, performance profiles, and support for various features. Here are some commonly used Docker storage drivers:
+
+    -   **aufs (Advanced Multi-Layered Unification File System)**:
+
+        -   aufs was one of the earliest storage drivers and allowed for efficient layering of images.
+        -   It supported copy-on-write, enabling the sharing of common layers among multiple containers.
+        -   However, aufs is no longer the default driver, and its usage has diminished in favor of other drivers.
+
+    -   **overlay and overlay2**:
+
+        -   overlay and overlay2 are modern and widely used storage drivers.
+        -   They provide better performance and support more features compared to aufs.
+        -   Both drivers allow for layering images, copy-on-write, and efficient use of storage space.
+        -   overlay2 is the recommended driver for most Linux distributions.
+
+    -   **btrfs (B-tree File System)**:
+
+        -   btrfs is a copy-on-write filesystem with features like snapshotting and subvolumes.
+        -   While it supports Docker, its adoption has been limited due to certain stability concerns and dependencies.
+
+    -   **devicemapper**:
+
+        -   devicemapper uses the device mapper thin provisioning framework in the Linux kernel.
+        -   It supports features like snapshots and thin provisioning.
+        -   It can be used with loopback devices or directly with block devices.
+        -   devicemapper requires careful configuration and management to avoid potential performance and storage space issues.
+
+    -   **vfs (Virtual File System)**:
+
+        -   vfs is the most basic storage driver and is used for testing and development.
+        -   It doesn't provide the same level of performance and efficiency as other drivers.
+        -   It does not support features like layering or copy-on-write.
+
+    -   To specify a storage driver for Docker, you can use the --storage-driver option when starting the Docker daemon or set it in the Docker daemon configuration file. For example:
+
+        -   `$ dockerd --storage-driver overlay2`
+
+        Or in the Docker daemon configuration file (e.g., /etc/docker/daemon.json):
+
+        ```json
+        {
+            "storage-driver": "overlay2"
+        }
+        ```
+
+    -   The choice of a storage driver can depend on factors such as performance requirements, filesystem support, and the specific features needed for your use case. It's essential to be aware of the characteristics and limitations of each storage driver when selecting the most suitable one for your Docker environment.
+
 </details>
 
-<details open>
-<summary style="font-size:25px;color:Orange;text-align:left">docker</summary>
+---
+
+<details open><summary style="font-size:25px;color:Orange;text-align:left">docker</summary>
 
 -   [docker](https://docs.docker.com/engine/reference/commandline/docker/) | [Use the Docker command line](https://docs.docker.com/engine/reference/commandline/cli/)
 
@@ -254,8 +352,7 @@
         -   Copy content of current directory in the `folder_name` of `volume_name`.
     -   `$ docker cp source <container_name | container_id>:folder_path`
 
-<details open>
-<summary style="font-size:25px;color:Orange;text-align:left">docker network</summary>
+<details open><summary style="font-size:25px;color:Orange;text-align:left">docker network</summary>
 
 -   [docker network](https://docs.docker.com/engine/reference/commandline/network/)
 -   `$ docker network --help`
@@ -269,8 +366,9 @@
 
 </details>
 
-<details open>
-<summary style="font-size:25px;color:Orange;text-align:left">docker volume</summary>
+---
+
+<details open><summary style="font-size:25px;color:Orange;text-align:left">docker volume</summary>
 -   [Add bind mounts, volumes or memory filesystems](https://docs.docker.com/engine/reference/commandline/service_create/#add-bind-mounts-volumes-or-memory-filesystems)
 
 -   `$ docker volume --help`
@@ -287,8 +385,9 @@
 
 </details>
 
-<details open>
-<summary style="font-size:25px;color:Orange;text-align:left">docker container</summary>
+---
+
+<details open><summary style="font-size:25px;color:Orange;text-align:left">docker container</summary>
 
 -   `$ docker container --help`
 -   `$ docker container <COMMAND> --help`
@@ -320,12 +419,11 @@
 
 </details>
 
-## </details>
+</details>
 
-<details open>
-<summary style="font-size:25px;color:Orange;text-align:left">docker-compose</summary>
+---
 
-## Docker Compose:
+<details open><summary style="font-size:25px;color:Orange;text-align:left">docker-compose</summary>
 
 -   [Using Volume in Docker Compose](https://devopsheaven.com/docker/docker-compose/volumes/2018/01/16/volumes-in-docker-compose.html)
 -   [docker-compose](https://docs.docker.com/compose/reference/):
@@ -333,35 +431,41 @@
 
 Docker Compose is a tool that allows you to define and manage multi-container Docker applications. It simplifies the process of running and orchestrating multiple containers as a single application. Docker Compose uses a YAML file to define the services, networks, and volumes required for the application, making it easy to configure and deploy complex setups. Here's a detailed explanation of Docker Compose and its key components:
 
-Docker Compose File:
+-   **Docker Compose File**:
 
-The core of Docker Compose is the Compose file (docker-compose.yml). It is a YAML-formatted configuration file that defines the services, networks, and volumes for your application.
-The Compose file specifies the Docker images to use for each service, the environment variables, container dependencies, network connections, and other configuration options.
-It allows you to define multiple services that can interact with each other, creating a cohesive application stack.
-Services:
+    -   The core of Docker Compose is the Compose file (docker-compose.yml). It is a YAML-formatted configuration file that defines the services, networks, and volumes for your application.
+    -   The Compose file specifies the Docker images to use for each service, the environment variables, container dependencies, network connections, and other configuration options.
+    -   It allows you to define multiple services that can interact with each other, creating a cohesive application stack.
 
-A service is a containerized application or component defined in the Compose file. Each service runs as a separate container with its own configuration and properties.
-Services can be built from a Dockerfile or use pre-built images from Docker Hub or other repositories.
-Services can define ports to expose, volumes to mount, environment variables, dependencies on other services, and other container-specific settings.
-Networks:
+-   **Services**:
 
-Docker Compose creates a default network for the application, allowing services to communicate with each other using service names as hostnames.
-You can define custom networks in the Compose file to isolate and control the communication between services. Custom networks can be used to create separate environments or apply specific network policies.
-Volumes:
+    -   A service is a containerized application or component defined in the Compose file. Each service runs as a separate container with its own configuration and properties.
+    -   Services can be built from a Dockerfile or use pre-built images from Docker Hub or other repositories.
+    -   Services can define ports to expose, volumes to mount, environment variables, dependencies on other services, and other container-specific settings.
 
-Docker Compose allows you to define volumes to persist data and share it between containers or with the host machine.
-Volumes can be used to store databases, log files, or any other data required by the application.
-By defining volumes in the Compose file, you ensure that the data persists even if the containers are recreated or restarted.
-Commands:
+-   **Networks**:
 
-Docker Compose provides several commands to manage the application defined in the Compose file, such as up, down, start, stop, build, logs, and more.
-For example, docker-compose up starts the application and creates the necessary containers, networks, and volumes as defined in the Compose file.
-docker-compose down stops and removes the containers, networks, and volumes associated with the application.
-Benefits:
+    -   Docker Compose creates a default network for the application, allowing services to communicate with each other using service names as hostnames.
+    -   You can define custom networks in the Compose file to isolate and control the communication between services. Custom networks can be used to create separate environments or apply specific network policies.
 
-Docker Compose simplifies the process of managing multi-container applications, making it easier to define, deploy, and scale complex setups.
-It promotes the use of a declarative and version-controlled approach to managing application infrastructure.
-With Docker Compose, you can define the entire application stack in a single file, making it easier to share and collaborate on application configurations.
+-   **Volumes**:
+
+    -   Docker Compose allows you to define volumes to persist data and share it between containers or with the host machine.
+    -   Volumes can be used to store databases, log files, or any other data required by the application.
+    -   By defining volumes in the Compose file, you ensure that the data persists even if the containers are recreated or restarted.
+
+-   **Commands**:
+
+    -   Docker Compose provides several commands to manage the application defined in the Compose file, such as up, down, start, stop, build, logs, and more.
+    -   For example, docker-compose up starts the application and creates the necessary containers, networks, and volumes as defined in the Compose file.
+    -   docker-compose down stops and removes the containers, networks, and volumes associated with the application.
+
+-   **Benefits**:
+
+    -   Docker Compose simplifies the process of managing multi-container applications, making it easier to define, deploy, and scale complex setups.
+    -   It promotes the use of a declarative and version-controlled approach to managing application infrastructure.
+    -   With Docker Compose, you can define the entire application stack in a single file, making it easier to share and collaborate on application configurations.
+
 Docker Compose is a powerful tool for managing containerized applications, allowing you to define and run multi-container environments with ease. It provides a concise and portable way to describe application stacks and simplifies the process of setting up and orchestrating complex Docker-based applications.
 
 -   `$ docker-compose down` →
@@ -370,18 +474,13 @@ Docker Compose is a powerful tool for managing containerized applications, allow
 -   `$ docker-compose build` → It just build the image.
 -   `$ docker-compose ` →
 
-### [$ ](): ``
-
-### [$ ](): ``
-
 </details>
 
 ---
 
-<details>
-<summary style="font-size:25px;color:Orange;text-align:left">Miscellaneous</summary>
+<details open><summary style="font-size:25px;color:Orange;text-align:left">Miscellaneous</summary>
 
-## Rough:
+### Rough:
 
 -   `$ docker commit`
 
@@ -460,9 +559,9 @@ Docker Compose is a powerful tool for managing containerized applications, allow
 
 ### Docker Volume:
 
--   Anonymous: Randomly created and maintained by Docker.
--   Host: Mount a local directory or file on the container
--   Named: Created with a name and maintaied by Docker
+-   `Anonymous`: Randomly created and maintained by Docker.
+-   `Host`: Mount a local directory or file on the container
+-   `Named`: Created with a name and maintaied by Docker
 
 ### Usefull Commands in case of non-responsive Dockers in RHEL
 
@@ -477,8 +576,9 @@ Docker Compose is a powerful tool for managing containerized applications, allow
 
 </details>
 
-<details>
-<summary style="font-size:25px;color:Orange;text-align:left"> Dockerfile </summary>
+---
+
+<details open><summary style="font-size:25px;color:Orange;text-align:left"> Dockerfile </summary>
 
 -   [Dockerfile sample for Jupyter notebook images](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.5.x?topic=image-dockerfile-sample-jupyter-notebook-images)
 -   [Dockerfile Components](https://github.com/wsargent/docker-cheat-sheet#dockerfile)

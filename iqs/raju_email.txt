@@ -1,0 +1,19 @@
+write an email to Raju, a Senior Manager II - Finance Technology in Walmart summarrizing the following fact: 
+    -   I was messaged on LinkedIn by a recruiter that your are hiring for a Python position in Dallas, TX on the basis of three monsth contract to hire. 
+    -   The salary he is offering to to low.
+    - Since I have my own corporation if you pay me through my corporation before the position get permanant; I can go for the interview
+
+---------------------
+
+Dear Mr. Raju,
+
+I trust this email finds you well. My name is [Your Name], and I recently received a message on LinkedIn from a recruiter indicating that Walmart is currently hiring for a Python position in Dallas, TX. I understand that the role is initially for a three-month contract with the potential for permanent placement.
+
+I am enthusiastic about the opportunity and eager to contribute my skills to the team. However, upon reviewing the offered salary, I believe there might be room for adjustment to better align with industry standards for my experience and qualifications.
+
+As an alternative solution, I operate my own corporation, and I would be open to being engaged through my corporation for the duration of the contract. This arrangement could provide flexibility for both parties and streamline the hiring process.
+
+I am keen to discuss this further and explore how we can ensure a mutually beneficial arrangement. If it suits your schedule, I would be available for an interview at your earliest convenience to discuss my background, skills, and potential contributions to the team.
+
+Thank you for considering my application, and I look forward to the possibility of working with Walmart's Finance Technology team.
+

@@ -1,6 +1,12 @@
--   [Fundamentals of Finance & Economics for Businesses – Crash Course](https://www.youtube.com/watch?v=EJHPltmAULA)
+### Free Tutorials
 
-Machine learning (ML) has become a vital tool in the financial industry, transforming how financial markets operate, analyze data, and make predictions. It encompasses a wide range of techniques and applications that help market participants make more informed decisions, manage risk, detect fraud, and optimize trading strategies. Let's explore machine learning in financial markets in greater detail:
+-   [Algorithmic Trading Python 2023 - FULL TUTORIAL Beginner](https://www.youtube.com/watch?v=GDMkkmkJigw)
+-   [Fundamentals of Finance & Economics for Businesses – Crash Course](https://www.youtube.com/watch?v=EJHPltmAULA)
+-   [LangChain Explained in 13 Minutes](https://www.youtube.com/watch?v=aywZrzNaKjs)
+
+### Terms and Concepts:
+
+-   Machine learning (ML) has become a vital tool in the financial industry, transforming how financial markets operate, analyze data, and make predictions. It encompasses a wide range of techniques and applications that help market participants make more informed decisions, manage risk, detect fraud, and optimize trading strategies. Let's explore machine learning in financial markets in greater detail:
 
 -   `Data Acquisition and Preprocessing`:
 

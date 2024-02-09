@@ -2,7 +2,7 @@
 
 ---
 
-<details><summary style="font-size:18px;color:Orange;text-align:left">Notes Link</summary>
+<details><summary style="font-size:18px;color:Orange;text-align:left">Documents & Tutorials</summary>
 
 -   [Introduction to Linux – Full Course for Beginners](https://www.youtube.com/watch?v=sWbUDq4S6Y8)
 -   [Learn CentOS](https://www.youtube.com/playlist?list=PLT98CRl2KxKHjHLIHrmmi5FmBGIZ8cNJE)
@@ -17,16 +17,12 @@
 
 <details><summary style="font-size:18px;color:Orange;text-align:left">Terms, Concepts & Helps</summary>
 
--   `man <command_name>` & COMMAND DESCRIPTION SYNTAX:
+-   [`TERMINAL` VS. `BASH` VS. `COMMAND LINE` VS. `PROMPT`](https://www.youtube.com/watch?v=hMSByvFHOro): These terms are often used interchangeably, but they refer to different concepts in the context of computing. Let's clarify each term:
 
-    1. angle brackets for required parameters:
-        - EX: `cp <source1> <dest>`
-    2. square brackets for optional parameters:
-        - EX: `mkdir [-p] <dirname>`
-    3. ellipses for repeated items:
-        - EX: `cp <source1> [source2…] <dest>`
-    4. vertical bars for choice of items:
-        - EX: `netstat {-t| -u}`
+    -   **Shell**: A shell is a command-line interpreter that acts as a user interface to interact with the operating system. It interprets user commands and executes them. Shells can be graphical or text-based. Text-based shells are commonly referred to as `Command-line` Shells. Examples of command-line shells include Bash (Bourne Again SHell), Zsh (Z Shell), and PowerShell (for Windows). Shells provide features such as command execution, script interpretation, variable assignment, and control structures. Users interact with the shell by typing commands, and the shell interprets and executes those commands.
+    -   **Terminal**: A terminal is a program that provides a text-based interface to interact with the shell. It acts as a window into the shell environment. Terminals can be graphical or text-based. Graphical terminals are often terminal emulators embedded in a graphical user interface (GUI). Text-based terminals may be physical terminals or terminal emulators in a text-based environment. The terminal program communicates with the shell, allowing users to input commands and receive the output. In a graphical environment, you may have multiple terminal windows open, each representing a separate session with the shell.
+    -   **Bash**: Bash, short for Bourne Again SHell, is a specific type of shell or command language interpreter. It is a popular shell that is commonly used on Unix-like operating systems, including Linux and macOS. Bash is a powerful and feature-rich shell that provides command-line access to the system.
+    -   **Prompt**: The prompt is the text or symbol displayed by the shell to indicate that it is ready to accept commands. The prompt typically includes information such as the current working directory, the username, the hostname, and other details. Users type commands at the prompt to interact with the system.
 
 -   COMMAND-LINE ARGUMENT:
 
@@ -34,7 +30,7 @@
 
 -   COMMAND-LINE OPTION:
 
-    -   A command-line option or simply option (also known as a flag or switch) refer to the additional arguments or flags that can be passed to a command or script when it is executed. Options follow the command name on the command line, separated by spaces. A space before the first option is required, dir --help (in many versions of Unix) does require the option to be preceded by at least one space (and is case-sensitive).
+    -   A command-line option or simply option (also known as a flag or switch) refer to the additional arguments or flags that can be passed to a command or script when it is executed. Options follow the command name on the command line, separated by spaces. A space before the first option is required
     -   There are two types of options in Bash:
         -   `Short Options`: Short options are single-letter options that are preceded by a single hyphen `-`. For example, in the command `ls -l`, the `-l` is a short option that tells the `ls` command to display the long listing format.
         -   `Long Options`: Long options are more descriptive options that are preceded by a double hyphen `--`. For example, in the command `ls --all`, the `--all` is a long option that is equivalent to the short option `-a` and tells the `ls` command to display all files, including hidden ones.
@@ -45,11 +41,22 @@
 
 -   OPTION CONVENTIONS IN UNIX-LIKE SYSTEMS:
 
-    -   In Unix-like systems, the ASCII hyphen-minus begins options; the new (and GNU) convention is to use two hyphens then a word (e.g. `--create`) to identify the option's use while the old convention (and still available as an option for frequently-used options) is to use one hyphen then one letter (e.g., `-c`); if one hyphen is followed by two or more letters it may mean two options are being specified, or it may mean the second and subsequent letters are a parameter (such as filename or date) for the first option.
+    -   **Single Dash (-) Convention**: In the single dash convention, short options are represented by a single dash followed by a single letter. Multiple short options can be combined into a single string. If an option requires an argument, it is specified immediately after the option letter.
 
--   `TERMINAL` VS. `BASH` VS. `COMMAND LINE` VS. `PROMPT`:
+    -   `$ ls -a -s -r`
+        -   `-a`, `-s`, and `-r` are short options without arguments.
+    -   `$ ls -asr`
+        -   `-asr` is a combination of multiple short options.
+    -   `$ grep -i pattern file.txt`
 
-    -   https://www.youtube.com/watch?v=hMSByvFHOro
+        -   `-i` is a short option that requires an argument (pattern).
+
+    -   **Double Dash (--) Convention**: In the double dash convention, long options are represented by a double dash followed by a descriptive name. Long options are typically more human-readable and often have an equivalent short option. If an option requires an argument, it is specified with an equal sign (=) or a space.
+
+        -   `$ command --option1 --option2=value --output file.txt`
+            -   `--option1` and `--option2` are long options without arguments.
+            -   `--option2=value` is a long option with an argument (value).
+            -   `--output file.txt` is a long option with an argument (file.txt).
 
 -   SOURCE vs EXECUTE:
 
@@ -60,11 +67,22 @@
 
 -   `Utilities` (`External Commands`): Utilities, also known as external commands, are separate programs installed on the system that can be executed from within the Bash shell. These utilities are usually located in directories specified in the PATH environment variable, allowing Bash to find and run them. Examples of utilities include common Unix tools like `ls`, `grep`, `sed`, `awk`, `sort`, and others. Unlike built-in commands, utilities are executed in separate processes from the Bash shell. You can use the which command to determine the path of a utility: `which utility_name`.
 
+-   `man <command_name>` & COMMAND DESCRIPTION SYNTAX:
+
+    1. angle brackets for required parameters:
+        - EX: `cp <source1> <dest>`
+    2. square brackets for optional parameters:
+        - EX: `mkdir [-p] <dirname>`
+    3. ellipses for repeated items:
+        - EX: `cp <source1> [source2 …] <dest>`
+    4. vertical bars for choice of items:
+        - EX: `netstat {-t| -u}`
+
 </details>
 
 ---
 
-<details><summary style="font-size:18px;color:Orange;text-align:left">Configurations</summary>
+<details><summary style="font-size:18px;color:Orange;text-align:left">Shell Configurations</summary>
 
 ### How to set default shell to bash.
 
@@ -72,7 +90,7 @@
 -   `$ chsh -s /bin/bash` → Set the shell to `/bin/bash` for the current user on MacOS only.
 -   `$ usermod -s /bin/bash <username>` → Set the shell to `/bin/bash` for the given user.
 -   `$ exec $SHELL -l` → Reload your shell.
--   `$ `
+-   `$ sudo hostnamectl set-hostname AWSEC2 && /bin/bash` -> Set Host name into 'AWSEC2'
 
 ### Some important files & directories in Linux distributions.
 
@@ -92,6 +110,8 @@
     # /etc/sudoers.d/custom_sudo_file_name
     username ALL=(ALL) NOPASSWD: /path/to/command
     ```
+
+-   `$ cat /etc/group` -> list all the groups.
 
 -   `$ cat /etc/sudoers`
 
@@ -195,6 +215,7 @@
 
     -   `$ ssh user@host` → Connects to host as user
     -   `$ ssh -i ~/.ssh/mos01_to_mos02.pub a.momin@mos02.local`
+    -   `$ ssh A.Momin@mos02.lan`
     -   `$ ssh A.Momin@mos02.local`
     -   `$ ssh farzana@mos02.local`
     -   `$ ssh datanode1 'cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub`
@@ -205,6 +226,7 @@
     -   `$ scp -r /local/directory/ username@to_host:/remote/directory/` → Copy directory from local host to a remote hos SCP example
     -   `$ scp file.txt username@to_host:/remote/directory/` → Copy file from local host to a remote host
     -   `$ scp file.txt rhel:/home/ec2-user` → 'rhel' is node name configured in `~/.ssh/config` file.
+    -   `$ scp rhel:/home/ec2-user/file.txt /local_machine/directory/` → scp from remote machine to local machine
 
 -   **ssh-copy-id:**
 
@@ -237,6 +259,9 @@
     -   `-type f `: find files, not directories (`d`)
     -   `-not -path '*/\.*'` : do not return `.hidden_files`
     -   `sed 's/^\.\///g'` : remove the prepended `./` from the result list
+
+-   `$ find . -type f -name *node_modules -ls -delete`
+    -   Delete all folder/file by the pattern '\*node_modules' recursively.
 
 ---
 
@@ -284,8 +309,8 @@ rsync -avz \                            # run in archival and vervose mode
 
 -   **wget:**
 
-    -   🔥 `$ wget -P ~/Data http://file-to-download.csv` → download `file-to-download.csv` into `~/Data` directory ( '`-P` to prefix directory path)
-    -   `$ wget -O my-file.csv ~/Data http://file-to-download.csv` → download `file-to-download.csv` and save it as `my-file.csv` instead of `file-to-download.csv` into `~/Data`. (`-O` indicates Output)
+    -   `$ wget -O ~/Data/my-file.csv http://file-to-download.csv` → download `file-to-download.csv` and save it as `my-file.csv` instead of `file-to-download.csv` into `~/Data`. (`-O`, Output)
+    -   `$ wget -P ~/Data http://file-to-download.csv` → download `file-to-download.csv` into `~/Data` directory ( '`-P` to prefix directory path)
     -   `$ wget --directory-prefix=~/Data --output-document=my-file.csv http://file-to-download.csv` →
 
 -   [tar](https://linuxhint.com/linux-tar-command/)
@@ -341,7 +366,7 @@ rsync -avz \                            # run in archival and vervose mode
 
 -   [chmod:](https://en.wikipedia.org/wiki/Chmod)
 
-    -   File permission system: `r=4,w=2,x=1` first, second, and third place of 3-digits representation for **Woner**, **Group**, and **Public** respectively
+    -   File permission system: `r=4,w=2,x=1` first, second, and third place of 3-digits representation for **Owner**, **Group**, and **Public** respectively
 
     -   `sudo chmod 664 <file_or_dir_name>`
 
@@ -467,61 +492,19 @@ sudo useradd \
 -   **Group Management:**
 
 -   `$ cat /etc/group` → To view all groups present on the system
--   `$ groups`
+-   `$ getent group` -> list all the groups.
+-   `$ cat /etc/group` -> list all the groups.
+-   `$ groups` -> list all the groups.
 -   `$ groups user_name`
 -   `$ sudo groupadd group_name`
 -   `$ sudo groupdel group_name`
 -   `$ sudo gpasswd -a user_name group_name`
--   `$ groups `
 
 </details>
 
 ---
 
-<details><summary style="font-size:18px;color:Orange;text-align:left">Netowrking </summary>
-
--   What the hell are a TCP and UDP ports?
-
-    -   A port is nothing but a 16-bit number between 0 to 65535.
-    -   For example, TCP port number 22 may be forwarded to the OpenSSH server. Therefore, 22 port number is a way to identify the sshd (OpenSSH server) process.
-
--   Port numbers
-
-    -   The Well Known Ports are those from 0 through 1023.
-    -   The Registered Ports are those from 1024 through 49151.
-    -   The Dynamic and Private Ports are those from 49152 through 65535.
-    -   `HTTP`: Port 80 is the standard port used for unencrypted HTTP (Hypertext Transfer Protocol) traffic.
-    -   `HTTPS`: Port 443 is the default port used for encrypted HTTP traffic using SSL/TLS (Secure Sockets Layer/Transport Layer Security). It is commonly used for secure communication over the web (HTTPS).
-    -   `FTP`: Port 21 is used for FTP (File Transfer Protocol) control traffic. FTP is commonly used for transferring files between systems.
-    -   `SSH`: Port 22 is the default port for SSH (Secure Shell) protocol, which provides secure remote access and administration of systems.
-    -   `SMTP`: Port 25 is used for SMTP (Simple Mail Transfer Protocol), the standard protocol for sending email between servers.
-    -   `DNS`: Port 53 is used for DNS (Domain Name System) services, which translates domain names into IP addresses.
-
-A registered port is a network port assigned by the Internet Assigned Numbers Authority (IANA) and stored in `/etc/services` file.
-
-#### TCP
-
--   TCP (Transmission Control Protocol) is a core protocol of the Internet Protocol Suite, specifically the Transport Layer. It provides reliable, ordered, and error-checked delivery of data packets between applications running on devices connected over an IP network.
-
--   In the context of Linux, TCP is implemented as part of the networking stack in the Linux kernel. It is responsible for establishing and managing connections between networked applications, ensuring the reliable delivery of data, and handling congestion control and flow control mechanisms.
-
--   TCP operates on top of the IP (Internet Protocol) layer and provides a connection-oriented communication model. It breaks data into packets and ensures that they are received in the correct order and without errors. It uses sequence numbers and acknowledgments to provide reliability, and it incorporates mechanisms for congestion control to ensure fair and efficient use of network resources.
-
--   Linux provides various tools and utilities for working with TCP, such as netstat for viewing network connections and tcpdump for capturing and analyzing TCP traffic. Developers and system administrators can also use programming libraries and APIs, such as the socket API, to create TCP-based applications or interact with TCP connections in their scripts or programs.
-
-#### TCP vs UDP:
-
--   TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are two different transport layer protocols used in computer networks. Here are the key differences between TCP and UDP:
--   Connection-Oriented vs Connectionless: TCP is a connection-oriented protocol, which means it establishes a reliable and ordered connection between two devices before data transfer begins. UDP, on the other hand, is connectionless, meaning it does not establish a dedicated connection and simply sends data packets without any guarantee of delivery or order.
--   Reliability: TCP provides reliable data delivery. It ensures that data packets are received in the correct order, without loss, duplication, or errors. TCP uses sequence numbers, acknowledgments, and retransmissions to guarantee reliable delivery. UDP, on the other hand, does not guarantee reliability. It does not have built-in error checking, retransmission, or acknowledgment mechanisms. It is often referred to as a "best-effort" protocol.
--   Ordered vs Unordered Delivery: TCP guarantees the ordered delivery of data packets. It ensures that packets are received in the same order they were sent. UDP does not provide ordering guarantees. Packets may arrive out of order or be dropped, and the receiving application needs to handle this accordingly.
--   Flow Control and Congestion Control: TCP incorporates flow control and congestion control mechanisms to manage the transmission of data. It adjusts the rate of data flow based on network conditions to avoid congestion and ensure fairness. UDP does not provide built-in flow control or congestion control. It simply sends data as quickly as possible without considering network conditions.
--   Header Size: TCP has a larger header size compared to UDP. TCP headers contain additional fields for sequence numbers, acknowledgments, window size, and other control information, making the overall overhead higher. UDP headers are smaller and more lightweight.
--   Application Use Cases: TCP is commonly used for applications that require reliable and ordered delivery of data, such as web browsing, email, file transfer, and database communication. UDP is often used in applications where real-time data delivery and low latency are more important than reliability, such as streaming media, online gaming, VoIP, and DNS.
-
-</details>
-
-<details><summary style="font-size:18px;color:Orange;text-align:left">Service Management & Systemd</summary>
+<details><summary style="font-size:18px;color:Orange;text-align:left">Systemd & Service Management</summary>
 
 <details><summary style="font-size:15px;color:red;">Terminology</summary>
 

@@ -1,4 +1,6 @@
-
+####################################################################
+##################### MY NEOVIM CONFIGURATIONS #####################
+####################################################################
 set path+=** "Enable recursive file find"
 set wildmenu
 set wildignore+=**/.venv/** "Exclude the given diractory from recursive searching for file find command"

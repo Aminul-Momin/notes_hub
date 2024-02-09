@@ -1,3 +1,119 @@
+<details open><summary style="font-size:22px;color:Orange;text-align:left">Linear</summary>
+
+</details>
+
+---
+
+<details open><summary style="font-size:22px;color:Orange;text-align:left">Logistic Regression</summary>
+
+</details>
+
+---
+
+<details open><summary style="font-size:22px;color:Orange;text-align:left">Support Vector Machine (SVM)</summary>
+
+Support Vector Machine (SVM) is a supervised machine learning algorithm used for classification and regression tasks. It is particularly effective in high-dimensional spaces and is widely used for tasks such as image classification, text classification, and regression analysis. Here's a detailed explanation of Support Vector Machines:
+
+1. **Introduction**:
+
+    - SVM was developed by Vladimir Vapnik and his colleagues in the 1990s.
+    - It falls under the category of discriminative classifiers.
+
+2. **Objective**:
+
+    - The primary objective of SVM is to find a hyperplane that best separates data into different classes in feature space.
+
+3. **Key Concepts**:
+
+    - `Hyperplane`:
+        - In a two-dimensional space, a hyperplane is a line that separates the data into different classes.
+        - In higher-dimensional spaces, it becomes a plane.
+    - `Support Vectors`:
+        - Support vectors are the data points that are closest to the decision boundary (hyperplane).
+        - They play a crucial role in determining the optimal hyperplane.
+    - `Margin`:
+        - The margin is the distance between the decision boundary and the nearest data point (support vector).
+        - SVM aims to maximize this margin.
+    - `Kernel Trick`:
+        - SVM can efficiently handle non-linearly separable data by using the kernel trick.
+        - Common kernels include linear, polynomial, and radial basis function (RBF) kernels.
+
+4. **Classification**:
+
+    - `Linear SVM`:
+
+        - For linearly separable data, SVM finds the optimal hyperplane that maximizes the margin.
+        - The decision function is based on the sign of the dot product between the input vector and the weight vector.
+
+    - `Soft Margin SVM`:
+
+        - In cases where data is not perfectly separable, SVM introduces a penalty term (C) to allow for some misclassification.
+
+    - `Multi-Class Classification`:
+        - SVM can be extended for multi-class classification using methods like one-vs-one or one-vs-all.
+
+5. **Regression**:
+
+    SVM can be used for regression tasks by predicting a continuous output instead of discrete classes.
+
+6. **Optimization**:
+
+    - The optimization problem involves finding the weights and bias that define the hyperplane.
+    - The objective is to maximize the margin while minimizing the classification error.
+
+7. **Regularization (C parameter)**:
+
+    - The regularization parameter (C) controls the trade-off between maximizing the margin and minimizing the classification error.
+    - Larger values of C result in a smaller margin but fewer misclassifications.
+
+8. **Kernel Functions: Commonly used kernels include**:
+
+    - Linear Kernel
+    - Polynomial Kernel
+    - RBF (Radial Basis Function) Kernel
+
+9. **Advantages**:
+
+    - Effective in high-dimensional spaces.
+    - Versatile and can handle non-linear data.
+
+10. **Challenges**:
+
+    - Choice of kernel and hyperparameter tuning can be critical.
+    - Sensitivity to outliers.
+
+11. **Applications**:
+
+    - Text classification, image classification, handwriting recognition, face detection, etc.
+
+12. **Summary**:
+
+    - SVM aims to find a hyperplane that best separates data into different classes with a maximum margin.
+    - It can handle non-linearly separable data using the kernel trick.
+    - The regularization parameter (C) controls the trade-off between margin maximization and classification error minimization.
+
+</details>
+
+---
+
+<details open><summary style="font-size:22px;color:Orange;text-align:left">Decission Tree</summary>
+
+</details>
+
+---
+
+<details open><summary style="font-size:22px;color:Orange;text-align:left">Random Forest</summary>
+
+</details>
+
+---
+
+<details open><summary style="font-size:22px;color:Orange;text-align:left">Support Vector Machine (SVM)</summary>
+
+</details>
+
+---
+
 ### Generative AI
 
 Generative AI, short for Generative Artificial Intelligence, refers to a category of artificial intelligence systems and techniques that are designed to generate new, original content or data that is similar to, or resembles, human-created content. These systems have the ability to produce text, images, audio, or even other types of data, often based on patterns and structures they have learned from large datasets during training.

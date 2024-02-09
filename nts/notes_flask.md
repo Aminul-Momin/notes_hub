@@ -20,6 +20,122 @@
 
 ---
 
+<details><summary style="font-size:18px;color:Orange;text-align:left">Flask Terms & Concepts</summary>
+
+-   `Web Application`:
+
+    -   A web application is a software application that runs on a web server and is accessed through a web browser.
+
+-   `Flask`:
+
+    -   Flask is a micro-framework for web development in Python.
+    -   It is lightweight, modular, and easy to use, providing the essentials for building web applications.
+
+-   `Micro-framework`:
+
+    -   A micro-framework is a minimalistic web framework that focuses on simplicity and allows developers to choose additional components as needed.
+
+-   `Routing`:
+
+    -   Routing in Flask refers to defining URL patterns and associating them with specific functions (views) that handle requests.
+
+-   `View Function`:
+
+    -   A view function is a Python function that handles a specific URL route.
+    -   It receives the request, processes it, and returns a response.
+
+-   `Template Engine (Jinja2)`:
+
+    -   Flask uses the Jinja2 template engine to render dynamic content in HTML.
+    -   Templates allow embedding Python code within HTML files to generate dynamic content.
+
+-   `HTTP Methods`:
+
+        -   Flask supports common HTTP methods like GET, POST, PUT, and DELETE.
+
+    View functions can be decorated with @app.route to specify the supported methods.
+
+-   `Request and Response Objects`:
+
+    -   Flask provides request and response objects to handle incoming requests and generate appropriate responses.
+    -   Request object contains data from the client, while the response object is used to send data back to the client.
+
+-   `URL Building`:
+
+    -   Flask provides a url_for function to dynamically build URLs based on view function names and arguments.
+
+-   `Middleware`:
+
+    -   Middleware in Flask refers to components that can process requests and responses globally before they reach the view function.
+    -   Examples include authentication and logging middleware.
+    -   In Flask, middleware functionality is typically implemented using "before_request" and "after_request" hooks. These hooks allow you to execute code before and after each request is processed. While Flask doesn't have a middleware system built-in like some larger frameworks, these hooks provide a flexible way to achieve similar functionality.
+
+        ```python
+        from flask import Flask, request
+
+        app = Flask(__name__)
+
+        # Define a simple middleware function
+        def simple_middleware():
+            # Code to run before each request
+            print("Middleware: Request received")
+
+            # You can also access request-specific information
+            print("Middleware: Path requested -", request.path)
+
+        # Register the middleware function to run before each request
+        app.before_request(simple_middleware)
+
+        # Define a route
+        @app.route('/')
+        def hello():
+            return 'Hello, World!'
+
+        # Run the application
+        if __name__ == '__main__':
+            app.run(debug=True)
+        ```
+
+-   `Session`:
+
+    -   Flask allows the storage of user-specific information across requests using session variables.
+    -   Session data is stored on the server or can be configured to use client-side storage.
+
+-   `Flask Extensions`:
+
+    -   Flask extensions are additional libraries that enhance the functionality of Flask.
+    -   Examples include Flask-SQLAlchemy for database integration and Flask-WTF for form handling.
+
+-   `Blueprints`:
+
+    -   Blueprints in Flask are used to organize and modularize applications.
+    -   They allow breaking down a large application into smaller, reusable components.
+
+-   `Middleware`:
+
+    -   Middleware in Flask refers to components that can process requests and responses globally before they reach the view function.
+    -   Examples include authentication and logging middleware.
+
+-   `Contexts (Request and App Context)`:
+
+    -   Flask provides request and application contexts to manage the state during a request.
+    -   The request context holds information about the current request, while the app context manages the application state.
+
+-   `Werkzeug`:
+
+    -   Werkzeug is a utility library that Flask is built on.
+    -   It provides tools for handling HTTP, routing, and other web-related tasks.
+
+-   `Debugging and Development Server`:
+
+    -   Flask includes a built-in development server for testing and debugging.
+
+In production, a more robust server like Gunicorn or uWSGI is recommended.
+
+</details>
+
+---
+
 <details><summary style="font-size:18px;color:Orange;text-align:left">request Objects</summary>
 
 -   [Doc: Request](https://flask.palletsprojects.com/en/2.3.x/api/#incoming-request-data)

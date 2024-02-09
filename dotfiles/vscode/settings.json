@@ -97,19 +97,10 @@
     "printcode.tabSize": 4,
     "printcode.fontSize": 10,
     "printcode.paperSize": "letter",
-    // "python.pythonPath": "/.venv/bin/python3",
-    // "python.pythonPath": "/usr/local/bin/python3",
-    "python.linting.flake8Enabled": true,
-    // "python.linting.pydocstyleEnabled": true,
-    "python.linting.flake8Args": [
-        "--ignore=E265, E305, E302, E501, E401, F401, E701, W293, E226, E251, E266, E731, E303, E242, F405, E402, F403"
-    ],
+    // "python.linting.flake8Args": ["--ignore=E265, E305, E302, E501, E401, F401, E701, W293, E226, E251, E266, E731, E303, E242, F405, E402, F403"],
     "python.analysis.typeCheckingMode": "off",
     "python.languageServer": "Pylance",
     "extensions.ignoreRecommendations": false,
-    "bracket-pair-colorizer-2.activeScopeCSS": ["borderStyle : solid","borderWidth : 3px","borderColor : {color}","opacity: 0.5"],
-    "bracket-pair-colorizer-2.colors": ["#FF9900", "FireBrick", "Tomato", "DodgerBlue", "DeepPink", "Orchid"],
-    "bracket-pair-colorizer-2.depreciation-notice": false,
     "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.folders.color": "#4169E1",
     "material-icon-theme.activeIconPack": "react_redux",
@@ -137,8 +128,8 @@
     "git.openRepositoryInParentFolders": "never",
     "chatgpt.gpt3.apiKey": "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",
     "markdown.extension.toc.omittedFromToc": {},
-    "markdown-preview-enhanced.previewTheme": "monokai.css",
-    "markdown-preview-enhanced.revealjsTheme": "simple.css",
+    "markdown-preview-enhanced.previewTheme": "atom-dark.css",
+    "markdown-preview-enhanced.revealjsTheme": "blood.css",
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -146,5 +137,7 @@
         "*.db": "default"
     },
     "explorer.confirmDragAndDrop": false,
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+    "diffEditor.hideUnchangedRegions.enabled": true,
 
 }

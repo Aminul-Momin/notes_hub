@@ -1,14 +1,13 @@
-# Statistics Tutorials
+<h1 style="text-align:center"> Theories of Statistics </h1>
 
 -   [Statistics - A Full University Course on Data Science Basics](https://www.youtube.com/watch?v=xxpc-HPKN28&t=28119s)
 -   []()
--   []()
 
-# Theories of Statistics
+---
 
-### 1. Terminology and sampling distributions
+<details><summary style="font-size:20px;color:Orange;text-align:left">Terms and Concepts</summary>
 
-### Terminology
+#### Terminology
 
 -   <font color='tomato'>Population:</font> the entire group of interest
 -   <font color='tomato'>Sample:</font> subset of the population
@@ -18,13 +17,13 @@
 -   <font color='tomato'>Sampling variability:</font> the statistics of different samples of a population will differ somewhat
 -   Sample skewness + fundamental randomness
 -   <font color='tomato'>Sampling distribution</font> is the distribution of a statistic across an infinite number of samples
--   <img src="/assets/statistics/inf_notation.png" width=300 align="middle">
+-   <center><img src="/assets/statistics/inf_notation.png" width=300 align="middle"></center>
 
-### Law of Large Number
+#### Law of Large Number
 
 The law of large numbers (LLN) is a theorem that describes the result of performing the same experiment a large number of times. According to the law, the average of the results obtained from a large number of trials should be close to the expected value and will tend to become closer to the expected value as more trials are performed
 
-### Regression to the Mean:
+#### Regression to the Mean:
 
 -   Following an extreme random event, the next random event is likely to be less extreme
 -   If you spin a fair roulette wheel 10 times and get 100% reds, that is an extreme event (probability = 1/1024)
@@ -33,11 +32,11 @@ The law of large numbers (LLN) is a theorem that describes the result of perform
 -   So, if you look at the average of the 20 spins, it will be
     closer to the expected mean of 50% reds than to the 100% of the first 10 spins
 
-### Confidence Levels and Intervals :
+#### Confidence Levels and Intervals :
 
 -   Instead of estimating an unknown parameter by a single value (e.g., the mean of a set of trials), a confidence interval provides a range that is likely to contain the unknown value and a confidence that the unknown value lays within that range.
 
-### Empirical Rule:
+#### Empirical Rule:
 
 -   Under the assumptions below
     -   ~68% of data within one standard deviation of mean
@@ -77,7 +76,7 @@ verify_empirical(3)
     	Fraction within 1.96 std = 0.95
     	Fraction within 3 std = 0.9973
 
-### Stratified Sampling :
+#### Stratified Sampling :
 
 -   When there are small subgroups that should be represented
 -   When it is important that subgroups be represented proportionally to their size in the population
@@ -85,7 +84,7 @@ verify_empirical(3)
     -   Variability of subgroups less than of entire population
 -   Requires care to do properly
 
-### Central Limit Therom (Given suficiently large sample):
+#### Central Limit Therom (Given suficiently large sample):
 
 As long as adequately large samples and adequately large number of samples are used from a population, the distribution of the sample mean will be normally distributed.
 
@@ -102,7 +101,7 @@ As long as adequately large samples and adequately large number of samples are u
 2. This Normal Distribution will have a mean close to the mean of the population.
 3. The variance of the sample means will be close to the variance of the population divided by the sample size.
 
-### [Covariance](https://en.wikipedia.org/wiki/Covariance):
+#### [Covariance](https://en.wikipedia.org/wiki/Covariance):
 
 -   `Definition`: `Covariance` is a statistical concept that measures the degree to which two variables change together. It indicates whether an increase in one variable is associated with an increase or decrease in another variable. In the context of data analysis, covariance helps us understand the relationship between two sets of data points and whether they tend to move in the same direction or in opposite directions.
 
@@ -164,7 +163,7 @@ $
 
 ```
 
-### Correlation:
+#### Correlation:
 
 -   `Definition`: Correlation is a statistical measure that quantifies the strength and direction of the linear relationship between two variables. It helps us understand how changes in one variable are associated with changes in another variable.
 -   `Range`: Correlation values range from `-1` to `1`.
@@ -177,7 +176,7 @@ $
     -   `Zero Correlation`: A correlation close to 0 indicates no linear relationship between the variables.
 -   `Correlation Coefficient`: The correlation coefficient, denoted by `r`, is the numerical value that represents the correlation between two variables. It provides a quantitative measure of the strength and direction of the relationship.
 
-#### [Pearson Correlation](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)
+##### [Pearson Correlation](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)
 
 **Pearson's Correlation Coefficient:**
 
@@ -225,48 +224,50 @@ $\Large \operatorname{corr}(\mathbf{X})
 
 -   Each element on the principal diagonal of a correlation matrix is the correlation of a random variable with itself, which always equals 1. Each off-diagonal element is between −1 and +1 inclusive.
 
-#### [Spearsman Correlation](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient):
+##### [Spearsman Correlation](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient):
 
 -   The Spearman correlation coefficient is defined as the **Pearson correlation coefficient** between the rank variables.
 
 -   For a sample of size `n`, the `n` raw scores $X_i, Y_i$ are converted to ranks $\operatorname{R}({X_i}), \operatorname{R}({Y_i})$, and $r_s$ is computed as
 
-$$
-\Large r_s =
- \rho_{\operatorname{R}(X),\operatorname{R}(Y)} =
- \frac{\operatorname{cov}(\operatorname{R}(X), \operatorname{R}(Y))}
-      {\sigma_{\operatorname{R}(X)} \sigma_{\operatorname{R}(Y)}}
-$$
+-   $$
+    \Large r_s =
+     \rho_{\operatorname{R}(X),\operatorname{R}(Y)} =
+     \frac{\operatorname{cov}(\operatorname{R}(X), \operatorname{R}(Y))}
+          {\sigma_{\operatorname{R}(X)} \sigma_{\operatorname{R}(Y)}}
+    $$
 
-where,
+    > where,
+    >
+    > -   $\rho$ denotes the usual Pearson correlation coefficient, but applied to the rank variables
+    > -   $\operatorname{cov}(\operatorname{R}(X), \operatorname{R}(Y))$ is the covariance of the rank variables
+    > -   $\sigma_{\operatorname{R}(X)}$ and $\sigma_{\operatorname{R}(Y)}$ are the standard deviations of the rank variables.
+    > -   Only if all `n` ranks are **distinct integers**, it can be computed using the popular formula
 
--   $\rho$ denotes the usual Pearson correlation coefficient, but applied to the rank variables
--   $\operatorname{cov}(\operatorname{R}(X), \operatorname{R}(Y))$ is the covariance of the rank variables
--   $\sigma_{\operatorname{R}(X)}$ and $\sigma_{\operatorname{R}(Y)}$ are the standard deviations of the rank variables.
--   Only if all `n` ranks are **distinct integers**, it can be computed using the popular formula
+-   $$\Large r_s = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}$$
 
-> $\Large r_s = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}$
+    > where,
+    >
+    > -   $d_i = \operatorname{R}(X_i) - \operatorname{R}(Y_i)$ is the difference between the two ranks of each observation,
+    > -   `n` is the number of observations.
 
-> where,
->
-> -   $d_i = \operatorname{R}(X_i) - \operatorname{R}(Y_i)$ is the difference between the two ranks of each observation,
-> -   `n` is the number of observations.
+-   [Example](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient#Example)
 
-##### [Example](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient#Example)
-
-### Common methods to estimate parameters from observations
+#### Common methods to estimate parameters from observations
 
 -   [Maximum Likelihood Estimation](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation)
 -   [Method of Moments Estimation](<https://en.wikipedia.org/wiki/Method_of_moments_(statistics)>)
 -   [Bayesian Estimation](https://en.wikipedia.org/wiki/Bayes_estimator)
 
+</details>
+
+---
+
 ### Bootstrapping
 
 Bootstrapping is sampling with replacement. No more data needed to gain a better understanding of the parameter.
 
-### 2. Confidence interval and hypothesis testing
-
-### 2.1. Confidence interval
+#### Confidence interval
 
 -   Interpretation
 
@@ -285,7 +286,7 @@ Bootstrapping is sampling with replacement. No more data needed to gain a better
 
     We are 95% confident that the mean height of all coffee drinkers is between 68.06 and 68.97.
 
-### 2.2. Standard error of the mean - a measure of confidence
+#### Standard error of the mean - a measure of confidence
 
 -   SE = $σ/√n$
 -   s: standard deviation of sample
@@ -298,7 +299,7 @@ Bootstrapping is sampling with replacement. No more data needed to gain a better
 
     comparing error bars could infer whether samples were drawn from the same population
 
-### 2.3. Hypothesis testing
+#### Hypothesis testing
 
 **Hypothesis testing:** Assessing evidence provided by the data in favor of or against each hypothesis about the population. To learn more about the traditional methods, see the documentation here on the [Stat Trek site](https://stattrek.com/hypothesis-test/hypothesis-testing.aspx) on the corresponding hypothesis tests.
 
@@ -309,20 +310,22 @@ Bootstrapping is sampling with replacement. No more data needed to gain a better
     - Significance level of a test: $\alpha=0.05$
     - **p-value** is also called **type one error rate** = the probability we would be wrong in rejecting null hypothesis
     - Probability value **p-value < 0.05**: more than 95% likely that the association of interest would be present following repeated samples drawn from the population (aka., sampling distribution). <br>
-      <img src="/assets/statistics/bivariate_stat_tools.png" width=400>
+          <center><img src="/assets/statistics/bivariate_stat_tools.png" width=400></center>
 4. Draw conclusions
     - If p-value < $\alpha$: the data provide significant evidence against the null hypothesis, so we reject the null hypothesis and accept the alternative hypothesis.
     - If p-value > $\alpha$: the data do not provide enough evidence to reject the null hypothesis; the data do not provide enough evidence to accept the alternative hypothesis.
 
-### 2.4. Statistical vs. practical significance
+#### Statistical vs. practical significance
 
 -   Using confidence intervals and hypothesis testing, you are able to provide **statistical significance** in making decisions.
 
 -   However, it is also important to take into consideration **practical significance** in making decisions. Practical significance takes into consideration other factors of your situation that might not be considered directly in the results of your hypothesis test or confidence interval. Constraints like **space, time, or money** are important in business decisions. However, they might not be accounted for directly in a statistical test.
 
-### 3. Bivariate statistical tools
+---
 
-### 3.1. Analysis of Variance (ANOVA)
+### Bivariate statistical tools
+
+#### Analysis of Variance (ANOVA)
 
 Examine differences in the mean response variable for each category of our explanatory variable. E.g. Are any of the treatments significantly different than the rest?
 
@@ -374,7 +377,7 @@ Examine differences in the mean response variable for each category of our expla
 
         Cannot compare each pair one-by-one due to the increase in the Type 1 error rate called the family-wise error rate, the error rate for the group of pair comparison.
 
-          <img src="/assets/statistics/family_wise_error.png" width=400>
+          <center><img src="/assets/statistics/family_wise_error.png" width=400></center>
 
         Use one of the post hoc tests that are designed to evaluate the difference between pairs of means while protecting against inflation of Type 1 errors:
 
@@ -399,7 +402,7 @@ Examine differences in the mean response variable for each category of our expla
 
     [Blog post](https://www.tumblr.com/blog/rfbds)
 
-### 3.2. Chi-Square test of independence
+#### Chi-Square test of independence
 
 Which of the 2 categorical variables plays the role of the explanatory variable and then calculating the conditional percentages separately.
 
@@ -421,9 +424,9 @@ Whether there is a significant difference between the expected frequencies and t
 
 -   $\chi^2$ test of independence
 
-      <img src="/assets/statistics/chi_suqare.png" width=400>
-      <img src="/assets/statistics/chi_suqare_table.png" width=600>
-      <img src="/assets/statistics/chi_suqare_txt.png" width=400>
+      <center><img src="/assets/statistics/chi_suqare.png" width=400></center>
+      <center><img src="/assets/statistics/chi_suqare_table.png" width=600></center>
+      <center><img src="/assets/statistics/chi_suqare_txt.png" width=400></center>
 
     The p-value of the $\chi^2$ test of independence is the probability of getting counts like those observed, assuming that the 2 variables are not related.
 
@@ -486,7 +489,7 @@ Whether there is a significant difference between the expected frequencies and t
         Bonferroni Adjusted p-value = $\frac{0.05}{\#\ comparisons}$ <br>
         Run $\chi^2$ test of independence for each paired comparison
 
-          <img src="/assets/statistics/chi_suqare_post_hoc.png" width=400>
+          <center><img src="/assets/statistics/chi_suqare_post_hoc.png" width=400></center>
 
         ```python
         recode2 = {1: 1, 2.5: 2.5}
@@ -526,7 +529,7 @@ Whether there is a significant difference between the expected frequencies and t
 
     [Blog post](https://www.tumblr.com/blog/rccma)
 
-### 3.3. Pearson Correlation
+#### Pearson Correlation
 
 Pearson correlation coefficient (r) measures a linear relationship between two quantitative variables.
 
@@ -574,7 +577,7 @@ Correlation ignores any other type of relationship no matter how strong.
 
     [Blog post](https://www.tumblr.com/blog/scfbid)
 
-### 3.4. Moderation
+#### Moderation
 
 Moderating variable (or moderator) is a third variable that affects the direction and or strength of the relation between the explanatory and response variable.
 
@@ -676,9 +679,11 @@ Moderating variable (or moderator) is a third variable that affects the directio
     print(scat2)
     ```
 
-### 4. The Student's t-test
+---
 
-### 4.1. One Sample T-Test
+### The Student's t-test
+
+#### One Sample T-Test
 
 Compare sample mean to the population mean
 
@@ -695,7 +700,7 @@ Compare sample mean to the population mean
     stats.ttest_1samp(sample, population.mean())
     ```
 
-### 4.2. Independent T-Test
+#### Independent T-Test
 
 Compare the means of 2 independent populations, i.e., how likely that two samples represent the same underlying population
 
@@ -715,21 +720,25 @@ Compare the means of 2 independent populations, i.e., how likely that two sample
     stats.ttest_ind(population1, population2, equal_var=False)
     ```
 
+---
+
+---
+
 ## Non-Parametric Tests
 
 We often use standard hypothesis tests on means of normal distributions to design and analyze experiments. However, it's possible that you will encounter scenarios where you can't rely on only standard tests. This might be due to uncertainty about the true variability of a metric's distribution, a lack of data to assume normality, or wanting to do inference on a statistic that lacks a standard test. It's useful to know about some non-parametric tests, not just as a workaround for cases like this, but also as a second check on your experimental results.
 
 -   (+) The main benefit of non-parametric tests is that they don't rely on many assumptions of the underlying population, and so can be used in a wider range of circumstances compared to standard tests.
 
-### 1. Bootstrapping
+### Bootstrapping
 
-#### 1.1. Method
+#### Method
 
 -   Bootstrapping use resampling of the collected data to make inferences about distributions.
 -   In a standard bootstrap, a bootstrapped sample means drawing points from the original data with replacement until we get as many points as there were in the original data. Essentially, we're treating the original data as the population: without making assumptions about the original population distribution, using the original data as a model of the population is the best that we can do.
 -   Taking a lot of bootstrapped samples allows us to estimate the sampling distribution for various statistics on our original data.
 
-#### 1.2. Pros and Cons
+#### Pros and Cons
 
 -   (+) The bootstrap procedure is fairly simple and straightforward.
 -   (+) Since you don't make assumptions about the distribution of data, it can be applicable for any case you encounter.
@@ -738,7 +747,7 @@ We often use standard hypothesis tests on means of normal distributions to desig
 -   (-) Its output does depend on the data put in. A different sample will produce different intervals, with different accuracies.
 -   (-) Confidence intervals coming from the bootstrap procedure will be optimistic compared to the true state of the world. This is because there will be things that we don't know about the real world that we can't account for, due to not having a parametric model of the world's state. Consider the extreme case of trying to understand the distribution of the maximum value: our confidence interval would never be able to include any value greater than the largest observed value and it makes no sense to have any lower bound below the maximum observation. Intuitively, however, there's a pretty clear possibility for there to be unobserved values that are larger than the one we've observed, especially for skewed data.
 
-#### 1.3. Example
+#### Example
 
 -   Create a 95% confidence interval for the 90th percentile from a dataset of 5000 data points. First of all, we take a bootstrap sample (i.e., draw 5000 points with replacement from the original data), record the 90th percentile, and then repeat this a large number of times, let's say 100 000. From this bunch of bootstrapped 90th percentile estimates, we form our confidence interval by finding the values that capture the central 95% of the estimates (cutting off 2.5% on each tail).
 
@@ -783,15 +792,15 @@ We often use standard hypothesis tests on means of normal distributions to desig
         return (lower_limit, upper_limit)
     ```
 
-### 2. Permutation tests
+### Permutation tests
 
-#### 2.1. Method
+#### Method
 
 -   The permutation test is a resampling-type test used to compare the values on an outcome variable between two or more groups.
 -   In the case of the permutation test, resampling is done on the group labels. The idea here is that, under the null hypothesis, the outcome distribution should be the same for all groups, whether control or experimental. Thus, we can emulate the null by taking all of the data values as a single large group. Applying labels randomly to the data points (while maintaining the original group membership ratios) gives us one simulated outcome from the null.
 -   The rest is similar to the sampling approach used in a standard hypothesis test, except that we haven't specified a reference distribution to sample from – we're sampling directly from the data we've collected. After applying the labels randomly to all the data and recording the outcome statistic many times, we compare our actual, observed statistic against the simulated statistics. A p-value is obtained by seeing how many simulated statistic values are as or more extreme than the one actually observed, and a conclusion is then drawn.
 
-#### 2.2. Example
+#### Example
 
 -   Implement a permutation test to test if the 90th percentile of times is statistically significantly smaller for the experimental group, as compared to the control group.
 
@@ -848,9 +857,9 @@ We often use standard hypothesis tests on means of normal distributions to desig
                       alternative = 'less')
     ```
 
-### 3. Rank-Sum Test (Mann-Whitney)
+### Rank-Sum Test (Mann-Whitney)
 
-#### 3.1. Method
+#### Method
 
 -   The rank-sum test, also known as the Mann-Whitney U test, only uses the collected data to test distributions between groups.
 
@@ -868,7 +877,7 @@ We often use standard hypothesis tests on means of normal distributions to desig
 
 -   There's no resamplng involved; the test is performed only on the data present. The rank-sum test is not a test of any particular statistic, like the mean or median. Instead, it's a test of distributions.
 
-#### 3.2. Example
+#### Example
 
 -   Code to calculate rank-sum test p-value
 
@@ -925,15 +934,15 @@ We often use standard hypothesis tests on means of normal distributions to desig
                        alternative = 'greater')
     ```
 
-### 4. Sign test
+### Sign test
 
-#### 4.1. Method
+#### Method
 
 -   The sign test only uses the collected data to compute a test result. It only requires that there be _paired values between two groups to compare_, and tests whether one group's values tend to be higher than the other's.
 
 -   In the sign test, we don't care how large differences are between groups, only which group takes a larger value. So comparisons of 0.21 vs. 0.22 and 0.21 vs. 0.31 are both counted equally as a point in favor of the second group. This makes the sign test a fairly weak test, though also a test that can be applied fairly broadly. It's most useful when we have very few observations to draw from and can't make a good assumption of underlying distribution characteristics.
 
-#### 4.2. Example
+#### Example
 
 -   Can use a sign test as an additional check on click rates that have been aggregated on a daily basis.
 

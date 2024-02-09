@@ -165,6 +165,7 @@ Here's a detailed breakdown of regular expressions in Bash:
     -   `egrep` (or grep -E): Enables extended regular expression syntax.
 
 </details>
+
 ### Meta-Characters:
 
 In Bash scripting, meta-characters are special characters that have specific meanings or functions within the shell. These characters are used to control the interpretation or behavior of commands and can be used for tasks such as redirection, expansion, quoting, and more. Here are some commonly used meta-characters in Bash:

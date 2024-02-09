@@ -1,3 +1,71 @@
+-   `$ diskutil list`
+-   `$ `
+-   `$ `
+-   `$ `
+
+---
+
+<details><summary style="font-size:22px;color:Orange;text-align:left">Configure Mac Bash Script</summary>
+
+```bash
+# Increase Trackpad Tracking Speed
+defaults write -g com.apple.trackpad.scaling 2.5
+# Reset to Default Trackpad Tracking Speed:
+defaults delete -g com.apple.trackpad.scaling
+# After running the commands, you may need to log out and log back in or restart your Mac for the changes to take effect. Alternatively, you can restart the SystemUIServer process using the following command:
+killall SystemUIServer
+```
+
+</details>
+
+---
+
+<details><summary style="font-size:22px;color:Orange;text-align:left">Configure Terminal</summary>
+
+**Customize Terminal Appearance**:
+
+-   You can use the tput command to change text attributes like color and style. For example, to set the terminal text color to red:
+
+    -   `$ tput setaf 1`
+
+-   To reset the color:
+
+    -   `$ tput sgr0`
+
+**Change Terminal Theme**:
+
+-   You can change the terminal theme using profiles. For example, to set the default theme, use:
+
+    -   `$ defaults write com.apple.Terminal "Default Window Settings" -string "Pro"`
+
+        -   Replace "Pro" with the name of your preferred theme.
+
+**Enable/Disable Terminal Bell**:
+
+-   To disable the terminal bell sound, you can use the set command. For example:
+
+    -   `$ set bell-style none`
+
+        -   Add this to your shell configuration file to make it permanent.
+
+**Customize Tab Title**:
+
+-   You can customize the tab title using escape sequences. For example:
+
+    -   `$ echo -e "\033];Custom Title\007"`
+
+        -   This changes the tab title to "Custom Title."
+
+**Modify Terminal Preferences**:
+
+-   You can use the defaults command to modify Terminal preferences. For example, to enable the "Use option as meta key" option:
+
+    -   `$ defaults write com.apple.Terminal "OptionIsMeta" -bool true`
+
+Remember to restart your terminal or open a new terminal window for changes to take effect. Additionally, always back up your configuration files before making significant changes.
+
+</details>
+
 ### Termianl:
 
 -   `$ less /var/log/system.log`
@@ -6,6 +74,12 @@
 
 -   `$ cat /etc/shells.` → List available shells by typing
 -   `$ chsh -s /bin/bash` → update your account to use bash run
+
+#### Configure Screenshoots App
+
+-   `$ defaults read com.apple.screencapture location` -> To check the current location where screenshots are being saved
+-   `$ defaults write com.apple.screencapture location ~/Desktop/screenshots` -> Change Default Screenshot Location
+-   `$ defaults write com.apple.screencapture type jpg` -> Change Screenshot File Format
 
 #### Usefull Terminal Commands
 
@@ -33,6 +107,16 @@ Homebrew is a popular package manager for macOS. It simplifies the installation 
 -   `/usr/local/Cellar` is the directory where Homebrew stores the source code or binary files for command-line utilities and other software packages that it installs. This includes packages that are installed using the brew command, as well as some packages that are installed using Homebrew Cask, such as fonts or plugins for command-line tools.
 -   `/usr/local/Caskroom`, on the other hand, is the directory where Homebrew Cask stores the binary applications that it installs. This includes popular desktop applications like web browsers, text editors, and media players.
 -   []()
+
+#### How to ssh into another mac in the same network:
+
+-   Enable Remote Login (SSH) On the Target Mac:
+    -   Click: "System Preferences" -> "Sharing." -> "Remote Login"
+
+#### how to share a mac screen to another mac in the same network
+
+-   Enable Screen Sharing On the Target Mac:
+    -   Click: "System Preferences" -> "Sharing" -> Select: "Screen Sharing" -> Click: "Computer Settings"
 
 #### How to `search`/`install`/`run`/`use` and `stop` a service through Homebrew
 

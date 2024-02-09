@@ -1,7 +1,5 @@
 <details><summary style="font-size:25px;color:Orange;text-align:left"> Theory: RDBMS </summary>
 
-## Useful Links and Symbols
-
 -   𝑳𝒊𝒔𝒕 𝒐𝒇 𝐔𝐬𝐞𝐟𝐮𝐥𝐥 𝑺𝒚𝒎𝒃𝒐𝒍𝒔: ⌘ ⌥ + ⌃ + ⤶ ⇧  ⤶ ⬋ ↩︎ ↲ ↵ ↫ ♥ ★ 🎾 &
 -   [Learn PostgreSQL Tutorial - Full Course for Beginners](https://www.youtube.com/watch?v=qw--VYLpxG4&t=1615s)
 -   [SQL Tutorial - Full Database Course for Beginners](https://www.youtube.com/watch?v=HXV3zeQKqGY&t=4269s)
@@ -31,7 +29,6 @@
 ##### LOGIN & LOGOUT
 
 -   `$ mysql -u root -p`
--   [Useful Links and Symbols](#useful-links-and-symbols) - [LOGIN \& LOGOUT](#login--logout) - [PRIMARYLY USEFULL MYSQL COMMAND](#primaryly-usefull-mysql-command) - [ADMINISTRATIVE OPERATIONS](#administrative-operations) - [ALTER](#alter) - [PRIVILEGES](#privileges) - [UNINSTAL MYSQL](#uninstal-mysql) - [How to `search`/`install`/`run`/`start` and `stop` PostgreSQL through Homebrew.](#how-to-searchinstallrunstart-and-stop-postgresql-through-homebrew) - [Connect/Login:](#connectlogin) - [Usefull Commands:](#usefull-commands) - [PGAdmin](#pgadmin)
 
     -   to connect to mysql server as 'root' user using password.
 
@@ -137,32 +134,99 @@
     -   Rereads the privileges from the grant tables in the mysql system schema
 
 -   `mysql> help ALTER`
+
     -   provide help about `ALTER`
 
-###### ALTER
+-   **ALTER**
 
--   `mysql> help ALTER SERVER`
+    -   `mysql> help ALTER SERVER`
 
-    -   Provide help of the command, 'ALTER' with item 'SERVER'.
+        -   Provide help of the command, 'ALTER' with item 'SERVER'.
 
--   `mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'PASS#...’;`
+    -   `mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'PASS#...’;`
 
-    -   Change password of 'root' user from old password to new password, PASS#...
+        -   Change password of 'root' user from old password to new password, PASS#...
 
--   `mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Shahs#1300';`
+    -   `mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Shahs#1300';`
 
-    -   Update password of root user
+        -   Update password of root user
 
--   `mysql> ALTER USER 'jeffrey'@'localhost' PASSWORD EXPIRE;`
+    -   `mysql> ALTER USER 'jeffrey'@'localhost' PASSWORD EXPIRE;`
 
-    -   To expire an account password manually
+        -   To expire an account password manually
 
--   `mysql> SELECT SIN(PI()/4), (4+1)*5;`
-    -   Performs mathematical operations.
+    -   `mysql> SELECT SIN(PI()/4), (4+1)*5;`
+        -   Performs mathematical operations.
 
-###### PRIVILEGES
+-   **PRIVILEGES**
 
--   `mysql> GRANT ALL ON interview_questions.* TO 'A.Momin'@'localhost';`
+    -   `mysql> GRANT ALL ON interview_questions.* TO 'A.Momin'@'localhost';`
+
+##### Role Based Access Control
+
+MySQL does not have built-in roles like some other database management systems, but you can simulate Role-Based Access Control (RBAC) using a combination of user accounts and privileges. Here's a demonstration of how you can implement RBAC-like access control in MySQL:
+
+-   **Step 1**: Create Users
+
+    ```sql
+    CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin_password';
+    CREATE USER 'editor'@'localhost' IDENTIFIED BY 'editor_password';
+    CREATE USER 'viewer'@'localhost' IDENTIFIED BY 'viewer_password';
+    ```
+
+-   **Step 2**: Create a Database and Grant Access
+
+    ```sql
+    CREATE DATABASE mydatabase;
+    Grant different privileges to each user based on their role:
+    ```
+
+    ```sql
+    -- Admin has all privileges on mydatabase
+    GRANT ALL PRIVILEGES ON mydatabase.* TO 'admin'@'localhost';
+
+    -- Editor can insert and update, but not delete
+    GRANT INSERT, UPDATE ON mydatabase.* TO 'editor'@'localhost';
+
+    -- Viewer has read-only access
+    GRANT SELECT ON mydatabase.* TO 'viewer'@'localhost';
+    ```
+
+-   **Step 3**: View User Privileges
+
+    -   You can check the privileges assigned to each user:
+
+    ```sql
+    SHOW GRANTS FOR 'admin'@'localhost';
+    SHOW GRANTS FOR 'editor'@'localhost';
+    SHOW GRANTS FOR 'viewer'@'localhost';
+    ```
+
+-   **Step 4**: Test the Setup
+
+    -   Log in as each user and test their access:
+
+    ```bash
+    mysql -u admin -p
+    mysql -u editor -p
+    mysql -u viewer -p
+    ```
+
+-   **Step 5**: Revoke Privileges if Needed
+
+    -   If you need to change a user's privileges, you can use the REVOKE statement:
+
+    ```sql
+    REVOKE DELETE ON mydatabase.* FROM 'editor'@'localhost';
+    ```
+
+-   **Step 6**: Remove Users
+
+    ```sql
+    DROP USER 'admin'@'localhost';
+    DROP USER 'editor'@'localhost';
+    DROP USER 'viewer'@'localhost';
+    ```
 
 ##### UNINSTAL MYSQL
 
@@ -231,19 +295,19 @@
 -   `$ psql -h localhost -p 5432 -U am am`
 -   `DBName-# \c database_name` → Connect to the given database from the current database (DBName).
 
-    -   Connection options:
-        -   `-d, --dbname=DBNAME`
-            -   database name to connect
-        -   `-h, --host=HOSTNAME`
-            -   database server host or socket directory (default: "local socket")
-        -   `-p, --port=PORT`
-            -   database server port (default: "5432")
-        -   `-U, --username=USERNAME`
-            -   database user name (default: "am")
-        -   `-w, --no-password`
-            -   never prompt for password
-        -   `-W, --password`
-            -   force password prompt (should happen automatically)
+-   Connection options:
+    -   `-d, --dbname=DBNAME`
+        -   database name to connect
+    -   `-h, --host=HOSTNAME`
+        -   database server host or socket directory (default: "local socket")
+    -   `-p, --port=PORT`
+        -   database server port (default: "5432")
+    -   `-U, --username=USERNAME`
+        -   database user name (default: "am")
+    -   `-w, --no-password`
+        -   never prompt for password
+    -   `-W, --password`
+        -   force password prompt (should happen automatically)
 
 ```yml
 -   User: am
@@ -302,69 +366,97 @@
 
 ---
 
+<details><summary style="font-size:20px;color:Red;text-align:left"> SQLite </summary>
+
+-   How to execute SQL script
+
+    -   `$ sqlite3 your_database_name.db`
+    -   `$ .read your_script_file.sql`
+    -   `$ .exit`
+    -   `$ `
+
+-   How to export data from 'sqlite' database
+
+    -   `$ sqlite3 db.sqlite`
+    -   `sqlite3> .mode csv`
+    -   `sqlite3> .output /path/to/output/file_name.csv`
+    -   `sqlite3> .output student_data.csv`
+    -   `sqlite3> SELECT * FROM table_name;`
+    -   `sqlite3> SELECT * FROM student_student;`
+
+-   How to import data from csv file to 'sqlite' database
+
+    -   `$ sqlite3 db.sqlite`
+    -   `sqlite3> .mode csv`
+    -   `sqlite3> .import /path/to/csv/file_name.csv table_name`
+    -   `sqlite3> .import student_data.csv student_student`
+    -   `sqlite3> SELECT * FROM table_name;`
+
+</details>
+
+---
+
 <details><summary style="font-size:25px;color:Orange;text-align:left"> NoSQL </summary>
 
 -   [NoSQL Database Tutorial – Full Course for Beginners](https://www.youtube.com/watch?v=xh4gy1lbL2k&t=3220s)
 
-### Terms and Concepts:
-
 -   NoSQL (which stands for "not only SQL") is a broad term that refers to a class of databases that use a non-relational data model to store and retrieve data. While traditional relational databases use tables with fixed schemas and structured data, NoSQL databases allow for more flexible and dynamic data models, often using key-value pairs, document-based storage, or graph-based models.
 -   NoSQL (Not Only SQL) databases have gained popularity in recent years due to their ability to handle large amounts of unstructured and semi-structured data that traditional relational databases struggle with. It offers many advantages over traditional relational databases, especially for modern applications that require high scalability, flexibility, and performance.
 
--   Here are some of the advantages of NoSQL databases:
+##### Here are some of the advantages of NoSQL databases:
 
-    -   `Scalability`: NoSQL databases can easily scale horizontally by adding more nodes to the system, allowing them to handle massive amounts of data and high-traffic applications.
-    -   `Flexibility`: NoSQL databases are designed to handle various types of data, including unstructured and semi-structured data, which makes them a better fit for modern applications.
-    -   `Performance`: NoSQL databases can provide faster read and write speeds than traditional relational databases, especially when dealing with large amounts of data.
-    -   `Cost-effective`: NoSQL databases are typically open source and free to use, which makes them a cost-effective solution for small and large businesses.
-    -   `Availability`: NoSQL databases are designed to handle high availability and fault tolerance, ensuring that applications continue to function even if one or more nodes fail.
-    -   `Easy to use`: NoSQL databases are typically easier to set up and use than traditional relational databases, which require extensive schema design and management.
-    -   `Cloud-native`: NoSQL databases are a good fit for cloud environments, as they can easily scale up and down as needed and are designed to work in distributed environments.
+-   `Scalability`: NoSQL databases can easily scale horizontally by adding more nodes to the system, allowing them to handle massive amounts of data and high-traffic applications.
+-   `Flexibility`: NoSQL databases are designed to handle various types of data, including unstructured and semi-structured data, which makes them a better fit for modern applications.
+-   `Performance`: NoSQL databases can provide faster read and write speeds than traditional relational databases, especially when dealing with large amounts of data.
+-   `Cost-effective`: NoSQL databases are typically open source and free to use, which makes them a cost-effective solution for small and large businesses.
+-   `Availability`: NoSQL databases are designed to handle high availability and fault tolerance, ensuring that applications continue to function even if one or more nodes fail.
+-   `Easy to use`: NoSQL databases are typically easier to set up and use than traditional relational databases, which require extensive schema design and management.
+-   `Cloud-native`: NoSQL databases are a good fit for cloud environments, as they can easily scale up and down as needed and are designed to work in distributed environments.
 
--   Key terms and concepts associated with NoSQL databases:
+##### Key terms and concepts associated with NoSQL databases:
 
-    -   `Document`: A NoSQL document is a data structure that can contain any number of fields, with each field having a name and a value. Documents are often used in document-based NoSQL databases such as MongoDB and Couchbase.
+-   `Document`: A NoSQL document is a data structure that can contain any number of fields, with each field having a name and a value. Documents are often used in document-based NoSQL databases such as MongoDB and Couchbase.
 
-    -   `Key-value store`: A key-value store is a NoSQL database that stores data as a collection of key-value pairs, where each key is unique and the associated value can be any data type. Key-value stores are often used for caching, session management, and real-time data processing.
-    -   `Column family`: A column family is a grouping of related data in a NoSQL database that is stored as columns rather than rows. Column families are often used in column-based NoSQL databases such as Apache Cassandra.
-    -   `Graph database`: A graph database is a NoSQL database that stores data in nodes and edges, where nodes represent entities and edges represent relationships between those entities. Graph databases are often used for social networking, recommendation engines, and fraud detection.
-    -   `CAP theorem`: The CAP theorem states that in a distributed system, it is impossible to simultaneously provide more than two out of three guarantees: consistency, availability, and partition tolerance. NoSQL databases often prioritize availability and partition tolerance over strong consistency.
+-   `Key-value store`: A key-value store is a NoSQL database that stores data as a collection of key-value pairs, where each key is unique and the associated value can be any data type. Key-value stores are often used for caching, session management, and real-time data processing.
+-   `Column family`: A column family is a grouping of related data in a NoSQL database that is stored as columns rather than rows. Column families are often used in column-based NoSQL databases such as Apache Cassandra.
+-   `Graph database`: A graph database is a NoSQL database that stores data in nodes and edges, where nodes represent entities and edges represent relationships between those entities. Graph databases are often used for social networking, recommendation engines, and fraud detection.
+-   `CAP theorem`: The CAP theorem states that in a distributed system, it is impossible to simultaneously provide more than two out of three guarantees: consistency, availability, and partition tolerance. NoSQL databases often prioritize availability and partition tolerance over strong consistency.
 
-        -   `Consistency (C)`:
+    -   `Consistency (C)`:
 
-            -   In a distributed database system, consistency implies that all nodes in the system will have the same data view at the same time. When a write operation is performed and acknowledged to the client, all subsequent read operations from any node will return the most recent write.
-            -   In other words, consistency ensures that the data is always up-to-date and consistent across all nodes.
+        -   In a distributed database system, consistency implies that all nodes in the system will have the same data view at the same time. When a write operation is performed and acknowledged to the client, all subsequent read operations from any node will return the most recent write.
+        -   In other words, consistency ensures that the data is always up-to-date and consistent across all nodes.
 
-        -   `Availability (A)`:
+    -   `Availability (A)`:
 
-            -   Availability means that every request (read or write) to the database receives a response, without guaranteeing that it is the most up-to-date data. An available system doesn't necessarily provide the latest data but ensures that there is no downtime or unavailability in the system.
-            -   It's important to note that "availability" in the CAP theorem refers to the ability of the system to respond to client requests, even if the response is based on potentially outdated data.
+        -   Availability means that every request (read or write) to the database receives a response, without guaranteeing that it is the most up-to-date data. An available system doesn't necessarily provide the latest data but ensures that there is no downtime or unavailability in the system.
+        -   It's important to note that "availability" in the CAP theorem refers to the ability of the system to respond to client requests, even if the response is based on potentially outdated data.
 
-        -   `Partition Tolerance (P)`:
+    -   `Partition Tolerance (P)`:
 
-            -   Partition tolerance means that the database can continue to function even in the presence of network partitions or communication failures between nodes in a distributed system. Network partitions can occur due to network failures or delays, but the system should still operate without complete failure.
-            -   Partition tolerance is essential for distributed systems because network issues are a common occurrence in real-world scenarios.
+        -   Partition tolerance means that the database can continue to function even in the presence of network partitions or communication failures between nodes in a distributed system. Network partitions can occur due to network failures or delays, but the system should still operate without complete failure.
+        -   Partition tolerance is essential for distributed systems because network issues are a common occurrence in real-world scenarios.
 
-        -   The CAP theorem asserts that it's impossible to simultaneously achieve all three of these properties in a distributed database system. You can have any combination of two out of the three:
+    -   The CAP theorem asserts that it's impossible to simultaneously achieve all three of these properties in a distributed database system. You can have any combination of two out of the three:
 
-        -   `CA`: If you prioritize Consistency and Availability (CA), your database will provide strong consistency guarantees, but it may become unavailable in the presence of network partitions. Traditional relational databases often fall into this category.
+    -   `CA`: If you prioritize Consistency and Availability (CA), your database will provide strong consistency guarantees, but it may become unavailable in the presence of network partitions. Traditional relational databases often fall into this category.
 
-        -   `CP`: If you prioritize Consistency and Partition Tolerance (CP), your database will ensure data consistency even in the face of network partitions, but this may come at the cost of availability during partition scenarios. Some distributed databases, like HBase, lean towards CP.
+    -   `CP`: If you prioritize Consistency and Partition Tolerance (CP), your database will ensure data consistency even in the face of network partitions, but this may come at the cost of availability during partition scenarios. Some distributed databases, like HBase, lean towards CP.
 
-        -   `AP`: If you prioritize Availability and Partition Tolerance (AP), your database will always be available to respond to requests, even in the presence of network partitions, but it may not guarantee strong data consistency. Many NoSQL databases, such as Cassandra and Couchbase, aim for AP characteristics.
+    -   `AP`: If you prioritize Availability and Partition Tolerance (AP), your database will always be available to respond to requests, even in the presence of network partitions, but it may not guarantee strong data consistency. Many NoSQL databases, such as Cassandra and Couchbase, aim for AP characteristics.
 
-        -   It's important to understand that the CAP theorem is more of a guideline than a strict rule, and real-world distributed systems often make trade-offs based on specific use cases and requirements. The choice between consistency, availability, and partition tolerance depends on the application's needs and the desired trade-offs in a given distributed database system.
+    -   It's important to understand that the CAP theorem is more of a guideline than a strict rule, and real-world distributed systems often make trade-offs based on specific use cases and requirements. The choice between consistency, availability, and partition tolerance depends on the application's needs and the desired trade-offs in a given distributed database system.
 
-    -   `Sharding`: Sharding is the process of splitting a large dataset across multiple servers, or shards, to improve performance and scalability in a distributed system.
-    -   `MapReduce`: MapReduce is a programming model used for processing large datasets in a distributed system, often used in conjunction with NoSQL databases to perform analytics and data processing.
+-   `Sharding`: Sharding is the process of splitting a large dataset across multiple servers, or shards, to improve performance and scalability in a distributed system.
+-   `MapReduce`: MapReduce is a programming model used for processing large datasets in a distributed system, often used in conjunction with NoSQL databases to perform analytics and data processing.
 
-### Different Types of NoSQL Databases:
+##### Different Types of NoSQL Databases:
 
 NoSQL databases are a diverse group of database management systems that are designed to handle various types of data and use cases. Comparing different types of NoSQL databases can be challenging because each type is optimized for specific scenarios. Here, I'll provide an overview of the main types of NoSQL databases (document-oriented, key-value, column-family, and graph), highlighting their characteristics, strengths, and weaknesses:
 
 -   `Document-Oriented Databases`:
 
-    -   `Examples`: MongoDB, CouchDB, RavenDB
+    -   `Examples`: `MongoDB`, `CouchDB`, `RavenDB`
     -   `Data Model`: Store data in flexible, semi-structured documents (e.g., JSON, BSON, XML).
     -   `Strengths`:
         -   Schema flexibility allows for easy data evolution.
@@ -377,7 +469,7 @@ NoSQL databases are a diverse group of database management systems that are desi
 
 -   `Key-Value Stores`:
 
-    -   `Examples`: Redis, Amazon DynamoDB, Riak
+    -   `Examples`: `Redis`, `Amazon DynamoDB`, `Riak`
     -   `Data Model`: Simple key-value pairs; values can be binary blobs or strings.
     -   `Strengths`:
         -   Extremely fast and scalable for read and write operations.
@@ -389,7 +481,7 @@ NoSQL databases are a diverse group of database management systems that are desi
 
 -   `Column-Family Stores`:
 
-    -   `Examples`: Apache Cassandra, HBase, ScyllaDB
+    -   `Examples`: `Apache Cassandra`, `HBase`, `ScyllaDB`
     -   `Data Model`: Data is organized into column families, similar to tables with rows and columns.
     -   `Strengths`:
         -   Highly scalable and designed for distributed environments.
@@ -402,7 +494,7 @@ NoSQL databases are a diverse group of database management systems that are desi
 
 -   `Graph Databases`:
 
-    -   `Examples`: Neo4j, Amazon Neptune, ArangoDB
+    -   `Examples`: `Neo4j`, `Amazon Neptune`, `ArangoDB`
     -   `Data Model`: Represent data as nodes, relationships, and properties, making it suitable for graph-based data structures.
     -   `Strengths`:
         -   Efficient for complex graph traversals and querying relationships.
@@ -415,7 +507,7 @@ NoSQL databases are a diverse group of database management systems that are desi
 
 -   `Time-Series Databases`:
 
-    -   `Examples`: InfluxDB, OpenTSDB, TimescaleDB
+    -   `Examples`: `InfluxDB`, `OpenTSDB`, `TimescaleDB`
     -   `Data Model`: Designed specifically for time-series data, such as sensor data, logs, and event data.
     -   `Strengths`:
         -   Optimized for high-volume data ingestion and time-based querying.
@@ -441,16 +533,36 @@ Cassandra is a distributed NoSQL database system designed for high availability,
 
 -   `Distributed Database`: Cassandra is a distributed database system, which means it can span multiple nodes (machines) across different data centers. This distribution provides redundancy and high availability.
 -   `Node`: In Cassandra, a node is a single instance of the database running on a machine. Nodes collectively form a cluster.
+    -   Node Ring:
+        -   Nodes in a Cassandra cluster are organized in a ring structure.
+        -   Each node is assigned a token, and the ring structure facilitates data distribution and retrieval.
 -   `Cluster`: A cluster in Cassandra is a group of nodes working together. Data is distributed across nodes in a cluster.
 -   `Keyspace`: A keyspace is a top-level namespace in Cassandra, similar to a database in a relational database system. It defines data replication settings and is used to group related tables.
+    -   A keyspace is the outermost container for data in Cassandra.
+    -   It is similar to a database in the relational database world.
+    -   Keyspaces contain column families (tables).
 -   `Table`: Tables in Cassandra are similar to tables in a relational database but with a flexible schema. Each table consists of rows and columns, and each row is identified by a unique primary key.
+    -   Tables in Cassandra are called column families.
 -   `Column Family`: In earlier versions of Cassandra, data was organized into column families, but this concept has evolved. In modern versions, tables serve the purpose of column families.
+    -   Each column family consists of rows and columns.
+    -   Columns do not need to be predefined; they can be added dynamically.
 -   `Column`: In Cassandra, a column is the basic unit of data storage. Columns are grouped into rows, and each column has a name, value, and a timestamp.
+    -   Columns are basic units of data in Cassandra.
+    -   Columns consist of a column name, a value, and a timestamp.
+    -   Columns are grouped into rows.
 -   `Primary Key`: A primary key is used to uniquely identify rows within a table. In Cassandra, the primary key can consist of one or more columns.
+    -   A primary key uniquely identifies a row in a table.
+    -   In Cassandra, the primary key can be composite, consisting of multiple columns.
 -   `Partition Key`: The partition key is the first part of the primary key. It determines how data is distributed across nodes. All rows with the same partition key are stored together on the same node.
+    -   The partition key is used to distribute data across nodes in the cluster.
+    -   It is part of the primary key and determines the node responsible for storing a particular row.
 -   `Clustering Column`: Clustering columns are part of the primary key but are used to sort data within a partition. They determine the physical storage order of rows within a partition.
 -   `Replication Factor`: Cassandra replicates data across multiple nodes for fault tolerance. The replication factor defines how many copies of data are maintained. It's set at the keyspace level.
+    -   Cassandra replicates data across multiple nodes for fault tolerance and high availability.
+    -   The replication factor determines how many copies of each piece of data are stored.
 -   `Consistency Level`: Cassandra allows you to configure the consistency level for read and write operations. Consistency levels determine how many nodes must acknowledge the operation for it to be considered successful.
+    -   The consistency level determines how many nodes must respond to a read or write operation for it to be considered successful.
+    -   It is configurable based on the desired balance between consistency and availability.
 -   `CAP Theorem`: Cassandra adheres to the CAP theorem, which states that in a distributed system, you can have at most two of the following three properties: Consistency, Availability, and Partition Tolerance. Cassandra prioritizes Availability and Partition Tolerance over strict Consistency.
 -   `Data Modeling`: Cassandra's data model is designed for query-intensive workloads. It's essential to model your data to fit the query patterns you expect.
 -   `Tombstones`: Cassandra uses tombstones to mark data that has been deleted. These tombstones are eventually removed during compaction.
@@ -461,7 +573,8 @@ Cassandra is a distributed NoSQL database system designed for high availability,
 -   `Snitch`: A snitch in Cassandra is responsible for determining the location of nodes in the cluster, which helps in data replication and routing.
 -   `Bloom Filters`: Bloom filters are used in Cassandra to quickly check if a particular row exists in a partition before performing a full read operation.
 -   `Write Path and Read Path`: Cassandra's architecture includes distinct paths for write operations (commit log and memtable) and read operations (SSTables and cache).
--   Cassandra's architecture and concepts can be complex due to its distributed nature. It's crucial to carefully plan your data model and cluster configuration to meet your application's requirements for scalability and fault tolerance. Proper tuning and maintenance are also essential for optimal Cassandra performance.
+
+Cassandra's architecture and concepts can be complex due to its distributed nature. It's crucial to carefully plan your data model and cluster configuration to meet your application's requirements for scalability and fault tolerance. Proper tuning and maintenance are also essential for optimal Cassandra performance.
 
 -   `$ `
 

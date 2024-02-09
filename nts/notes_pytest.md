@@ -9,6 +9,7 @@
 
 <details open><summary style="font-size:25px;color:Red;text-align:left">Pytest</summary>
 
+-   [Pytest Tutorial – How to Test Python Code](https://www.youtube.com/watch?v=cHYq1MRoyI0)
 -   [API Reference](https://docs.pytest.org/en/latest/reference/reference.html#)
 -   [Pytest Master Class Full Course](https://www.youtube.com/watch?v=IN4qt-9bMiE)
 
