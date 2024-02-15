@@ -61,7 +61,6 @@ beautify_prompt(){
 
 
     host=$(hostname)
-    # host=
     if [ $host = "MOS01" ]; then
         host_color=$BRed
     elif [ $host = "MOS02" ]; then
@@ -72,7 +71,7 @@ beautify_prompt(){
     arrow_color=$purple
 
     # Prompt String
-    export PS1="$host_color${host}$arrow_color =>|$green\$(__git_ps1)$blue\W$arrow_color|\n$ $reset"
+    export PS1="$host_color\u@${host}$arrow_color =>|$green\$(__git_ps1)$blue\W$arrow_color|\n$ $reset"
     # export PS1="$purple\u =>> |$green\$(__git_ps1)$blue\W$purple|\n$ $reset"
 
     # Meaning of
