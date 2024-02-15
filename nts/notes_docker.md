@@ -1,10 +1,41 @@
 <details><summary style="font-size:25px;color:Orange;text-align:left">MISC</summary>
 
--   How to start Docke App from terminal on MacOS?
+-   How to start Docke App from terminal on `MacOS` ONLY?
     -   `$ open -a Docker`
--   How to stop Docke App from terminal on MacOS?
+-   How to stop Docke App from terminal on `MacOS` ONLY?
+
     1.  `$ ps aus | grep Docker`
     2.  `$ kil PIP`
+
+-   The Docker daemon is located at `unix:///var/run/docker.sock` on Linux server
+-   `$ sudo systemctl status docker` → Check whether Docker is running or not on Linux machine.
+
+-   `$ docker --version`
+-   `$ docker version`
+-   `$ docker-compose --version`
+-   `$ ls /var/lib/docker/`
+    -   `/aufs`
+    -   `/containers`
+    -   `/image`
+    -   `/volumes`
+-   `$ docker info`
+-   `$ sudo service docker status`
+-   `$ systemctl is-active docker`
+-   `$ sudo vim /lib/systemd/system/docker.service`
+-   `$ sudo systemclt daemon-reload`
+-   `$ sudo service docker restart`
+
+-   **Configure a Docker Host With Remote API so that The Jenkins server can comunicate with the Docker**:
+
+    -   Edit the `/lib/systemd/system/docker.service` file
+        -   `$ sudo vim /lib/systemd/system/docker.service`
+        -   assign `/usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock` to `ExecStart` as follows
+            -   `ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock`
+    -   `$ sudo systemctl daemon-reload`
+    -   `$ sudo service docker restart`
+    -   Now Test:
+        -   `$ curl http://localhost:4243/version`
+        -   `$ curl http://<EC2PrivateIP>:4243/version`
 
 ### Refferances:
 
@@ -35,25 +66,11 @@
 -   [Install using the convenience script](https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script)
 -   [Container Dev: Develop from anywhere with Visual Studio Code](https://www.youtube.com/watch?v=CYObXaSjj78)
 
--   The Docker daemon is located at `unix:///var/run/docker.sock`
--   `$ sudo systemctl status docker` → Check whether Docker is running or not on Linux machine.
-
--   `$ docker --version`
--   `$ docker version`
--   `$ docker-compose --version`
--   `/var/lib/docker/`
-    -   `/aufs`
-    -   `/containers`
-    -   `/image`
-    -   `/volumes`
--   `$ docker info`
--   `$ sudo service docker status`
--   `$ systemctl is-active docker`
 </details>
 
 ---
 
-<details open><summary style="font-size:25px;color:Orange;text-align:left">Terms & Concepts</summary>
+<details><summary style="font-size:25px;color:Orange;text-align:left">Terms & Concepts</summary>
 
 -   [Glossary](https://docs.docker.com/glossary/)
 
@@ -67,6 +84,21 @@
 -   `Orchestration`: Orchestration refers to the management and coordination of multiple containers within a distributed application or infrastructure. Docker Swarm and Kubernetes are popular container orchestration platforms that automate container deployment, scaling, load balancing, service discovery, and fault tolerance.
 -   `Service`: In Docker Swarm or Kubernetes, a service is a logical abstraction that represents a running instance of an application or microservice. It encapsulates a group of containers and provides a consistent endpoint for accessing the application, load balancing traffic, and enabling scalability.
 -   `Volume`: A volume is a persistent storage mechanism in Docker that allows data to be shared and preserved between containers and the host machine. Volumes provide a way to manage and persist application data separately from the container's lifecycle, ensuring data integrity and persistence even if the container is stopped or removed.
+
+    ```yml
+    version: "3"
+
+    services:
+    webapp:
+        image: nginx
+        volumes:
+            - ./host-data:/usr/share/nginx/html # Volume Mounts
+            - /path/on/host:/path/in/container # Volume Mounts
+            - named-volume:/container/mount/point
+
+    volumes:
+        named-volume:
+    ```
 
     -   `Named Volumes`:
 
@@ -82,15 +114,12 @@
         -   With volume mounts, the data is stored on the host machine's file system and is shared with the container.
         -   Any changes made to the mounted directory or file in the container are immediately reflected on the host machine and vice versa.
         -   Volume mounts provide flexibility, as they allow you to work directly with the host machine's file system and leverage existing files or directories.
-        -   Volume mounts are typically specified in the Docker run command or in the Docker Compose file using the `<host_path>:<container_path>` syntax.
+        -   Volume mounts are typically specified in the Docker run command or in the Docker Compose file using the `<absolut_host_path>:<container_path>` syntax.
 
-    -   `Bind Mounts`: allows you to mount a host file or directory into a container. The host file or directory is mounted directly into the container's file system and changes made to the mounted file or directory are reflected in both the host and container file systems.
+        -   `Bind Mounts`: allows you to mount a host file or directory into a container. The host file or directory is mounted directly into the container's file system and changes made to the mounted file or directory are reflected in both the host and container file systems.
 
-        -   Bind mounts are a specific type of volume mount that map a host file or directory to a container.
-        -   With bind mounts, the specified file or directory on the host is directly mounted into the container without any modifications.
-        -   Bind mounts offer real-time synchronization between the host and the container, allowing for immediate updates and changes.
-        -   Bind mounts are commonly used during development or debugging to enable live code reloading and easier access to logs or configuration files.
-        -   Bind mounts are specified in the Docker run command or in the Docker Compose file using the `<host_path>:<container_path>:<options>` syntax, where `<options>` can include read-only mode, consistency settings, or other mount options.
+            -   Bind mounts are a specific type of volume mount that map a host file or directory to a container.
+            -   Bind mounts are specified in the Docker run command or in the Docker Compose file using the `<host_path>:<container_path>:<options>` syntax, where `<options>` can include read-only mode, consistency settings, or other mount options.
 
     -   `Anonymous Volumes`: are created automatically when a container is created with the `--mount` or `-v` flag, without specifying a named volume. Anonymous volumes are not managed by Docker and their contents are lost when the container is deleted. Anonymous volumes are useful for testing and debugging, but not recommended for production use.
     -   In summary, named volumes are a better choice for production use, as they provide a way to manage and persist data, while anonymous volumes are useful for testing and debugging, but should not be used for production data.

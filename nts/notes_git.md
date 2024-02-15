@@ -162,7 +162,9 @@
 -   `$ git config --global user.name 'Aminul Momin'`
 -   `$ git config --global user.email A.Momin.NYC@gmail.com`
 -   `$ git config --global init.defaultBranch <master_branch>` → setup the initial branch name to create in all new repositories.
+-   `$ 🔥 alias sshadd='eval $(ssh-agent) && ssh-add'` → If any unexpected issue arise, mske sure ssh-agent is running.
 -   `$ 🔥 git remote set-url origin git@github.com:Aminul-Momin/<repository_name>.git` → Change your remote's URL from `HTTPS to SSH`. (SSH based Authentication)
+-   `$ git remote set-url origin git@gh2:Aminul-Momin/project_name.git`
 -   `$ git remote` → List out all the remote this git repo has been added to
 -   `$ git remote -v` → Listout all the remote’s URL this git repo has been added to
 
@@ -257,7 +259,7 @@
     -   `$ git reset HEAD~1` → Discard the LAST commit from Local Repository (Committing Area). Discarted file kept in Working Area
     -   `$ git reset HEAD~3` → Discard the LAST THREE commit from Local Repository (Committing Area). Discarted file kept in Working Area
     -   `$ git reset --soft HEAD~3` → Discard the first three commit from Local Repository (Committing Area). Discarted file kept in Staging Area
-    -   `$ git reset --hard` → COMPLETELY REMOVE EVERYTHING FROM LOCAL REPOSITORY (COMMITTING AREA) !!!!!!!!!!!!
+    -   **$ git reset --hard** → It is used to reset the current commit or branch and the staging area to it's initial state or to a given commit. It moves the HEAD and the current branch pointer to the specified commit if given any.
     -   `$ git reset --hard HEAD~2`
     -   <font color="orange">How do I unstage changes?</font>
     -   `$ git restore .`
@@ -332,6 +334,8 @@
 
 <details><summary style="font-size:25px;color:Orange;text-align:left">Github CLI Commands</summary>
 
+[DOC](https://cli.github.com/manual/gh_api)
+
 ### Authentication and Configuration
 
 -   `$ gh auth status`
@@ -345,10 +349,11 @@
 
 ### Repository Management
 
+-   `$ gh repo -h`
+-   `$ gh repo list`
 -   `$ gh repo clone owner/repo`
 -   `$ gh repo create [repo_name]`
 -   `$ gh repo view [owner/repo]`
--   `$ gh repo list`
 -   `$ gh repo list --fork`
 -   `$ gh repo list --source`
 
@@ -432,6 +437,8 @@ remove_github_secrets(){
 }
 ```
 
+-   `$ gh extension install cli/gh-webhook`
+
 -   How to set up a webhook on GitHub using the 'gh' CLI tool?
 
     -   `$ gh repo create repo-name --webhook-url=https://your-webhook-url`
@@ -446,5 +453,22 @@ remove_github_secrets(){
         -   `12345` with the actual webhook ID (you can obtain it from the output of the gh repo view command).
         -   `https://your-new-webhook-url` with the updated payload URL.
     -   This command retrieves the existing webhook information, and then uses the `gh` api command to update the webhook configuration with the new payload URL.
+
+```sh
+
+add_gh_wh(){
+    # Replace the following placeholders with your values
+    OWNER=A-Momin
+    REPO=bookstore
+    # SECRET=your_webhook_secret
+    URL=https://54.210.9.192/github-webhook/
+
+    # Use gh api to create a webhook
+    # gh api repos/$OWNER/$REPO/hooks -w -X POST -F name=web -F active=true -F events=push -F config.url=$URL
+    # gh api repos/A-Momin/bookstore/hooks -X POST -F name=web -F active=true -F events=push -F config.url=https://54.210.9.192/github-webhook/
+    # gh api https://github.com/A-Momin/bookstore/settings/hooks/new -W -X POST -F config.url=https://54.210.9.192/github-webhook/
+    gh webhook forward --repo=/A-Momin/bookstore --events=push --url=https://54.210.9.192/webhooks/
+}
+```
 
 </details>

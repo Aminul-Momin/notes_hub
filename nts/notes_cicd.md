@@ -1,6 +1,20 @@
 <details open><summary style="font-size:25px;color:Orange;text-align:left">Jenkins:</summary>
 
-<details open><summary style="font-size:18px;color:Red;text-align:left">Jenkins Architecture, Terms and Concepts</summary>
+##### Exploring the Jenkins Filesystem and Workspace
+
+-   `$ docker exec -it jenkins-blueocean bash`
+-   `/var/jenkins_home/workspace` → location of jenkin workspace
+-   `/var/jenkins_home/config.xml` → location of jenkin configuration file in Docker container.
+-   `journalctl -u jenkins.service` -> if you are troubleshooting Jenkins.
+-   Populate `/lib/systemd/system/jenkins.service` with configuration parameters for the launch, e.g `JENKINS_HOME`
+-   If Jenkins fails to start because a port is in use, run `systemctl edit jenkins` and add the following:
+    ```ini
+    [Service]
+    Environment="JENKINS_PORT=8081"
+    ```
+-   `$ sudo systemctl edit jenkins`
+
+<details><summary style="font-size:18px;color:Red;text-align:left">Jenkins Architecture, Terms and Concepts</summary>
 
 ##### What is Jenkins?
 
@@ -141,29 +155,134 @@ In short, Jenkins is an open-source powerful CI automation server that is used f
     -   `Use plugins`:
         -   Jenkins has a large number of plugins that can be used to extend its functionality. These plugins can be used to add new features to Jenkins or to improve the performance of Jenkins.
 
--   **Web Dashboard**: The web dashboard of Jenkins is a powerful and flexible user interface that provides an easy-to-use graphical interface for configuring and managing Jenkins. The dashboard is organized into several sections, each of which provides access to different aspects of Jenkins functionality.
+</details>
 
-    -   `Dashboard Navigation`: The dashboard navigation menu is located on the left-hand side of the screen and provides access to all of the primary functions of Jenkins. The menu is organized into several categories, including Home, New Item, Manage Jenkins, Build History, Nodes, People, and Plugins. Each of these categories provides access to a different set of features.
-    -   `Home`: The Home category provides an overview of the Jenkins system, including the number of jobs currently running, the number of nodes connected to the system, and a summary of recent builds.
-    -   `New Item`: The New Item category allows users to create new jobs in Jenkins. Jobs are the core of the Jenkins system and define the tasks that Jenkins performs, such as building, testing, and deploying software.
-    -   `Manage Jenkins`: The Manage Jenkins category provides access to a wide range of configuration options for the Jenkins system. This includes options for managing nodes, configuring security settings, managing plugins, and more.
-    -   `Build History`: The Build History category provides an overview of all builds that have been run in Jenkins. This includes information on the status of each build, the duration of the build, and other details.
-    -   `Nodes`: The Nodes category provides information on all of the nodes that are connected to the Jenkins system. This includes details on the status of each node, such as whether it is online or offline, and what tasks it is currently performing.
-    -   `People`: The People category provides information on all of the users that have access to the Jenkins system. This includes details on their permissions, roles, and other settings.
-    -   `Plugins`: The Plugins category provides access to a wide range of plugins that can be used to extend the functionality of the Jenkins system. This includes plugins for integrating with other systems, such as version control systems, as well as plugins for enhancing the functionality of Jenkins itself.
-    -   In addition to these main categories, the Jenkins web dashboard also includes several other features, such as search functionality, notifications, and a help system. Together, these features provide a comprehensive and easy-to-use interface for managing Jenkins and performing a wide range of software development tasks.
+---
 
-##### Exploring the Jenkins Filesystem and Workspace
+<details open><summary style="font-size:18px;color:Red;text-align:left">UI Dashboard</summary>
 
--   `$ docker exec -it jenkins-blueocean bash`
--   `/var/jenkins_home/workspace` → location of jenkin workspace
--   `/var/jenkins_home/config.xml` → location of jenkin configuration file in Docker container.
+The web dashboard of Jenkins is a powerful and flexible user interface that provides an easy-to-use graphical interface for configuring and managing Jenkins. The dashboard is organized into several sections, each of which provides access to different aspects of Jenkins functionality.
+
+-   `Dashboard Navigation`: The dashboard navigation menu is located on the left-hand side of the screen and provides access to all of the primary functions of Jenkins. The menu is organized into several categories, including Home, New Item, Manage Jenkins, Build History, Nodes, People, and Plugins. Each of these categories provides access to a different set of features.
+-   `Home`: The Home category provides an overview of the Jenkins system, including the number of jobs currently running, the number of nodes connected to the system, and a summary of recent builds.
+-   `New Item`: The New Item category allows users to create new jobs in Jenkins. Jobs are the core of the Jenkins system and define the tasks that Jenkins performs, such as building, testing, and deploying software.
+-   `Manage Jenkins`: The Manage Jenkins category provides access to a wide range of configuration options for the Jenkins system. This includes options for managing nodes, configuring security settings, managing plugins, and more.
+-   `Build History`: The Build History category provides an overview of all builds that have been run in Jenkins. This includes information on the status of each build, the duration of the build, and other details.
+-   `Nodes`: The Nodes category provides information on all of the nodes that are connected to the Jenkins system. This includes details on the status of each node, such as whether it is online or offline, and what tasks it is currently performing.
+-   `People`: The People category provides information on all of the users that have access to the Jenkins system. This includes details on their permissions, roles, and other settings.
+-   `Plugins`: The Plugins category provides access to a wide range of plugins that can be used to extend the functionality of the Jenkins system. This includes plugins for integrating with other systems, such as version control systems, as well as plugins for enhancing the functionality of Jenkins itself.
+-   In addition to these main categories, the Jenkins web dashboard also includes several other features, such as search functionality, notifications, and a help system. Together, these features provide a comprehensive and easy-to-use interface for managing Jenkins and performing a wide range of software development tasks.
+
+##### Credential Scopes
+
+In Jenkins, credential scopes refer to the contexts or domains in which credentials are valid and can be used. Jenkins uses credentials to securely store sensitive information such as usernames, passwords, API tokens, or private keys. The concept of credential scopes helps manage where these credentials can be utilized within the Jenkins environment. Different plugins and features within Jenkins may define their own credential scopes to control access to specific resources or functionalities.
+
+Here are some common credential scopes in Jenkins:
+
+-   **System (Jenkins)**:
+
+    -   Scope Identifier: Jenkins
+    -   Description: Credentials with the "Jenkins" scope are generally available and applicable across the entire Jenkins instance. They can be used by various parts of Jenkins, including job configurations, pipeline scripts, and system configurations.
+
+-   **Global (Jenkins)**:
+
+    -   Scope Identifier: Global (Jenkins)
+    -   Description: Similar to the "Jenkins" scope, credentials with the "Global (Jenkins)" scope are accessible globally. They can be used in various configurations, but they may have a more limited scope than system-wide credentials.
+
+-   **System (Nodes)**:
+
+    -   Scope Identifier: Node (agent)
+    -   Description: Credentials with the "Node (agent)" scope are specific to Jenkins agent nodes. They can be used in configurations related to distributed builds or specific tasks that run on agent nodes.
+
+-   **User**:
+
+    -   Scope Identifier: User
+    -   Description: User-scoped credentials are associated with a specific Jenkins user. These credentials are typically used within user-specific configurations, such as in pipeline scripts owned by that user.
+
+-   **Item (Job)**:
+
+    -   Scope Identifier: Item
+    -   Description: Credentials with the "Item" scope are specific to a particular Jenkins job or project. They are often used in job configurations or pipeline scripts associated with that job.
+
+-   **Folder**:
+
+    -   Scope Identifier: Folder
+    -   Description: Folder-scoped credentials are specific to a Jenkins folder. They can be used within jobs or configurations contained within that folder.
+
+These are just a few examples, and the availability of credential scopes may depend on the plugins installed and the Jenkins version. When configuring credentials in Jenkins, you will typically specify the credential scope to indicate where and how those credentials can be used.
+
+By using credential scopes, Jenkins provides a way to manage and organize credentials based on the context in which they are intended to be used, enhancing security and access control within the CI/CD environment.
+
+##### Types of Credentials
+
+Jenkins supports various types of credentials, allowing users to securely store sensitive information such as usernames, passwords, API tokens, or private keys. Different credential types are designed to accommodate specific authentication mechanisms and use cases. Here are some common types of Jenkins credentials:
+
+-   **Username and Password**:
+
+    -   Usage: Used for basic username and password authentication.
+    -   Fields: Typically includes "Username" and "Password" fields.
+    -   Example Use Case: Authenticating with a version control system (e.g., Git, Subversion), accessing an external service, or connecting to a database.
+
+-   **Secret Text**:
+
+    -   Usage: Stores a secret string (e.g., an API token, encryption key).
+    -   Fields: Usually contains a single "Secret" field.
+    -   Example Use Case: Storing an API token for authentication with an external API.
+
+-   **Secret File**:
+
+    -   Usage: Stores a secret as a file.
+    -   Fields: Typically includes a file path or content field.
+    -   Example Use Case: Storing a private key file for SSH authentication.
+
+-   **SSH Username with Private Key**:
+
+    -   Usage: Used for SSH authentication with a private key.
+    -   Fields: Includes "Username" and "Private Key" fields.
+    -   Example Use Case: Authenticating with a remote server using SSH.
+
+-   **Certificate**:
+
+    -   Usage: Stores X.509 certificates for secure communication.
+    -   Fields: May include certificate, private key, and passphrase fields.
+    -   Example Use Case: Establishing secure connections with services that require SSL/TLS.
+
+-   **AWS Credentials**:
+
+    -   Usage: Stores AWS access key ID and secret access key.
+    -   Fields: Typically includes "Access Key ID" and "Secret Access Key" fields.
+    -   Example Use Case: Integrating Jenkins with AWS services (e.g., S3, EC2).
+
+-   **Docker Host Certificate Authentication**:
+
+    -   Usage: Stores certificates for authenticating with a Docker host.
+    -   Fields: Includes certificate, key, and ca key fields.
+    -   Example Use Case: Authenticating Jenkins to interact with Docker daemon securely.
+
+-   **Bearer Token**:
+
+    -   Usage: Stores a bearer token for authentication.
+    -   Fields: Usually contains a single "Token" field.
+    -   Example Use Case: Authenticating with APIs that use bearer token authentication.
+
+-   **Git Username with Password**:
+
+    -   Usage: Stores Git credentials for repository access.
+    -   Fields: Includes "Username" and "Password" fields.
+    -   Example Use Case: Authenticating Jenkins to clone or fetch from a Git repository.
+
+-   **Jenkins**:
+
+    -   Usage: Internal credential type for Jenkins itself.
+    -   Fields: Specific to Jenkins internal use.
+
+These credential types can be configured and managed through the Jenkins web interface. Users can associate credentials with Jenkins jobs, build pipelines, and other configurations to facilitate secure interactions with external systems and services. The choice of credential type depends on the authentication method required by the external system or service being accessed.
 
 </details>
 
 ---
 
-<details open><summary style="font-size:18px;color:Red;text-align:left">Step by Step Jankins Pipeline</summary>
+<details><summary style="font-size:18px;color:Red;text-align:left">Step by Step Jankins Pipeline</summary>
 
 Setting up a Jenkins pipeline for a Django project hosted on GitHub involves several steps. Below is a step-by-step procedure to guide you through the process. This assumes that you already have Jenkins installed and running.
 
@@ -259,7 +378,7 @@ Setting up a Jenkins pipeline for a Django project hosted on GitHub involves sev
 
 ---
 
-<details open><summary style="font-size:18px;color:Red;text-align:left">Secret management options in Jankins</summary>
+<details><summary style="font-size:18px;color:Red;text-align:left">Secret management options in Jankins</summary>
 
 In Jenkins, secret management is a crucial aspect of ensuring secure and reliable CI/CD processes. Secrets typically include sensitive information such as API keys, passwords, access tokens, and other credentials required by jobs or pipelines. Jenkins provides several options for secret management to secure and handle these sensitive pieces of information.
 
@@ -551,7 +670,7 @@ jobs:
 -   `become`: Used to elevate privileges on the target hosts.
 -   `become_user`: Specifies the user account that should be used when elevating privileges.
 
-## </details>
+</details>
 
 ---
 

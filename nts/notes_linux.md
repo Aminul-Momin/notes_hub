@@ -65,6 +65,10 @@
 -   [Linux Crash Course - The dnf Command](https://www.youtube.com/watch?v=mL1hMBYP1bQ)
 -   **dnf**: DNF or Dandified YUM is the next-generation version of the Yellowdog Updater, Modified (**yum**), a package manager for .rpm-based Linux distributions.
 
+-   `$ yum repolist`
+-   `$ yum`
+-   `$ yum`
+
 </details>
 
 <details open><summary style="font-size:25px;color:Orange;text-align:left">apt</summary>

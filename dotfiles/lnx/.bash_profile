@@ -1,16 +1,3 @@
-
-if [ ! -f $HOME/ntmd.md ]; then
-    touch $HOME/ntmd.md;
-fi
-alias ntmd="code $HOME/ntmd.md"
-
-
-
-
-
-
-# ===================================================================
-
 export PATH="$HOME/bin:$PATH";
 
 # Load the shell dotfiles, and then some:
@@ -60,6 +47,7 @@ source ~/.git-completion.bash
 source ~/.git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 
+# =============================================================================
 beautify_prompt(){
     # colors:
     green="\[\033[0;32m\]"
@@ -68,21 +56,23 @@ beautify_prompt(){
     reset="\[\033[0m\]"
     BRed='\033[1;31m'       # Bold Red
     Yellow='\033[0;33m' # Yellow
-    # orange='\033[40m'
-    # orange='\033[1;32m'
+    Orange='\033[38;5;214m'
+    BOrange='\e[1;33m'
 
 
     host=$(hostname)
-    host="RHEL8"
-    host_color=$BRed
+    # host=
+    if [ $host = "MOS01" ]; then
+        host_color=$BRed
+    elif [ $host = "MOS02" ]; then
+        host_color=$Orange
+    else
+        host_color=$green
+    fi
     arrow_color=$purple
 
-    if [[ $host == "RHEL8" ]]; then
-        host_color=$BRed
-    fi
-
     # Prompt String
-    export PS1="$host_color\u@${host}$arrow_color =>|$green\$(__git_ps1)$blue\W$arrow_color|\n$ $reset"
+    export PS1="$host_color${host}$arrow_color =>|$green\$(__git_ps1)$blue\W$arrow_color|\n$ $reset"
     # export PS1="$purple\u =>> |$green\$(__git_ps1)$blue\W$purple|\n$ $reset"
 
     # Meaning of
@@ -95,18 +85,20 @@ beautify_prompt(){
         #	\W     ->> the basename of the current working directory
 }
 beautify_prompt
-## ------------------------ End of Udacity Block ------------------------ ##
 
+create_alias(){
+    alias python=python3
+    alias pip=pip3
+    # alias vim=nvim
+    # alias tmux="tmux 2"
+}
 
 
 # User specific aliases and functions
 complete -cf sudo
 
-# Flask Environment Variables
-# export FLASK_APP=run.py
-# export FLASK_DEBUG=1
-# export FLASK_ENV=dev
-# export EMAIL_USER='amominnj@gmail.com'
-# export EMAIL_PASS='recal'
 
-export NTS="$HOME/NTS"
+if [ ! -f $HOME/rough.md ]; then
+    touch $HOME/rough.md;
+fi
+alias rgh="code $HOME/rough.md"

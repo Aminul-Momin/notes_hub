@@ -13,6 +13,8 @@ alias -- -="cd -"
 alias g="git"
 alias h="history"
 alias j="jobs"
+alias "python"="python3"
+alias "pip"="pip3"
 
 #========== Docker Shortcuts =============
 # image_name="xbk_notification_service"

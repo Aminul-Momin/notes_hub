@@ -134,41 +134,48 @@ remove_pattern(){
     find $1 -type f -name "*.class" -delete
 }
 
+instance_id_from_nickname(){
+    local INSTANCE_NICK_NAME=$1  # Assign the value of the first argument to INSTANCE_NICK_NAME
+
+    # Transform INSTANCE_NICK_NAME to uppercase using 'tr' command
+    local INSTANCE_NAME=$(echo "$INSTANCE_NICK_NAME" | tr '[:lower:]' '[:upper:]')
+
+    local INSTANCE=AWS_INSTANCE_ID_$INSTANCE_NAME
+    
+    local INSTANCE_ID=$(eval "echo \$$INSTANCE")
+
+    echo $INSTANCE_ID
+}
+
 launch_ec2(){
     : ' Given the AWS EC2 inastance Name, it will launch the instance. Its assumed that the given instance is already created.
     Args:
         ($1): AWS EC2 inastance Name (Host) in your `~/.ssh/config` file.
     Usage:
-        $ launch_ec2 ubuntu_server
+        $ launch_ec2 ubun
     '
-    local INSTANCE_NAME=$1
 
-    case "$INSTANCE_NAME" in
-        "rhel")
-            local INSTANCE_ID="${AWS_RHEL_INSTANCE_ID}"
-            echo "Your $INSTANCE_NAME (Instance ID: $INSTANCE_ID) is starting ..."
-            ;;
-        "ubuntu_server")
-            local INSTANCE_ID="${AWS_UBUNTU_SERVER_INSTANCE_ID}"
-            echo "Your $INSTANCE_NAME (Instance ID: $INSTANCE_ID) is starting ..."
-            ;;
-        *)
-            echo "Invalid Server Name: $1. Please choose one of: 'rhel', 'ubuntu_server'."
-            return 1
-            ;;
-    esac
+    local INSTANCE_NICK_NAME=$1  # Assign the value of the first argument to INSTANCE_NICK_NAME
+
+    # Transform INSTANCE_NICK_NAME to uppercase using 'tr' command
+    local INSTANCE_NAME=$(echo "$INSTANCE_NICK_NAME" | tr '[:lower:]' '[:upper:]')
+
+    local INSTANCE=AWS_INSTANCE_ID_$INSTANCE_NAME
+    
+    local INSTANCE_ID=$(eval "echo \$$INSTANCE")
 
     # Start the EC2 instance
     aws ec2 start-instances --instance-ids "$INSTANCE_ID"
     sleep 30
 
-    local matching="Host $INSTANCE_NAME"
+    local matching="Host $INSTANCE_NICK_NAME"
     local public_ip=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query 'Reservations[].Instances[].PublicIpAddress' --output text)
     local replacement="HostName $public_ip"
 
 
     if [ $public_ip ]; then
-        echo "Your $INSTANCE_NAME is Started (public IP address: $public_ip)"
+        echo "Your $INSTANCE_NICK_NAME is Started (public IP address: $public_ip)"
+        echo "Your Jenkins server is running at: $public_ip:8080/"
 
         if [ ! -d "$HOME/tmp" ]; then
             mkdir $HOME/tmp
@@ -187,27 +194,36 @@ launch_ec2(){
     fi
 }
 
+
+show_ec2_ip(){
+    local INSTANCE_NICK_NAME=$1  # Assign the value of the first argument to INSTANCE_NICK_NAME
+
+    # Transform INSTANCE_NICK_NAME to uppercase using 'tr' command
+    local INSTANCE_NAME=$(echo "$INSTANCE_NICK_NAME" | tr '[:lower:]' '[:upper:]')
+
+    local INSTANCE=AWS_INSTANCE_ID_$INSTANCE_NAME
+    
+    local INSTANCE_ID=$(eval "echo \$$INSTANCE")
+
+    local public_ip=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query 'Reservations[].Instances[].PublicIpAddress' --output text)
+
+    echo "PUBLIC IP ADDRESS: $public_ip"
+    echo "Your Jenkins server is running at: http://$public_ip:8080/"
+}
+
 stop_ec2(){
     : ' Given the AWS EC2 inastance Name, it will stop the running instance.
     Args:
         ($1): AWS EC2 inastance Name (Host) in your `~/.ssh/config` file
     '
-    local INSTANCE_NAME=$1
+    local INSTANCE_NICK_NAME=$1  # Assign the value of the first argument to INSTANCE_NICK_NAME
 
-    case "$INSTANCE_NAME" in
-        "rhel")
-            local INSTANCE_ID="${AWS_RHEL_INSTANCE_ID}"
-            echo "Your $INSTANCE_NAME (Instance ID: $INSTANCE_ID) is stopping ..."
-            ;;
-        "ubuntu_server")
-            local INSTANCE_ID="${AWS_UBUNTU_SERVER_INSTANCE_ID}"
-            echo "Your $INSTANCE_NAME (Instance ID: $INSTANCE_ID) is stopping ..."
-            ;;
-        *)
-            echo "Invalid Server Name: $1. Please choose one of: 'rhel', 'ubuntu_server'."
-            return 1
-            ;;
-    esac
+    # Transform INSTANCE_NICK_NAME to uppercase using 'tr' command
+    local INSTANCE_NAME=$(echo "$INSTANCE_NICK_NAME" | tr '[:lower:]' '[:upper:]')
+
+    local INSTANCE=AWS_INSTANCE_ID_$INSTANCE_NAME
+    
+    local INSTANCE_ID=$(eval "echo \$$INSTANCE")
 
     # Start the EC2 instance
     aws ec2 stop-instances --instance-ids "$INSTANCE_ID"
@@ -221,4 +237,17 @@ setscpath(){
 
 showscpath(){
     echo "Screenshots will be saved in '$(defaults read com.apple.screencapture location)'"
+}
+
+trans() {
+    local INSTANCE_NICK_NAME=$1  # Assign the value of the first argument to INSTANCE_NICK_NAME
+
+    # Transform INSTANCE_NICK_NAME to uppercase using 'tr' command
+    local INSTANCE_NAME=$(echo "$INSTANCE_NICK_NAME" | tr '[:lower:]' '[:upper:]')
+
+    # Construct INSTANCE_ID by appending "ID_" to the uppercase value
+    local INSTANCE_ID="ID_$INSTANCE_NAME"
+
+    # Print the resulting INSTANCE_ID
+    echo $INSTANCE_ID
 }

@@ -1,6 +1,6 @@
 Host mos02
 HostName MOS02.lan
-User Farzana 
+User Farzana
 
 Host mos01
 HostName MOS01.local
@@ -10,17 +10,17 @@ User AM
 
 # ============================================================================
 
-Host rhel
-HostName 54.236.226.121
+Host ubun0
+HostName 54.85.78.150
 StrictHostKeyChecking no
 User ec2-user
-IdentityFile ~/.ssh/MOS01_ADMIN_HARNESS.pem
+IdentityFile ~/.ssh/aws-ht.pem
 
-Host ubuntu_server
-HostName 3.91.181.91
+Host ubun
+HostName 54.85.78.150
 StrictHostKeyChecking no
 User ubuntu
-IdentityFile ~/.ssh/MOS01_ADMIN_HARNESS.pem
+IdentityFile ~/.ssh/aws-ht.pem
 
 Host ds_tmp
 HostName 34.139.107.187

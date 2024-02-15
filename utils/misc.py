@@ -4,7 +4,7 @@ data_dir = os.environ["DATA"]
 # Specify the file path
 file_path = data_dir + "/rough/output.txt"
 
-def save_output_in_file(file_path, content):
+def save_output_in_file(content, file_path):
 
     # Open the file in append mode
     with open(file_path, 'w') as file:

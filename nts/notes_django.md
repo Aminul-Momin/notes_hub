@@ -9,6 +9,10 @@
 
 <details><summary style="font-size:22px;color:Orange;text-align:left">Django CLI</summary>
 
+-   [**django-admin & manage.py**](https://docs.djangoproject.com/en/5.0/ref/django-admin/#django-admin-and-manage-py)
+
+**django-admin** and **manage.py** are Django’s command-line utility for administrative tasks. `manage.py` is automatically created in each Django project. It does the same thing as django-admin but also sets the DJANGO_SETTINGS_MODULE environment variable so that it points to your project’s settings.py file. Generally, when working on a single Django project, it’s easier to use `manage.py` than django-admin. If you need to switch between multiple Django settings files, use django-admin with DJANGO_SETTINGS_MODULE or the --settings command line option.
+
 -   `$ django-admin -h`
 -   `$ django-admin check`
 -   `$ django-admin compilemessages`
@@ -270,8 +274,8 @@ Django is a high-level web framework for building web applications in Python. It
 
         -   A OneToOneField is a type of ForeignKey with a unique constraint. It creates a one-to-one relationship, ensuring that each source object is associated with only one target object, and vice versa.
         -   Example: A Profile model with a OneToOneField to a User model creates a one-to-one relationship, where each user has a single profile, and each profile belongs to only one user.
-        -   `on_delete`: When an object referenced by a ForeignKey is deleted, Django will emulate the behavior of the SQL constraint specified by the `on_delete` argument. - `parent_link`
-        -   `parent_link`
+        -   `on_delete`: When an object referenced by a ForeignKey is deleted, Django will emulate the behavior of the SQL constraint specified by the `on_delete` argument.
+        -   `parent_link`: When True and used in a model which inherits from another concrete model, indicates that this field should be used as the link back to the parent class, rather than the extra OneToOneField which would normally be implicitly created by subclassing.
 
     -   `GenericForeignKey` and `GenericRelation`:
 
@@ -281,9 +285,9 @@ Django is a high-level web framework for building web applications in Python. It
     -   `Reverse Relations`:
 
         -   By defining a related name in a ForeignKey or a ManyToManyField, you can create reverse relations. These allow you to access objects related to a particular instance from the other end of the relationship.
-        -   Example: If an Author model has a ForeignKey to a Book model with related_name='books', you can access the books written by an author using author.books.all().
+        -   Example: If an Book model has a ForeignKey to a Author model with related_name='books', you can access the books written by an author using author.books.all().
 
--   Field Options (Arguments of Field Types): In Django, a Model represents a table in a database and its fields represent columns. Each field in a Django Model can have various options (parameters) to customize its behavior. Here are some commonly used Django model field options:
+-   `Field Options` (Arguments of Field Types): In Django, a Model represents a table in a database and its fields represent columns. Each field in a Django Model can have various options (parameters) to customize its behavior. Here are some commonly used Django model field options:
 
     -   `null` - If set to True, the field can be NULL in the database. The default is False.
     -   `blank` - If set to True, the field is allowed to be blank (i.e., have no value). The default is False.
@@ -379,6 +383,12 @@ The Meta class provides a way to configure various aspects of a Django model, in
         -   `label`
         -   `label_lower`
 
+#### [Model Inheritance Options](https://www.youtube.com/watch?v=4Xag2FzmN60&list=PLOLrQ9Pn6cazjoDEnwzcdWWf4SNS0QZml&index=9)
+
+-   **Abstract Models**
+-   **Multi-Table Model Inheritance**
+-   **Proxy Models**
+
 </details>
 
 ---
@@ -460,7 +470,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, Pass
 
     -   Forms can be used in combination with AJAX to submit and validate data without reloading the entire page.
 
--   Core Fields and Field Arguments:
+-   `Form Fields` and `Field Arguments`:
 
     -   Available Fields Arguments :
 
@@ -645,6 +655,59 @@ def my_view(request):
         </div>
         {% endfor %}
         ```
+
+#### Forms Classes Hierarchy
+
+-   <b style="color:#C71585">DeclarativeFieldsMetaclass(MediaDefiningClass)</b>:
+    -   <b style="color:#9370DB">.\_\_new\_\_(mcs, name, bases, attrs)</b>
+-   <b style="color:#C71585">BaseForm</b>:
+    -   `default_renderer = None`
+    -   `field_order = None`
+    -   `prefix = None`
+    -   `use_required_attribute = True`
+    -   <b style="color:#9370DB">.\_\_init\_\_(self, ...)</b>
+    -   <b style="color:#9370DB">.order_fields(self, field_order)</b>
+    -   <b style="color:#9370DB">.\_\_str\_\_(self)</b>
+    -   <b style="color:#9370DB">.\_\_repr\_\_(self)</b>
+    -   <b style="color:#9370DB">.\_\_iter\_\_(self)</b>
+    -   <b style="color:#9370DB">.\_\_getitem\_\_(self, name)</b>
+    -   <b style="color:#9370DB">.errors(self)</b>
+    -   <b style="color:#9370DB">.is_valid(self)</b>
+    -   <b style="color:#9370DB">.add_prefix(self, field_name)</b>
+    -   <b style="color:#9370DB">.add_initial_prefix(self, field_name)</b>
+    -   <b style="color:#9370DB">.\_html_output(self, normal_row, error_row, row_ender, help_text_html, errors_on_separate_row)</b>
+    -   <b style="color:#9370DB">.as_table(self)</b>
+    -   <b style="color:#9370DB">.as_ul(self)</b>
+    -   <b style="color:#9370DB">.as_p(self)</b>
+    -   <b style="color:#9370DB">.non_field_errors(self)</b>
+    -   <b style="color:#9370DB">.add_error(self, field, error)</b>
+    -   <b style="color:#9370DB">.has_error(self, field, code=None)</b>
+    -   <b style="color:#9370DB">.full_clean(self)</b>
+    -   <b style="color:#9370DB">.\_clean_fields(self)</b>
+    -   <b style="color:#9370DB">.\_clean_form(self)</b>
+    -   <b style="color:#9370DB">.\_post_clean(self)</b>
+    -   <b style="color:#9370DB">.clean(self)</b>
+    -   <b style="color:#9370DB">.has_changed(self)</b>
+    -   <b style="color:#9370DB">.changed_data(self)</b>
+    -   <b style="color:#9370DB">.media(self)</b>
+    -   <b style="color:#9370DB">.is_multipart(self)</b>
+    -   <b style="color:#9370DB">.hidden_fields(self)</b>
+    -   <b style="color:#9370DB">.visible_fields(self)</b>
+    -   <b style="color:#9370DB">.get_initial_for_field(self, field, field_name)</b>
+-   <b style="color:#C71585">Form(BaseForm, metaclass=DeclarativeFieldsMetaclass)</b>:
+
+-   <b style="color:#C71585">BaseModelForm(BaseForm)</b>:
+    -   <b style="color:#9370DB">.\_\_init\_\_(self, ...)</b>
+    -   <b style="color:#9370DB">.\_get_validation_exclusions(self)</b>
+    -   <b style="color:#9370DB">.clean(self)</b>
+    -   <b style="color:#9370DB">.\_update_errors(self, errors)</b>
+    -   <b style="color:#9370DB">.\_post_clean(self)</b>
+    -   <b style="color:#9370DB">.validate_unique(self)</b>
+    -   <b style="color:#9370DB">.\_save_m2m(self)</b>
+    -   <b style="color:#9370DB">.save(self, commit=True)</b>
+-   <b style="color:#C71585">ModelForm(BaseModelForm, metaclass=ModelFormMetaclass)</b>:
+
+-   <b style="color:#C71585">modelform_factory(model, form=ModelForm, fields=None, exclude=None, formfield_callback=None, widgets=None, localized_fields=None, labels=None, help_texts=None, error_messages=None, field_classes=None)</b>
 
 </details>
 
@@ -1015,39 +1078,40 @@ In Django, both Manager and QuerySet are integral parts of the Object-Relational
 
 -   Django uses request and response objects to pass state through the system.
 -   When a page is requested, Django creates an `HttpRequest` object that contains metadata about the request. Then Django loads the appropriate view, passing the `HttpRequest` as the first argument to the view function. Each view is responsible for returning an `HttpResponse` object.
--   Most usefull `HttpRequest`'s attributes and methods:
 
-    -   **HttpRequest.scheme**:
+-   <b style="color:#EE82EE">HttpRequest</b>: Follwongs are the most usefull attributes of `HttpRequest` object
+
+    -   <b style="color:#EE82EE">HttpRequest</b>**.scheme**:
 
         -   A string representing the scheme of the request (http or https usually).
 
-    -   **HttpRequest.body**:
+    -   <b style="color:#EE82EE">HttpRequest</b>**.body**:
 
         -   The raw HTTP request body as a bytestring. This is useful for processing data in different ways than conventional HTML forms: binary images, XML payload etc. For processing conventional form data, use HttpRequest.POST.
         -   You can also read from an HttpRequest using a file-like interface with HttpRequest.read() or HttpRequest.readline(). Accessing the body attribute after reading the request with either of these I/O stream methods will produce a RawPostDataException.
 
-    -   **HttpRequest.path**:
+    -   <b style="color:#EE82EE">HttpRequest</b>**.path**:
 
         -   A string representing the full path to the requested page, not including the scheme, domain, or query string.
         -   Example: "/music/bands/the_beatles/"
 
-    -   **HttpRequest.method**
+    -   <b style="color:#EE82EE">HttpRequest</b>**.method**
 
         -   A string representing the HTTP method used in the request. This is guaranteed to be uppercase.
 
-    -   **HttpRequest.content_type**
+    -   <b style="color:#EE82EE">HttpRequest</b>**.content_type**
 
         -   A string representing the MIME type of the request, parsed from the CONTENT_TYPE header.
 
-    -   **HttpRequest.content_params**
+    -   <b style="color:#EE82EE">HttpRequest</b>**.content_params**
 
         -   A dictionary of key/value parameters included in the CONTENT_TYPE header.
 
-    -   **HttpRequest.GET**
+    -   <b style="color:#EE82EE">HttpRequest</b>**.GET**
 
         -   A dictionary-like object containing all given HTTP GET parameters. See the QueryDict documentation below.
 
-    -   **HttpRequest.POST**
+    -   <b style="color:#EE82EE">HttpRequest</b>**.POST**
 
         -   A dictionary-like object containing all given HTTP POST parameters, providing that the request contains form data. See the QueryDict documentation below. If you need to access raw or non-form data posted in the request, access this through the HttpRequest.body attribute instead.
 
@@ -1055,26 +1119,26 @@ In Django, both Manager and QuerySet are integral parts of the Object-Relational
 
         -   POST does not include file-upload information. See FILES.
 
-    -   **HttpRequest.FILES**
+    -   <b style="color:#EE82EE">HttpRequest</b>**.FILES**
 
         -   A dictionary-like object containing all uploaded files. Each key in FILES is the name from the `<input type="file" name="">`. Each value in FILES is an UploadedFile.
         -   FILES will only contain data if the request method was POST and the `<form>` that posted to the request had enctype="multipart/form-data". Otherwise, FILES will be a blank dictionary-like object.
 
-    -   **HttpRequest.META**
+    -   <b style="color:#EE82EE">HttpRequest</b>**.META**
 
         -   A dictionary containing all available HTTP headers. Available headers depend on the client and server, but here are some examples:
 
     -   Attributes set by middleware:
 
-        -   **HttpRequest.session**
+        -   <b style="color:#EE82EE">HttpRequest</b>**.session**
 
             -   From the `SessionMiddleware`: A readable and writable, dictionary-like object that represents the current session.
 
-        -   **HttpRequest.site**
+        -   <b style="color:#EE82EE">HttpRequest</b>**.site**
 
             -   From the `CurrentSiteMiddleware`: An instance of Site or RequestSite as returned by `get_current_site()` representing the current site.
 
-        -   **HttpRequest.user**
+        -   <b style="color:#EE82EE">HttpRequest</b>**.user**
             -   From the `AuthenticationMiddleware`: An instance of `AUTH_USER_MODEL` representing the currently logged-in user. If the user isn’t currently logged in, user will be set to an instance of `AnonymousUser`.
 
 #### [Class-Based Views (CBVs)](https://docs.djangoproject.com/en/4.1/topics/class-based-views/)
@@ -1165,159 +1229,157 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 #### django.views.generic.base
 
--   `ContextMixin`
+-   <b style="color:#C71585">ContextMixin</b>
 
-    -   `get_context_data(self, **kwargs)`
+    -   <b style="color:#9370DB">.get_context_data(self, \*\*kwargs)</b>
 
--   `View`
+-   <b style="color:#C71585">View</b>
 
-    -   `__init__(self, **kwargs)`
+    -   <b style="color:#9370DB">.**init**(self, \*\*kwargs)</b>
     -   `as_view(cls, **initkwargs)`
     -   `view(request, *args, **kwargs)`
-    -   `setup(self, request, *args, **kwargs)`
-    -   `dispatch(self, request, *args, **kwargs)`
-    -   `http_method_not_allowed(self, request, *args, **kwargs)`
-    -   `options(self, request, *args, **kwargs)`
-    -   `_allowed_methods(self)`
+    -   <b style="color:#9370DB">.setup(self, request, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.dispatch(self, request, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.http_method_not_allowed(self, request, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.options(self, request, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.\_allowed_methods(self)</b>
 
--   `TemplateResponseMixin`
+-   <b style="color:#C71585">TemplateResponseMixin</b>
 
     -   `template_name = None`
     -   `template_engine = None`
     -   `response_class = TemplateResponse`
     -   `content_type = None`
-    -   `render_to_response(self, context, **response_kwargs)`
-    -   `get_template_names(self)`
+    -   <b style="color:#9370DB">.render_to_response(self, context, \*\*response_kwargs)</b>
+    -   <b style="color:#9370DB">.get_template_names(self)</b>
 
--   `TemplateView(TemplateResponseMixin, ContextMixin, View)`
+-   <b style="color:#C71585">TemplateView(TemplateResponseMixin, ContextMixin, View)</b>
 
-    -   `get(self, request, *args, **kwargs)`
+    -   <b style="color:#9370DB">.get(self, request, \*args, \*\*kwargs)</b>
 
--   `RedirectView(View)`
+-   <b style="color:#C71585">RedirectView(View)</b>
     -   `permanent = False`
     -   `url = None`
     -   `pattern_name = None`
     -   `query_string = False`
-    -   `get_redirect_url(self, *args, **kwargs)`
-    -   `get(self, request, *args, **kwargs)`
-    -   `head(self, request, *args, **kwargs)`
-    -   `post(self, request, *args, **kwargs)`
-    -   `options(self, request, *args, **kwargs)`
-    -   `delete(self, request, *args, **kwargs)`
-    -   `put(self, request, *args, **kwargs)`
-    -   `patch(self, request, *args, **kwargs)`
+    -   <b style="color:#9370DB">.get_redirect_url(self, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.get(self, request, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.head(self, request, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.post(self, request, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.options(self, request, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.delete(self, request, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.put(self, request, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.patch(self, request, \*args, \*\*kwargs)</b>
 
 #### django.views.generic.edit
 
--   `FormMixin(ContextMixin)`
+-   <b style="color:#C71585">FormMixin(ContextMixin)</b>
     -   `initial = {}`
     -   `form_class = None`
     -   `success_url = None`
     -   `prefix = None`
-    -   `get_initial(self)`
-    -   `get_prefix(self)`
-    -   `get_form_class(self)`
-    -   `get_form(self, form_class=None)`
-    -   `get_form_kwargs(self)`
-    -   `get_success_url(self)`
-    -   `form_valid(self, form)`
-    -   `form_invalid(self, form)`
-    -   `get_context_data(self, **kwargs)`
--   `ModelFormMixin(FormMixin, SingleObjectMixin)`
+    -   <b style="color:#9370DB">.get_initial(self)</b>
+    -   <b style="color:#9370DB">.get_prefix(self)</b>
+    -   <b style="color:#9370DB">.get_form_class(self)</b>
+    -   <b style="color:#9370DB">.get_form(self, form_class=None)</b>
+    -   <b style="color:#9370DB">.get_form_kwargs(self)</b>
+    -   <b style="color:#9370DB">.get_success_url(self)</b>
+    -   <b style="color:#9370DB">.form_valid(self, form)</b>
+    -   <b style="color:#9370DB">.form_invalid(self, form)</b>
+    -   <b style="color:#9370DB">.get_context_data(self, \*\*kwargs)</b>
+-   <b style="color:#C71585">ModelFormMixin(FormMixin, SingleObjectMixin)</b>
     -   `fields = None`
-    -   `get_form_class(self)`
-    -   `get_form_kwargs(self)`
-    -   `get_success_url(self)`
-    -   `form_valid(self, form)`
--   `ProcessFormView(View)`
-    -   `get(self, request, *args, **kwargs)`
-    -   `post(self, request, *args, **kwargs)`
-    -   `put(self, *args, **kwargs)`
--   `BaseFormView(FormMixin, ProcessFormView)`
--   `FormView(TemplateResponseMixin, BaseFormView)`
--   `BaseCreateView(ModelFormMixin, ProcessFormView)`
-    -   `get(self, request, *args, **kwargs)`
-    -   `post(self, request, *args, **kwargs)`
--   `CreateView(SingleObjectTemplateResponseMixin, BaseCreateView)`
+    -   <b style="color:#9370DB">.get_form_class(self)</b>
+    -   <b style="color:#9370DB">.get_form_kwargs(self)</b>
+    -   <b style="color:#9370DB">.get_success_url(self)</b>
+    -   <b style="color:#9370DB">.form_valid(self, form)</b>
+-   <b style="color:#C71585">ProcessFormView(View)</b>
+    -   <b style="color:#9370DB">.get(self, request, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.post(self, request, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.put(self, \*args, \*\*kwargs)</b>
+-   <b style="color:#C71585">BaseFormView(FormMixin, ProcessFormView)</b>
+-   <b style="color:#C71585">FormView(TemplateResponseMixin, BaseFormView)</b>
+-   <b style="color:#C71585">BaseCreateView(ModelFormMixin, ProcessFormView)</b>
+    -   <b style="color:#9370DB">.get(self, request, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.post(self, request, \*args, \*\*kwargs)</b>
+-   <b style="color:#C71585">CreateView(SingleObjectTemplateResponseMixin, BaseCreateView)</b>
     -   `template_name_suffix = '_form'`
--   `BaseUpdateView(ModelFormMixin, ProcessFormView)`
-    -   `get(self, request, *args, **kwargs)`
-    -   `post(self, request, *args, **kwargs)`
--   `UpdateView(SingleObjectTemplateResponseMixin, BaseUpdateView)`
+-   <b style="color:#C71585">BaseUpdateView(ModelFormMixin, ProcessFormView)</b>
+    -   <b style="color:#9370DB">.get(self, request, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.post(self, request, \*args, \*\*kwargs)</b>
+-   <b style="color:#C71585">UpdateView(SingleObjectTemplateResponseMixin, BaseUpdateView)</b>
     -   `template_name_suffix = '_form'`
--   `DeletionMixin`
+-   <b style="color:#C71585">DeletionMixin</b>
     -   `success_url = None`
-    -   `delete(self, request, *args, **kwargs)`
-    -   `post(self, request, *args, **kwargs)`
-    -   `get_success_url(self)`
--   `BaseDeleteView(DeletionMixin, BaseDetailView)`
--   `DeleteView(SingleObjectTemplateResponseMixin, BaseDeleteView)`
+    -   <b style="color:#9370DB">.delete(self, request, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.post(self, request, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.get_success_url(self)</b>
+-   <b style="color:#C71585">BaseDeleteView(DeletionMixin, BaseDetailView)</b>
+-   <b style="color:#C71585">DeleteView(SingleObjectTemplateResponseMixin, BaseDeleteView)</b>
     -   `template_name_suffix = '_confirm_delete'`
 
 #### django.views.generic.list
 
--   `MultipleObjectMixin(ContextMixin)`
-    -   `get_queryset(self)`
-    -   `get_ordering(self)`
-    -   `paginate_queryset(self, queryset, page_size)`
-    -   `get_paginate_by(self, queryset)`
-    -   `get_paginator(self, queryset, per_page, orphans=0`
-    -   `get_paginate_orphans(self)`
-    -   `get_allow_empty(self)`
-    -   `get_context_object_name(self, object_list)`
-    -   `get_context_data(self, *, object_list=None, **kwargs)`
--   `BaseListView(MultipleObjectMixin, View)`
-    -   `get(self, request, *args, **kwargs)`
--   `MultipleObjectTemplateResponseMixin(TemplateResponseMixin)`
-    -   `get_template_names(self)`
--   `ListView(MultipleObjectTemplateResponseMixin, BaseListView)`
+-   <b style="color:#C71585">MultipleObjectMixin(ContextMixin)</b>
+    -   <b style="color:#9370DB">.get_queryset(self)</b>
+    -   <b style="color:#9370DB">.get_ordering(self)</b>
+    -   <b style="color:#9370DB">.paginate_queryset(self, queryset, page_size)</b>
+    -   <b style="color:#9370DB">.get_paginate_by(self, queryset)</b>
+    -   <b style="color:#9370DB">.get_paginator(self, queryset, per_page, orphans=0</b>
+    -   <b style="color:#9370DB">.get_paginate_orphans(self)</b>
+    -   <b style="color:#9370DB">.get_allow_empty(self)</b>
+    -   <b style="color:#9370DB">.get_context_object_name(self, object_list)</b>
+    -   <b style="color:#9370DB">.get_context_data(self, \*, object_list=None, \*\*kwargs)</b>
+-   <b style="color:#C71585">BaseListView(MultipleObjectMixin, View)</b>
+    -   <b style="color:#9370DB">.get(self, request, \*args, \*\*kwargs)</b>
+-   <b style="color:#C71585">MultipleObjectTemplateResponseMixin(TemplateResponseMixin)</b>
+    -   <b style="color:#9370DB">.get_template_names(self)</b>
+-   <b style="color:#C71585">ListView(MultipleObjectTemplateResponseMixin, BaseListView)</b>
 
 #### django.views.generic.detail
 
--   `SingleObjectMixin(ContextMixin)`
-    -   `get_object(self, queryset=None)`
-    -   `get_queryset(self)`
-    -   `get_slug_field(self)`
-    -   `get_context_object_name(self, obj)`
-    -   `get_context_data(self, **kwargs)`
--   `BaseDetailView(SingleObjectMixin, View)`
-    -   `get(self, request, *args, **kwargs)`
--   `SingleObjectTemplateResponseMixin(TemplateResponseMixin)`
-    -   `get_template_names(self)`
--   `DetailView(SingleObjectTemplateResponseMixin, BaseDetailView)`
-
-#### django.views.generic.edit
+-   <b style="color:#C71585">SingleObjectMixin(ContextMixin)</b>
+    -   <b style="color:#9370DB">.get_object(self, queryset=None)</b>
+    -   <b style="color:#9370DB">.get_queryset(self)</b>
+    -   <b style="color:#9370DB">.get_slug_field(self)</b>
+    -   <b style="color:#9370DB">.get_context_object_name(self, obj)</b>
+    -   <b style="color:#9370DB">.get_context_data(self, \*\*kwargs)</b>
+-   <b style="color:#C71585">BaseDetailView(SingleObjectMixin, View)</b>
+    -   <b style="color:#9370DB">.get(self, request, \*args, \*\*kwargs)</b>
+-   <b style="color:#C71585">SingleObjectTemplateResponseMixin(TemplateResponseMixin)</b>
+    -   <b style="color:#9370DB">.get_template_names(self)</b>
+-   <b style="color:#C71585">DetailView(SingleObjectTemplateResponseMixin, BaseDetailView)</b>
 
 #### django.contrib.auth.views
 
--   `SuccessURLAllowedHostsMixin`
-    -   `get_success_url_allowed_hosts(self)`
--   `LoginView(SuccessURLAllowedHostsMixin, FormView)`
+-   <b style="color:#C71585">SuccessURLAllowedHostsMixin</b>
+    -   <b style="color:#9370DB">.get_success_url_allowed_hosts(self)</b>
+-   <b style="color:#C71585">LoginView(SuccessURLAllowedHostsMixin, FormView)</b>
     -   `form_class = AuthenticationForm`
     -   `authentication_form = None`
     -   `redirect_field_name = REDIRECT_FIELD_NAME`
     -   `template_name = 'registration/login.html'`
     -   `redirect_authenticated_user = False`
     -   `extra_context = None`
-    -   `dispatch(self, request, *args, **kwargs)`
-    -   `get_success_url(self)`
-    -   `get_redirect_url(self)`
-    -   `get_form_class(self)`
-    -   `get_form_kwargs(self)`
-    -   `form_valid(self, form)`
-    -   `get_context_data(self, **kwargs)`
--   `LogoutView(SuccessURLAllowedHostsMixin, TemplateView)`
+    -   <b style="color:#9370DB">.dispatch(self, request, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.get_success_url(self)</b>
+    -   <b style="color:#9370DB">.get_redirect_url(self)</b>
+    -   <b style="color:#9370DB">.get_form_class(self)</b>
+    -   <b style="color:#9370DB">.get_form_kwargs(self)</b>
+    -   <b style="color:#9370DB">.form_valid(self, form)</b>
+    -   <b style="color:#9370DB">.get_context_data(self, \*\*kwargs)</b>
+-   <b style="color:#C71585">LogoutView(SuccessURLAllowedHostsMixin, TemplateView)</b>
     -   `next_page = None`
     -   `redirect_field_name = REDIRECT_FIELD_NAME`
     -   `template_name = 'registration/logged_out.html'`
     -   `extra_context = None`
-    -   `dispatch(self, request, *args, **kwargs)`
-    -   `post(self, request, *args, **kwargs)`
-    -   `get_next_page(self)`
-    -   `get_context_data(self, **kwargs)`
--   `PasswordContextMixin`
-    -   `get_context_data(self, **kwargs)`
--   `PasswordResetView(PasswordContextMixin, FormView)`
+    -   <b style="color:#9370DB">.dispatch(self, request, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.post(self, request, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.get_next_page(self)</b>
+    -   <b style="color:#9370DB">.get_context_data(self, \*\*kwargs)</b>
+-   <b style="color:#C71585">PasswordContextMixin</b>
+    -   <b style="color:#9370DB">.get_context_data(self, \*\*kwargs)</b>
+-   <b style="color:#C71585">PasswordResetView(PasswordContextMixin, FormView)</b>
     -   `email_template_name = 'registration/password_reset_email.html'`
     -   `extra_email_context = None`
     -   `form_class = PasswordResetForm`
@@ -1328,12 +1390,12 @@ from django.contrib.auth.views import LoginView, LogoutView
     -   `template_name = 'registration/password_reset_form.html'`
     -   `title = _('Password reset')`
     -   `token_generator = default_token_generator`
-    -   `dispatch(self, *args, **kwargs)`
-    -   `form_valid(self, form)`
--   `PasswordResetDoneView(PasswordContextMixin, TemplateView)`
+    -   <b style="color:#9370DB">.dispatch(self, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.form_valid(self, form)</b>
+-   <b style="color:#C71585">PasswordResetDoneView(PasswordContextMixin, TemplateView)</b>
     -   `template_name = 'registration/password_reset_done.html'`
     -   `title = _('Password reset sent')`
--   `PasswordResetConfirmView(PasswordContextMixin, FormView)`
+-   <b style="color:#C71585">PasswordResetConfirmView(PasswordContextMixin, FormView)</b>
     -   `form_class = SetPasswordForm`
     -   `post_reset_login = False`
     -   `post_reset_login_backend = None`
@@ -1342,27 +1404,27 @@ from django.contrib.auth.views import LoginView, LogoutView
     -   `template_name = 'registration/password_reset_confirm.html'`
     -   `title = _('Enter new password')`
     -   `token_generator = default_token_generator`
-    -   `dispatch(self, *args, **kwargs)`
-    -   `get_user(self, uidb64)`
-    -   `get_form_kwargs(self)`
-    -   `form_valid(self, form)`
-    -   `get_context_data(self, **kwargs)`
--   `PasswordResetCompleteView(PasswordContextMixin, TemplateView)`
+    -   <b style="color:#9370DB">.dispatch(self, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.get_user(self, uidb64)</b>
+    -   <b style="color:#9370DB">.get_form_kwargs(self)</b>
+    -   <b style="color:#9370DB">.form_valid(self, form)</b>
+    -   <b style="color:#9370DB">.get_context_data(self, \*\*kwargs)</b>
+-   <b style="color:#C71585">PasswordResetCompleteView(PasswordContextMixin, TemplateView)</b>
     -   `template_name = 'registration/password_reset_complete.html'`
     -   `title = _('Password reset complete')`
-    -   `get_context_data(self, **kwargs)`
--   `PasswordChangeView(PasswordContextMixin, FormView)`
+    -   <b style="color:#9370DB">.get_context_data(self, \*\*kwargs)</b>
+-   <b style="color:#C71585">PasswordChangeView(PasswordContextMixin, FormView)</b>
     -   `form_class = PasswordChangeForm`
     -   `success_url = reverse_lazy('password_change_done')`
     -   `template_name = 'registration/password_change_form.html'`
     -   `title = _('Password change')`
-    -   `dispatch(self, *args, **kwargs)`
-    -   `get_form_kwargs(self)`
-    -   `form_valid(self, form)`
--   `PasswordChangeDoneView(PasswordContextMixin, TemplateView)`
+    -   <b style="color:#9370DB">.dispatch(self, \*args, \*\*kwargs)</b>
+    -   <b style="color:#9370DB">.get_form_kwargs(self)</b>
+    -   <b style="color:#9370DB">.form_valid(self, form)</b>
+-   <b style="color:#C71585">PasswordChangeDoneView(PasswordContextMixin, TemplateView)</b>
     -   `template_name = 'registration/password_change_done.html'`
     -   `title = _('Password change successful')`
-    -   `dispatch(self, *args, **kwargs)`
+    -   <b style="color:#9370DB">.dispatch(self, \*args, \*\*kwargs)</b>
 
 </details>
 
@@ -2290,6 +2352,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.template.loader import render_to_string
 from decimal import Decimal
 from six import text_type
+from django.forms.models import model_to_dict
 # =============================================================================
 
 from django.core.mail import send_mail

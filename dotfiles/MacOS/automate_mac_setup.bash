@@ -109,7 +109,7 @@ uninstall_vscode_extensions(){
 
 
 
-mac_nvim_tmux_config(){
+mac_nvim_tmux_config_depricated(){
     : ' Configure nvim for your local MAC OS.
         NOTE: It removes 'vim' (.vimrc) configuration if there is any.
     '

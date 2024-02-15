@@ -4,6 +4,7 @@
 
 <details><summary style="font-size:18px;color:Orange;text-align:left">Documents & Tutorials</summary>
 
+-   [Corey Schafer: Linux/Mac Tutorials](https://www.youtube.com/playlist?list=PL-osiE80TeTvGhHkpvfmKWOiIPF8UVy6c)
 -   [Introduction to Linux – Full Course for Beginners](https://www.youtube.com/watch?v=sWbUDq4S6Y8)
 -   [Learn CentOS](https://www.youtube.com/playlist?list=PLT98CRl2KxKHjHLIHrmmi5FmBGIZ8cNJE)
 -   [Linux TV: Linux Crash Course](https://www.youtube.com/playlist?list=PLT98CRl2KxKHKd_tH3ssq0HPrThx2hESW)
@@ -17,57 +18,43 @@
 
 <details><summary style="font-size:18px;color:Orange;text-align:left">Terms, Concepts & Helps</summary>
 
--   [`TERMINAL` VS. `BASH` VS. `COMMAND LINE` VS. `PROMPT`](https://www.youtube.com/watch?v=hMSByvFHOro): These terms are often used interchangeably, but they refer to different concepts in the context of computing. Let's clarify each term:
+-   **Shell**: A shell is a command-line interpreter that acts as a user interface to interact with the operating system. It interprets user commands and executes them. Shells can be graphical or text-based. Text-based shells are commonly referred to as `Command-line` Shells. Examples of command-line shells include Bash (Bourne Again SHell), Zsh (Z Shell), and PowerShell (for Windows). Shells provide features such as command execution, script interpretation, variable assignment, and control structures. Users interact with the shell by typing commands, and the shell interprets and executes those commands.
+-   **Terminal**: A terminal is a program that provides a text-based interface to interact with the shell. It acts as a window into the shell environment. Terminals can be graphical or text-based. Graphical terminals are often terminal emulators embedded in a graphical user interface (GUI). Text-based terminals may be physical terminals or terminal emulators in a text-based environment. The terminal program communicates with the shell, allowing users to input commands and receive the output. In a graphical environment, you may have multiple terminal windows open, each representing a separate session with the shell.
+-   **Bash**: Bash, short for Bourne Again SHell, is a specific type of shell or command language interpreter. It is a popular shell that is commonly used on Unix-like operating systems, including Linux and macOS. Bash is a powerful and feature-rich shell that provides command-line access to the system.
+-   **Prompt**: The prompt is the text or symbol displayed by the shell to indicate that it is ready to accept commands. The prompt typically includes information such as the current working directory, the username, the hostname, and other details. Users type commands at the prompt to interact with the system.
 
-    -   **Shell**: A shell is a command-line interpreter that acts as a user interface to interact with the operating system. It interprets user commands and executes them. Shells can be graphical or text-based. Text-based shells are commonly referred to as `Command-line` Shells. Examples of command-line shells include Bash (Bourne Again SHell), Zsh (Z Shell), and PowerShell (for Windows). Shells provide features such as command execution, script interpretation, variable assignment, and control structures. Users interact with the shell by typing commands, and the shell interprets and executes those commands.
-    -   **Terminal**: A terminal is a program that provides a text-based interface to interact with the shell. It acts as a window into the shell environment. Terminals can be graphical or text-based. Graphical terminals are often terminal emulators embedded in a graphical user interface (GUI). Text-based terminals may be physical terminals or terminal emulators in a text-based environment. The terminal program communicates with the shell, allowing users to input commands and receive the output. In a graphical environment, you may have multiple terminal windows open, each representing a separate session with the shell.
-    -   **Bash**: Bash, short for Bourne Again SHell, is a specific type of shell or command language interpreter. It is a popular shell that is commonly used on Unix-like operating systems, including Linux and macOS. Bash is a powerful and feature-rich shell that provides command-line access to the system.
-    -   **Prompt**: The prompt is the text or symbol displayed by the shell to indicate that it is ready to accept commands. The prompt typically includes information such as the current working directory, the username, the hostname, and other details. Users type commands at the prompt to interact with the system.
-
--   COMMAND-LINE ARGUMENT:
+-   **Command-Line Argument & Options**:
 
     -   A command-line argument or parameter is an item of information provided to a program when it is started. A program can have many command-line arguments that identify sources or destinations of information, or that alter the operation of the program.
-
--   COMMAND-LINE OPTION:
-
     -   A command-line option or simply option (also known as a flag or switch) refer to the additional arguments or flags that can be passed to a command or script when it is executed. Options follow the command name on the command line, separated by spaces. A space before the first option is required
     -   There are two types of options in Bash:
-        -   `Short Options`: Short options are single-letter options that are preceded by a single hyphen `-`. For example, in the command `ls -l`, the `-l` is a short option that tells the `ls` command to display the long listing format.
-        -   `Long Options`: Long options are more descriptive options that are preceded by a double hyphen `--`. For example, in the command `ls --all`, the `--all` is a long option that is equivalent to the short option `-a` and tells the `ls` command to display all files, including hidden ones.
-    -   Options can be used in combination with other command-line arguments. For example, in the command `ls -l --all`, both the short option `-l` and the long option `--all` are used together to display a long listing format including all files.
-    -   Some common conventions for options are:
-        -   Single-letter options can be combined, e.g., `ls -l -a` can be written as `ls -la`.
-        -   Options can be followed by their values, e.g., `grep -i "pattern" file.txt`, where `-i` is an option that makes the search case-insensitive and `pattern` is the value.
+    -   `Single Dash (-) Convention`: In the single dash convention, short options are represented by a single dash followed by a single letter. Multiple short options can be combined into a single string. If an option requires an argument, it is specified immediately after the option letter.
 
--   OPTION CONVENTIONS IN UNIX-LIKE SYSTEMS:
+        -   `$ ls -a -s -r` -> `-a`, `-s`, and `-r` are short options without arguments.
+        -   `$ ls -asr` -> `-asr` is a combination of multiple short options.
+        -   `$ grep -i pattern file.txt` -> `-i` is a short option that requires an argument (pattern).
 
-    -   **Single Dash (-) Convention**: In the single dash convention, short options are represented by a single dash followed by a single letter. Multiple short options can be combined into a single string. If an option requires an argument, it is specified immediately after the option letter.
-
-    -   `$ ls -a -s -r`
-        -   `-a`, `-s`, and `-r` are short options without arguments.
-    -   `$ ls -asr`
-        -   `-asr` is a combination of multiple short options.
-    -   `$ grep -i pattern file.txt`
-
-        -   `-i` is a short option that requires an argument (pattern).
-
-    -   **Double Dash (--) Convention**: In the double dash convention, long options are represented by a double dash followed by a descriptive name. Long options are typically more human-readable and often have an equivalent short option. If an option requires an argument, it is specified with an equal sign (=) or a space.
+    -   `Double Dash (--) Convention`: In the double dash convention, long options are represented by a double dash followed by a descriptive name. Long options are typically more human-readable and often have an equivalent short option. If an option requires an argument, it is specified with an equal sign (=) or a space.
 
         -   `$ command --option1 --option2=value --output file.txt`
             -   `--option1` and `--option2` are long options without arguments.
             -   `--option2=value` is a long option with an argument (value).
             -   `--output file.txt` is a long option with an argument (file.txt).
 
--   SOURCE vs EXECUTE:
+    -   Options can be used in combination with other command-line arguments. For example, in the command `ls -l --all`, both the short option `-l` and the long option `--all` are used together to display a long listing format including all files.
+    -   Single-letter options can be combined, e.g., `ls -l -a` can be written as `ls -la`.
+    -   Options can be followed by their values, e.g., `grep -i "pattern" file.txt`, where `-i` is an option that makes the search case-insensitive and `pattern` is the value.
 
-    -   EXECUTE (`./script.sh`): The execute command is used to run a shell script in a new process, which means it runs the script in a new shell instance separate from the current shell. This can be useful when you want to run a script without affecting the current environment.
-    -   SOURCE (`source script.sh`): The source command, on the other hand, is used to run a script in the current shell process. This means that the environment variables and functions defined in the script are available in the current shell after the script is run.
+-   **Built-in Commands**: Built-in commands are commands that are an integral part of the Bash shell itself. They are implemented directly within the shell's executable and do not require separate binary files on the system. When you execute a built-in command, it runs directly within the current shell process, which makes them generally faster and more efficient compared to external utilities. Examples of built-in commands include `cd`, `echo`, `pwd`, `export`, `alias`, `history`, `read`, and many others. You can use the type command to check whether a command is a built-in: type command_name.
 
--   `Built-in Commands`: Built-in commands are commands that are an integral part of the Bash shell itself. They are implemented directly within the shell's executable and do not require separate binary files on the system. When you execute a built-in command, it runs directly within the current shell process, which makes them generally faster and more efficient compared to external utilities. Examples of built-in commands include `cd`, `echo`, `pwd`, `export`, `alias`, `history`, `read`, and many others. You can use the type command to check whether a command is a built-in: type command_name.
+-   **Utilities (`External Commands`)**: Utilities, also known as external commands, are separate programs installed on the system that can be executed from within the Bash shell. These utilities are usually located in directories specified in the PATH environment variable, allowing Bash to find and run them. Examples of utilities include common Unix tools like `ls`, `grep`, `sed`, `awk`, `sort`, and others. Unlike built-in commands, utilities are executed in separate processes from the Bash shell. You can use the which command to determine the path of a utility: `which utility_name`.
 
--   `Utilities` (`External Commands`): Utilities, also known as external commands, are separate programs installed on the system that can be executed from within the Bash shell. These utilities are usually located in directories specified in the PATH environment variable, allowing Bash to find and run them. Examples of utilities include common Unix tools like `ls`, `grep`, `sed`, `awk`, `sort`, and others. Unlike built-in commands, utilities are executed in separate processes from the Bash shell. You can use the which command to determine the path of a utility: `which utility_name`.
+-   **Source Vs Execute**:
 
--   `man <command_name>` & COMMAND DESCRIPTION SYNTAX:
+    -   Execute (`./script.sh`): The execute command is used to run a shell script in a new process, which means it runs the script in a new shell instance separate from the current shell. This can be useful when you want to run a script without affecting the current environment.
+    -   Source (`source script.sh`): The source command, on the other hand, is used to run a script in the current shell process. This means that the environment variables and functions defined in the script are available in the current shell after the script is run.
+
+-   **man <command_name>** & **Command Description Syntax**:
 
     1. angle brackets for required parameters:
         - EX: `cp <source1> <dest>`
@@ -180,6 +167,47 @@
 
 ---
 
+<details><summary style="font-size:18px;color:Orange;text-align:left">Basic Bash Commands</summary>
+
+### FILE/DIRECTORY COMMANDS
+
+-   `ls -l -a -r`
+-   `$ mkdir <dirname>` → Makes a new directory
+-   `$ rmdir <dirname>` → Remove an empty directory
+-   `$ rmdir -rf <dirname>` → Remove a non-empty directory
+-   `$ mv <dir1> <dir2>` → Rename a directory from <dir1> to <dir2>
+-   `$ cd <dirname>` → Changes directory
+-   `$ cp -r <dir1> <dir2>` → Copy <dir1> into <dir2> including sub-directories
+    -   `$ cp dir1/* dir2/`
+    -   `$ cp dir1 dir2/`
+-   `$ pwd` → Tells you where you currently are
+-   `$ cd` → Changes to home directory.
+-   `$ cd ..` → Changes to the parent directory.
+-   `$ cd ~` → Changes to home directory.
+-   `$ cd /` → Changes to root directory.
+-   `$ cd -` → Changes to previous directory.
+
+### BASH BASICS
+
+-   `$ cd `
+
+-   `$ env` → Displays all environment variables
+-   `$ echo $SHELL` → Displays the shell you're using
+-   `$ echo $BASH_VERSION` → Displays bash version
+-   `$ unset VARIABLE_NAME` → Unset the given variabel - 'VARIABLE_NAME'
+-   `$ bash` → If you want to use bash (type exit to go back to your previously opened shell)
+-   `$ whereis bash` → Locates the binary, source and manual-page for a command
+-   `$ which bash` → Finds out which program is executed as 'bash' (default: /bin/bash, can change across environments)
+-   `$ whoami` → Returns your username
+-   `$ passwd` → Lets you change your password
+-   `$ clear` → Clears content on window (hide displayed lines)
+
+---
+
+</details>
+
+---
+
 <details><summary style="font-size:18px;color:Orange;text-align:left">SSH: Usage, Options, Configuration</summary>
 
 -   [Documents](https://www.ssh.com/academy/ssh/command#ssh-client-configuration-file) || [SSH: Usage, Options, Configuration](https://www.ssh.com/academy/ssh/command#ssh-client-configuration-file) || [SSH Agent Explained](https://smallstep.com/blog/ssh-agent-explained/)
@@ -200,6 +228,7 @@
     -   `$ ssh-keygen -t rsa -f ~/.ssh/ghub_amomin -C A.Momin.NYC@gmail.com` → Generate a rsa key with file-name `KEY_FILENAME` and username `USERNAME`.
     -   `$ ssh-keygen -t rsa -f ~/.ssh/ghub_bbcredcap3 -C bbcredcap3@gmail.com` → Generate a rsa key with file-name `KEY_FILENAME` and username `USERNAME`.
     -   `$ ssh-keygen -t rsa -f ~/.ssh/<KEY_FILENAME> -P passphrase` → Example 1: `$ ssh-keygen -f ~/.ssh/file_name -t rsa -P ""`
+    -   `$ ssh-keygen -y -f aws-ht.pem` -> It outputs the corresponding public key on the terminal.
 
 -   **ssh-add:**
 
@@ -226,7 +255,7 @@
     -   `$ scp -r /local/directory/ username@to_host:/remote/directory/` → Copy directory from local host to a remote hos SCP example
     -   `$ scp file.txt username@to_host:/remote/directory/` → Copy file from local host to a remote host
     -   `$ scp file.txt rhel:/home/ec2-user` → 'rhel' is node name configured in `~/.ssh/config` file.
-    -   `$ scp rhel:/home/ec2-user/file.txt /local_machine/directory/` → scp from remote machine to local machine
+    -   `$ scp -r rhel:/home/ec2-user/file.txt /local_machine/directory/` → scp the entire directory from remote machine to local machine
 
 -   **ssh-copy-id:**
 
@@ -234,6 +263,8 @@
         -   `$ ssh-copy-id ~/.ssh/puplic_ssh_key.pub shah@10.0.0.4`
         -   `$ ssh-copy-id -i ~/.ssh/mos01_mos02.pub a.momin@mos02.local`
 
+-   **ssh-keyscan:**
+    -   `$ ssh-keyscan -H rhel >> /var/lib/jenkins/.ssh/known_hosts`
 -   **sshpass:**
 
     -   `$ sshpass -p <password> scp [options] [source] [destination]`
@@ -243,7 +274,7 @@
 
 ---
 
-### find
+##### find
 
 -   `$ find -type f -name *.gdoc`
 -   `$ find . -name <name> <type>`
@@ -265,7 +296,7 @@
 
 ---
 
-### rsync
+##### rsync
 
 ```bash
 rsync -avz \                            # run in archival and vervose mode
@@ -282,7 +313,7 @@ rsync -avz \                            # run in archival and vervose mode
 
 ---
 
-### curl
+##### curl
 
 -   [curl](https://www.hostinger.com/tutorials/curl-command-with-examples-linux/)
 -   [Using Curl and Telnet Command To Make HTTP Requests](https://www.youtube.com/watch?v=cn3u7-dP3S0)
@@ -299,13 +330,13 @@ rsync -avz \                            # run in archival and vervose mode
 
 ---
 
-### jq
+##### jq
 
 -   To process JSON data efficiently, Linux provides a command-line tool called jq. This powerful tool enables users to extract, manipulate, and transform JSON data with ease. With jq, users can quickly perform a wide range of tasks on JSON data, including filtering, sorting, and selecting specific fields.
 
 ---
 
-### Archive
+##### Archive
 
 -   **wget:**
 
@@ -328,7 +359,7 @@ rsync -avz \                            # run in archival and vervose mode
 
 ---
 
-### Symbolic Links
+##### Symbolic Links
 
 -   symbolic links (also known as “soft links” or “symlinks”): Refer to a symbolic path indicating the abstract location of another file.
 -   hard links : Refer to the specific location of physical data.
@@ -339,14 +370,14 @@ rsync -avz \                            # run in archival and vervose mode
 
 ---
 
-### sed (Stream Editor)
+##### sed (Stream Editor)
 
 -   `$ visudo` → Open `/etc/sudoers` in vim
 -   `$ sed -i '$ a Shah ALL=(ALL) NOPASSWD: ALL' /etc/sudoers` → gives the user `Shah` the ability to use sudo without a password prompt.
 
 ---
 
-### diff
+##### diff
 
 -   [The diff Command](https://www.youtube.com/watch?v=qLRQspQxvFk)
 -   `$ diff -u file1 file2` → The `-u` option produces a unified diff output, which includes additional context lines around the differences to provide better readability.
@@ -356,7 +387,7 @@ rsync -avz \                            # run in archival and vervose mode
 
 ---
 
-### htop
+##### htop
 
 -   [Linux Crash Course - htop](https://www.youtube.com/watch?v=tU9cO9FwDx0)
 
@@ -409,34 +440,32 @@ rsync -avz \                            # run in archival and vervose mode
         -   Sticky bit on a directory: The value is 1 (in octal notation) or 001 (in binary). When the sticky bit is set on a directory, it becomes a "sticky directory." The sticky bit on directories restricts the ability to delete or rename files within the directory to only the owner of the file, the owner of the directory, and the superuser.
 
 -   [chown](https://linuxize.com/post/linux-chown-command/)
--   `$ chown [OPTIONS] USER[:GROUP] FILE(s)`
 
+    -   `$ chown [OPTIONS] USER[:GROUP] FILE(s)`
     -   `$ sudo chown :group file`
     -   `$ sudo chown :docker file1.txt`
         -   Change the group owner of file1.txt to docker.
-
--   `$ chown -R www-data: /var/dir`
-
-    -   Change the ownership of all files and subdirectories under the /var/dir directory to a new owner and group named www-data
-
--   `$ chown www-data: symlink1`
-    -   Change the ownership of the file or directory the symlink points to
--   `$ chown -h www-data symlink1`
-
-    -   Change the group ownership of the symlink itself, use the -h option.
+    -   `$ chown -R jenkins:jenkins /var/lib/jenkins/.ssh`
+        -   give the ownership of `/var/lib/jenkins/.ssh` to `jenkins` user and `jenkins` group
+    -   `$ chown -R www-data: /var/dir`
+        -   Change the ownership of all files and subdirectories under the /var/dir directory to a new owner and group named www-data
+    -   `$ chown www-data: symlink1`
+        -   Change the ownership of the file or directory the symlink points to
+    -   `$ chown -h www-data symlink1`
+        -   Change the group ownership of the symlink itself, use the -h option.
 
 -   [chgrp](https://linuxize.com/post/chgrp-command-in-linux/)
--   `$ chgrp [OPTIONS] GROUP FILE..`
-    -   EX: `$ chgrp OPTION group_name /path/to/file_or_directory`
-    -   The group_name attribute represents the new group name that the file or directory will acquire. Additionally, you can specify the GID (group ID) instead of the group name. In that case, you need to append the GID with a plus sign (+).
--   `$ chgrp -R www-data /var/www`
 
--   `$ chgrp www-data symlink1`
-    -   If you try to change the group of the symbolic link symlink1 that points to /opt/file1, chgrp will change the ownership of the file or directory the symlink points to:
--   `$ chgrp -h www-data symlink1`
-    -   To change the group ownership of the symlink itself, use the `-h` option
--   `$ chgrp -hR www-data /var/www`
-    -   Change the group ownership recursively including symbolic links, pass the `-h` option
+    -   `$ chgrp [OPTIONS] GROUP FILE..`
+        -   EX: `$ chgrp OPTION group_name /path/to/file_or_directory`
+        -   The group_name attribute represents the new group name that the file or directory will acquire. Additionally, you can specify the GID (group ID) instead of the group name. In that case, you need to append the GID with a plus sign (+).
+    -   `$ chgrp -R www-data /var/www`
+    -   `$ chgrp www-data symlink1`
+        -   If you try to change the group of the symbolic link symlink1 that points to /opt/file1, chgrp will change the ownership of the file or directory the symlink points to:
+    -   `$ chgrp -h www-data symlink1`
+        -   To change the group ownership of the symlink itself, use the `-h` option
+    -   `$ chgrp -hR www-data /var/www`
+        -   Change the group ownership recursively including symbolic links, pass the `-h` option
 
 </details>
 
@@ -506,7 +535,12 @@ sudo useradd \
 
 <details><summary style="font-size:18px;color:Orange;text-align:left">Systemd & Service Management</summary>
 
+-   [How To Use Systemctl to Manage Systemd Services and Units](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)
+
 <details><summary style="font-size:15px;color:red;">Terminology</summary>
+
+-   `$ service sshd status`
+-   `$ service sshd start`
 
 -   **System Services:**
 
@@ -566,7 +600,9 @@ sudo useradd \
 
 -   **Socket:**
 
-    In Linux, a unit socket refers to a systemd unit that provide interprocess communication (IPC) between processes on the same machine. It allows processes to exchange data through network sockets or Unix domain sockets. Here's an explanation of unit sockets in Linux:
+-   What is Unix Domain Socket?
+
+In Linux, a unit socket refers to a systemd unit that provide interprocess communication (IPC) between processes on the same machine. It allows processes to exchange data through network sockets or Unix domain sockets. Here's an explanation of unit sockets in Linux:
 
 -   `Socket Unit`: A socket unit is defined by a systemd unit configuration file with a .socket extension. It specifies the properties and behavior of the socket endpoint.
 
@@ -603,6 +639,8 @@ sudo useradd \
 **systemctl:**
 
 -   [How to Use Systemctl Utility in Linux](https://linuxhint.com/systemctl-utility-linux/)
+
+-   `$ sudo hostnamectl set-hostname t2Medium && /bin/bash`
 -   `$ sudo systemctl list-units`
 -   `$ sudo systemctl list-units --type=service`
 -   `$ sudo systemctl list-units –state=inactive`
@@ -618,7 +656,6 @@ sudo useradd \
 -   `$ sudo systemctl enable nginx`
 -   `$ sudo systemctl enable nginx --now`
 -   `$ sudo systemctl disable sshd`
--   `$ `
 -   `$ `
 
 **journalctl:**
@@ -706,21 +743,6 @@ bar.o: bar.c
 
 ---
 
-### BASH BASICS
-
--   `$ env` → Displays all environment variables
--   `$ echo $SHELL` → Displays the shell you're using
--   `$ echo $BASH_VERSION` → Displays bash version
--   `$ unset VARIABLE_NAME` → Unset the given variabel - 'VARIABLE_NAME'
--   `$ bash` → If you want to use bash (type exit to go back to your previously opened shell)
--   `$ whereis bash` → Locates the binary, source and manual-page for a command
--   `$ which bash` → Finds out which program is executed as 'bash' (default: /bin/bash, can change across environments)
--   `$ whoami` → Returns your username
--   `$ passwd` → Lets you change your password
--   `$ clear` → Clears content on window (hide displayed lines)
-
----
-
 ### SYSTEM INFO & NETWORK COMMANDS
 
 -   [34 Basic Linux Commands Every User Should Know](https://www.hostinger.com/tutorials/linux-commands)
@@ -777,22 +799,6 @@ bar.o: bar.c
 | `$ grep -r <pattern> <dir>`      | search recursively for pattern in directory                                                                                                 |
 | `$ head -n file_name \| tail +n` | Print nth line from file.                                                                                                                   |
 | `$ head -y lines.txt \| tail +x` | want to display all the lines from x to y. This includes the xth and yth lines.                                                             |
-
----
-
-### DIRECTORY COMMANDS
-
--   `$ mkdir <dirname>` → Makes a new directory
--   `$ rmdir <dirname>` → Remove an empty directory
--   `$ rmdir -rf <dirname>` → Remove a non-empty directory
--   `$ mv <dir1> <dir2>` → Rename a directory from <dir1> to <dir2>
--   `$ cd <dirname>` → Changes directory
--   `$ cp -r <dir1> <dir2>` → Copy <dir1> into <dir2> including sub-directories
--   `$ pwd` → Tells you where you currently are
--   `$ cd` → Changes to home directory.
--   `$ cd ..` → Changes to the parent directory.
--   `$ cd ~` → Changes to home directory.
--   `$ cd -` → Changes to previous directory.
 
 ---
 

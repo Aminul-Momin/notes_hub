@@ -223,10 +223,6 @@ In Bash scripting, meta-characters are special characters that have specific mea
     -   `[a-z]*.[!j]?*` - Matches any file with any extension except ".jpg" or ".jpeg" that starts with any lowercase letter:
         -   Result: apple.txt, banana.txt, cherry.txt, peach.txt
 
-    ```
-
-    ```
-
 -   Quoting:
 
     -   `'single quotes'`: Preserves the literal value of all characters within the single quotes. No variable expansion or command substitution occurs within single quotes. (Interpret literally without evaluating any metacharacter.)
@@ -322,6 +318,34 @@ In Bash scripting, meta-characters are special characters that have specific mea
 -   `-n str1` → str1 is not null (has length greater than 0)
 -   `-z str1` → str1 is null (has length 0)
 
+### STRINGS OPERATIONS:
+
+```sh
+#!/bin/bash
+
+# Original string
+original_string="ThisIsABashString"
+
+# Extract a substring starting from index 6 to the end
+substring="${original_string:6}"
+
+# Print the original and sliced strings
+echo "Original String: $original_string"
+echo "Sliced String: $substring"
+
+# ============================================
+
+# Print the original and sliced strings
+echo "Original String: $original_string"
+echo "Sliced String: $substring"
+
+# ============================================
+
+# Transform the string to uppercase
+uppercase_string="${original_string^^}"
+echo "Transformed String: $substring"
+```
+
 ### FILES EXPRESSION:
 
 -   `-a File` → file exists or its compilation is successful
@@ -354,23 +378,21 @@ In Bash scripting, meta-characters are special characters that have specific mea
 ### FUNCTIONS
 
 ```bash
-# The function refers to passed arguments by position (as if they were positional parameters), that is, $1, $2, and so forth.
-# $@ is equal to "$1" "$2"... "$N", where N is the number of positional parameters. $# holds the number of positional parameters.
+## The function refers to passed arguments by position (as if they were positional parameters), that is, $1, $2, and so forth.
+## $@ is equal to "$1" "$2"... "$N", where N is the number of positional parameters. $# holds the number of positional parameters.
 
 
-function func_name {
-    echo "Hello World"
-}
+# function func_name {
+#     echo "Hello World"
+# }
 
-func_name(){
-    echo "Hello World"
-}
+# func_name(){
+#     echo "Hello World"
+# }
 
-unset -f func_name  # deletes a function definition
-declare -f          # displays all defined functions in your login session
+# unset -f func_name  # deletes a function definition
+# declare -f          # displays all defined functions in your login session
 ```
-
----
 
 ### Control Flow in Bash:
 
