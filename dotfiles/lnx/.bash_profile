@@ -66,7 +66,7 @@ beautify_prompt(){
     elif [ $host = "MOS02" ]; then
         host_color=$Orange
     else
-        host_color=$green
+        host_color=$BOrange
     fi
     arrow_color=$purple
 
